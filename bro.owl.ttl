@@ -1,20 +1,17 @@
-#@prefix : <http://bioontology.org/ontologies/BRO.owl#> .
 @prefix : <https://bioportal.bioontology.org/ontologies/BRO.owl#> .
-#@prefix dct: <https://purl.org/dc/terms/> .
 @prefix dct: <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> .
 @prefix owl: <https://www.w3.org/2002/07/owl#> .
 @prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <https://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <https://www.w3.org/2001/XMLSchema#> .
 @prefix xsp: <https://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
-#@prefix area: <http://bioontology.org/ontologies/ResearchArea.owl#> .
-#@prefix desc: <http://bioontology.org/ontologies/biositemap.owl#> .
-@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
-#@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix skos: <https://www.w3.org/2009/08/skos-reference/skos.html> .
-@prefix protege: <https://protege.stanford.edu/plugins/owl/protege#> .
-#@prefix activity: <http://bioontology.org/ontologies/Activity.owl#> .
-@base: <https://github.com/biocypher/biomedical-resource-ontology/blob/main/bro.owl#> .
+@prefix area: <http://bioontology.org/ontologies/ResearchArea.owl#> .
+@prefix desc: <http://bioontology.org/ontologies/biositemap.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <https://www.w3.org/2009/08/skos-reference/skos#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix activity: <http://bioontology.org/ontologies/Activity.owl#> .
+@base <https://github.com/biocypher/biomedical-resource-ontology/blob/main/bro.owl#> .
 
 <http://bioontology.org/ontologies/BiomedicalResources.owl> rdf:type owl:Ontology ;
                                                              owl:imports <https://www.w3.org/2009/08/skos-reference/skos> ;
