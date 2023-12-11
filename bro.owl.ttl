@@ -11,7 +11,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
 @prefix activity: <http://bioontology.org/ontologies/Activity.owl#> .
-@base <https://github.com/biocypher/biomedical-resource-ontology/blob/main/bro.owl#> .
+@base <http://bioontology.org/ontologies/BiomedicalResourceOntology.owl#> .
 
 <http://bioontology.org/ontologies/BiomedicalResources.owl> rdf:type owl:Ontology ;
                                                              owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -28,6 +28,18 @@ desc:definition rdf:type owl:AnnotationProperty ;
 
 ###  http://bioontology.org/ontologies/biositemap.owl#replacedBy
 desc:replacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -1287,6 +1299,7 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
 :Federal_Funding_Resource rdf:type owl:Class ;
                           rdfs:subClassOf :Funding_Resource ;
                           desc:definition "A funding resource where money is obtained from the central government." ;
+                          rdfs:comment "should be instance of public funding resource" ;
                           rdfs:label "Federal Funding Resource" .
 
 
@@ -1945,6 +1958,7 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
 :Microscope rdf:type owl:Class ;
             rdfs:subClassOf :Instrument ;
             desc:definition "An instrument used to obtain a magnified image of small objects and reveal details of structure not otherwise distinguishable." ;
+            rdfs:comment "should be the lowest level class, as further distinction should go into instances" ;
             rdfs:label "Microscope" ;
             skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
 
@@ -2818,6 +2832,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 :Semi-Structured_Knowledge_Resource rdf:type owl:Class ;
                                     rdfs:subClassOf :Information_Resource ;
                                     desc:definition "A resource that provides data that is partially structured. " ;
+                                    rdfs:comment "should be subclass of Knowledge Base" ;
                                     rdfs:label "Semi-Structured Knowledge Resource" .
 
 
@@ -3004,6 +3019,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 :State_Funding_Resource rdf:type owl:Class ;
                         rdfs:subClassOf :Funding_Resource ;
                         desc:definition "A funding resource that is provided by a state." ;
+                        rdfs:comment "should be instance of public funding resource" ;
                         rdfs:label "State Funding Resource" .
 
 
@@ -3983,6 +3999,7 @@ activity:Novel_Therapeutics desc:definition "Innovative therapeutics (http://en.
 
 
 :Bibliographic_Resource desc:definition "A resource that contains information about or access to published sources." ;
+                        rdfs:comment "possibly to be instance of Narrative R subclasses, but should be not missed upon deletion" ;
                         rdfs:label "Bibliographic Resource" .
 
 
@@ -4081,6 +4098,8 @@ we think this should be deleted""" ;
 
 
 :Data_Resource desc:definition "A resource that provides individual facts, statistics or items of information." ;
+               rdfs:comment """subclasses should be instances
+skos:altLabel Digital Data R?""" ;
                rdfs:label "Data Resource" .
 
 
@@ -4143,6 +4162,9 @@ we think this should be deleted""" ;
      rdfs:label "EDA" ;
      owl:deprecated "true"^^xsd:boolean ;
      skos:historyNote "Deprecated for BRO v3.0" .
+
+
+:Environmental_Health_and_Safety rdfs:label "Environmental Health and Safety Resource" .
 
 
 :Experimental_Measurment desc:definition "A resource that provides access to data from individual experiments." ;
@@ -4298,6 +4320,12 @@ we think this should be deleted""" ;
 
 
 :Narrative_Resource desc:definition "A resource that provides a literary work, book, story, textual description, or account of events, experiences, or the like, whether true or fictitious.  " ;
+                    rdfs:comment """subclasses should be instances, alternative subclasses are
+- Publication (Scientific Preprint, Scientific Peer-reviewed, Thesis, ...), 
+- Personal Presentation (Oral or Poster Presentation, ...), 
+- Documentation (Protocol, User Manual, …),
+- Internal Communication (Own unpublished results, Collaborator results, ...), 
+- Online Source (Blog, Newpaper, Webpage, ...)""" ;
                     rdfs:label "Narrative Resource" ;
                     skos:editorialNote "Work with NIF to define blog and wiki." .
 
@@ -4371,6 +4399,7 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" .
 
 
 :Portal desc:definition "A Resource that provides a point of access to information on the World Wide Web, presenting information from diverse sources in a unified way." ;
+        rdfs:comment "should be Knowledge Base instead" ;
         rdfs:label "Portal" ;
         skos:editorialNote "pending final vetting: review NIF hierarchy for source of children terms." .
 
@@ -4410,6 +4439,8 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" .
 
 
 :Resource desc:definition "An entity that provides access (either in the open community or within an organization) to material, intellectual, financial, technological, or electronic means of carrying out research and development." ;
+          rdfs:comment """to change in current definition -> in biomedical research and development
+alternative skos:definition \"An entity that provides access (either in the open community or within an organization) to a data item or a data source (collection of data items) for carrying out biomedical research and development.\"""" ;
           rdfs:label "Resource" .
 
 
@@ -4489,6 +4520,7 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" .
 
 
 :Structured_Knowledge_Resource desc:definition "A resource that provides access to collection of data records arranged according to some semantic framework.  The semantic framework may be minimally expressive - such as a simple controlled vocabulary - or highly expressive such as a formally structured ontology.  Such resources may include only a representation of universal/classes/categories or may be linked to individual instance data typed according to a set of asserted classes (i.e., a knowledgebase)." ;
+                               rdfs:comment "should be subclass of Knowledge Base" ;
                                rdfs:label "Structured Knowledge Resource" .
 
 
@@ -4558,9 +4590,6 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" .
                          rdfs:label "physico chemical models" ;
                          owl:deprecated "true"^^xsd:boolean ;
                          skos:historyNote "Deprecated for BRO v2.7" .
-
-
-:Environmental_Health_and_Safety rdfs:label "Environmental Health and Safety Resource" .
 
 
 desc:definition rdfs:label "Definition" ,
