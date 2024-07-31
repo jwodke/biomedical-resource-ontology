@@ -1,5 +1,5 @@
-| BRO Class      | Existing Class          | Ontology  | Link |
-| ------------- | ------------- | ----- | ------ |
+| BRO Class      | Existing Class          | Ontology  | Definition | Link |
+| ------------- | ------------- | ----- | ------ | -------- |
 | Financial Resource     |  |  |  |
 | Internal Resource     |       |    |
 | Third Party Resource |       |     |
@@ -11,7 +11,7 @@
 | Institutional Resource |
 | Personal Resource |
 |  |  |  |  |
-| Information Resource |
+| Information Resource | Information Resource | National Cancer Institute Thesaurus | Sources of information such as libraries, databases, and websites. | [Link](https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C16048)
 | Structured Resource |
 | Database |
 | noSQL DB |
