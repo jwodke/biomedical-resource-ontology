@@ -60,7 +60,8 @@
 | Primary Source System |
 | Processing System |
 | Management System |
-| Software Resource | NIF |
+| Software Resource | | NIF |
+| Algorithm | Algorithm | NIF | An algorithm is a plan which describes inputs, output of mathematical functions as well as workflow of execution for achieving an predefined objective. Algorithms are realized usually by means of implementation as computer programs for execution by automata. | [Link](https://bioportal.bioontology.org/ontologies/NIFSTD?p=classes&conceptid=http%3A%2F%2Furi.neuinfo.org%2Fnif%2Fnifstd%2Fbirnlex_11009)
 | Data Acess Sotware | 
 | Data Acquisition Software |
 | Data Analysis Software |
