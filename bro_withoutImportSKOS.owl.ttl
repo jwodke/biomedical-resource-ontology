@@ -23,6 +23,14 @@
 #    Annotation properties
 #################################################################
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#mentions
+:mentions rdf:type owl:AnnotationProperty ;
+          rdfs:label "mentions" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Annotation property that includes the IRI of an entity that is referenced." ;
+          skos:editorialNote "At the moment only a working version, label and definition of the Annotation might still change." ;
+          rdfs:range xsd:anyURI .
+
+
 ###  http://bioontology.org/ontologies/biositemap.owl#definition
 desc:definition rdf:type owl:AnnotationProperty ;
                 rdfs:range xsd:string .
@@ -198,6 +206,92 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F1001
+:F1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Financial Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to monetary support for research, training, or education, including to grants, contracts, materials, or gifts."@en ;
+       skos:altLabel "FR"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F2002
+:F2002 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Internal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided from within the organizational unit, organization, or institution of the applicant."@en ;
+       skos:altLabel "Internal Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F2003
+:F2003 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Third Party FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided by an external party."@en ;
+       skos:altLabel "Third Party Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F3004
+:F3004 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:comment "This does not have to be by the public sector where the usage of the 'Financial Resource' is taking place."@en ;
+       rdfs:label "Public FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a public sector, including the local, city, county, state and federal government, or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Public Health Care, EU Funding"@en ;
+       skos:altLabel "Public Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F3008
+:F3008 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:label "Private FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a person or organization not from the public sector. It could be made of investments, donations, loans or crowdfunding."@en ;
+       skos:altLabel "Private Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4005
+:F4005 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "Federal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided from the central government of a country or one of its organizations."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Funding by German Federal Ministry of Research, Technology and Space"@en ;
+       skos:altLabel "Federal Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4006
+:F4006 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "International FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by public institutions of and/or given to beneficiaries from several countries or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "EU Funding"@en ;
+       skos:altLabel "International Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4007
+:F4007 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "State FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by a state or one of its organizations."@en ;
+       skos:altLabel "State Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4009
+:F4009 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       owl:disjointWith :F4010 ;
+       rdfs:label "Institutional FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by a company, organization or foundation."@en ;
+       skos:altLabel "Institutional Financial Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4010
+:F4010 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       rdfs:label "Personal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by one or more human individuals."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "FR by a natural person, foundation of a single person, married couple"@en ;
+       skos:altLabel "Personal Financial Resource"@en .
+
+
 ###  http://bioontology.org/ontologies/BiomedicalResources.owl#I3021
 :I3021 rdf:type owl:Class ;
        rdfs:subClassOf :I2011 ;
@@ -222,9 +316,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Aggregate_Human_Data
 :Aggregate_Human_Data rdf:type owl:Class ;
-                      rdfs:subClassOf :Clinical_Care_Data ;
-                      desc:definition "A resource that provides data from clinical care that comprises combined data from multiple individual human subjects." ;
-                      rdfs:label "Aggregate Human Data" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Aggregate Human Data" ;
+                      rdfs:seeAlso :Clinical_Care_Data ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Algorithm
@@ -544,8 +639,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Care_Data
-:Clinical_Care_Data rdf:type owl:Class ;
-                    rdfs:subClassOf :Data_Resource .
+:Clinical_Care_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Chart
@@ -564,8 +658,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Research_Data
-:Clinical_Research_Data rdf:type owl:Class ;
-                        rdfs:subClassOf :Data_Resource .
+:Clinical_Research_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Trial_Data
@@ -835,8 +928,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Resource
-:Data_Resource rdf:type owl:Class ;
-               rdfs:subClassOf :I1001 .
+:Data_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Service
@@ -1119,9 +1211,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Federal_Funding_Resource
 :Federal_Funding_Resource rdf:type owl:Class ;
-                          rdfs:subClassOf :Funding_Resource ;
-                          desc:definition "A funding resource where money is obtained from the central government." ;
-                          rdfs:label "Federal Funding Resource" .
+                          rdfs:comment "Change in definition, IRI and hierachy" ;
+                          rdfs:label "DEPRECATED Federal Funding Resource" ;
+                          rdfs:seeAlso :F4005 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Filtering
@@ -1172,15 +1265,15 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Funding_Resource
-:Funding_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :R0001 .
+:Funding_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Gene_Expression
 :Gene_Expression rdf:type owl:Class ;
-                 rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                 desc:definition "A resource that provides data on the abundance of RNA that is coded from genes." ;
-                 rdfs:label "Gene Expression" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Gene Expression" ;
+                 rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Gene_Therapy_Facility
@@ -1638,9 +1731,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Individual_Human_Data
 :Individual_Human_Data rdf:type owl:Class ;
-                       rdfs:subClassOf :Clinical_Care_Data ;
-                       desc:definition "A resource that provides clinical care data at the level of an individual." ;
-                       rdfs:label "Individual Human Data" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Individual Human Data" ;
+                       rdfs:seeAlso :Clinical_Care_Data ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Industry_Partnership_Expertise
@@ -2074,9 +2168,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Interaction
 :Molecular_Interaction rdf:type owl:Class ;
-                       rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                       desc:definition "A resource that provides data related to the measurement of interaction between molecules of any type. " ;
-                       rdfs:label "Molecular Interaction" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Molecular Interaction" ;
+                       rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Model
@@ -2112,8 +2207,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
-:Molecular_and_Cellular_Data rdf:type owl:Class ;
-                             rdfs:subClassOf :Data_Resource .
+:Molecular_and_Cellular_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Monoclonal_Antibody_Facility
@@ -2540,9 +2634,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotypic_Measurement
 :Phenotypic_Measurement rdf:type owl:Class ;
-                        rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                        desc:definition "A resource that provides data related to any kind of measurement designed to describe an observable characteristic or trait. " ;
-                        rdfs:label "Phenotypic Measurement" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Phenotypic Measurement" ;
+                        rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phlebotomy_Facility
@@ -2580,10 +2675,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portal
-:Portal rdf:type owl:Class ;
-        rdfs:subClassOf :Communication_and_Collaborative_Work ,
-                        :I1001 ,
-                        :Integration_and_Interoperability_Tool .
+:Portal rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portlet_Component
@@ -2622,9 +2714,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Private_Funding_Resource
 :Private_Funding_Resource rdf:type owl:Class ;
-                          rdfs:subClassOf :Funding_Resource ;
-                          desc:definition "A funding resource where money is supplied by a non governmental organization, foundation, or company." ;
-                          rdfs:label "Private Funding Resource" .
+                          rdfs:comment "change in definition, IRI and hierarchy" ;
+                          rdfs:label "DEPRECATED Private Funding Resource" ;
+                          rdfs:seeAlso :F3008 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Processing_Pipeline
@@ -2651,9 +2744,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Expression
 :Protein_Expression rdf:type owl:Class ;
-                    rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                    desc:definition "A resource that provides data related to the presence and abundance of proteins from a cell or tissue sample." ;
-                    rdfs:label "Protein Expression" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Protein Expression" ;
+                    rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Interaction_Modeling
@@ -3075,9 +3169,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#State_Funding_Resource
 :State_Funding_Resource rdf:type owl:Class ;
-                        rdfs:subClassOf :Funding_Resource ;
-                        desc:definition "A funding resource that is provided by a state." ;
-                        rdfs:label "State Funding Resource" .
+                        rdfs:comment "change in definition, IRI and hierarchy" ;
+                        rdfs:label "DEPRECATED State Funding Resource" ;
+                        rdfs:seeAlso :F4007 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Algorithm
@@ -4078,8 +4173,10 @@ desc:replacedBy rdfs:label "replacedBy" .
                      rdfs:label "Centrality Analysis" .
 
 
-:Clinical_Care_Data desc:definition "A resource that provides any type of data obtained in the course of caring for humans outside of measurements obtained in clinical trials." ;
-                    rdfs:label "Clinical Care Data" .
+:Clinical_Care_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                    rdfs:label "DEPRECATED Clinical Care Data" ;
+                    rdfs:seeAlso :Data_Resource ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 :Clinical_Chart desc:definition """**previously was called Clinical_Charts_eg_Demographics
@@ -4102,8 +4199,10 @@ we think this should be deleted""" ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Clinical_Research_Data desc:definition "A resource that provides data on clinical trials and outcomes studies. " ;
-                        rdfs:label "Clinical Research Data" .
+:Clinical_Research_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                        rdfs:label "DEPRECATED Clinical Research Data" ;
+                        rdfs:seeAlso :Data_Resource ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 :Clinical_Trial_Data desc:definition "A resource the provides access to data about subjects in a clinical trial; for example demographics, medical history, labs, procedures, etc." ;
@@ -4150,8 +4249,10 @@ we think this should be deleted""" ;
                  skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Data_Resource desc:definition "A resource that provides individual facts, statistics or items of information." ;
-               rdfs:label "Data Resource" .
+:Data_Resource rdfs:comment "there is no clear difference between Data Resource and Information Resource" ;
+               rdfs:label "DEPRECATED Data Resource" ;
+               rdfs:seeAlso :I1001 ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 :Data_Storage desc:definition "thing stores data" ;
@@ -4249,10 +4350,11 @@ we think this should be deleted""" ;
            skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Funding_Resource desc:definition "A resource that provides monetary support in the form of grants, contracts, or gifts for research, training, or education." ;
-                  rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                  rdfs:label "Funding Resource" ;
-                  skos:editorialNote "pending final vetting: are more subclasses needed, e.g. Foreign_Funding_Resource  and Local_Funding_Resource" .
+:Funding_Resource rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                               "Rename and change of IRI and definition" ;
+                  rdfs:label "DEPRECATED Funding Resource" ;
+                  rdfs:seeAlso :F1001 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 :Graph_Viewer desc:definition "Resource that provides access to general graph visualization methods." ;
@@ -4373,8 +4475,9 @@ we think this should be deleted""" ;
                            skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Molecular_and_Cellular_Data desc:definition "A resource that provides data related to molecular and cellular properties and their relationship to macroscopic parameters. " ;
-                             rdfs:label "Molecular and Cellular Data" .
+:Molecular_and_Cellular_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                             rdfs:label "DEPRECATED Molecular and Cellular Data" ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 :Narrative_Resource rdfs:comment "moved in hierarchy and change in definition and IRI" ;
@@ -4446,9 +4549,10 @@ we think this should be deleted""" ;
                         rdfs:label "Physico-Chemical Model" .
 
 
-:Portal desc:definition "A Resource that provides a point of access to information on the World Wide Web, presenting information from diverse sources in a unified way." ;
-        rdfs:label "Portal" ;
-        skos:editorialNote "pending final vetting: review NIF hierarchy for source of children terms." .
+:Portal rdfs:comment "No clear difference to Database IR" ;
+        rdfs:label "DEPRECATED Portal" ;
+        rdfs:seeAlso :I3005 ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
 :Portlet_Component desc:definition "Resource that provides access to software portlet." ;

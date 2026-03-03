@@ -1,6 +1,18 @@
 | BRO Identifier New | BRO Class New [v.5.0.0] | Old class [v.4.1.1] | change |
 | ------------- | ------------- | -------------| ------------- |
-| R0001 | Resource | Resource | definition change 	|
+| R0001 | Resource | Resource | definition change |
+**ab hier @en ergänzen, in ttl, da super nervig in protege**
+| F1001 | Financial Resource | Funding Resource | rename and definition change |
+| F2002 | Internal FR | - | new class added as subclass of Financial Resource |
+| F2003 | Third Party FR | - | new class added as subclass of Financial Resource |
+| F3004 | Public FR | - | new class added as subclass of Third Party FR |
+| F4005 | Federal FR | Federal Funding Resource | change in hierarchy from Subclass of Financial Resource to Subclass of Public FR and definition change |
+| F4006 | International FR | - | new class added as subclass of Public FR |
+| F4007 | State FR | State Funding Resource | change in hierarchy from Subclass of Financial Resource to Subclass of Public FR and definition change |
+| F3008 | Private FR | Private Funding Resource | change in hierarchy from Subclass of Financial Resource to Subclass of Third Party FR and definition change |
+| F4009 | Institutional FR | - | new class added as subclass of Private FR |
+| F4010 | Personal FR | - | new class added as subclass of Private FR |
+**below here done**
 | I1001 | Information Resource | Information Resource | definition change |
 | I2002 | Semi-Structured IR | Semi-Structured Knowledge Resource | rename and definition change |
 | - | - | Atlas | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
@@ -29,8 +41,7 @@
 | I3013 | Image IR | Image | definition change |
 | I4014 | Three D Image IR | Three D Image | definition change |
 | I4015 | Two D Image IR | Two D Image | definition change |
-**ab hier @en ergänzen, in ttl, da super nervig in protege**
-| I3016 | Narrative IR | Narrative Resource | change in hierarchy from Subclass of Information Resource zu Subclass of Unstructured IR and definition change |
+| I3016 | Narrative IR | Narrative Resource | change in hierarchy from Subclass of Information Resource to Subclass of Unstructured IR and definition change |
 | - | - | Book | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
 | - | - | Conference Proceeding | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
 | - | - | Experimental Protocol | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
@@ -51,11 +62,18 @@
 | I5019 | Unreviewed IR | - | new class added as subclass of Published IR |
 | I4020 | Unpublished IR | - | new class added as subclass of Narrative IR |
 | I3021 | Video IR | - | new class added as subclass of Unstructured IR |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| - | - | Portal | Subclass of Information Resource, deprecated because there is no clear difference to Database IR |
+| - | - | Data Resource | Subclass of Information Resource, deprecated because there is no clear difference between Data Resource and Information Resource |
+| - | - | Clinical Care Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Aggregate Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
+| - | - | Individual Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
+| - | - | Clinical Research Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Molecular and Cellular Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Gene Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Molecular Interaction | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+**ab hier @en ergänzen, in ttl, da super nervig in protege**
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
