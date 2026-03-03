@@ -29,10 +29,28 @@
 | I3013 | Image IR | Image | definition change |
 | I4014 | Three D Image IR | Three D Image | definition change |
 | I4015 | Two D Image IR | Two D Image | definition change |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+**ab hier @en ergänzen, in ttl, da super nervig in protege**
+| I3016 | Narrative IR | Narrative Resource | change in hierarchy from Subclass of Information Resource zu Subclass of Unstructured IR and definition change |
+| - | - | Book | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Conference Proceeding | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Experimental Protocol | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Government Publication | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Journal Article | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | License | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Paper | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Patent | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Personal Communication | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Report | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Software Technology Protocol | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Standard Specification | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Thesis | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | Website | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| - | - | White Paper | Subclass of Narrative Resource, deprecated because the level of detail is too specific |
+| I4017 | Published IR | - | new class added as subclass of Narrative IR |
+| I5018 | Peer-reviewed IR | - | new class added as subclass of Published IR |
+| I5019 | Unreviewed IR | - | new class added as subclass of Published IR |
+| I4020 | Unpublished IR | - | new class added as subclass of Narrative IR |
+| I3021 | Video IR | - | new class added as subclass of Unstructured IR |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
