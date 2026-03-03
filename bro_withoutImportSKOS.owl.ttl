@@ -23,14 +23,6 @@
 #    Annotation properties
 #################################################################
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#mentions
-:mentions rdf:type owl:AnnotationProperty ;
-          rdfs:label "mentions" ;
-          <http://www.w3.org/2004/02/skos/core#definition> "Annotation property that includes the IRI of an entity that is referenced." ;
-          skos:editorialNote "At the moment only a working version, label and definition of the Annotation might still change." ;
-          rdfs:range xsd:anyURI .
-
-
 ###  http://bioontology.org/ontologies/biositemap.owl#definition
 desc:definition rdf:type owl:AnnotationProperty ;
                 rdfs:range xsd:string .
@@ -38,6 +30,14 @@ desc:definition rdf:type owl:AnnotationProperty ;
 
 ###  http://bioontology.org/ontologies/biositemap.owl#replacedBy
 desc:replacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#mentions
+:mentions rdf:type owl:AnnotationProperty ;
+          rdfs:label "mentions" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Annotation property that includes the IRI of an entity that is referenced." ;
+          skos:editorialNote "At the moment only a working version, label and definition of the Annotation might still change." ;
+          rdfs:range xsd:anyURI .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
@@ -204,100 +204,6 @@ activity:Heath_Services rdf:type owl:Class ;
 ###  http://bioontology.org/ontologies/Activity.owl#Novel_Therapeutics
 activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F1001
-:F1001 rdf:type owl:Class ;
-       rdfs:subClassOf :R0001 ;
-       rdfs:label "Financial Resource"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to monetary support for research, training, or education, including to grants, contracts, materials, or gifts."@en ;
-       skos:altLabel "FR"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F2002
-:F2002 rdf:type owl:Class ;
-       rdfs:subClassOf :F1001 ;
-       rdfs:label "Internal FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided from within the organizational unit, organization, or institution of the applicant."@en ;
-       skos:altLabel "Internal Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F2003
-:F2003 rdf:type owl:Class ;
-       rdfs:subClassOf :F1001 ;
-       rdfs:label "Third Party FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided by an external party."@en ;
-       skos:altLabel "Third Party Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F3004
-:F3004 rdf:type owl:Class ;
-       rdfs:subClassOf :F2003 ;
-       rdfs:comment "This does not have to be by the public sector where the usage of the 'Financial Resource' is taking place."@en ;
-       rdfs:label "Public FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a public sector, including the local, city, county, state and federal government, or a transnational group."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "Public Health Care, EU Funding"@en ;
-       skos:altLabel "Public Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F3008
-:F3008 rdf:type owl:Class ;
-       rdfs:subClassOf :F2003 ;
-       rdfs:label "Private FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a person or organization not from the public sector. It could be made of investments, donations, loans or crowdfunding."@en ;
-       skos:altLabel "Private Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4005
-:F4005 rdf:type owl:Class ;
-       rdfs:subClassOf :F3004 ;
-       rdfs:label "Federal FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided from the central government of a country or one of its organizations."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "Funding by German Federal Ministry of Research, Technology and Space"@en ;
-       skos:altLabel "Federal Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4006
-:F4006 rdf:type owl:Class ;
-       rdfs:subClassOf :F3004 ;
-       rdfs:label "International FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by public institutions of and/or given to beneficiaries from several countries or a transnational group."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "EU Funding"@en ;
-       skos:altLabel "International Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4007
-:F4007 rdf:type owl:Class ;
-       rdfs:subClassOf :F3004 ;
-       rdfs:label "State FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by a state or one of its organizations."@en ;
-       skos:altLabel "State Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4009
-:F4009 rdf:type owl:Class ;
-       rdfs:subClassOf :F3008 ;
-       owl:disjointWith :F4010 ;
-       rdfs:label "Institutional FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by a company, organization or foundation."@en ;
-       skos:altLabel "Institutional Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#F4010
-:F4010 rdf:type owl:Class ;
-       rdfs:subClassOf :F3008 ;
-       rdfs:label "Personal FR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by one or more human individuals."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "FR by a natural person, foundation of a single person, married couple"@en ;
-       skos:altLabel "Personal Financial Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#I3021
-:I3021 rdf:type owl:Class ;
-       rdfs:subClassOf :I2011 ;
-       rdfs:label "Video IR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a moving visual representation of data."@en ;
-       skos:altLabel "Video Information Resource"@en .
 
 
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
@@ -1162,6 +1068,93 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                            rdfs:subClassOf :Image_Processing .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F1001
+:F1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Financial Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to monetary support for research, training, or education, including to grants, contracts, materials, or gifts."@en ;
+       skos:altLabel "FR"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F2002
+:F2002 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Internal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided from within the organizational unit, organization, or institution of the applicant."@en ;
+       skos:altLabel "Internal Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F2003
+:F2003 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Third Party FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided by an external party."@en ;
+       skos:altLabel "Third Party Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F3004
+:F3004 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:comment "This does not have to be by the public sector where the usage of the 'Financial Resource' is taking place."@en ;
+       rdfs:label "Public FR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C102434> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a public sector, including the local, city, county, state and federal government, or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Public Health Care, EU Funding"@en ;
+       skos:altLabel "Public Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F3008
+:F3008 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:label "Private FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a person or organization not from the public sector. It could be made of investments, donations, loans or crowdfunding."@en ;
+       skos:altLabel "Private Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4005
+:F4005 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "Federal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided from the central government of a country or one of its organizations."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Funding by German Federal Ministry of Research, Technology and Space"@en ;
+       skos:altLabel "Federal Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4006
+:F4006 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "International FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by public institutions of and/or given to beneficiaries from several countries or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "EU Funding"@en ;
+       skos:altLabel "International Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4007
+:F4007 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "State FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by a state or one of its organizations."@en ;
+       skos:altLabel "State Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4009
+:F4009 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       owl:disjointWith :F4010 ;
+       rdfs:label "Institutional FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by a company, organization or foundation."@en ;
+       skos:altLabel "Institutional Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4010
+:F4010 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       rdfs:label "Personal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by one or more human individuals."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "FR by a natural person, foundation of a single person, married couple"@en ;
+       skos:altLabel "Personal Financial Resource"@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fabrication_Facility
 :Fabrication_Facility rdf:type owl:Class ;
                       rdfs:subClassOf :Facility_Core ;
@@ -1446,6 +1439,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I1001 rdf:type owl:Class ;
        rdfs:subClassOf :R0001 ;
        rdfs:label "Information Resource"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C16048> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to sources of knowledge in the form of data, metadata, or narrative."@en ;
        skos:altLabel "IR" .
 
@@ -1455,6 +1449,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I1001 ;
        rdfs:comment "They are not organised in a complex manner that makes easy computer analysis possible. However, they may have information associated with them, such as metadata tagging that allows elements contained to be addressed."@en ;
        rdfs:label "Semi-Structured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000431> ;
        <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' that has some organizational properties (like keys or labels), but does not follow a strict schema."@en ;
        skos:altLabel "Semi-Structured Information Resource"@en .
 
@@ -1471,6 +1466,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I1001 ;
        rdfs:comment "The 'Structured IR' can be minimally to highly expressive, such that the elements can be easily addressed, organised, and accessed in various combinations to make better use of the information."@en ;
        rdfs:label "Structured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000295> ;
        <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' arranged according to some predefined semantic or technical framework."@en ;
        skos:altLabel "Structured Information Resource" .
 
@@ -1487,6 +1483,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I1001 ;
        rdfs:comment "They are difficult to use for computer analyses."@en ;
        rdfs:label "Unstructured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000420> ;
        <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' that does not follow a strictly predefined data structure nor has organizational properties. These data can often be searched as long as they are digital, but they are not properly machine-readable."@en ;
        skos:altLabel "Unstructured Information Resource"@en .
 
@@ -1495,6 +1492,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I3004 rdf:type owl:Class ;
        rdfs:subClassOf :I2003 ;
        rdfs:label "Computational Model IR"@en ;
+       rdfs:seeAlso <http://identifiers.org/mamo/MAMO_0000023> ;
        <http://www.w3.org/2004/02/skos/core#definition> "An computationally executable 'Structured IR' that provides with a simplified or symbolic representation of a system or phenomenon. It is often used to study the behavior of this system or a phenomenon."@en ;
        skos:altLabel "Computational Model Information Resource"@en .
 
@@ -1503,6 +1501,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I3005 rdf:type owl:Class ;
        rdfs:subClassOf :I2003 ;
        rdfs:label "Database IR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D019991> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' of electronic data, designed to enable efficient storage, management, updating, and retrieval of information."@en ;
        skos:altLabel "Database Information Resource"@en .
 
@@ -1518,6 +1517,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I3008 rdf:type owl:Class ;
        rdfs:subClassOf :I2003 ;
        rdfs:label "Ontology IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C21270> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' that encompasses a formal representation of a domain of knowledge. It is a hierarchical structure of concepts, references, and relations."@en ;
        skos:altLabel "Ontology Information Resource"@en .
 
@@ -1534,6 +1534,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I2003 ;
        rdfs:comment "It was decided to include “Repository IR” in “Structured IR” instead of “Semi-Structured IR” because the structure within this repository is decisive, not the type of files that can be stored in it."@en ;
        rdfs:label "Repository IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000489> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' that collects data, code, and other files to enable cooperative work with revision history."@en ;
        skos:altLabel "Repository Information Resource"@en .
 
@@ -1559,6 +1560,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I3012 rdf:type owl:Class ;
        rdfs:subClassOf :I2011 ;
        rdfs:label "Audio IR"@en ;
+       rdfs:seeAlso <http://semanticscience.org/resource/SIO_001168> ;
        <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a recording or creation of soundwaves."@en ;
        skos:altLabel "Audio Information Resource"@en .
 
@@ -1585,6 +1587,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
    owl:annotatedTarget "It can be non-fictional or fictional."@en ;
    rdfs:seeAlso "https://en.wikipedia.org/wiki/Narrative"
  ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3021
+:I3021 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:label "Video IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a moving visual representation of data."@en ;
+       skos:altLabel "Video Information Resource"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4006
@@ -1632,6 +1642,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I3016 ;
        owl:disjointWith :I4020 ;
        rdfs:label "Published IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C48471> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that has been formally released, distributed, or made publicly available through established publication channels, typically with editorial oversight, formatting, and distribution mechanisms that distinguish it from 'Unpublished IR'."@en ;
        <http://www.w3.org/2004/02/skos/core#example> "book, paper, blog, newspaper, website"@en ;
        skos:altLabel "Published Information Resource"@en .
@@ -1641,6 +1652,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :I4020 rdf:type owl:Class ;
        rdfs:subClassOf :I3016 ;
        rdfs:label "Unpublished IR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D022902> ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that exists in private, informal, or preliminary stages without formal release, distribution, or public availability through established publication channels."@en ;
        <http://www.w3.org/2004/02/skos/core#example> "unfinished paper, results, personal journal"@en ;
        skos:altLabel "Unpublished Information Resource"@en .
