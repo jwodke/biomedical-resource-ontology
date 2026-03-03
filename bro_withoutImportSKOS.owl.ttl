@@ -198,40 +198,12 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#I4017
-:I4017 rdf:type owl:Class ;
-       rdfs:subClassOf :I3016 ;
-       owl:disjointWith :I4020 ;
-       rdfs:label "Published IR" ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that has been formally released, distributed, or made publicly available through established publication channels, typically with editorial oversight, formatting, and distribution mechanisms that distinguish it from 'Unpublished IR'." ;
-       <http://www.w3.org/2004/02/skos/core#example> "book, paper, blog, newspaper, website" ;
-       skos:altLabel "Published Information Resource" .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#I4020
-:I4020 rdf:type owl:Class ;
-       rdfs:subClassOf :I3016 ;
-       rdfs:label "Unpublished IR" ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that exists in private, informal, or preliminary stages without formal release, distribution, or public availability through established publication channels." ;
-       <http://www.w3.org/2004/02/skos/core#example> "unfinished paper, results, personal journal" ;
-       skos:altLabel "Unpublished Information Resource" .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#I5018
-:I5018 rdf:type owl:Class ;
-       rdfs:subClassOf :I4017 ;
-       owl:disjointWith :I5019 ;
-       rdfs:label "Peer-reviewed IR" ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'." ;
-       skos:altLabel "Peer-reviewed Information Resource" .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#I5019
-:I5019 rdf:type owl:Class ;
-       rdfs:subClassOf :I4017 ;
-       rdfs:label "Unreviewed IR" ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been released without being evaluated." ;
-       skos:altLabel "Unreviewed Information Resource" .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#I3021
+:I3021 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:label "Video IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a moving visual representation of data."@en ;
+       skos:altLabel "Video Information Resource"@en .
 
 
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
@@ -1509,15 +1481,15 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3016
 :I3016 rdf:type owl:Class ;
        rdfs:subClassOf :I2011 ;
-       rdfs:comment "It can be non-fictional or fictional." ;
+       rdfs:comment "It can be non-fictional or fictional."@en ;
        rdfs:label "Narrative IR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that is a written account of research, events or experiences." ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that is a written account of research, events or experiences."@en ;
        skos:altLabel "Narrative Information Resource"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :I3016 ;
    owl:annotatedProperty rdfs:comment ;
-   owl:annotatedTarget "It can be non-fictional or fictional." ;
+   owl:annotatedTarget "It can be non-fictional or fictional."@en ;
    rdfs:seeAlso "https://en.wikipedia.org/wiki/Narrative"
  ] .
 
@@ -1560,6 +1532,42 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Two D Image IR"@en ;
        <http://www.w3.org/2004/02/skos/core#definition> "An 'Image IR' that has the spatial dimensions length and width."@en ;
        skos:altLabel "Two Dimensional Image Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4017
+:I4017 rdf:type owl:Class ;
+       rdfs:subClassOf :I3016 ;
+       owl:disjointWith :I4020 ;
+       rdfs:label "Published IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that has been formally released, distributed, or made publicly available through established publication channels, typically with editorial oversight, formatting, and distribution mechanisms that distinguish it from 'Unpublished IR'."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "book, paper, blog, newspaper, website"@en ;
+       skos:altLabel "Published Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4020
+:I4020 rdf:type owl:Class ;
+       rdfs:subClassOf :I3016 ;
+       rdfs:label "Unpublished IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that exists in private, informal, or preliminary stages without formal release, distribution, or public availability through established publication channels."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "unfinished paper, results, personal journal"@en ;
+       skos:altLabel "Unpublished Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I5018
+:I5018 rdf:type owl:Class ;
+       rdfs:subClassOf :I4017 ;
+       owl:disjointWith :I5019 ;
+       rdfs:label "Peer-reviewed IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'."@en ;
+       skos:altLabel "Peer-reviewed Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I5019
+:I5019 rdf:type owl:Class ;
+       rdfs:subClassOf :I4017 ;
+       rdfs:label "Unreviewed IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been released without being evaluated."@en ;
+       skos:altLabel "Unreviewed Information Resource"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Identity_Management
