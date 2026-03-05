@@ -206,6 +206,123 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P1001
+:P1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:comment "Not the contact is meant, but the person itself."@en ;
+       rdfs:label "People Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' comprised of one or more individuals providing or exchanging knowledge, experience, or skills in a specific domain."@en ;
+       skos:altLabel "PR"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P2002
+:P2002 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:label "Private PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more laypersons, that have untrained experience or knowledge."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "relative, patient representative, volunteer, possibly student"@en ;
+       skos:altLabel "Private People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P2003
+:P2003 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:comment "They can have expertise in different fields of work, from preparation, development, and execution to scientific analysis."@en ;
+       rdfs:label "Professional PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more trained persons."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "medical staff, IT professional"@en ;
+       skos:altLabel "Professional People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3004
+:P3004 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Administrative Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in policy and governance, project management, and other supportive tasks required in biomedical organizations."@en ;
+       skos:altLabel "Administrative Expertise People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3005
+:P3005 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Enabling them to provide expert diagnosis, treatment, and patient care services."@en ;
+       rdfs:label "Clinical Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in clinical medicine, healthcare delivery, or related medical fields."@en ;
+       skos:altLabel "Clinical Expertise People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3006
+:P3006 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ;
+       rdfs:label "Data Management Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the collection, storage, access, and preservation of data along the data life cycle."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Specific activities and issues that fall within the category of data management include: File naming (the proper way to name computer files); data quality control and quality assurance; data access; data documentation (including levels of uncertainty); metadata creation and controlled vocabularies; data storage; data archiving and preservation; data sharing and reuse; data integrity; data security; data privacy; data rights; notebook protocols (lab or field) as required."@en ;
+       skos:altLabel "Data Management People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3006 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/research-data-management"
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3007
+:P3007 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Document Writing Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+       skos:altLabel "Document Writing Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3007 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+   :mentions :I3016
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3008
+:P3008 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "This includes especially the preparation of application documents."@en ;
+       rdfs:label "Financial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+       skos:altLabel "Financial Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+   :mentions :F1001
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3009
+:P3009 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Industrial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the domain of collaboration with industry."@en ;
+       skos:altLabel "Industrial Expertise People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3010
+:P3010 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Research Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en ;
+       skos:altLabel "Research Expertise People Resource"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3011
+:P3011 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Software Development Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en ;
+       skos:altLabel "Software Development Expertise People Resource"@en .
+
+
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -302,7 +419,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Assessment_Material_Resource
 :Assessment_Material_Resource rdf:type owl:Class ;
-                              rdfs:subClassOf :Material_Resource ;
+                              rdfs:subClassOf :M1001 ;
                               desc:definition "A resource that provides access to scientific data assessment instruments, for example behavioral assessment tests. " ;
                               rdfs:label "Assessment Material Resource" .
 
@@ -402,14 +519,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Supply_Resource
 :Biomaterial_Supply_Resource rdf:type owl:Class ;
-                             rdfs:subClassOf :Material_Resource ;
+                             rdfs:subClassOf :M1001 ;
                              desc:definition "A resource that provides access to physical materials like tissue samples or organisms. For example, the IMSR enables acquisition of a transgenic mouse or cell line. Note, for the sake of simplicity we have excluded molecules of organismal origin from this category as these can be manufactured chemically and have included them under the reagent category (eg. antibodies, toxins)." ;
                              rdfs:label "Biomaterial Supply Resource" .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomedical_Supply_Resource
 :Biomedical_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Material_Resource ;
+                            rdfs:subClassOf :M1001 ;
                             desc:definition "Biomedical (http://en.wikipedia.org/wiki/Biomedicine) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
                             rdfs:label "Biomedical Supply Resource" ;
                             skos:editorialNote "pending final vetting: suggest to deprecate" .
@@ -1164,7 +1281,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Facility_Core
 :Facility_Core rdf:type owl:Class ;
-               rdfs:subClassOf :Material_Resource ,
+               rdfs:subClassOf :M1001 ,
                                :Service_Resource ;
                desc:definition "A resource that provides instruments, technologies, facilities, and/or expert support for a specific area of research." ;
                rdfs:comment "As defined in http://dictionary.reference.com/browse/facility" ;
@@ -1303,10 +1420,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Grant_Preparation_Expertise
 :Grant_Preparation_Expertise rdf:type owl:Class ;
-                             rdfs:subClassOf :People_Resource ;
-                             desc:definition "A resource or expertise relating to grant preparation (http://en.wikipedia.org/wiki/Grant_(money))" ;
-                             rdfs:label "Grant Preparation Expertise" ;
-                             skos:editorialNote "pending final vetting: refine definition" .
+                             rdfs:comment "change in label, definitiona and IRI" ;
+                             rdfs:label "DEPRECATED Grant Preparation Expertise" ;
+                             rdfs:seeAlso :P3008 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Algorithm
@@ -1666,6 +1783,13 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'."@en ;
        skos:altLabel "Peer-reviewed Information Resource"@en .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I5018 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'."@en ;
+   :mentions :P2003
+ ] .
+
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I5019
 :I5019 rdf:type owl:Class ;
@@ -1751,10 +1875,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Industry_Partnership_Expertise
 :Industry_Partnership_Expertise rdf:type owl:Class ;
-                                rdfs:subClassOf :People_Resource ;
-                                desc:definition "Expertise for liaison with Industry (http://en.wikipedia.org/wiki/Industry)" ;
-                                rdfs:label "Industry Partnership Expertise" ;
-                                skos:editorialNote "pending final vetting: refine definition" .
+                                rdfs:comment "change in class name, definition and IRI" ;
+                                rdfs:label "DEPRECATED Industry Partnership Expertise" ;
+                                rdfs:seeAlso :P3009 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Inference_From_Data
@@ -1789,7 +1913,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument
 :Instrument rdf:type owl:Class ;
-            rdfs:subClassOf :Material_Resource ;
+            rdfs:subClassOf :M1001 ;
             desc:definition "A resource that provides scientific instruments such as microscopes, amplifiers or dissection tools. For example, Grass Instruments is a site that sells amplifiers and other equipment useful for electrophysiology. From NIFSTD" ;
             rdfs:label "Instrument" ;
             skos:editorialNote "pending final vetting: review scope of BRO for child terms" .
@@ -1907,7 +2031,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Laboratory_Supply_Resource
 :Laboratory_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Material_Resource ;
+                            rdfs:subClassOf :M1001 ;
                             desc:definition "A resource that provides items such as reagents, instruments, tissue samples or organisms for use in a laboratory." ;
                             rdfs:label "Laboratory Supply Resource" .
 
@@ -1954,6 +2078,130 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
 :Linear_Algebra_Tools rdf:type owl:Class ;
                       rdfs:subClassOf :Numerical_Methods .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M1001
+:M1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Material Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' provided of something physical to be used for testing, analysis, inspection, investigation, demonstration, or trial use."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "an individual from a population, a device or a portion of a substance"@en ;
+       skos:altLabel "MR" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M1001 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Resource' provided of something physical to be used for testing, analysis, inspection, investigation, demonstration, or trial use."@en ;
+   rdfs:seeAlso "https://biolink.github.io/biolink-model/MaterialSample/"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M2002
+:M2002 rdf:type owl:Class ;
+       rdfs:subClassOf :M1001 ;
+       rdfs:label "Living MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Material Resource' of biological origin."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> <http://purl.obolibrary.org/obo/mesh#B> ;
+       skos:altLabel "Living Material Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M2009
+:M2009 rdf:type owl:Class ;
+       rdfs:subClassOf :M1001 ;
+       rdfs:comment "Removed sub-categories, because only unclear distinctions are possible in the field of biomedicine. Since subfield are extremly large and heterogeneous in their use of terms, only a upper-level category is given here."@en ;
+       rdfs:label "Non-living MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Material Resource' of non-biological origin."@en ;
+       skos:altLabel "Non-living Material Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3003
+:M3003 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Animal MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BTO:'Animal'"@en ;
+       skos:altLabel "Animal Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3003 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BTO:'Animal'"@en ;
+   :mentions "http://purl.obolibrary.org/obo/BTO_0000042"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3005
+:M3005 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Bacterial MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Bacterium'."@en ;
+       skos:altLabel "Bacterial Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3005 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Bacterium'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Bacterium"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3006
+:M3006 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Fungal MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
+       skos:altLabel "Fungal Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3006 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Fungus"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3007
+:M3007 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Plant MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from MESH:'Plant'."@en ;
+       skos:altLabel "Plant Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3007 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from MESH:'Plant'."@en ;
+   :mentions <http://id.nlm.nih.gov/mesh/D010944>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3008
+:M3008 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Viral MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Virus'."@en ;
+       skos:altLabel "Viral Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Virus'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Virus"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M4004
+:M4004 rdf:type owl:Class ;
+       rdfs:subClassOf :M3003 ;
+       rdfs:label "Human MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Human'"@en ;
+       skos:altLabel "Human Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M4004 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Human'"@en ;
+   :mentions "https://w3id.org/biolink/vocab/Human"^^xsd:anyURI
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#MRI_Scanner
@@ -2013,10 +2261,11 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Resource
 :Material_Resource rdf:type owl:Class ;
-                   rdfs:subClassOf :R0001 ;
-                   desc:definition "A resource that provides items such as reagents, instruments, tissue samples or organisms." ;
-                   rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                   rdfs:label "Material Resource" .
+                   rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                                "change of definition and IRI" ;
+                   rdfs:label "DEPRECATED Material Resource" ;
+                   rdfs:seeAlso :M1001 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Service
@@ -2047,7 +2296,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Medical_Device
 :Medical_Device rdf:type owl:Class ;
-                rdfs:subClassOf :Material_Resource ;
+                rdfs:subClassOf :M1001 ;
                 desc:definition "A resource that provides devices used for therapy, diagnosis or surgery. " ;
                 rdfs:label "Medical Device" .
 
@@ -2593,31 +2842,11 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#People_Resource
 :People_Resource rdf:type owl:Class ;
-                 rdfs:subClassOf :R0001 ;
-                 desc:definition "A resource comprised of one or more individuals who have specific expertise and provide professional or expert advice." ;
-                 rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                 rdfs:label "People Resource" ;
-                 skos:editorialNote """I spent some time thinking about the distinction between People Resources and Services Resources. Then I spent some time thinking of what would be subclasses of people. Below is the list I came up with. However, it bares striking similarity to what we had envisioned for Related Activity or Area of Research. Looking over at NIF, they defined People Resource as \"A resource that provides access to individual people based, for example, on expertise or affiliation\" and do not have any child nodes. I think I've come around to the opinion that we should either adopt NIF's approach, or change from having the top level People Resource to Consulting Resource as a child of Service Resource. (then still tbd whether to have children of that- I think I'd vote for not.) Note that we're already not in complete alignment at the top level- NIF has \"Job Resource\". I look forward to discussion with the group.
-  
-- grant prep  
-- business development   
-- industry partnership 
-- toxicology  
-- funding discovery  
-- legal counsel  
-- intellectual property  
-- IRB  
-- community outreach  
-- finance  
-- regulatory compliance  
-- minority health  
-- study design   
-- clinical trials  
-- basic research 
-- Informatics 
-- Biostatistics 
-- epidemiology 
-- development""" .
+                 rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                              "change of definition and IRI" ;
+                 rdfs:label "DEPRECATED People Resource" ;
+                 rdfs:seeAlso :P1001 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Personal_Communication
@@ -2630,10 +2859,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pharmacokinetics_Pharmacodynamics_Expertise
 :Pharmacokinetics_Pharmacodynamics_Expertise rdf:type owl:Class ;
-                                             rdfs:subClassOf :People_Resource ;
-                                             desc:definition "A resource or expertise relating to pharmacokinetics (http://en.wikipedia.org/wiki/Pharmacokinetics) and pharmacodynamics (http://en.wikipedia.org/wiki/Pharmacodynamics)" ;
-                                             rdfs:label "Pharmacokinetics Pharmacodynamics Expertise" ;
-                                             skos:editorialNote "pending final vetting: refine definition" .
+                                             rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                                             rdfs:label "DEPRECATED Pharmacokinetics Pharmacodynamics Expertise" ;
+                                             rdfs:seeAlso :P3010 ;
+                                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotype_Management
@@ -2786,10 +3015,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protocol_Development_Expertise
 :Protocol_Development_Expertise rdf:type owl:Class ;
-                                rdfs:subClassOf :People_Resource ;
-                                desc:definition "A resource or expertise in research (http://en.wikipedia.org/wiki/Protocol_(natural_sciences)) or clinical-trial protocol (http://en.wikipedia.org/wiki/Clinical_trial_protocol)" ;
-                                rdfs:label "Protocol Development Expertise" ;
-                                skos:editorialNote "pending final vetting: refine definition" .
+                                rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                                rdfs:label "DEPRECATED Protocol Development Expertise" ;
+                                rdfs:seeAlso :P3010 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance
@@ -2804,10 +3033,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Psychometrics_Expertise
 :Psychometrics_Expertise rdf:type owl:Class ;
-                         rdfs:subClassOf :People_Resource ;
-                         desc:definition "A resource or expertise relating to psychometrics (http://en.wikipedia.org/wiki/Psychometrics)" ;
-                         rdfs:label "Psychometrics Expertise" ;
-                         skos:editorialNote "pending final vetting: refine definition" .
+                         rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                         rdfs:label "DEPRECATED Psychometrics Expertise" ;
+                         rdfs:seeAlso :P3010 ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Publication
@@ -2868,7 +3097,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
 :Reagent_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :Material_Resource .
+                  rdfs:subClassOf :M1001 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Registration
@@ -3281,7 +3510,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
 :Technical_Support rdf:type owl:Class ;
-                   rdfs:subClassOf :People_Resource ,
+                   rdfs:subClassOf :P1001 ,
                                    :Service_Resource .
 
 
@@ -3350,10 +3579,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toxicology_Expertise
 :Toxicology_Expertise rdf:type owl:Class ;
-                      rdfs:subClassOf :People_Resource ;
-                      desc:definition "A resource or expertise relating to (http://en.wikipedia.org/wiki/Toxicology)" ;
-                      rdfs:label "Toxicology Expertise" ;
-                      skos:editorialNote "pending final vetting: refine definition" .
+                      rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                      rdfs:label "DEPRECATED Toxicology Expertise" ;
+                      rdfs:seeAlso :P3010 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Training_Resource
