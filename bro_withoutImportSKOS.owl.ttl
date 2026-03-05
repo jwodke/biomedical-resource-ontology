@@ -206,123 +206,6 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P1001
-:P1001 rdf:type owl:Class ;
-       rdfs:subClassOf :R0001 ;
-       rdfs:comment "Not the contact is meant, but the person itself."@en ;
-       rdfs:label "People Resource"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' comprised of one or more individuals providing or exchanging knowledge, experience, or skills in a specific domain."@en ;
-       skos:altLabel "PR"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P2002
-:P2002 rdf:type owl:Class ;
-       rdfs:subClassOf :P1001 ;
-       rdfs:label "Private PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more laypersons, that have untrained experience or knowledge."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "relative, patient representative, volunteer, possibly student"@en ;
-       skos:altLabel "Private People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P2003
-:P2003 rdf:type owl:Class ;
-       rdfs:subClassOf :P1001 ;
-       rdfs:comment "They can have expertise in different fields of work, from preparation, development, and execution to scientific analysis."@en ;
-       rdfs:label "Professional PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more trained persons."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "medical staff, IT professional"@en ;
-       skos:altLabel "Professional People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3004
-:P3004 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:label "Administrative Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in policy and governance, project management, and other supportive tasks required in biomedical organizations."@en ;
-       skos:altLabel "Administrative Expertise People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3005
-:P3005 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:comment "Enabling them to provide expert diagnosis, treatment, and patient care services."@en ;
-       rdfs:label "Clinical Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in clinical medicine, healthcare delivery, or related medical fields."@en ;
-       skos:altLabel "Clinical Expertise People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3006
-:P3006 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:comment "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ;
-       rdfs:label "Data Management Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the collection, storage, access, and preservation of data along the data life cycle."@en ;
-       <http://www.w3.org/2004/02/skos/core#example> "Specific activities and issues that fall within the category of data management include: File naming (the proper way to name computer files); data quality control and quality assurance; data access; data documentation (including levels of uncertainty); metadata creation and controlled vocabularies; data storage; data archiving and preservation; data sharing and reuse; data integrity; data security; data privacy; data rights; notebook protocols (lab or field) as required."@en ;
-       skos:altLabel "Data Management People Resource"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :P3006 ;
-   owl:annotatedProperty rdfs:comment ;
-   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
-   rdfs:seeAlso "https://terms.codata.org/rdmt/research-data-management"
- ] .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3007
-:P3007 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:label "Document Writing Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
-       skos:altLabel "Document Writing Expertise People Resource"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :P3007 ;
-   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
-   owl:annotatedTarget "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
-   :mentions :I3016
- ] .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3008
-:P3008 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:comment "This includes especially the preparation of application documents."@en ;
-       rdfs:label "Financial Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
-       skos:altLabel "Financial Expertise People Resource"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :P3008 ;
-   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
-   owl:annotatedTarget "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
-   :mentions :F1001
- ] .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3009
-:P3009 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:label "Industrial Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the domain of collaboration with industry."@en ;
-       skos:altLabel "Industrial Expertise People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3010
-:P3010 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:label "Research Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en ;
-       skos:altLabel "Research Expertise People Resource"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#P3011
-:P3011 rdf:type owl:Class ;
-       rdfs:subClassOf :P2003 ;
-       rdfs:label "Software Development Expertise PR"@en ;
-       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en ;
-       skos:altLabel "Software Development Expertise People Resource"@en .
-
-
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -2118,6 +2001,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3003 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Animal MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0000042> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BTO:'Animal'"@en ;
        skos:altLabel "Animal Material Resource"@en .
 
@@ -2133,6 +2017,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3005 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Bacterial MR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D001419> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Bacterium'."@en ;
        skos:altLabel "Bacterial Material Resource"@en .
 
@@ -2148,6 +2033,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3006 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Fungal MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001494> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
        skos:altLabel "Fungal Material Resource"@en .
 
@@ -2163,6 +2049,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3007 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Plant MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001481> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from MESH:'Plant'."@en ;
        skos:altLabel "Plant Material Resource"@en .
 
@@ -2178,6 +2065,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3008 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Viral MR"@en ;
+       rdfs:seeAlso <https://id.nlm.nih.gov/mesh/D014780.html> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Virus'."@en ;
        skos:altLabel "Viral Material Resource"@en .
 
@@ -2193,6 +2081,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M4004 rdf:type owl:Class ;
        rdfs:subClassOf :M3003 ;
        rdfs:label "Human MR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D006801> ;
        <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Human'"@en ;
        skos:altLabel "Human Material Resource"@en .
 
@@ -2742,6 +2631,128 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                   rdfs:subClassOf :Training_Resource ;
                   desc:definition "A resource that provides general education to the public. " ;
                   rdfs:label "Outreach Program" .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P1001
+:P1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:comment "Not the contact is meant, but the person itself."@en ;
+       rdfs:label "People Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' comprised of one or more individuals providing or exchanging knowledge, experience, or skills in a specific domain."@en ;
+       skos:altLabel "PR"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P2002
+:P2002 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:label "Private PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more laypersons, that have untrained experience or knowledge."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "relative, patient representative, volunteer, possibly student"@en ;
+       skos:altLabel "Private People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P2003
+:P2003 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:comment "They can have expertise in different fields of work, from preparation, development, and execution to scientific analysis."@en ;
+       rdfs:label "Professional PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D011361> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more trained persons."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "medical staff, IT professional"@en ;
+       skos:altLabel "Professional People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3004
+:P3004 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Administrative Expertise PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D000288> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in policy and governance, project management, and other supportive tasks required in biomedical organizations."@en ;
+       skos:altLabel "Administrative Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3005
+:P3005 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Enabling them to provide expert diagnosis, treatment, and patient care services."@en ;
+       rdfs:label "Clinical Expertise PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D002983> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in clinical medicine, healthcare delivery, or related medical fields."@en ;
+       skos:altLabel "Clinical Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3006
+:P3006 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ,
+                    "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+       rdfs:label "Data Management Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the collection, storage, access, and preservation of data along the data life cycle."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Specific activities and issues that fall within the category of data management include: File naming (the proper way to name computer files); data quality control and quality assurance; data access; data documentation (including levels of uncertainty); metadata creation and controlled vocabularies; data storage; data archiving and preservation; data sharing and reuse; data integrity; data security; data privacy; data rights; notebook protocols (lab or field) as required."@en ;
+       skos:altLabel "Data Management People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3006 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/research-data-management"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3007
+:P3007 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Document Writing Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+       skos:altLabel "Document Writing Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3007 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+   :mentions :I3016
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3008
+:P3008 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "This includes especially the preparation of application documents."@en ;
+       rdfs:label "Financial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+       skos:altLabel "Financial Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+   :mentions :F1001
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3009
+:P3009 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Industrial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the domain of collaboration with industry."@en ;
+       skos:altLabel "Industrial Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3010
+:P3010 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Research Expertise PR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000433> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en ;
+       skos:altLabel "Research Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3011
+:P3011 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Software Development Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en ;
+       skos:altLabel "Software Development Expertise People Resource"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Facility
