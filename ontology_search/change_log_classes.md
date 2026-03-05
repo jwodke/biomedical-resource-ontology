@@ -1,7 +1,6 @@
 | BRO Identifier New | BRO Class New [v.5.0.0] | Old class [v.4.1.1] | change |
 | ------------- | ------------- | -------------| ------------- |
 | R0001 | Resource | Resource | definition change |
-
 | F1001 | Financial Resource | Funding Resource | rename and definition change |
 | F2002 | Internal FR | - | new class added as subclass of Financial Resource |
 | F2003 | Third Party FR | - | new class added as subclass of Financial Resource |
@@ -12,7 +11,6 @@
 | F3008 | Private FR | Private Funding Resource | change in hierarchy from Subclass of Financial Resource to Subclass of Third Party FR and definition change |
 | F4009 | Institutional FR | - | new class added as subclass of Private FR |
 | F4010 | Personal FR | - | new class added as subclass of Private FR |
-
 | I1001 | Information Resource | Information Resource | definition change |
 | I2002 | Semi-Structured IR | Semi-Structured Knowledge Resource | rename and definition change |
 | - | - | Atlas | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
@@ -73,7 +71,6 @@
 | - | - | Molecular Interaction | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
-
 | M1001 | Material Resource | Material Resource | definition change |
 | M2002 | Living MR | - | new class added as subclass of Material Resource |
 | M3003 | Animal MR | - | new class added as subclass of Living MR |
@@ -83,7 +80,6 @@
 | M3007 | Plant MR | - | new class added as subclass of Living MR |
 | M3008 | Viral MR | - | new class added as subclass of Living MR |
 | M2009 | Non-living MR | - | new class added as subclass of Material Resource |
-
 | P1001 | People Resource | People Resource | definition change |
 | P2002 | Private PR | - | new class added as subclass of People Resource |
 | P2003 | Professional PR | - | new class added as subclass of People Resource |
@@ -100,6 +96,7 @@
 | - | - | Protocol Development Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Psychometrics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Toxicology Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
+
 **ab hier @en ergänzen, in ttl, da super nervig in protege**
 |  |  |  |  |
 |  |  |  |  |
