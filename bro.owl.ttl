@@ -206,6 +206,57 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3003
+:S3003 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:comment "Usage for experimental research, teaching, or testing" ;
+       rdfs:label "Animal Facility" ;
+       skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals." .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3008
+:S3008 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Molecular Biology Facility" ;
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Molecular Biology'." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3008 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Molecular Biology'." ;
+   :mentions <http://id.nlm.nih.gov/mesh/D008967>
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3009
+:S3009 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Physiology Facility" ;
+       skos:definition "A 'Core Facility' with a specialization in NCIT:'Physiology'." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3009 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in NCIT:'Physiology'." ;
+   :mentions <http://purl.obolibrary.org/obo/NCIT_C16990>
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3010
+:S3010 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:comment "For research, diagnostic, or therapeutic purposes" ;
+       rdfs:label "Tissue Organ Facility" ;
+       skos:definition "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3010 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'." ;
+   :mentions <http://purl.obolibrary.org/obo/UBERON_0000479>
+ ] .
+
+
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -257,10 +308,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Animal_Care_Facility
 :Animal_Care_Facility rdf:type owl:Class ;
-                      rdfs:subClassOf :Research_Animals_Facility ;
-                      desc:definition "A facility or core devoted to the care of research animals. " ;
-                      rdfs:label "Animal Care Facility" ;
-                      skos:editorialNote "pending final vetting: Refine definition" .
+                      rdfs:comment "level of detail is too specific" ;
+                      rdfs:label "DEPRECATED Animal Care Facility" ;
+                      rdfs:seeAlso :S3003 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Animal_Compliance_Resource
@@ -272,10 +323,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Animal_Models_Facility
 :Animal_Models_Facility rdf:type owl:Class ;
-                        rdfs:subClassOf :Research_Animals_Facility ;
-                        desc:definition "A facility or core devoted to developing animal research models (http://en.wikipedia.org/wiki/Animal_models)" ;
-                        rdfs:label "Animal Models Facility" ;
-                        skos:editorialNote "pending final vetting: Refine definition" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Animal Models Facility" ;
+                        rdfs:seeAlso :S3003 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Antibody_Production
@@ -376,9 +427,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biobank_Facility
 :Biobank_Facility rdf:type owl:Class ;
-                  rdfs:subClassOf :Tissue_Organ_Facility ;
-                  desc:definition "A facility or core that provides storage for any type of biospecimen." ;
-                  rdfs:label "Biobank Facility" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Biobank Facility" ;
+                  rdfs:seeAlso :S3010 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biochemical_Supply_Resource
@@ -417,17 +469,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomolecular_Interaction_Facility
 :Biomolecular_Interaction_Facility rdf:type owl:Class ;
-                                   rdfs:subClassOf :Molecular_Biology_Facility ;
-                                   desc:definition "A molecular biology facility devoted to the study of interactions between molecules in biology." ;
-                                   rdfs:label "Biomolecular Interaction Facility" ;
-                                   skos:editorialNote "pending final vetting: Refine definition" .
+                                   rdfs:comment "level of detail is too specific" ;
+                                   rdfs:label "DEPRECATED Biomolecular Interaction Facility" ;
+                                   rdfs:seeAlso :S3008 ;
+                                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biosafety_Level_Facility
 :Biosafety_Level_Facility rdf:type owl:Class ;
-                          rdfs:subClassOf :Facility_Core ;
-                          desc:definition "A resource that provides access to an enclosed facility that takes specified precautions for containment of dangerous biological agents, as defined by http://en.wikipedia.org/wiki/Biosafety_level" ;
-                          rdfs:label "Biosafety Level Facility" .
+                          rdfs:comment "change of IRI and definition" ;
+                          rdfs:label "DEPRECATED Biosafety Level Facility" ;
+                          rdfs:seeAlso :S3004 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Book
@@ -478,10 +531,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cardiovascular_Facility
 :Cardiovascular_Facility rdf:type owl:Class ;
-                         rdfs:subClassOf :Physiology_Facility ;
-                         desc:definition "A physiology facility devoted to cardiovascular (http://en.wikipedia.org/wiki/Cardiovascular_disease) research." ;
-                         rdfs:label "Cardiovascular Facility" ;
-                         skos:editorialNote "pending final vetting: Refine definition" .
+                         rdfs:comment "level of detail is too specific" ;
+                         rdfs:label "DEPRECATED Cardiovascular Facility" ;
+                         rdfs:seeAlso :S3009 ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cardiovascular_Model
@@ -493,16 +546,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Biology_Facility
 :Cell_Biology_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Facility_Core ;
-                       desc:definition "A resource that provides access to instruments, technologies, facilities, and/or expert support devoted to cell biology (http://en.wikipedia.org/wiki/Cell_biology) research" ;
-                       rdfs:label "Cell Biology Facility" .
+                       rdfs:comment "change of definition and IRI" ;
+                       rdfs:label "DEPRECATED Cell Biology Facility" ;
+                       rdfs:seeAlso :S3005 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Culture_Facility
 :Cell_Culture_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Cell_Biology_Facility ;
-                       desc:definition "A facility or core that provides resources for the growth of cells." ;
-                       rdfs:label "Cell Culture Facility" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Cell Culture Facility" ;
+                       rdfs:seeAlso :S3005 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Model
@@ -514,9 +569,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Processing_Clean_Room_Facility
 :Cell_Processing_Clean_Room_Facility rdf:type owl:Class ;
-                                     rdfs:subClassOf :Cell_Biology_Facility ;
-                                     desc:definition "A resource that provides access to an enclosed environment that has a low and controlled level of environmental pollutants such as dust, airborne microbes, aerosol particles and chemical vapors. " ;
-                                     rdfs:label "Cell Processing Clean Room Facility" .
+                                     rdfs:comment "level of detail is too specific" ;
+                                     rdfs:label "DEPRECATED Cell Processing Clean Room Facility" ;
+                                     rdfs:seeAlso :S3005 ;
+                                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analsysis
@@ -640,7 +696,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
 :Computational_Service rdf:type owl:Class ;
-                       rdfs:subClassOf :Service_Resource .
+                       rdfs:subClassOf :S1001 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computer-Instrumentation_Interface
@@ -857,7 +913,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Service
 :Data_Storage_Service rdf:type owl:Class ;
-                      rdfs:subClassOf :Service_Resource .
+                      rdfs:subClassOf :S1001 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transfer_and_Communication
@@ -1040,9 +1096,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exercise_Study_Facility
 :Exercise_Study_Facility rdf:type owl:Class ;
-                         rdfs:subClassOf :Physiology_Facility ;
-                         desc:definition "A facility or core that provides services and equipment related to exercise physiology." ;
-                         rdfs:label "Exercise Study Facility" .
+                         rdfs:comment "level of detail is too specific" ;
+                         rdfs:label "DEPRECATED Exercise Study Facility" ;
+                         rdfs:seeAlso :S3009 ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Experimental_Measurment
@@ -1157,19 +1214,19 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fabrication_Facility
 :Fabrication_Facility rdf:type owl:Class ;
-                      rdfs:subClassOf :Facility_Core ;
-                      desc:definition "A facility core devoted to creating, manufacturing, building or assembling resources used in scientific research." ;
-                      rdfs:label "Fabrication Facility" .
+                      rdfs:comment "change of definition and IRI" ;
+                      rdfs:label "DEPRECATED Fabrication Facility" ;
+                      rdfs:seeAlso :S3006 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Facility_Core
 :Facility_Core rdf:type owl:Class ;
-               rdfs:subClassOf :M1001 ,
-                               :Service_Resource ;
-               desc:definition "A resource that provides instruments, technologies, facilities, and/or expert support for a specific area of research." ;
-               rdfs:comment "As defined in http://dictionary.reference.com/browse/facility" ;
-               rdfs:label "Facility Core" ;
-               skos:editorialNote "pending final vetting: suggest to re-name to Core Facility, discuss how to manage change." .
+               rdfs:comment "DEPRECATED As defined in http://dictionary.reference.com/browse/facility" ,
+                            "change of label, IRI and definition" ;
+               rdfs:label "DEPRECATED Facility Core" ;
+               rdfs:seeAlso :S2002 ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Faraday_Cage
@@ -1234,10 +1291,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Flow_Cytometry_Cell_Sorting_Facility
 :Flow_Cytometry_Cell_Sorting_Facility rdf:type owl:Class ;
-                                      rdfs:subClassOf :Cell_Biology_Facility ;
-                                      desc:definition "A facility or core devoted to analysis of cells by suspension of the cells in a stream of fluid and passing them by an electronic detection apparatus (flow cytometer)." ;
-                                      rdfs:label "Flow Cytometry Cell Sorting Facility" ;
-                                      skos:editorialNote "pending final vetting: consider changing name to Flow Cytometry Facility" .
+                                      rdfs:comment "level of detail is too specific" ;
+                                      rdfs:label "DEPRECATED Flow Cytometry Cell Sorting Facility" ;
+                                      rdfs:seeAlso :S3005 ;
+                                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Four_Dimensional_Data
@@ -1271,9 +1328,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Gene_Therapy_Facility
 :Gene_Therapy_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Cell_Biology_Facility ;
-                       desc:definition "A facility or core for generating recombinant vectors containing a functioning copy of a human gene." ;
-                       rdfs:label "Gene Therapy Facility" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Gene Therapy Facility" ;
+                       rdfs:seeAlso :S3005 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Genomic_Phenotypic_Analysis
@@ -1287,10 +1345,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Genomics_Facility
 :Genomics_Facility rdf:type owl:Class ;
-                   rdfs:subClassOf :Molecular_Biology_Facility ;
-                   desc:definition "A molecular biology facility devoted to the study of genomics (http://en.wikipedia.org/wiki/Genomics)" ;
-                   rdfs:label "Genomics Facility" ;
-                   skos:editorialNote "pending final vetting: Refine definition" .
+                   rdfs:comment "level of detail is too specific" ;
+                   rdfs:label "DEPRECATED Genomics Facility" ;
+                   rdfs:seeAlso :S3008 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Government_Publication
@@ -1729,23 +1787,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Imaging_Facility
 :Imaging_Facility rdf:type owl:Class ;
-                  rdfs:subClassOf :Facility_Core ;
-                  desc:definition "A facility or core for biomedical imaging." ;
-                  rdfs:label "Imaging Facility" .
+                  rdfs:comment "change of definition and IRI" ;
+                  rdfs:label "DEPRECATED Imaging Facility" ;
+                  rdfs:seeAlso :S3007 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Immune_Monitoring_Facility
 :Immune_Monitoring_Facility rdf:type owl:Class ;
-                            rdfs:subClassOf :Cell_Biology_Facility ;
-                            desc:definition "A facility or core devoted to assessing effects on the human immune system (immunogenicity, immunocompetence, immune reconstitution, immunotoxicity, and immunopathology) of particular importance in the study of disease and therapeutics." ;
-                            rdfs:label "Immune Monitoring Facility" .
+                            rdfs:comment "level of detail is too specific" ;
+                            rdfs:label "DEPRECATED Immune Monitoring Facility" ;
+                            rdfs:seeAlso :S3005 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Immunohistochemistry_Facility
 :Immunohistochemistry_Facility rdf:type owl:Class ;
-                               rdfs:subClassOf :Tissue_Organ_Facility ;
-                               desc:definition "A facility or core devoted to localizing antigens (eg. proteins) in cells of a tissue section through antibodies binding specifically to antigens." ;
-                               rdfs:label "Immunohistochemistry Facility" .
+                               rdfs:comment "level of detail is too specific" ;
+                               rdfs:label "DEPRECATED Immunohistochemistry Facility" ;
+                               rdfs:seeAlso :S3010 ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Individual_Human_Data
@@ -2159,14 +2220,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Service
 :Material_Service rdf:type owl:Class ;
-                  rdfs:subClassOf :Service_Resource ;
+                  rdfs:subClassOf :S1001 ;
                   desc:definition "A resource that provides a service the output of which is a material object. That material object might be an instrument, a chemical, or an animal." ;
                   rdfs:label "Material Service" .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Storage_Service
 :Material_Storage_Service rdf:type owl:Class ;
-                          rdfs:subClassOf :Service_Resource ;
+                          rdfs:subClassOf :S1001 ;
                           desc:definition "A resource that provides material storage, maintenance and retrieval, such as the Harvard brain tissue bank." ;
                           rdfs:label "Material Storage Service" .
 
@@ -2206,25 +2267,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Metabolism_Facility
 :Metabolism_Facility rdf:type owl:Class ;
-                     rdfs:subClassOf :Physiology_Facility ;
-                     desc:definition "A physiology facility devoted to research into metabolism (http://en.wikipedia.org/wiki/Metabolism)" ;
-                     rdfs:label "Metabolism Facility" ;
-                     skos:editorialNote "pending final vetting: Refine definition" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Metabolism Facility" ;
+                     rdfs:seeAlso :S3009 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Metabolomics_Facility
 :Metabolomics_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Molecular_Biology_Facility ;
-                       desc:definition "A molecular biology facility devoted to metabolomics (http://en.wikipedia.org/wiki/Metabolomics)" ;
-                       rdfs:label "Metabolomics Facility" ;
-                       skos:editorialNote "pending final vetting: Refine definition" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Metabolomics Facility" ;
+                       rdfs:seeAlso :S3008 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Micro_Dissection_Facility
 :Micro_Dissection_Facility rdf:type owl:Class ;
-                           rdfs:subClassOf :Tissue_Organ_Facility ;
-                           desc:definition "A facility or core devoted to cutting apart tissue on a very small scale such as at the level of individual cells." ;
-                           rdfs:label "Micro Dissection Facility" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Micro Dissection Facility" ;
+                           rdfs:seeAlso :S3010 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microarray_Scanner
@@ -2253,9 +2315,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microscopy_Facility
 :Microscopy_Facility rdf:type owl:Class ;
-                     rdfs:subClassOf :Cell_Biology_Facility ;
-                     desc:definition "A facility that provides microscopes with which to view samples or objects." ;
-                     rdfs:label "Microscopy Facility" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Microscopy Facility" ;
+                     rdfs:seeAlso :S3005 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microtome
@@ -2296,10 +2359,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Biology_Facility
 :Molecular_Biology_Facility rdf:type owl:Class ;
-                            rdfs:subClassOf :Facility_Core ;
-                            desc:definition "A facility or core devoted to molecular biology (http://en.wikipedia.org/wiki/Molecular_biology)" ;
-                            rdfs:label "Molecular Biology Facility" ;
-                            skos:editorialNote "pending final vetting: Refine definition" .
+                            rdfs:comment "change of definition and IRI" ;
+                            rdfs:label "DEPRECATED Molecular Biology Facility" ;
+                            rdfs:seeAlso :S3008 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Dynamics
@@ -2362,10 +2425,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Monoclonal_Antibody_Facility
 :Monoclonal_Antibody_Facility rdf:type owl:Class ;
-                              rdfs:subClassOf :Molecular_Biology_Facility ;
-                              desc:definition "A molecular biology facility devoted to monoclonal antibody (http://en.wikipedia.org/wiki/Monoclonal_antibody) research and uses." ;
-                              rdfs:label "Monoclonal Antibody Facility" ;
-                              skos:editorialNote "pending final vetting: Refine definition" .
+                              rdfs:comment "level of detail is too specific" ;
+                              rdfs:label "DEPRECATED Monoclonal Antibody Facility" ;
+                              rdfs:seeAlso :S3008 ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Monte_Carlo_Simulation
@@ -2384,10 +2447,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#NMR_Facility
 :NMR_Facility rdf:type owl:Class ;
-              rdfs:subClassOf :Molecular_Biology_Facility ;
-              desc:definition "A molecular biology facility devoted to NMR (http://en.wikipedia.org/wiki/Nuclear_magnetic_resonance) research" ;
-              rdfs:label "NMR Facility" ;
-              skos:editorialNote "pending final vetting: Refine definition" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED NMR Facility" ;
+              rdfs:seeAlso :S3008 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#NMR_Instrument
@@ -2458,10 +2521,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Neurological_Facility
 :Neurological_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Physiology_Facility ;
-                       desc:definition "A physiology facility devoted to neurology (http://en.wikipedia.org/wiki/Neurology) research" ;
-                       rdfs:label "Neurological Facility" ;
-                       skos:editorialNote "pending final vetting: Refine definition" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Neurological Facility" ;
+                       rdfs:seeAlso :S3009 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Neuromuscular_Model
@@ -2532,10 +2595,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Nutrition_Facility
 :Nutrition_Facility rdf:type owl:Class ;
-                    rdfs:subClassOf :Physiology_Facility ;
-                    desc:definition "A physiology facility devoted to nutrition (http://en.wikipedia.org/wiki/Nutrition) research" ;
-                    rdfs:label "Nutrition Facility" ;
-                    skos:editorialNote "pending final vetting: Refine definition" .
+                    rdfs:comment "level of detail is too specific" ;
+                    rdfs:label "DEPRECATED Nutrition Facility" ;
+                    rdfs:seeAlso :S3009 ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Object_Database
@@ -2757,10 +2820,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Facility
 :PCR_Facility rdf:type owl:Class ;
-              rdfs:subClassOf :Molecular_Biology_Facility ;
-              desc:definition "A molecular biology facility devoted to PCR (http://en.wikipedia.org/wiki/PCR)" ;
-              rdfs:label "PCR Facility" ;
-              skos:editorialNote "pending final vetting: Refine definition" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED PCR Facility" ;
+              rdfs:seeAlso :S3008 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Instrument
@@ -2894,9 +2957,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phlebotomy_Facility
 :Phlebotomy_Facility rdf:type owl:Class ;
-                     rdfs:subClassOf :Tissue_Organ_Facility ;
-                     desc:definition "A facility or core devoted to the act or practice of opening a vein by incision or puncture to remove blood." ;
-                     rdfs:label "Phlebotomy Facility" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Phlebotomy Facility" ;
+                     rdfs:seeAlso :S3010 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physico-Chemical_Model
@@ -2906,10 +2970,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physiology_Facility
 :Physiology_Facility rdf:type owl:Class ;
-                     rdfs:subClassOf :Facility_Core ;
-                     desc:definition "A facility or core devoted to physiology (http://en.wikipedia.org/wiki/Physiology)" ;
-                     rdfs:label "Physiology Facility" ;
-                     skos:editorialNote "pending final vetting: Refine definition" .
+                     rdfs:comment "change of definition and IRI" ;
+                     rdfs:label "DEPRECATED Physiology Facility" ;
+                     rdfs:seeAlso :S3009 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physioloigcal_Model
@@ -3018,10 +3082,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Proteomics_Facility
 :Proteomics_Facility rdf:type owl:Class ;
-                     rdfs:subClassOf :Molecular_Biology_Facility ;
-                     desc:definition "A molecular biology facility devoted to proteomics (http://en.wikipedia.org/wiki/Proteomics)" ;
-                     rdfs:label "Proteomics Facility" ;
-                     skos:editorialNote "pending final vetting: Refine definition" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Proteomics Facility" ;
+                     rdfs:seeAlso :S3008 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protocol_Development_Expertise
@@ -3086,10 +3150,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Radioisotopes_Facility
 :Radioisotopes_Facility rdf:type owl:Class ;
-                        rdfs:subClassOf :Molecular_Biology_Facility ;
-                        desc:definition "A molecular biology facility devoted to radioisotopes or radionuclides (http://en.wikipedia.org/wiki/Radioisotopes)" ;
-                        rdfs:label "Radioisotopes Facility" ;
-                        skos:editorialNote "pending final vetting: Refine definition" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Radioisotopes Facility" ;
+                        rdfs:seeAlso :S3008 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Random_Number_Simulation
@@ -3127,7 +3191,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Compliance_Resource
 :Regulatory_Compliance_Resource rdf:type owl:Class ;
-                                rdfs:subClassOf :Service_Resource ;
+                                rdfs:subClassOf :S1001 ;
                                 desc:definition "A resource that provides guidance related to ethical or legal matters concerning scientific research.  These resources provide both information regarding ethical/legal research matters as well as methods for developing, applying, assessing and reviewing regulations (i.e. compliance documents, procedures, consent forms, etc).  These resources can include both materials and documentation along with expertise in the form of personnel." ;
                                 rdfs:label "Regulatory Compliance Resource" .
 
@@ -3164,10 +3228,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Animals_Facility
 :Research_Animals_Facility rdf:type owl:Class ;
-                           rdfs:subClassOf :Facility_Core ;
-                           desc:definition "A facility or core devoted to research animals (http://en.wikipedia.org/wiki/Animal_testing)" ;
-                           rdfs:label "Research Animals Facility" ;
-                           skos:editorialNote "pending final vetting: Refine definition" .
+                           rdfs:comment "change of label, definition and IRI" ;
+                           rdfs:label "DEPRECATED Research Animals Facility" ;
+                           rdfs:seeAlso :S3003 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Supplies
@@ -3199,6 +3263,66 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
              rdfs:subClassOf :Numerical_Method ;
              desc:definition "A resource that provides access to a tool or function that finds a value x such that f(x) = 0, for a given function f. Such an x is called a root of the function f." ;
              rdfs:label "Root Finder" .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S1001
+:S1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:comment "An organized system of apparatus, appliances, technology, personnel, performance, etc. It references to the provider, who performs the task for a service consumer." ;
+       rdfs:label "Service Resource" ;
+       skos:altLabel "SR" ;
+       skos:definition "A 'Resource' providing access to an act of supporting activity, consisting in a defined system for access to and conditions for the offered support." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2002
+:S2002 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:comment "This includes specialized devices, technologies and/or professional support, and usually services and space for this particular purpose." ;
+       rdfs:label "Core Facility" ;
+       skos:definition "A 'Service Resource' that provides expert support (knowledge and devices) for a specific type of tasks." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3004
+:S3004 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:comment "Is classified by guidelines into levels 1 to 4." ;
+       rdfs:label "Biosafety Level Facility" ;
+       skos:definition "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'.." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3004 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'.." ;
+   :mentions <http://purl.obolibrary.org/obo/NCIT_C151920>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3005
+:S3005 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Cell Biology Facility" ;
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Cell Biology'." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3005 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Cell Biology'." ;
+   :mentions <http://id.nlm.nih.gov/mesh/D003585>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3006
+:S3006 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Fabrication Facility" ;
+       skos:definition "A 'Core Facility' with a specialization on creating, manufacturing, building or assembling resources from raw or intermediate materials used in scientific research." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3007
+:S3007 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Imaging Facility" ;
+       skos:definition "A 'Core Facility' with a specialization on technologies or methods that aid in the visualization of any biomedical material, data, or process." .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
@@ -3287,10 +3411,11 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Service_Resource
 :Service_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :R0001 ;
-                  desc:definition "A resource that provides an act of helpful activity, consisting of an organized system of apparatus, appliances, technology, personnel, etc." ;
-                  rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                  rdfs:label "Service Resource" .
+                  rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                               "change of IRI and definition" ;
+                  rdfs:label "DEPRECATED Service Resource" ;
+                  rdfs:seeAlso :S1001 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Shape_Analysis
@@ -3325,9 +3450,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sleep_Study_Facility
 :Sleep_Study_Facility rdf:type owl:Class ;
-                      rdfs:subClassOf :Physiology_Facility ;
-                      desc:definition "A facility or core that provides services for research on sleep problems." ;
-                      rdfs:label "Sleep Study Facility" .
+                      rdfs:comment "level of detail is too specific" ;
+                      rdfs:label "DEPRECATED Sleep Study Facility" ;
+                      rdfs:seeAlso :S3009 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software
@@ -3457,9 +3583,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stem_Cell_Therapy_Facility
 :Stem_Cell_Therapy_Facility rdf:type owl:Class ;
-                            rdfs:subClassOf :Cell_Biology_Facility ;
-                            desc:definition "A facility that provides resources for the development and growth of self-renewing cells that are capable of differentiation into a diverse range of specialized cells." ;
-                            rdfs:label "Stem Cell Therapy Facility" .
+                            rdfs:comment "level of detail is too specific" ;
+                            rdfs:label "DEPRECATED Stem Cell Therapy Facility" ;
+                            rdfs:seeAlso :S3005 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stimulator
@@ -3522,7 +3649,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
 :Technical_Support rdf:type owl:Class ;
                    rdfs:subClassOf :P1001 ,
-                                   :Service_Resource .
+                                   :S1001 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Temperature_Control_Unit
@@ -3578,9 +3705,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tissue_Organ_Facility
 :Tissue_Organ_Facility rdf:type owl:Class ;
-                       rdfs:subClassOf :Facility_Core ;
-                       desc:definition "A facility that provides resources relating to tissues used in biomedical research." ;
-                       rdfs:label "Tissue Organ Facility" .
+                       rdfs:comment "change of definition and IRI" ;
+                       rdfs:label "DEPRECATED Tissue Organ Facility" ;
+                       rdfs:seeAlso :S3010 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toolkit
@@ -3606,7 +3734,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Training_Service
 :Training_Service rdf:type owl:Class ;
-                  rdfs:subClassOf :Service_Resource ;
+                  rdfs:subClassOf :S1001 ;
                   desc:definition "A resource that provides training to people." ;
                   rdfs:label "Training Service" ;
                   skos:editorialNote "pending final vetting: review location in hierarchy" .
@@ -3748,10 +3876,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#X-Ray_Crystallography_Facility
 :X-Ray_Crystallography_Facility rdf:type owl:Class ;
-                                rdfs:subClassOf :Molecular_Biology_Facility ;
-                                desc:definition "A molecular biology facility devoted to x-ray crystallography (http://en.wikipedia.org/wiki/X-ray_crystallography)" ;
-                                rdfs:label "X-Ray Crystallography Facility" ;
-                                skos:editorialNote "pending final vetting: Refine definition" .
+                                rdfs:comment "level of detail is too specific" ;
+                                rdfs:label "DEPRECATED X-Ray Crystallography Facility" ;
+                                rdfs:seeAlso :S3008 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#XML_Data

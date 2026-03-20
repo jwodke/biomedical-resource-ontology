@@ -98,6 +98,61 @@
 | - | - | Toxicology Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 
 **ab hier @en ergänzen, in ttl, da super nervig in protege**
+| S1001 | Service Resource | Service Resource | definition change |
+| S2002 | Core Facility | Facility Core | rename and definition change |
+| S3003 | Animal Facility | Research Animals Facility | rename and definition change |
+| - | - | Animal Care Facility | Subclass of Animal Facility, deprecated because the level of detail is too specific |
+| - | - | Animal Models Facility | Subclass of Animal Facility, deprecated because the level of detail is too specific |
+| S3004 | Biosafety Level Facility | Biosafety Level Facility | definition change |
+| S3005 | Cell Biology Facility | Cell Biology Facility | definition change |
+| - | - | Cell Culture Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Cell Processing Clean Room Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Flow Cytometry Cell Sorting Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Gene Therapy Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Immune Monitoring Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Microscopy Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Stem Cell Therapy Facility | Subclass of Cell Biology Facility, deprecated because the level of detail is too specific |
+| S3006 | Fabrication Facility | Fabrication Facility | definition change |
+| S3007 | Imaging Facility | Imaging Facility | defintion change |
+| S3008 | Molecular Biology Facility | Molecular Biology Facility | definition change |
+| - | - | Biomolecular Interaction Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Genomics Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Metabolomics Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Monoclonal Antibody Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | NMR Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | PCR Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Proteomics Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | Radioisotopes Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| - | - | X-Ray Crystallography Facility | Subclass of Molecular Biology Facility, deprecated because the level of detail is too specific |
+| S3009 | Physiology Facility | Physiology Facility | definition change |
+| - | - | Cardiovascular Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| - | - | Exercise Study Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| - | - | Metabolism Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| - | - | Neurological Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| - | - | Nutrition Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| - | - | Sleep Study Facility | Subclass of Physiology Facility, deprecated because the level of detail is too specific |
+| S3010 | Tissue Organ Facility | Tissue Organ Facility | definition change |
+| - | - | Biobank Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
+| - | - | Immunohistochemistry Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
+| - | - | Micro Dissection Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
+| - | - | Phlebotomy Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
