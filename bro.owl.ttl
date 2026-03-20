@@ -11,11 +11,13 @@
 @prefix skos: <http://www.w3.org/2009/08/skos-reference/skos#> .
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
 @prefix activity: <http://bioontology.org/ontologies/Activity.owl#> .
-@base <http://bioontology.org/ontologies/BiomedicalResources.owl> .
+@base <http://bioportal.bioontology.org/ontologies/BRO.owl#> .
 
 <http://bioontology.org/ontologies/BiomedicalResources.owl> rdf:type owl:Ontology ;
-                                                             owl:imports <https://www.w3.org/2009/08/skos-reference/skos> ;
-                                                             owl:versionInfo "4.1.1" .
+                                                             owl:versionIRI <http://bioontology.org/ontologies/BiomedicalResources.owl/4.2.0> ;
+                                                             rdfs:comment "Test with new version Info, if changes can be depicted by CHimP" ;
+                                                             owl:priorVersion "4.1.1" ;
+                                                             owl:versionInfo "4.2.0" .
 
 #################################################################
 #    Annotation properties
@@ -28,6 +30,22 @@ desc:definition rdf:type owl:AnnotationProperty ;
 
 ###  http://bioontology.org/ontologies/biositemap.owl#replacedBy
 desc:replacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#mentions
+:mentions rdf:type owl:AnnotationProperty ;
+          rdfs:label "mentions" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Annotation property that includes the IRI of an entity that is referenced." ;
+          skos:editorialNote "At the moment only a working version, label and definition of the Annotation might still change." ;
+          rdfs:range xsd:anyURI .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2009/08/skos-reference/skos#altLabel
@@ -204,9 +222,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Aggregate_Human_Data
 :Aggregate_Human_Data rdf:type owl:Class ;
-                      rdfs:subClassOf :Clinical_Care_Data ;
-                      desc:definition "A resource that provides data from clinical care that comprises combined data from multiple individual human subjects." ;
-                      rdfs:label "Aggregate Human Data" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Aggregate Human Data" ;
+                      rdfs:seeAlso :Clinical_Care_Data ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Algorithm
@@ -283,14 +302,13 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Assessment_Material_Resource
 :Assessment_Material_Resource rdf:type owl:Class ;
-                              rdfs:subClassOf :Material_Resource ;
+                              rdfs:subClassOf :M1001 ;
                               desc:definition "A resource that provides access to scientific data assessment instruments, for example behavioral assessment tests. " ;
                               rdfs:label "Assessment Material Resource" .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas
-:Atlas rdf:type owl:Class ;
-       rdfs:subClassOf :Semi-Structured_Knowledge_Resource .
+:Atlas rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas_Generation
@@ -348,8 +366,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bibliographic_Resource
-:Bibliographic_Resource rdf:type owl:Class ;
-                        rdfs:subClassOf :Semi-Structured_Knowledge_Resource .
+:Bibliographic_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Binary_Executable
@@ -385,14 +402,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Supply_Resource
 :Biomaterial_Supply_Resource rdf:type owl:Class ;
-                             rdfs:subClassOf :Material_Resource ;
+                             rdfs:subClassOf :M1001 ;
                              desc:definition "A resource that provides access to physical materials like tissue samples or organisms. For example, the IMSR enables acquisition of a transgenic mouse or cell line. Note, for the sake of simplicity we have excluded molecules of organismal origin from this category as these can be manufactured chemically and have included them under the reagent category (eg. antibodies, toxins)." ;
                              rdfs:label "Biomaterial Supply Resource" .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomedical_Supply_Resource
 :Biomedical_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Material_Resource ;
+                            rdfs:subClassOf :M1001 ;
                             desc:definition "Biomedical (http://en.wikipedia.org/wiki/Biomedicine) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
                             rdfs:label "Biomedical Supply Resource" ;
                             skos:editorialNote "pending final vetting: suggest to deprecate" .
@@ -415,9 +432,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Book
 :Book rdf:type owl:Class ;
-      rdfs:subClassOf :Narrative_Resource ;
-      desc:definition "A resource that provides access to a written or printed work of fiction or nonfiction, usually on sheets of paper fastened or bound together within covers." ;
-      rdfs:label "Book" .
+      rdfs:comment "level of detail is too specific" ;
+      rdfs:label "DEPRECATED Book" ;
+      rdfs:seeAlso :I3016 ;
+      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bug_Reporting
@@ -527,8 +545,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Care_Data
-:Clinical_Care_Data rdf:type owl:Class ;
-                    rdfs:subClassOf :Data_Resource .
+:Clinical_Care_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Chart
@@ -547,8 +564,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Research_Data
-:Clinical_Research_Data rdf:type owl:Class ;
-                        rdfs:subClassOf :Data_Resource .
+:Clinical_Research_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Trial_Data
@@ -616,9 +632,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Model
 :Computational_Model rdf:type owl:Class ;
-                     rdfs:subClassOf :Structured_Knowledge_Resource ;
-                     desc:definition "A resource that provides a simplified or symbolic representation of a system or phenomenon." ;
-                     rdfs:label "Computational Model" .
+                     rdfs:comment "outdated definition and IRI" ;
+                     rdfs:label "DEPRECATED Computational Model" ;
+                     rdfs:seeAlso :I3004 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
@@ -636,9 +653,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Conference_Proceeding
 :Conference_Proceeding rdf:type owl:Class ;
-                       rdfs:subClassOf :Narrative_Resource ;
-                       desc:definition "A resource the provides access to papers and/or talk and poster abstracts that are presented at a conference." ;
-                       rdfs:label "Conference Proceeding" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Conference Proceeding" ;
+                       rdfs:seeAlso :I3016 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Conflict_of_Interest_Resource
@@ -816,8 +834,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Resource
-:Data_Resource rdf:type owl:Class ;
-               rdfs:subClassOf :Information_Resource .
+:Data_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Service
@@ -868,8 +885,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database
-:Database rdf:type owl:Class ;
-          rdfs:subClassOf :Structured_Knowledge_Resource .
+:Database rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database_Hosting
@@ -893,9 +909,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Delimited_Table
 :Delimited_Table rdf:type owl:Class ;
-                 rdfs:subClassOf :Structured_File ;
-                 desc:definition "A resource that provides access to structured data that is separated by a sequence of one or more characters to mark the boundary between plain text or data streams." ;
-                 rdfs:label "Delimited Table" .
+                 rdfs:comment "level of detail is too specific" ;
+                 rdfs:label "DEPRECATED Delimited Table" ;
+                 rdfs:seeAlso :Structured_File ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Deprecated_Data_Resource
@@ -974,8 +991,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Dynamic_Model
-:Dynamic_Model rdf:type owl:Class ;
-               rdfs:subClassOf :Computational_Model .
+:Dynamic_Model rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#EDA
@@ -1036,9 +1052,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Experimental_Protocol
 :Experimental_Protocol rdf:type owl:Class ;
-                       rdfs:subClassOf :Narrative_Resource ;
-                       desc:definition "A resource that provides detailed plans for a scientific experiments, medical trials, or other pieces of research." ;
-                       rdfs:label "Experimental Protocol" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Experimental Protocol" ;
+                       rdfs:seeAlso :I3016 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Expertise
@@ -1051,6 +1068,93 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                            rdfs:subClassOf :Image_Processing .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F1001
+:F1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Financial Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to monetary support for research, training, or education, including to grants, contracts, materials, or gifts."@en ;
+       skos:altLabel "FR"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F2002
+:F2002 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Internal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided from within the organizational unit, organization, or institution of the applicant."@en ;
+       skos:altLabel "Internal Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F2003
+:F2003 rdf:type owl:Class ;
+       rdfs:subClassOf :F1001 ;
+       rdfs:label "Third Party FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Financial Resource' provided by an external party."@en ;
+       skos:altLabel "Third Party Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F3004
+:F3004 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:comment "This does not have to be by the public sector where the usage of the 'Financial Resource' is taking place."@en ;
+       rdfs:label "Public FR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C102434> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a public sector, including the local, city, county, state and federal government, or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Public Health Care, EU Funding"@en ;
+       skos:altLabel "Public Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F3008
+:F3008 rdf:type owl:Class ;
+       rdfs:subClassOf :F2003 ;
+       rdfs:label "Private FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Third Party FR' provided by a person or organization not from the public sector. It could be made of investments, donations, loans or crowdfunding."@en ;
+       skos:altLabel "Private Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4005
+:F4005 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "Federal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided from the central government of a country or one of its organizations."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Funding by German Federal Ministry of Research, Technology and Space"@en ;
+       skos:altLabel "Federal Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4006
+:F4006 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "International FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by public institutions of and/or given to beneficiaries from several countries or a transnational group."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "EU Funding"@en ;
+       skos:altLabel "International Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4007
+:F4007 rdf:type owl:Class ;
+       rdfs:subClassOf :F3004 ;
+       rdfs:label "State FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Public FR' provided by a state or one of its organizations."@en ;
+       skos:altLabel "State Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4009
+:F4009 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       owl:disjointWith :F4010 ;
+       rdfs:label "Institutional FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by a company, organization or foundation."@en ;
+       skos:altLabel "Institutional Financial Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#F4010
+:F4010 rdf:type owl:Class ;
+       rdfs:subClassOf :F3008 ;
+       rdfs:label "Personal FR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Private FR' provided by one or more human individuals."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "FR by a natural person, foundation of a single person, married couple"@en ;
+       skos:altLabel "Personal Financial Resource"@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fabrication_Facility
 :Fabrication_Facility rdf:type owl:Class ;
                       rdfs:subClassOf :Facility_Core ;
@@ -1060,7 +1164,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Facility_Core
 :Facility_Core rdf:type owl:Class ;
-               rdfs:subClassOf :Material_Resource ,
+               rdfs:subClassOf :M1001 ,
                                :Service_Resource ;
                desc:definition "A resource that provides instruments, technologies, facilities, and/or expert support for a specific area of research." ;
                rdfs:comment "As defined in http://dictionary.reference.com/browse/facility" ;
@@ -1100,9 +1204,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Federal_Funding_Resource
 :Federal_Funding_Resource rdf:type owl:Class ;
-                          rdfs:subClassOf :Funding_Resource ;
-                          desc:definition "A funding resource where money is obtained from the central government." ;
-                          rdfs:label "Federal Funding Resource" .
+                          rdfs:comment "Change in definition, IRI and hierachy" ;
+                          rdfs:label "DEPRECATED Federal Funding Resource" ;
+                          rdfs:seeAlso :F4005 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Filtering
@@ -1121,9 +1226,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Flatfile_Distribution
 :Flatfile_Distribution rdf:type owl:Class ;
-                       rdfs:subClassOf :Structured_File ;
-                       desc:definition "A resource that provides access to structured data that is found in separate, unlinked files that is accessible via the internet." ;
-                       rdfs:label "Flatfile Distribution" .
+                       rdfs:comment "level of detail is too specific" ;
+                       rdfs:label "DEPRECATED Flatfile Distribution" ;
+                       rdfs:seeAlso :Structured_File ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Flow_Cytometry_Cell_Sorting_Facility
@@ -1152,15 +1258,15 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Funding_Resource
-:Funding_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :Resource .
+:Funding_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Gene_Expression
 :Gene_Expression rdf:type owl:Class ;
-                 rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                 desc:definition "A resource that provides data on the abundance of RNA that is coded from genes." ;
-                 rdfs:label "Gene Expression" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Gene Expression" ;
+                 rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Gene_Therapy_Facility
@@ -1189,17 +1295,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Government_Publication
 :Government_Publication rdf:type owl:Class ;
-                        rdfs:subClassOf :Narrative_Resource ;
-                        desc:definition "A resource the provides access to a publicly available document that is  generated by a governing entity." ;
-                        rdfs:label "Government Publication" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Government Publication" ;
+                        rdfs:seeAlso :I3016 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Grant_Preparation_Expertise
 :Grant_Preparation_Expertise rdf:type owl:Class ;
-                             rdfs:subClassOf :People_Resource ;
-                             desc:definition "A resource or expertise relating to grant preparation (http://en.wikipedia.org/wiki/Grant_(money))" ;
-                             rdfs:label "Grant Preparation Expertise" ;
-                             skos:editorialNote "pending final vetting: refine definition" .
+                             rdfs:comment "change in label, definitiona and IRI" ;
+                             rdfs:label "DEPRECATED Grant Preparation Expertise" ;
+                             rdfs:seeAlso :P3008 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Algorithm
@@ -1328,6 +1435,253 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                               rdfs:label "Hypothesis Testing Algorithm" .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I1001
+:I1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Information Resource"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C16048> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' that provides access to sources of knowledge in the form of data, metadata, or narrative."@en ;
+       skos:altLabel "IR" .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I2002
+:I2002 rdf:type owl:Class ;
+       rdfs:subClassOf :I1001 ;
+       rdfs:comment "They are not organised in a complex manner that makes easy computer analysis possible. However, they may have information associated with them, such as metadata tagging that allows elements contained to be addressed."@en ;
+       rdfs:label "Semi-Structured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000431> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' that has some organizational properties (like keys or labels), but does not follow a strict schema."@en ;
+       skos:altLabel "Semi-Structured Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I2002 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "They are not organised in a complex manner that makes easy computer analysis possible. However, they may have information associated with them, such as metadata tagging that allows elements contained to be addressed."@en ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/semi-structured-data"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I2003
+:I2003 rdf:type owl:Class ;
+       rdfs:subClassOf :I1001 ;
+       rdfs:comment "The 'Structured IR' can be minimally to highly expressive, such that the elements can be easily addressed, organised, and accessed in various combinations to make better use of the information."@en ;
+       rdfs:label "Structured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000295> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' arranged according to some predefined semantic or technical framework."@en ;
+       skos:altLabel "Structured Information Resource" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I2003 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "The 'Structured IR' can be minimally to highly expressive, such that the elements can be easily addressed, organised, and accessed in various combinations to make better use of the information."@en ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/structured-data"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I2011
+:I2011 rdf:type owl:Class ;
+       rdfs:subClassOf :I1001 ;
+       rdfs:comment "They are difficult to use for computer analyses."@en ;
+       rdfs:label "Unstructured IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000420> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Information Resource' that does not follow a strictly predefined data structure nor has organizational properties. These data can often be searched as long as they are digital, but they are not properly machine-readable."@en ;
+       skos:altLabel "Unstructured Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3004
+:I3004 rdf:type owl:Class ;
+       rdfs:subClassOf :I2003 ;
+       rdfs:label "Computational Model IR"@en ;
+       rdfs:seeAlso <http://identifiers.org/mamo/MAMO_0000023> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An computationally executable 'Structured IR' that provides with a simplified or symbolic representation of a system or phenomenon. It is often used to study the behavior of this system or a phenomenon."@en ;
+       skos:altLabel "Computational Model Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3005
+:I3005 rdf:type owl:Class ;
+       rdfs:subClassOf :I2003 ;
+       rdfs:label "Database IR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D019991> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' of electronic data, designed to enable efficient storage, management, updating, and retrieval of information."@en ;
+       skos:altLabel "Database Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I3005 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Structured IR' of electronic data, designed to enable efficient storage, management, updating, and retrieval of information."@en ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/database"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3008
+:I3008 rdf:type owl:Class ;
+       rdfs:subClassOf :I2003 ;
+       rdfs:label "Ontology IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C21270> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' that encompasses a formal representation of a domain of knowledge. It is a hierarchical structure of concepts, references, and relations."@en ;
+       skos:altLabel "Ontology Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Structured IR' that encompasses a formal representation of a domain of knowledge. It is a hierarchical structure of concepts, references, and relations."@en ;
+   rdfs:seeAlso "https://biocypher.org/BioCypher/learn/tutorials/tutorial002_handling_ontologies/"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3009
+:I3009 rdf:type owl:Class ;
+       rdfs:subClassOf :I2003 ;
+       rdfs:comment "It was decided to include “Repository IR” in “Structured IR” instead of “Semi-Structured IR” because the structure within this repository is decisive, not the type of files that can be stored in it."@en ;
+       rdfs:label "Repository IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000489> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' that collects data, code, and other files to enable cooperative work with revision history."@en ;
+       skos:altLabel "Repository Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I3009 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Structured IR' that collects data, code, and other files to enable cooperative work with revision history."@en ;
+   rdfs:seeAlso "https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3010
+:I3010 rdf:type owl:Class ;
+       rdfs:subClassOf :I2003 ;
+       rdfs:comment "Having and manifesting a clearly defined structure or organization that allows it to be executed."@en ;
+       rdfs:label "Structured File IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Structured IR' that encompasses an electronic document being machine-readable."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "JSON, XML, code script" ;
+       skos:altLabel "Structured File Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3012
+:I3012 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:label "Audio IR"@en ;
+       rdfs:seeAlso <http://semanticscience.org/resource/SIO_001168> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a recording or creation of soundwaves."@en ;
+       skos:altLabel "Audio Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3013
+:I3013 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:label "Image IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a visual representation of data."@en ;
+       skos:altLabel "Image Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3016
+:I3016 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:comment "It can be non-fictional or fictional."@en ;
+       rdfs:label "Narrative IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that is a written account of research, events or experiences."@en ;
+       skos:altLabel "Narrative Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I3016 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "It can be non-fictional or fictional."@en ;
+   rdfs:seeAlso "https://en.wikipedia.org/wiki/Narrative"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3021
+:I3021 rdf:type owl:Class ;
+       rdfs:subClassOf :I2011 ;
+       rdfs:label "Video IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Unstructured IR' that gives a moving visual representation of data."@en ;
+       skos:altLabel "Video Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4006
+:I4006 rdf:type owl:Class ;
+       rdfs:subClassOf :I3005 ;
+       rdfs:label "noSQL DB"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A type of 'Database IR' that uses a single structure to store, manipulate and retrieve information. Structure types can be objects, key-value pairs, graphs, documents etc."@en ;
+       skos:altLabel "noSQL Database"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I4006 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A type of 'Database IR' that uses a single structure to store, manipulate and retrieve information. Structure types can be objects, key-value pairs, graphs, documents etc."@en ;
+   rdfs:seeAlso "https://en.wikipedia.org/wiki/NoSQL"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4007
+:I4007 rdf:type owl:Class ;
+       rdfs:subClassOf :I3005 ;
+       rdfs:comment "It is displayed in tabular format."@en ;
+       rdfs:label "SQL DB"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A type of 'Database IR' that uses a specific entity-relation data model to store, manipulate and retrieve data."@en ;
+       skos:altLabel "SQL Database"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4014
+:I4014 rdf:type owl:Class ;
+       rdfs:subClassOf :I3013 ;
+       rdfs:label "Three D Image IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Image IR' that has the spatial dimensions length, width, and depth."@en ;
+       skos:altLabel "Three Dimensional Image Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4015
+:I4015 rdf:type owl:Class ;
+       rdfs:subClassOf :I3013 ;
+       rdfs:label "Two D Image IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An 'Image IR' that has the spatial dimensions length and width."@en ;
+       skos:altLabel "Two Dimensional Image Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4017
+:I4017 rdf:type owl:Class ;
+       rdfs:subClassOf :I3016 ;
+       owl:disjointWith :I4020 ;
+       rdfs:label "Published IR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C48471> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that has been formally released, distributed, or made publicly available through established publication channels, typically with editorial oversight, formatting, and distribution mechanisms that distinguish it from 'Unpublished IR'."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "book, paper, blog, newspaper, website"@en ;
+       skos:altLabel "Published Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4020
+:I4020 rdf:type owl:Class ;
+       rdfs:subClassOf :I3016 ;
+       rdfs:label "Unpublished IR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D022902> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Narrative IR' that exists in private, informal, or preliminary stages without formal release, distribution, or public availability through established publication channels."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "unfinished paper, results, personal journal"@en ;
+       skos:altLabel "Unpublished Information Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I5018
+:I5018 rdf:type owl:Class ;
+       rdfs:subClassOf :I4017 ;
+       owl:disjointWith :I5019 ;
+       rdfs:label "Peer-reviewed IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'."@en ;
+       skos:altLabel "Peer-reviewed Information Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :I5018 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Published IR' that has been accepted in a journal and has been evaluated by one or more domain experts in the sense of a 'Professional PR'."@en ;
+   :mentions :P2003
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#I5019
+:I5019 rdf:type owl:Class ;
+       rdfs:subClassOf :I4017 ;
+       rdfs:label "Unreviewed IR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Published IR' that has been released without being evaluated."@en ;
+       skos:altLabel "Unreviewed Information Resource"@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Identity_Management
 :Identity_Management rdf:type owl:Class ;
                      rdfs:subClassOf :Data_Service ;
@@ -1337,10 +1691,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image
 :Image rdf:type owl:Class ;
-       rdfs:subClassOf :Unstructured_Knowledge_Resource ;
-       desc:definition "A resource that provides data in the form of images. " ;
-       rdfs:label "Image" ;
-       skos:editorialNote "pending final vetting: review location in hierarchy" .
+       rdfs:comment "change of definition and IRI" ;
+       rdfs:label "DEPRECATED Image" ;
+       rdfs:seeAlso :I3013 ;
+       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Algorithm
@@ -1396,17 +1750,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Individual_Human_Data
 :Individual_Human_Data rdf:type owl:Class ;
-                       rdfs:subClassOf :Clinical_Care_Data ;
-                       desc:definition "A resource that provides clinical care data at the level of an individual." ;
-                       rdfs:label "Individual Human Data" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Individual Human Data" ;
+                       rdfs:seeAlso :Clinical_Care_Data ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Industry_Partnership_Expertise
 :Industry_Partnership_Expertise rdf:type owl:Class ;
-                                rdfs:subClassOf :People_Resource ;
-                                desc:definition "Expertise for liaison with Industry (http://en.wikipedia.org/wiki/Industry)" ;
-                                rdfs:label "Industry Partnership Expertise" ;
-                                skos:editorialNote "pending final vetting: refine definition" .
+                                rdfs:comment "change in class name, definition and IRI" ;
+                                rdfs:label "DEPRECATED Industry Partnership Expertise" ;
+                                rdfs:seeAlso :P3009 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Inference_From_Data
@@ -1418,10 +1773,11 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Information_Resource
 :Information_Resource rdf:type owl:Class ;
-                      rdfs:subClassOf :Resource ;
-                      desc:definition "A resource that provides data, knowledge or narrative." ;
-                      rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                      rdfs:label "Information Resource" .
+                      rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                                   "Outdated IRI and definition" ;
+                      rdfs:label "DEPRECATED Information Resource" ;
+                      rdfs:seeAlso :I1001 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Information_Retrieval
@@ -1440,7 +1796,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument
 :Instrument rdf:type owl:Class ;
-            rdfs:subClassOf :Material_Resource ;
+            rdfs:subClassOf :M1001 ;
             desc:definition "A resource that provides scientific instruments such as microscopes, amplifiers or dissection tools. For example, Grass Instruments is a site that sells amplifiers and other equipment useful for electrophysiology. From NIFSTD" ;
             rdfs:label "Instrument" ;
             skos:editorialNote "pending final vetting: review scope of BRO for child terms" .
@@ -1494,9 +1850,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interaction_Network
 :Interaction_Network rdf:type owl:Class ;
-                     rdfs:subClassOf :Network_Model ;
-                     desc:definition "A resource that provides a network model that includes nodes and edges based on physical interactions between the entities represented by the nodes." ;
-                     rdfs:label "Interaction Network" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Interaction Network" ;
+                     rdfs:seeAlso :Network_Model ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Network_Analysis
@@ -1525,9 +1882,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Journal_Article
 :Journal_Article rdf:type owl:Class ;
-                 rdfs:subClassOf :Narrative_Resource ;
-                 desc:definition "A resource that provides access to reports that are published journals" ;
-                 rdfs:label "Journal Article" .
+                 rdfs:comment "level of detail is too specific" ;
+                 rdfs:label "DEPRECATED Journal Article" ;
+                 rdfs:seeAlso :I3016 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Environment
@@ -1551,13 +1909,12 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledgebase
-:Knowledgebase rdf:type owl:Class ;
-               rdfs:subClassOf :Structured_Knowledge_Resource .
+:Knowledgebase rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Laboratory_Supply_Resource
 :Laboratory_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Material_Resource ;
+                            rdfs:subClassOf :M1001 ;
                             desc:definition "A resource that provides items such as reagents, instruments, tissue samples or organisms for use in a laboratory." ;
                             rdfs:label "Laboratory Supply Resource" .
 
@@ -1575,8 +1932,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License
-:License rdf:type owl:Class ;
-         rdfs:subClassOf :Narrative_Resource .
+:License rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Redistribution
@@ -1605,6 +1961,136 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
 :Linear_Algebra_Tools rdf:type owl:Class ;
                       rdfs:subClassOf :Numerical_Methods .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M1001
+:M1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Material Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' provided of something physical to be used for testing, analysis, inspection, investigation, demonstration, or trial use."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "an individual from a population, a device or a portion of a substance"@en ;
+       skos:altLabel "MR" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M1001 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Resource' provided of something physical to be used for testing, analysis, inspection, investigation, demonstration, or trial use."@en ;
+   rdfs:seeAlso "https://biolink.github.io/biolink-model/MaterialSample/"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M2002
+:M2002 rdf:type owl:Class ;
+       rdfs:subClassOf :M1001 ;
+       rdfs:label "Living MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Material Resource' of biological origin."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> <http://purl.obolibrary.org/obo/mesh#B> ;
+       skos:altLabel "Living Material Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M2009
+:M2009 rdf:type owl:Class ;
+       rdfs:subClassOf :M1001 ;
+       rdfs:comment "Removed sub-categories, because only unclear distinctions are possible in the field of biomedicine. Since subfield are extremly large and heterogeneous in their use of terms, only a upper-level category is given here."@en ;
+       rdfs:label "Non-living MR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Material Resource' of non-biological origin."@en ;
+       skos:altLabel "Non-living Material Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3003
+:M3003 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Animal MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0000042> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BTO:'Animal'"@en ;
+       skos:altLabel "Animal Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3003 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BTO:'Animal'"@en ;
+   :mentions "http://purl.obolibrary.org/obo/BTO_0000042"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3005
+:M3005 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Bacterial MR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D001419> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Bacterium'."@en ;
+       skos:altLabel "Bacterial Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3005 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Bacterium'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Bacterium"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3006
+:M3006 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Fungal MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001494> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
+       skos:altLabel "Fungal Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3006 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Fungus"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3007
+:M3007 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Plant MR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001481> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from MESH:'Plant'."@en ;
+       skos:altLabel "Plant Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3007 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from MESH:'Plant'."@en ;
+   :mentions <http://id.nlm.nih.gov/mesh/D010944>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M3008
+:M3008 rdf:type owl:Class ;
+       rdfs:subClassOf :M2002 ;
+       rdfs:label "Viral MR"@en ;
+       rdfs:seeAlso <https://id.nlm.nih.gov/mesh/D014780.html> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Virus'."@en ;
+       skos:altLabel "Viral Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Virus'."@en ;
+   :mentions "https://w3id.org/biolink/vocab/Virus"^^xsd:anyURI
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#M4004
+:M4004 rdf:type owl:Class ;
+       rdfs:subClassOf :M3003 ;
+       rdfs:label "Human MR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D006801> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Any 'Living MR' from BIOLINK:'Human'"@en ;
+       skos:altLabel "Human Material Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :M4004 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Human'"@en ;
+   :mentions "https://w3id.org/biolink/vocab/Human"^^xsd:anyURI
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#MRI_Scanner
@@ -1664,10 +2150,11 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Resource
 :Material_Resource rdf:type owl:Class ;
-                   rdfs:subClassOf :Resource ;
-                   desc:definition "A resource that provides items such as reagents, instruments, tissue samples or organisms." ;
-                   rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                   rdfs:label "Material Resource" .
+                   rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                                "change of definition and IRI" ;
+                   rdfs:label "DEPRECATED Material Resource" ;
+                   rdfs:seeAlso :M1001 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Service
@@ -1698,7 +2185,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Medical_Device
 :Medical_Device rdf:type owl:Class ;
-                rdfs:subClassOf :Material_Resource ;
+                rdfs:subClassOf :M1001 ;
                 desc:definition "A resource that provides devices used for therapy, diagnosis or surgery. " ;
                 rdfs:label "Medical Device" .
 
@@ -1831,9 +2318,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Interaction
 :Molecular_Interaction rdf:type owl:Class ;
-                       rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                       desc:definition "A resource that provides data related to the measurement of interaction between molecules of any type. " ;
-                       rdfs:label "Molecular Interaction" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Molecular Interaction" ;
+                       rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Model
@@ -1869,8 +2357,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
-:Molecular_and_Cellular_Data rdf:type owl:Class ;
-                             rdfs:subClassOf :Data_Resource .
+:Molecular_and_Cellular_Data rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Monoclonal_Antibody_Facility
@@ -1926,8 +2413,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Narrative_Resource
-:Narrative_Resource rdf:type owl:Class ;
-                    rdfs:subClassOf :Information_Resource .
+:Narrative_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Natural_Language_Processing
@@ -1955,8 +2441,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Model
-:Network_Model rdf:type owl:Class ;
-               rdfs:subClassOf :Computational_Model .
+:Network_Model rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_and_Communication
@@ -2055,9 +2540,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Object_Database
 :Object_Database rdf:type owl:Class ;
-                 rdfs:subClassOf :Database ;
-                 desc:definition "A resource that provides access to a database that represents information in the form of objects." ;
-                 rdfs:label "Object Database" .
+                 rdfs:comment "rename, change of definition and of IRI" ;
+                 rdfs:label "DEPRECATED Object Database" ;
+                 rdfs:seeAlso :I4006 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Online_Course
@@ -2076,9 +2562,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology
 :Ontology rdf:type owl:Class ;
-          rdfs:subClassOf :Structured_Knowledge_Resource ;
-          desc:definition "A resource that provides access to a set of concepts within a domain and the relationships between those concepts, used to reason about the objects within that domain.  " ;
-          rdfs:label "Ontology" .
+          rdfs:comment "change of definition and IRI" ;
+          rdfs:label "DEPRECATED Ontology" ;
+          rdfs:seeAlso :I3008 ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology_Development
@@ -2146,6 +2633,128 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                   rdfs:label "Outreach Program" .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P1001
+:P1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:comment "Not the contact is meant, but the person itself."@en ;
+       rdfs:label "People Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Resource' comprised of one or more individuals providing or exchanging knowledge, experience, or skills in a specific domain."@en ;
+       skos:altLabel "PR"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P2002
+:P2002 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:label "Private PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more laypersons, that have untrained experience or knowledge."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "relative, patient representative, volunteer, possibly student"@en ;
+       skos:altLabel "Private People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P2003
+:P2003 rdf:type owl:Class ;
+       rdfs:subClassOf :P1001 ;
+       rdfs:comment "They can have expertise in different fields of work, from preparation, development, and execution to scientific analysis."@en ;
+       rdfs:label "Professional PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D011361> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'People Resource' made up by one or more trained persons."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "medical staff, IT professional"@en ;
+       skos:altLabel "Professional People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3004
+:P3004 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Administrative Expertise PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D000288> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in policy and governance, project management, and other supportive tasks required in biomedical organizations."@en ;
+       skos:altLabel "Administrative Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3005
+:P3005 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Enabling them to provide expert diagnosis, treatment, and patient care services."@en ;
+       rdfs:label "Clinical Expertise PR"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D002983> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in clinical medicine, healthcare delivery, or related medical fields."@en ;
+       skos:altLabel "Clinical Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3006
+:P3006 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ,
+                    "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+       rdfs:label "Data Management Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the collection, storage, access, and preservation of data along the data life cycle."@en ;
+       <http://www.w3.org/2004/02/skos/core#example> "Specific activities and issues that fall within the category of data management include: File naming (the proper way to name computer files); data quality control and quality assurance; data access; data documentation (including levels of uncertainty); metadata creation and controlled vocabularies; data storage; data archiving and preservation; data sharing and reuse; data integrity; data security; data privacy; data rights; notebook protocols (lab or field) as required."@en ;
+       skos:altLabel "Data Management People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3006 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+   rdfs:seeAlso "https://terms.codata.org/rdmt/research-data-management"
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3007
+:P3007 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Document Writing Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+       skos:altLabel "Document Writing Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3007 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the creation process of 'Narrative IR'."@en ;
+   :mentions :I3016
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3008
+:P3008 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:comment "This includes especially the preparation of application documents."@en ;
+       rdfs:label "Financial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+       skos:altLabel "Financial Expertise People Resource"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3008 ;
+   owl:annotatedProperty <http://www.w3.org/2004/02/skos/core#definition> ;
+   owl:annotatedTarget "A 'Professional PR' trained in the aquisition of 'Financial Resource's."@en ;
+   :mentions :F1001
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3009
+:P3009 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Industrial Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the domain of collaboration with industry."@en ;
+       skos:altLabel "Industrial Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3010
+:P3010 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Research Expertise PR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000433> ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en ;
+       skos:altLabel "Research Expertise People Resource"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3011
+:P3011 rdf:type owl:Class ;
+       rdfs:subClassOf :P2003 ;
+       rdfs:label "Software Development Expertise PR"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en ;
+       skos:altLabel "Software Development Expertise People Resource"@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Facility
 :PCR_Facility rdf:type owl:Class ;
               rdfs:subClassOf :Molecular_Biology_Facility ;
@@ -2181,9 +2790,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Paper
 :Paper rdf:type owl:Class ;
-       rdfs:subClassOf :Narrative_Resource ;
-       desc:definition "An unpublished document, which may also be submitted to a publisher for publication." ;
-       rdfs:label "Paper" .
+       rdfs:comment "level of detail is too specific" ;
+       rdfs:label "DEPRECATED Paper" ;
+       rdfs:seeAlso :I3016 ;
+       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Parsing
@@ -2207,9 +2817,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Patent
 :Patent rdf:type owl:Class ;
-        rdfs:subClassOf :Narrative_Resource ;
-        desc:definition "A resource that provides access to documents describing the exclusive right granted by a government to an inventor to manufacture, use, or sell an invention for a certain number of years." ;
-        rdfs:label "Patent" .
+        rdfs:comment "level of detail is too specific" ;
+        rdfs:label "DEPRECATED Patent" ;
+        rdfs:seeAlso :I3016 ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pathology_Laboratory_Screening
@@ -2242,46 +2853,27 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#People_Resource
 :People_Resource rdf:type owl:Class ;
-                 rdfs:subClassOf :Resource ;
-                 desc:definition "A resource comprised of one or more individuals who have specific expertise and provide professional or expert advice." ;
-                 rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                 rdfs:label "People Resource" ;
-                 skos:editorialNote """I spent some time thinking about the distinction between People Resources and Services Resources. Then I spent some time thinking of what would be subclasses of people. Below is the list I came up with. However, it bares striking similarity to what we had envisioned for Related Activity or Area of Research. Looking over at NIF, they defined People Resource as \"A resource that provides access to individual people based, for example, on expertise or affiliation\" and do not have any child nodes. I think I've come around to the opinion that we should either adopt NIF's approach, or change from having the top level People Resource to Consulting Resource as a child of Service Resource. (then still tbd whether to have children of that- I think I'd vote for not.) Note that we're already not in complete alignment at the top level- NIF has \"Job Resource\". I look forward to discussion with the group.
-  
-- grant prep  
-- business development   
-- industry partnership 
-- toxicology  
-- funding discovery  
-- legal counsel  
-- intellectual property  
-- IRB  
-- community outreach  
-- finance  
-- regulatory compliance  
-- minority health  
-- study design   
-- clinical trials  
-- basic research 
-- Informatics 
-- Biostatistics 
-- epidemiology 
-- development""" .
+                 rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                              "change of definition and IRI" ;
+                 rdfs:label "DEPRECATED People Resource" ;
+                 rdfs:seeAlso :P1001 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Personal_Communication
 :Personal_Communication rdf:type owl:Class ;
-                        rdfs:subClassOf :Narrative_Resource ;
-                        desc:definition "A resource that provides access to a communication between an agent and one or more specific recipients.," ;
-                        rdfs:label "Personal Communication" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Personal Communication" ;
+                        rdfs:seeAlso :I3016 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pharmacokinetics_Pharmacodynamics_Expertise
 :Pharmacokinetics_Pharmacodynamics_Expertise rdf:type owl:Class ;
-                                             rdfs:subClassOf :People_Resource ;
-                                             desc:definition "A resource or expertise relating to pharmacokinetics (http://en.wikipedia.org/wiki/Pharmacokinetics) and pharmacodynamics (http://en.wikipedia.org/wiki/Pharmacodynamics)" ;
-                                             rdfs:label "Pharmacokinetics Pharmacodynamics Expertise" ;
-                                             skos:editorialNote "pending final vetting: refine definition" .
+                                             rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                                             rdfs:label "DEPRECATED Pharmacokinetics Pharmacodynamics Expertise" ;
+                                             rdfs:seeAlso :P3010 ;
+                                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotype_Management
@@ -2294,9 +2886,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotypic_Measurement
 :Phenotypic_Measurement rdf:type owl:Class ;
-                        rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                        desc:definition "A resource that provides data related to any kind of measurement designed to describe an observable characteristic or trait. " ;
-                        rdfs:label "Phenotypic Measurement" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Phenotypic Measurement" ;
+                        rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phlebotomy_Facility
@@ -2334,10 +2927,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portal
-:Portal rdf:type owl:Class ;
-        rdfs:subClassOf :Communication_and_Collaborative_Work ,
-                        :Information_Resource ,
-                        :Integration_and_Interoperability_Tool .
+:Portal rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portlet_Component
@@ -2376,9 +2966,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Private_Funding_Resource
 :Private_Funding_Resource rdf:type owl:Class ;
-                          rdfs:subClassOf :Funding_Resource ;
-                          desc:definition "A funding resource where money is supplied by a non governmental organization, foundation, or company." ;
-                          rdfs:label "Private Funding Resource" .
+                          rdfs:comment "change in definition, IRI and hierarchy" ;
+                          rdfs:label "DEPRECATED Private Funding Resource" ;
+                          rdfs:seeAlso :F3008 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Processing_Pipeline
@@ -2398,16 +2989,17 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein-Protein_Interaction
 :Protein-Protein_Interaction rdf:type owl:Class ;
-                             rdfs:subClassOf :Interaction_Network ;
-                             desc:definition "A resource that provides a description of the interaction network of proteins." ;
-                             rdfs:label "Protein-Protein Interaction" .
+                             rdfs:comment "level of detail is too specific" ;
+                             rdfs:label "DEPRECATED Protein-Protein Interaction" ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Expression
 :Protein_Expression rdf:type owl:Class ;
-                    rdfs:subClassOf :Molecular_and_Cellular_Data ;
-                    desc:definition "A resource that provides data related to the presence and abundance of proteins from a cell or tissue sample." ;
-                    rdfs:label "Protein Expression" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Protein Expression" ;
+                    rdfs:seeAlso :Molecular_and_Cellular_Data ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Interaction_Modeling
@@ -2434,10 +3026,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protocol_Development_Expertise
 :Protocol_Development_Expertise rdf:type owl:Class ;
-                                rdfs:subClassOf :People_Resource ;
-                                desc:definition "A resource or expertise in research (http://en.wikipedia.org/wiki/Protocol_(natural_sciences)) or clinical-trial protocol (http://en.wikipedia.org/wiki/Clinical_trial_protocol)" ;
-                                rdfs:label "Protocol Development Expertise" ;
-                                skos:editorialNote "pending final vetting: refine definition" .
+                                rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                                rdfs:label "DEPRECATED Protocol Development Expertise" ;
+                                rdfs:seeAlso :P3010 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance
@@ -2452,10 +3044,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Psychometrics_Expertise
 :Psychometrics_Expertise rdf:type owl:Class ;
-                         rdfs:subClassOf :People_Resource ;
-                         desc:definition "A resource or expertise relating to psychometrics (http://en.wikipedia.org/wiki/Psychometrics)" ;
-                         rdfs:label "Psychometrics Expertise" ;
-                         skos:editorialNote "pending final vetting: refine definition" .
+                         rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                         rdfs:label "DEPRECATED Psychometrics Expertise" ;
+                         rdfs:seeAlso :P3010 ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Publication
@@ -2463,11 +3055,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
              rdfs:subClassOf :Deprecated_Resource .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#R0001
+:R0001 rdf:type owl:Class ;
+       rdfs:label "Resource"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An entity that provides access (either in the open community or within an organization) to data, information, and support of any kind for carrying out biomedical research and development."@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#RDF_Data
 :RDF_Data rdf:type owl:Class ;
-          rdfs:subClassOf :Structured_File ;
-          desc:definition "A resource that provides access to structured data that is formatted according to the Resource Description Framework, a language for representing information about resources in the World Wide Web." ;
-          rdfs:label "RDF Data" .
+          rdfs:comment "level of detail is too specific" ;
+          rdfs:label "DEPRECATED RDF Data" ;
+          rdfs:seeAlso :Structured_File ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#RNA_Model
@@ -2509,7 +3108,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
 :Reagent_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :Material_Resource .
+                  rdfs:subClassOf :M1001 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Registration
@@ -2549,16 +3148,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Relational_Database
 :Relational_Database rdf:type owl:Class ;
-                     rdfs:subClassOf :Database ;
-                     desc:definition "A resource that provides access to a database that comprises a normalized data set constructed according to a specific entity-relation data model." ;
-                     rdfs:label "Relational Database" .
+                     rdfs:comment "rename, change of definition and of IRI" ;
+                     rdfs:label "DEPRECATED Relational Database" ;
+                     rdfs:seeAlso :I4007 ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Report
 :Report rdf:type owl:Class ;
-        rdfs:subClassOf :Narrative_Resource ;
-        desc:definition "A resource that provides access to documents describing an account, event, situation, or the like, usually as the result of observation, inquiry, etc." ;
-        rdfs:label "Report" .
+        rdfs:comment "level of detail is too specific" ;
+        rdfs:label "DEPRECATED Report" ;
+        rdfs:seeAlso :I3016 ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Animals_Facility
@@ -2631,9 +3232,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Semi-Structured_Knowledge_Resource
 :Semi-Structured_Knowledge_Resource rdf:type owl:Class ;
-                                    rdfs:subClassOf :Information_Resource ;
-                                    desc:definition "A resource that provides data that is partially structured. " ;
-                                    rdfs:label "Semi-Structured Knowledge Resource" .
+                                    rdfs:comment "outdated definition and class name change" ;
+                                    rdfs:label "DEPRECATED Semi-Structured Knowledge Resource" ;
+                                    rdfs:seeAlso :I2002 ;
+                                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Seminar_Series
@@ -2685,7 +3287,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Service_Resource
 :Service_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :Resource ;
+                  rdfs:subClassOf :R0001 ;
                   desc:definition "A resource that provides an act of helpful activity, consisting of an organized system of apparatus, appliances, technology, personnel, etc." ;
                   rdfs:comment "As per alignment with NIF resource type hierarchy." ;
                   rdfs:label "Service Resource" .
@@ -2730,7 +3332,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software
 :Software rdf:type owl:Class ;
-          rdfs:subClassOf :Resource ;
+          rdfs:subClassOf :R0001 ;
           desc:definition "Resource that provides access usually through repositories or the Internet to computer executables, libraries, plugins, or source code." ;
           rdfs:comment "As per alignment with NIF resource type hierarchy." ;
           rdfs:label "Software" .
@@ -2774,9 +3376,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Technology_Protocol
 :Software_Technology_Protocol rdf:type owl:Class ;
-                              rdfs:subClassOf :Narrative_Resource ;
-                              desc:definition "A resource that provides access to information on how to implement and use a computer program." ;
-                              rdfs:label "Software Technology Protocol" .
+                              rdfs:comment "level of detail is too specific" ;
+                              rdfs:label "DEPRECATED Software Technology Protocol" ;
+                              rdfs:seeAlso :I3016 ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_development
@@ -2810,16 +3413,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Standard_Specification
 :Standard_Specification rdf:type owl:Class ;
-                        rdfs:subClassOf :Narrative_Resource ;
-                        desc:definition "A resource that provides access to a generally agreed upon set of rules for representation." ;
-                        rdfs:label "Standard Specification" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Standard Specification" ;
+                        rdfs:seeAlso :I3016 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#State_Funding_Resource
 :State_Funding_Resource rdf:type owl:Class ;
-                        rdfs:subClassOf :Funding_Resource ;
-                        desc:definition "A funding resource that is provided by a state." ;
-                        rdfs:label "State Funding Resource" .
+                        rdfs:comment "change in definition, IRI and hierarchy" ;
+                        rdfs:label "DEPRECATED State Funding Resource" ;
+                        rdfs:seeAlso :F4007 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Algorithm
@@ -2890,13 +3495,11 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_File
-:Structured_File rdf:type owl:Class ;
-                 rdfs:subClassOf :Structured_Knowledge_Resource .
+:Structured_File rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_Knowledge_Resource
-:Structured_Knowledge_Resource rdf:type owl:Class ;
-                               rdfs:subClassOf :Information_Resource .
+:Structured_Knowledge_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Summarization
@@ -2918,7 +3521,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
 :Technical_Support rdf:type owl:Class ;
-                   rdfs:subClassOf :People_Resource ,
+                   rdfs:subClassOf :P1001 ,
                                    :Service_Resource .
 
 
@@ -2947,16 +3550,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Thesis
 :Thesis rdf:type owl:Class ;
-        rdfs:subClassOf :Narrative_Resource ;
-        desc:definition "A resource that provides access to a document created to summarize research findings associated with the completion of an academic degree." ;
-        rdfs:label "Thesis" .
+        rdfs:comment "level of detail is too specific" ;
+        rdfs:label "DEPRECATED Thesis" ;
+        rdfs:seeAlso :I3016 ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Three_D_Image
 :Three_D_Image rdf:type owl:Class ;
-               rdfs:subClassOf :Image ;
-               desc:definition "A resource that provides image data consisting of length, width and depth." ;
-               rdfs:label "Three D Image" .
+               rdfs:comment "definition and IRI change" ;
+               rdfs:label "DEPRECATED Three D Image" ;
+               rdfs:seeAlso :I4014 ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Three_Dimensional_Data
@@ -2985,15 +3590,15 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toxicology_Expertise
 :Toxicology_Expertise rdf:type owl:Class ;
-                      rdfs:subClassOf :People_Resource ;
-                      desc:definition "A resource or expertise relating to (http://en.wikipedia.org/wiki/Toxicology)" ;
-                      rdfs:label "Toxicology Expertise" ;
-                      skos:editorialNote "pending final vetting: refine definition" .
+                      rdfs:comment "deprecated because it was summed into Research Expertise PR (P3010)" ;
+                      rdfs:label "DEPRECATED Toxicology Expertise" ;
+                      rdfs:seeAlso :P3010 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Training_Resource
 :Training_Resource rdf:type owl:Class ;
-                   rdfs:subClassOf :Resource ;
+                   rdfs:subClassOf :R0001 ;
                    desc:definition "A resource that provides access to educational materials or events, such as courses, workshops or graduate programs." ;
                    rdfs:comment "As per alignment with NIF resource type hierarchy." ;
                    rdfs:label "Training Resource" .
@@ -3019,9 +3624,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Two_D_Image
 :Two_D_Image rdf:type owl:Class ;
-             rdfs:subClassOf :Image ;
-             desc:definition "A resource that provides image data consisting of length and width, but no depth." ;
-             rdfs:label "Two D Image" .
+             rdfs:comment "definition and IRI change" ;
+             rdfs:label "DEPRECATED Two D Image" ;
+             rdfs:seeAlso :I4015 ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Data
@@ -3030,8 +3636,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Knowledge_Resource
-:Unstructured_Knowledge_Resource rdf:type owl:Class ;
-                                 rdfs:subClassOf :Information_Resource .
+:Unstructured_Knowledge_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vector_Data
@@ -3071,10 +3676,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Volume_Model_Scene_Data
 :Volume_Model_Scene_Data rdf:type owl:Class ;
-                         rdfs:subClassOf :Computational_Model ;
-                         desc:definition "" ;
-                         rdfs:label "Volume Model Scene Data" ;
-                         skos:editorialNote "pending final vetting: provide definition" .
+                         rdfs:comment "level of detail is too specific" ;
+                         rdfs:label "DEPRECATED Volume Model Scene Data" ;
+                         rdfs:seeAlso :Computational_Model ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Wavelet_Model
@@ -3112,10 +3717,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Website
 :Website rdf:type owl:Class ;
-         rdfs:subClassOf :Narrative_Resource ;
-         desc:definition "Resource that provides access to software, application, or toolkit that can develop access to a connected group of pages on the World Wide Web regarded as a single entity, usually maintained by one person or organization and devoted to a single topic or several closely related topics." ;
-         rdfs:label "Website" ;
-         skos:historyNote "Deprecated for BRO v3.0" .
+         rdfs:comment "level of detail is too specific" ;
+         rdfs:label "DEPRECATED Website" ;
+         rdfs:seeAlso :I3016 ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Website_Hosting
@@ -3127,9 +3732,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#White_Paper
 :White_Paper rdf:type owl:Class ;
-             rdfs:subClassOf :Narrative_Resource ;
-             desc:definition "A publication that is an authoritative report or guide that often addresses issues and how to solve them." ;
-             rdfs:label "White Paper" .
+             rdfs:comment "level of detail is too specific" ;
+             rdfs:label "DEPRECATED White Paper" ;
+             rdfs:seeAlso :I3016 ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Workbench
@@ -3150,25 +3756,23 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#XML_Data
 :XML_Data rdf:type owl:Class ;
-          rdfs:subClassOf :Structured_File ;
-          desc:definition "A resource that provides access to structured data that is in XML, a self-descriptive format to store and transport data." ;
-          rdfs:label "XML Data" .
+          rdfs:comment "level of detail is too specific" ;
+          rdfs:label "DEPRECATED XML Data" ;
+          rdfs:seeAlso :Structured_File ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#XML_Database
 :XML_Database rdf:type owl:Class ;
-              rdfs:subClassOf :Object_Database ;
-              desc:definition "A resource that provides access to a database that stores XML." ;
-              rdfs:label "XML Database" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED XML Database" ;
+              rdfs:seeAlso :I4006 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#physico_chemical_models
 :physico_chemical_models rdf:type owl:Class ;
                          rdfs:subClassOf :Deprecated_Resource .
-
-
-###  http://protege.stanford.edu/plugins/owl/protege#ExternalResource
-protege:ExternalResource rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2002/07/owl#DeprecatedClass
@@ -3184,11 +3788,13 @@ activity:Health_Services rdf:type owl:NamedIndividual .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Heath_Services
-activity:Heath_Services rdf:type owl:NamedIndividual .
+activity:Heath_Services rdf:type owl:NamedIndividual ;
+                        desc:replacedBy activity:Health_Services .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Novel_Therapeutics
-activity:Novel_Therapeutics rdf:type owl:NamedIndividual .
+activity:Novel_Therapeutics rdf:type owl:NamedIndividual ;
+                            desc:replacedBy activity:Therapeutics .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Software_Development
@@ -3200,7 +3806,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Anatomic_Atlas
-:Anatomic_Atlas rdf:type owl:NamedIndividual .
+:Anatomic_Atlas rdf:type owl:NamedIndividual ;
+                desc:replacedBy :Atlas .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas
@@ -3208,7 +3815,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Automated_Natural_Language_Output
-:Automated_Natural_Language_Output rdf:type owl:NamedIndividual .
+:Automated_Natural_Language_Output rdf:type owl:NamedIndividual ;
+                                   desc:replacedBy :Natural_Language_Processing .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Agglomeration
@@ -3216,7 +3824,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Aglomeration
-:Averaging_and_Aglomeration rdf:type owl:NamedIndividual .
+:Averaging_and_Aglomeration rdf:type owl:NamedIndividual ;
+                            desc:replacedBy :Averaging_and_Agglomeration .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archive_Service
@@ -3224,23 +3833,29 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archives_and_Disaster_Recovery
-:Backup_Archives_and_Disaster_Recovery rdf:type owl:NamedIndividual .
+:Backup_Archives_and_Disaster_Recovery rdf:type owl:NamedIndividual ;
+                                       desc:replacedBy :Backup_Archive_Service ,
+                                                       :Disaster_Recovery_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bibliographic_Resource
-:Bibliographic_Resource rdf:type owl:NamedIndividual .
+:Bibliographic_Resource rdf:type owl:NamedIndividual ;
+                        desc:replacedBy :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Binary_Executable
-:Binary_Executable rdf:type owl:NamedIndividual .
+:Binary_Executable rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biochemical_Supply_Resource
-:Biochemical_Supply_Resource rdf:type owl:NamedIndividual .
+:Biochemical_Supply_Resource rdf:type owl:NamedIndividual ;
+                             desc:replacedBy :Reagent_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analsysis
-:Centrality_Analsysis rdf:type owl:NamedIndividual .
+:Centrality_Analsysis rdf:type owl:NamedIndividual ;
+                      desc:replacedBy :Centrality_Analysis .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analysis
@@ -3252,15 +3867,18 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Chart
-:Clinical_Chart rdf:type owl:NamedIndividual .
+:Clinical_Chart rdf:type owl:NamedIndividual ;
+                desc:replacedBy :Narrative_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Charts
-:Clinical_Charts rdf:type owl:NamedIndividual .
+:Clinical_Charts rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Clinical_Chart .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Data
-:Clinical_Data rdf:type owl:NamedIndividual .
+:Clinical_Data rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Clinical_Care_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Research_Data
@@ -3268,7 +3886,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Trial_Data
-:Clinical_Trial_Data rdf:type owl:NamedIndividual .
+:Clinical_Trial_Data rdf:type owl:NamedIndividual ;
+                     desc:replacedBy :Clinical_Research_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
@@ -3276,15 +3895,18 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Connectivity_Matrix
-:Connectivity_Matrix rdf:type owl:NamedIndividual .
+:Connectivity_Matrix rdf:type owl:NamedIndividual ;
+                     desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuous_Data
-:Continuous_Data rdf:type owl:NamedIndividual .
+:Continuous_Data rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Distribution
-:Data_Distribution rdf:type owl:NamedIndividual .
+:Data_Distribution rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Editor
@@ -3292,11 +3914,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Object
-:Data_Object rdf:type owl:NamedIndividual .
+:Data_Object rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Repository
-:Data_Repository rdf:type owl:NamedIndividual .
+:Data_Repository rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Database .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Resource
@@ -3304,11 +3928,14 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage
-:Data_Storage rdf:type owl:NamedIndividual .
+:Data_Storage rdf:type owl:NamedIndividual ;
+              desc:replacedBy :Data_Storage_Repository ,
+                              :Data_Storage_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Repository
-:Data_Storage_Repository rdf:type owl:NamedIndividual .
+:Data_Storage_Repository rdf:type owl:NamedIndividual ;
+                         desc:replacedBy :Database_Software .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Service
@@ -3320,7 +3947,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transforms
-:Data_Transforms rdf:type owl:NamedIndividual .
+:Data_Transforms rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Data_Transform .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database
@@ -3336,11 +3964,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Discrete_Data
-:Discrete_Data rdf:type owl:NamedIndividual .
+:Discrete_Data rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document
-:Document rdf:type owl:NamedIndividual .
+:Document rdf:type owl:NamedIndividual ;
+          desc:replacedBy :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Dynamic_Model
@@ -3348,15 +3978,18 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#EDA
-:EDA rdf:type owl:NamedIndividual .
+:EDA rdf:type owl:NamedIndividual ;
+     desc:replacedBy :Exploratory_Data_Analysis .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Experimental_Measurment
-:Experimental_Measurment rdf:type owl:NamedIndividual .
+:Experimental_Measurment rdf:type owl:NamedIndividual ;
+                         desc:replacedBy :Molecular_and_Cellular_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Expertise
-:Expertise rdf:type owl:NamedIndividual .
+:Expertise rdf:type owl:NamedIndividual ;
+           desc:replacedBy :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exploratory_Data_Analysis
@@ -3364,11 +3997,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Four_Dimensional_Data
-:Four_Dimensional_Data rdf:type owl:NamedIndividual .
+:Four_Dimensional_Data rdf:type owl:NamedIndividual ;
+                       desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Free_Text
-:Free_Text rdf:type owl:NamedIndividual .
+:Free_Text rdf:type owl:NamedIndividual ;
+           desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Funding_Resource
@@ -3380,15 +4015,18 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewers
-:Graph_Viewers rdf:type owl:NamedIndividual .
+:Graph_Viewers rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Graph_Viewer .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heterogeneous_Funding_Resource
-:Heterogeneous_Funding_Resource rdf:type owl:NamedIndividual .
+:Heterogeneous_Funding_Resource rdf:type owl:NamedIndividual ;
+                                desc:replacedBy :Funding_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#High_Dimensional_Data
-:High_Dimensional_Data rdf:type owl:NamedIndividual .
+:High_Dimensional_Data rdf:type owl:NamedIndividual ;
+                       desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
@@ -3396,7 +4034,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tools
-:Integration_and_Interoperability_Tools rdf:type owl:NamedIndividual .
+:Integration_and_Interoperability_Tools rdf:type owl:NamedIndividual ;
+                                        desc:replacedBy :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tool
@@ -3404,11 +4043,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tools
-:Interactive_Tools rdf:type owl:NamedIndividual .
+:Interactive_Tools rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Interactive_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Environment
-:Knowledge_Environment rdf:type owl:NamedIndividual .
+:Knowledge_Environment rdf:type owl:NamedIndividual ;
+                       desc:replacedBy :Structured_Knowledge_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledgebase
@@ -3424,11 +4065,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Redistribution
-:License_and_Terms_for_Redistribution rdf:type owl:NamedIndividual .
+:License_and_Terms_for_Redistribution rdf:type owl:NamedIndividual ;
+                                      desc:replacedBy :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Use
-:License_and_Terms_for_Use rdf:type owl:NamedIndividual .
+:License_and_Terms_for_Use rdf:type owl:NamedIndividual ;
+                           desc:replacedBy :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tool
@@ -3436,7 +4079,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
-:Linear_Algebra_Tools rdf:type owl:NamedIndividual .
+:Linear_Algebra_Tools rdf:type owl:NamedIndividual ;
+                      desc:replacedBy :Linear_Algebra_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewer
@@ -3444,23 +4088,28 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewers
-:Manifold_Viewers rdf:type owl:NamedIndividual .
+:Manifold_Viewers rdf:type owl:NamedIndividual ;
+                  desc:replacedBy :Manifold_Viewer .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Matrix
-:Matrix rdf:type owl:NamedIndividual .
+:Matrix rdf:type owl:NamedIndividual ;
+        desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Modular_Component
-:Modular_Component rdf:type owl:NamedIndividual .
+:Modular_Component rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectories
-:Molecular_Trajectories rdf:type owl:NamedIndividual .
+:Molecular_Trajectories rdf:type owl:NamedIndividual ;
+                        desc:replacedBy :Molecular_Trajectory_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectory_Data
-:Molecular_Trajectory_Data rdf:type owl:NamedIndividual .
+:Molecular_Trajectory_Data rdf:type owl:NamedIndividual ;
+                           desc:replacedBy :Dynamic_Model .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
@@ -3476,7 +4125,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Editor
-:Network_Editor rdf:type owl:NamedIndividual .
+:Network_Editor rdf:type owl:NamedIndividual ;
+                desc:replacedBy :Data_Editor .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Model
@@ -3484,15 +4134,18 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_model
-:Network_model rdf:type owl:NamedIndividual .
+:Network_model rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Network_Model .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Non_Computational_Service
-:Non_Computational_Service rdf:type owl:NamedIndividual .
+:Non_Computational_Service rdf:type owl:NamedIndividual ;
+                           desc:replacedBy :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Nonhuman_Data
-:Nonhuman_Data rdf:type owl:NamedIndividual .
+:Nonhuman_Data rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Clinical_Research_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrator
@@ -3500,7 +4153,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrators
-:Numerical_Integrators rdf:type owl:NamedIndividual .
+:Numerical_Integrators rdf:type owl:NamedIndividual ;
+                       desc:replacedBy :Numerical_Integrator .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Method
@@ -3508,11 +4162,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Methods
-:Numerical_Methods rdf:type owl:NamedIndividual .
+:Numerical_Methods rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Numerical_Method .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pass_Through_License
-:Pass_Through_License rdf:type owl:NamedIndividual .
+:Pass_Through_License rdf:type owl:NamedIndividual ;
+                      desc:replacedBy :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physico-Chemical_Model
@@ -3524,19 +4180,23 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portlet_Component
-:Portlet_Component rdf:type owl:NamedIndividual .
+:Portlet_Component rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Portal .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance
-:Provenance rdf:type owl:NamedIndividual .
+:Provenance rdf:type owl:NamedIndividual ;
+            desc:replacedBy :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance_and_Intellectual_Property
-:Provenance_and_Intellectual_Property rdf:type owl:NamedIndividual .
+:Provenance_and_Intellectual_Property rdf:type owl:NamedIndividual ;
+                                      desc:replacedBy :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Publication
-:Publication rdf:type owl:NamedIndividual .
+:Publication rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
@@ -3544,7 +4204,8 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Supplies
-:Research_Supplies rdf:type owl:NamedIndividual .
+:Research_Supplies rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Resource
@@ -3552,19 +4213,23 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
-:Scalar_Data rdf:type owl:NamedIndividual .
+:Scalar_Data rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scripting_Language_and_Environment
-:Scripting_Language_and_Environment rdf:type owl:NamedIndividual .
+:Scripting_Language_and_Environment rdf:type owl:NamedIndividual ;
+                                    desc:replacedBy :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Semantic_Network
-:Semantic_Network rdf:type owl:NamedIndividual .
+:Semantic_Network rdf:type owl:NamedIndividual ;
+                  desc:replacedBy :Knowledgebase .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Server
-:Server rdf:type owl:NamedIndividual .
+:Server rdf:type owl:NamedIndividual ;
+        desc:replacedBy :Computational_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Resource
@@ -3572,31 +4237,39 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Distribution
-:Software_Distribution rdf:type owl:NamedIndividual .
+:Software_Distribution rdf:type owl:NamedIndividual ;
+                       desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Documentation
-:Software_Documentation rdf:type owl:NamedIndividual .
+:Software_Documentation rdf:type owl:NamedIndividual ;
+                        desc:replacedBy :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_development
-:Software_development rdf:type owl:NamedIndividual .
+:Software_development rdf:type owl:NamedIndividual ;
+                      desc:replacedBy activity:Software_Development ,
+                                      :Software_Development_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Source_Code
-:Source_Code rdf:type owl:NamedIndividual .
+:Source_Code rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Standalone_Application
-:Standalone_Application rdf:type owl:NamedIndividual .
+:Standalone_Application rdf:type owl:NamedIndividual ;
+                        desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stochastic_Data
-:Stochastic_Data rdf:type owl:NamedIndividual .
+:Stochastic_Data rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_Data
-:Structured_Data rdf:type owl:NamedIndividual .
+:Structured_Data rdf:type owl:NamedIndividual ;
+                 desc:replacedBy :Structured_File .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_File
@@ -3608,11 +4281,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Summarization
-:Summarization rdf:type owl:NamedIndividual .
+:Summarization rdf:type owl:NamedIndividual ;
+               desc:replacedBy :Language_Summarization .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Support
-:Support rdf:type owl:NamedIndividual .
+:Support rdf:type owl:NamedIndividual ;
+         desc:replacedBy :Technical_Support .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
@@ -3620,11 +4295,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Three_Dimensional_Data
-:Three_Dimensional_Data rdf:type owl:NamedIndividual .
+:Three_Dimensional_Data rdf:type owl:NamedIndividual ;
+                        desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toolkit
-:Toolkit rdf:type owl:NamedIndividual .
+:Toolkit rdf:type owl:NamedIndividual ;
+         desc:replacedBy :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorial
@@ -3632,11 +4309,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorials
-:Tutorials rdf:type owl:NamedIndividual .
+:Tutorials rdf:type owl:NamedIndividual ;
+           desc:replacedBy :Tutorial .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Data
-:Unstructured_Data rdf:type owl:NamedIndividual .
+:Unstructured_Data rdf:type owl:NamedIndividual ;
+                   desc:replacedBy :Unstructured_Knowledge_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Knowledge_Resource
@@ -3644,63 +4323,58 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vector_Data
-:Vector_Data rdf:type owl:NamedIndividual .
+:Vector_Data rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Service
-:Web_Service rdf:type owl:NamedIndividual .
+:Web_Service rdf:type owl:NamedIndividual ;
+             desc:replacedBy :Computational_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#physico_chemical_models
-:physico_chemical_models rdf:type owl:NamedIndividual .
-
-
-###  http://www.w3.org/TR/skos-reference/
-<http://www.w3.org/TR/skos-reference/> rdf:type owl:NamedIndividual ,
-                                                protege:ExternalResource .
+:physico_chemical_models rdf:type owl:NamedIndividual ;
+                         desc:replacedBy :Physico-Chemical_Model .
 
 
 #################################################################
 #    Annotations
 #################################################################
 
-activity:Heath_Services owl:deprecated "true"^^xsd:boolean ;
-                        skos:historyNote "Deprecated for BRO v2.7" ;
+activity:Heath_Services desc:definition "As defined in http://en.wikipedia.org/wiki/Health_services_research" ;
                         rdfs:label "Heath Services" ;
-                        desc:definition "As defined in http://en.wikipedia.org/wiki/Health_services_research" ;
-                        desc:replacedBy activity:Health_Services .
+                        owl:deprecated "true"^^xsd:boolean ;
+                        skos:historyNote "Deprecated for BRO v2.7" .
 
 
-activity:Novel_Therapeutics desc:replacedBy activity:Therapeutics ;
-                            desc:definition "Innovative therapeutics (http://en.wiktionary.org/wiki/therapeutics)" ;
-                            skos:historyNote "Deprecated for BRO v2.7" ;
+activity:Novel_Therapeutics desc:definition "Innovative therapeutics (http://en.wiktionary.org/wiki/therapeutics)" ;
                             rdfs:label "Novel Therapeutics" ;
-                            owl:deprecated "true"^^xsd:boolean .
+                            owl:deprecated "true"^^xsd:boolean ;
+                            skos:historyNote "Deprecated for BRO v2.7" .
 
 
-desc:definition rdfs:label "definition" ,
-                           "Definition" .
+desc:definition rdfs:label "Definition" .
 
 
 desc:replacedBy rdfs:label "replacedBy" .
 
 
-:Anatomic_Atlas owl:deprecated "true"^^xsd:boolean ;
-                skos:historyNote "Deprecated for BRO v3.0" ;
+:Anatomic_Atlas desc:definition "A collection of tables, charts, or plates to illustrate anatomical structures." ;
                 rdfs:label "Anatomic Atlas" ;
-                desc:replacedBy :Atlas ;
-                desc:definition "A collection of tables, charts, or plates to illustrate anatomical structures." .
+                owl:deprecated "true"^^xsd:boolean ;
+                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Atlas rdfs:label "Atlas" ;
-       desc:definition "A resource that provides anatomical data represented by spatially indexed anatomical maps." .
+:Atlas rdfs:comment "Level of detail is to specific" ;
+       rdfs:label "DEPRECATED Atlas" ;
+       rdfs:seeAlso :I2002 ;
+       owl:deprecated "true"^^xsd:boolean .
 
 
 :Automated_Natural_Language_Output desc:definition "Data file resulting from natural language processing." ;
+                                   rdfs:label "Automated Natural Language Output" ;
                                    owl:deprecated "true"^^xsd:boolean ;
-                                   skos:historyNote "Deprecated for BRO v3.0" ;
-                                   desc:replacedBy :Natural_Language_Processing ;
-                                   rdfs:label "Automated Natural Language Output" .
+                                   skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Averaging_and_Agglomeration desc:definition "Resource that provides access to software, applications, or toolkits that performs signal processing by repeated measures of the signal and then calculates the expected value of the data set." ;
@@ -3708,114 +4382,106 @@ desc:replacedBy rdfs:label "replacedBy" .
 
 
 :Averaging_and_Aglomeration desc:definition "Resource that provides access to software, applications, or toolkits that performs signal processing by repeated measures of the signal and then calculates the expected value of the data set." ;
+                            rdfs:label "Averaging and Aglomeration" ;
                             owl:deprecated "true"^^xsd:boolean ;
-                            desc:replacedBy :Averaging_and_Agglomeration ;
-                            skos:historyNote "Deprecated for BRO v3.0" ;
-                            rdfs:label "Averaging and Aglomeration" .
+                            skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Backup_Archive_Service rdfs:label "Backup Archive Service" ;
-                        desc:definition "A resource that provides long-term storage for back-up copies of files. " .
+:Backup_Archive_Service desc:definition "A resource that provides long-term storage for back-up copies of files. " ;
+                        rdfs:label "Backup Archive Service" .
 
 
-:Backup_Archives_and_Disaster_Recovery desc:replacedBy :Backup_Archive_Service ;
-                                       desc:definition "A resource that provides long-term storage for backup copies of files or for files that are no longer in active use, and the ability to retrieve backed up content in the event of a disaster that impacts the system in question," ;
+:Backup_Archives_and_Disaster_Recovery desc:definition "A resource that provides long-term storage for backup copies of files or for files that are no longer in active use, and the ability to retrieve backed up content in the event of a disaster that impacts the system in question," ;
                                        rdfs:label "Backup Archives and Disaster Recovery" ;
-                                       skos:historyNote "Deprecated for BRO v3.0" ;
-                                       desc:replacedBy :Disaster_Recovery_Service ;
-                                       owl:deprecated "true"^^xsd:boolean .
+                                       owl:deprecated "true"^^xsd:boolean ;
+                                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Bibliographic_Resource rdfs:label "Bibliographic Resource" ;
-                        desc:replacedBy :Bibliographic_Resource ;
-                        desc:definition "A resource that contains information about or access to published sources." .
+:Bibliographic_Resource rdfs:comment "level of detail is to specific" ;
+                        rdfs:label "DEPRECATED Bibliographic Resource" ;
+                        rdfs:seeAlso :I2002 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
-:Binary_Executable skos:historyNote "Deprecated for BRO v3.0" ;
-                   desc:definition "Resource that provides access to Software that contains data encoded in binary form and contains instructions for the computer to perform a given set of tasks." ;
+:Binary_Executable desc:definition "Resource that provides access to Software that contains data encoded in binary form and contains instructions for the computer to perform a given set of tasks." ;
                    rdfs:label "Binary Executable" ;
-                   desc:replacedBy :Data_Resource ;
-                   owl:deprecated "true"^^xsd:boolean .
+                   owl:deprecated "true"^^xsd:boolean ;
+                   skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Biochemical_Supply_Resource rdfs:label "Biochemical Supply Resource" ;
-                             skos:historyNote "Deprecated for BRO v2.7" ;
-                             desc:definition "Biochemical (http://en.wikipedia.org/wiki/Biochemistry) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
-                             desc:replacedBy :Reagent_Resource ;
-                             owl:deprecated "true"^^xsd:boolean .
+:Biochemical_Supply_Resource desc:definition "Biochemical (http://en.wikipedia.org/wiki/Biochemistry) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
+                             rdfs:label "Biochemical Supply Resource" ;
+                             owl:deprecated "true"^^xsd:boolean ;
+                             skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Centrality_Analsysis desc:definition "A Resource that provides access to a graph algorithm that uses ranking of network elements to identify the importance of elements in a network." ;
-                      skos:historyNote "Deprecated for BRO v3.0" ;
-                      owl:deprecated "true"^^xsd:boolean ;
                       rdfs:label "Centrality Analsysis" ;
-                      desc:replacedBy :Centrality_Analysis .
+                      owl:deprecated "true"^^xsd:boolean ;
+                      skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Centrality_Analysis desc:definition "A Resource that provides access to a graph algorithm that uses ranking of network elements to identify the importance of elements in a network." ;
                      rdfs:label "Centrality Analysis" .
 
 
-:Clinical_Care_Data desc:definition "A resource that provides any type of data obtained in the course of caring for humans outside of measurements obtained in clinical trials." ;
-                    rdfs:label "Clinical Care Data" .
+:Clinical_Care_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                    rdfs:label "DEPRECATED Clinical Care Data" ;
+                    rdfs:seeAlso :Data_Resource ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 :Clinical_Chart desc:definition """**previously was called Clinical_Charts_eg_Demographics
 we think this should be deleted""" ;
-                desc:replacedBy :Narrative_Resource ;
-                skos:historyNote "Deprecated for BRO v3.0" ;
                 rdfs:label "Clinical Chart" ;
-                owl:deprecated "true"^^xsd:boolean .
+                owl:deprecated "true"^^xsd:boolean ;
+                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Clinical_Charts rdfs:label "Clinical Charts" ;
-                 owl:deprecated "true"^^xsd:boolean ;
-                 skos:historyNote "Deprecated for BRO v2.7" ;
-                 desc:definition """**previously was called Clinical_Charts_eg_Demographics
+:Clinical_Charts desc:definition """**previously was called Clinical_Charts_eg_Demographics
 we think this should be deleted""" ;
-                 desc:replacedBy :Clinical_Chart .
+                 rdfs:label "Clinical Charts" ;
+                 owl:deprecated "true"^^xsd:boolean ;
+                 skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Clinical_Data skos:historyNote "Deprecated for BRO v3.0" ;
-               desc:definition "Any type of data obtained in the course of caring for humans." ;
+:Clinical_Data desc:definition "Any type of data obtained in the course of caring for humans." ;
                rdfs:label "Clinical Data" ;
                owl:deprecated "true"^^xsd:boolean ;
-               desc:replacedBy :Clinical_Care_Data .
+               skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Clinical_Research_Data rdfs:label "Clinical Research Data" ;
-                        desc:definition "A resource that provides data on clinical trials and outcomes studies. " .
+:Clinical_Research_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                        rdfs:label "DEPRECATED Clinical Research Data" ;
+                        rdfs:seeAlso :Data_Resource ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
-:Clinical_Trial_Data owl:deprecated "true"^^xsd:boolean ;
-                     skos:historyNote "Deprecated for BRO v3.0" ;
+:Clinical_Trial_Data desc:definition "A resource the provides access to data about subjects in a clinical trial; for example demographics, medical history, labs, procedures, etc." ;
                      rdfs:label "Clinical Trial Data" ;
-                     desc:replacedBy :Clinical_Research_Data ;
-                     desc:definition "A resource the provides access to data about subjects in a clinical trial; for example demographics, medical history, labs, procedures, etc." .
+                     owl:deprecated "true"^^xsd:boolean ;
+                     skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Computational_Service desc:definition "A resource that provides support for computer-related services such as database hosting and backup and disaster recovery." ;
                        rdfs:label "Computational Service" .
 
 
-:Connectivity_Matrix desc:replacedBy :Data_Resource ;
-                     skos:historyNote "Deprecated for BRO v3.0" ;
-                     desc:definition "A matrix is a subset of a network that contains node-edge-node connections of interest and are represented as a matrix." ;
+:Connectivity_Matrix desc:definition "A matrix is a subset of a network that contains node-edge-node connections of interest and are represented as a matrix." ;
+                     rdfs:label "Connectivity Matrix" ;
                      owl:deprecated "true"^^xsd:boolean ;
-                     rdfs:label "Connectivity Matrix" .
+                     skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Continuous_Data desc:definition "A data object that has infinite numbers of possible values. Quantitative data is often continuous such as weight, blood pressure." ;
-                 desc:replacedBy :Data_Resource ;
-                 skos:historyNote "Deprecated for BRO v3.0" ;
+                 rdfs:label "Continuous Data" ;
                  owl:deprecated "true"^^xsd:boolean ;
-                 rdfs:label "Continuous Data" .
+                 skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Data_Distribution desc:definition "A resource that provides data or allows users to access and utilize data" ;
-                   owl:deprecated "true"^^xsd:boolean ;
                    rdfs:label "Data Distribution" ;
-                   desc:replacedBy :Data_Resource ;
+                   owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
@@ -3824,36 +4490,33 @@ we think this should be deleted""" ;
 
 
 :Data_Object desc:definition "A resource that provides computational building blocks for complex data types, individual facts, statistics or items of information." ;
-             skos:historyNote "Deprecated for BRO v3.0" ;
-             desc:replacedBy :Data_Resource ;
              rdfs:label "Data Object" ;
-             owl:deprecated "true"^^xsd:boolean .
+             owl:deprecated "true"^^xsd:boolean ;
+             skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Data_Repository owl:deprecated "true"^^xsd:boolean ;
-                 skos:historyNote "Deprecated for BRO v3.0" ;
+:Data_Repository desc:definition "A resource that provides data storage and maintenance, such as a database which accepts submissions of similar data for storage and use. For example, the cell centered database (CCDB) encourages submissions of anatomical images that will increase its' holdings." ;
                  rdfs:label "Data Repository" ;
-                 desc:replacedBy :Database ;
-                 desc:definition "A resource that provides data storage and maintenance, such as a database which accepts submissions of similar data for storage and use. For example, the cell centered database (CCDB) encourages submissions of anatomical images that will increase its' holdings." .
+                 owl:deprecated "true"^^xsd:boolean ;
+                 skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Data_Resource desc:definition "A resource that provides individual facts, statistics or items of information." ;
-               rdfs:label "Data Resource" .
+:Data_Resource rdfs:comment "there is no clear difference between Data Resource and Information Resource" ;
+               rdfs:label "DEPRECATED Data Resource" ;
+               rdfs:seeAlso :I1001 ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
-:Data_Storage skos:historyNote "Deprecated for BRO v2.7" ;
-              owl:deprecated "true"^^xsd:boolean ;
-              desc:definition "thing stores data" ;
-              desc:replacedBy :Data_Storage_Service ;
+:Data_Storage desc:definition "thing stores data" ;
               rdfs:label "Data Storage" ;
-              desc:replacedBy :Data_Storage_Repository .
+              owl:deprecated "true"^^xsd:boolean ;
+              skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Data_Storage_Repository desc:replacedBy :Database_Software ;
-                         skos:historyNote "Deprecated for BRO v3.0" ;
-                         desc:definition "A resource that provides access through the Internet or archive to formatted digital or textual data." ;
+:Data_Storage_Repository desc:definition "A resource that provides access through the Internet or archive to formatted digital or textual data." ;
+                         rdfs:label "Data Storage Repository" ;
                          owl:deprecated "true"^^xsd:boolean ;
-                         rdfs:label "Data Storage Repository" .
+                         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Data_Storage_Service desc:definition "A resource that provides data storage and maintenance, such as a database that accepts submissions of similar data for storage and use. For example, the cell centered database (CCDB) encourages submissions of anatomical images that will increase its' holdings." ;
@@ -3864,66 +4527,63 @@ we think this should be deleted""" ;
                 rdfs:label "Data Transform" .
 
 
-:Data_Transforms skos:historyNote "Deprecated for BRO v2.7" ;
+:Data_Transforms desc:definition "General data transformations" ;
+                 rdfs:label "Data Transforms" ;
                  owl:deprecated "true"^^xsd:boolean ;
-                 desc:definition "General data transformations" ;
-                 desc:replacedBy :Data_Transform ;
-                 rdfs:label "Data Transforms" .
+                 skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Database rdfs:label "Database" ;
-          skos:altLabel "Data Repository" ;
-          desc:definition "A data resource that delivers its' data by way of a 'database', which involves a structured data store and interrogation methods for data selection." .
+:Database rdfs:comment "changed definition and IRI" ;
+          rdfs:label "DEPRECATED Database" ;
+          rdfs:seeAlso :I3005 ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
-:Database_Software rdfs:label "Database Software" ;
-                   desc:definition "A resource that provides access to software, applications, or toolkits that are used in the development of database management systems." .
+:Database_Software desc:definition "A resource that provides access to software, applications, or toolkits that are used in the development of database management systems." ;
+                   rdfs:label "Database Software" .
 
 
 :Disaster_Recovery_Service desc:definition "A resource that provides the ability to retrieve archived content in the event of a disaster that impacts the system in question. " ;
                            rdfs:label "Disaster Recovery Service" .
 
 
-:Discrete_Data rdfs:label "Discrete Data" ;
-               skos:historyNote "Deprecated for BRO v3.0" ;
-               desc:replacedBy :Data_Resource ;
+:Discrete_Data desc:definition "A data object that consists of separate, but finite set of values. " ;
+               rdfs:label "Discrete Data" ;
                owl:deprecated "true"^^xsd:boolean ;
-               desc:definition "A data object that consists of separate, but finite set of values. " .
+               skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Document owl:deprecated "true"^^xsd:boolean ;
-          skos:historyNote "Deprecated for BRO v3.0" ;
+:Document desc:definition "A resource that provides any kind written item, as a book, article, or letter, esp. of a factual or informative nature." ;
           rdfs:label "Document" ;
-          desc:replacedBy :Bibliographic_Resource ;
-          desc:definition "A resource that provides any kind written item, as a book, article, or letter, esp. of a factual or informative nature." .
+          owl:deprecated "true"^^xsd:boolean ;
+          skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Dynamic_Model desc:definition "A resource that provides a simplified or symbolic representation representing the states of a system or network over time. " ;
-               rdfs:label "Dynamic Model" .
+:Dynamic_Model rdfs:comment "level of detail is too specific" ;
+               rdfs:label "DEPRECATED Dynamic Model" ;
+               rdfs:seeAlso :Computational_Model ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
-:EDA owl:deprecated "true"^^xsd:boolean ;
-     desc:definition "Resource that provides access to software, applications, or toolkits that performs exploratory data analysis methods." ;
+:EDA desc:definition "Resource that provides access to software, applications, or toolkits that performs exploratory data analysis methods." ;
      rdfs:label "EDA" ;
-     desc:replacedBy :Exploratory_Data_Analysis ;
+     owl:deprecated "true"^^xsd:boolean ;
      skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Environmental_Health_and_Safety rdfs:label "Environmental Health and Safety Resource" .
 
 
-:Experimental_Measurment owl:deprecated "true"^^xsd:boolean ;
-                         desc:definition "A resource that provides access to data from individual experiments." ;
+:Experimental_Measurment desc:definition "A resource that provides access to data from individual experiments." ;
                          rdfs:label "Experimental Measurement" ;
-                         desc:replacedBy :Molecular_and_Cellular_Data ;
+                         owl:deprecated "true"^^xsd:boolean ;
                          skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Expertise rdfs:label "Expertise" ;
+:Expertise desc:definition "A resource as an expert (http://en.wikipedia.org/wiki/Expert) who can answer questions, provide technical assistance, etc." ;
+           rdfs:label "Expertise" ;
            owl:deprecated "true"^^xsd:boolean ;
-           skos:historyNote "Deprecated for BRO v2.7" ;
-           desc:replacedBy :Resource ;
-           desc:definition "A resource as an expert (http://en.wikipedia.org/wiki/Expert) who can answer questions, provide technical assistance, etc." .
+           skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Exploratory_Data_Analysis desc:definition "Resource that provides access to software, applications, or toolkits that performs exploratory data analysis methods." ;
@@ -3932,202 +4592,184 @@ we think this should be deleted""" ;
 
 :Four_Dimensional_Data desc:definition "3-D models evolving in time" ;
                        rdfs:label "Four Dimensional Data" ;
-                       desc:replacedBy :Data_Resource ;
-                       skos:historyNote "Deprecated for BRO v3.0" ;
-                       owl:deprecated "true"^^xsd:boolean .
+                       owl:deprecated "true"^^xsd:boolean ;
+                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Free_Text desc:definition "Unstructured data in a format of alphanumeric characters." ;
-           desc:replacedBy :Data_Resource ;
            rdfs:label "Free Text" ;
            owl:deprecated "true"^^xsd:boolean ;
            skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Funding_Resource desc:definition "A resource that provides monetary support in the form of grants, contracts, or gifts for research, training, or education." ;
-                  rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                  skos:editorialNote "pending final vetting: are more subclasses needed, e.g. Foreign_Funding_Resource  and Local_Funding_Resource" ;
-                  rdfs:label "Funding Resource" .
+:Funding_Resource rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                               "Rename and change of IRI and definition" ;
+                  rdfs:label "DEPRECATED Funding Resource" ;
+                  rdfs:seeAlso :F1001 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
-:Graph_Viewer rdfs:label "Graph Viewer" ;
-              desc:definition "Resource that provides access to general graph visualization methods." .
+:Graph_Viewer desc:definition "Resource that provides access to general graph visualization methods." ;
+              rdfs:label "Graph Viewer" .
 
 
-:Graph_Viewers owl:deprecated "true"^^xsd:boolean ;
+:Graph_Viewers desc:definition "General graph visualization resources" ;
                rdfs:label "Graph Viewers" ;
-               desc:definition "General graph visualization resources" ;
-               desc:replacedBy :Graph_Viewer ;
+               owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Heterogeneous_Funding_Resource desc:definition "" ;
                                 rdfs:label "Heterogeneous Funding Resource" ;
-                                skos:historyNote "Deprecated for BRO v3.0" ;
-                                desc:replacedBy :Funding_Resource ;
-                                owl:deprecated "true"^^xsd:boolean .
+                                owl:deprecated "true"^^xsd:boolean ;
+                                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:High_Dimensional_Data skos:historyNote "Deprecated for BRO v3.0" ;
-                       desc:definition "Discrete data that contains many variables. " ;
-                       desc:replacedBy :Data_Resource ;
+:High_Dimensional_Data desc:definition "Discrete data that contains many variables. " ;
+                       rdfs:label "High Dimensional Data" ;
                        owl:deprecated "true"^^xsd:boolean ;
-                       rdfs:label "High Dimensional Data" .
+                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Integration_and_Interoperability_Tool rdfs:label "Integration and Interoperability Tool" ;
-                                       desc:definition "A resource that provides access to software or application that is used to enable (i) interoperability and association of data and/or (ii) pipeline of online tools." .
+:Integration_and_Interoperability_Tool desc:definition "A resource that provides access to software or application that is used to enable (i) interoperability and association of data and/or (ii) pipeline of online tools." ;
+                                       rdfs:label "Integration and Interoperability Tool" .
 
 
-:Integration_and_Interoperability_Tools rdfs:label "Integration and Interoperability Tools" ;
-                                        desc:replacedBy :Integration_and_Interoperability_Tool ;
+:Integration_and_Interoperability_Tools desc:definition "These are resources that allow tool interoperability and resource integration and data mediation." ;
+                                        rdfs:label "Integration and Interoperability Tools" ;
                                         owl:deprecated "true"^^xsd:boolean ;
-                                        skos:historyNote "Deprecated for BRO v2.7" ;
-                                        desc:definition "These are resources that allow tool interoperability and resource integration and data mediation." .
+                                        skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Interactive_Tool rdfs:label "Interactive Tool" ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that are used to enable user input of data and display corresponding information." .
+:Interactive_Tool desc:definition "Resource that provides access to software, applications, or toolkits that are used to enable user input of data and display corresponding information." ;
+                  rdfs:label "Interactive Tool" .
 
 
 :Interactive_Tools rdfs:label "Interactive Tools" ;
-                   skos:historyNote "Deprecated for BRO v2.7" ;
                    owl:deprecated "true"^^xsd:boolean ;
-                   desc:replacedBy :Interactive_Tool .
+                   skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Knowledge_Environment skos:historyNote "Deprecated for BRO v3.0" ;
+:Knowledge_Environment desc:definition "A resource that provides access to collaborative knowledge building, decision making, inference or discovery tools." ;
                        rdfs:label "Knowledge Environment" ;
-                       desc:replacedBy :Structured_Knowledge_Resource ;
                        owl:deprecated "true"^^xsd:boolean ;
-                       desc:definition "A resource that provides access to collaborative knowledge building, decision making, inference or discovery tools." .
+                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Knowledgebase rdfs:label "Knowledgebase" ;
-               desc:definition "A resource that provides access to facts and/or information, often in the form of rules that describe the knowledge in a logically consistent manner. " .
+:Knowledgebase rdfs:comment "no clear difference to Database visible" ;
+               rdfs:label "DEPRECATED Knowledgebase" ;
+               rdfs:seeAlso :I3005 ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
-:Language_Summarization rdfs:label "Language Summarization" ;
-                        desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." .
+:Language_Summarization desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." ;
+                        rdfs:label "Language Summarization" .
 
 
-:License rdfs:label "License" ;
-         desc:definition "A resource that provides access to documented permission to do something, either from a government or under a law or regulation." .
+:License rdfs:comment "level of detail is too specific" ;
+         rdfs:label "DEPRECATED License" ;
+         rdfs:seeAlso :I3016 ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
-:License_and_Terms_for_Redistribution rdfs:label "License and Terms for Redistribution" ;
-                                      skos:historyNote "Deprecated for BRO v3.0" ;
-                                      desc:replacedBy :License ;
+:License_and_Terms_for_Redistribution desc:definition "A license that describes the constraints for sharing the resource." ;
+                                      rdfs:label "License and Terms for Redistribution" ;
                                       owl:deprecated "true"^^xsd:boolean ;
-                                      desc:definition "A license that describes the constraints for sharing the resource." .
+                                      skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:License_and_Terms_for_Use desc:replacedBy :License ;
-                           owl:deprecated "true"^^xsd:boolean ;
-                           skos:historyNote "Deprecated for BRO v3.0" ;
+:License_and_Terms_for_Use desc:definition "A license that describes the constraints for using the resource." ;
                            rdfs:label "License and Terms for Use" ;
-                           desc:definition "A license that describes the constraints for using the resource." .
+                           owl:deprecated "true"^^xsd:boolean ;
+                           skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Linear_Algebra_Tool rdfs:label "Linear Algebra Tool" ;
-                     desc:definition "A resource which provides access to tools or functions that compute linear calculations on vector spaces." .
+:Linear_Algebra_Tool desc:definition "A resource which provides access to tools or functions that compute linear calculations on vector spaces." ;
+                     rdfs:label "Linear Algebra Tool" .
 
 
-:Linear_Algebra_Tools desc:replacedBy :Linear_Algebra_Tool ;
+:Linear_Algebra_Tools rdfs:label "Linear Algebra Tools" ;
                       owl:deprecated "true"^^xsd:boolean ;
-                      skos:historyNote "Deprecated for BRO v2.7" ;
-                      rdfs:label "Linear Algebra Tools" .
+                      skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Manifold_Viewer rdfs:label "Manifold Viewer" ;
-                 desc:definition "Resource that provides access to general (hyper)volume visualization tools (e.g., volume rendering)." .
+:Manifold_Viewer desc:definition "Resource that provides access to general (hyper)volume visualization tools (e.g., volume rendering)." ;
+                 rdfs:label "Manifold Viewer" .
 
 
-:Manifold_Viewers owl:deprecated "true"^^xsd:boolean ;
-                  skos:historyNote "Deprecated for BRO v2.7" ;
-                  desc:replacedBy :Manifold_Viewer ;
-                  desc:definition "General (hyper)volume visualization tools (e.g., volume rendering)." ;
-                  rdfs:label "Manifold Viewers" .
+:Manifold_Viewers desc:definition "General (hyper)volume visualization tools (e.g., volume rendering)." ;
+                  rdfs:label "Manifold Viewers" ;
+                  owl:deprecated "true"^^xsd:boolean ;
+                  skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Matrix rdfs:label "Matrix" ;
-        desc:replacedBy :Data_Resource ;
-        desc:definition "The dimensions of the array in computer memory used to store the data acquired during a pulse sequence. Related to the number of phase-encoding steps, frequency-encoding points and number of slices." ;
-        skos:historyNote "Deprecated for BRO v3.0" ;
-        owl:deprecated "true"^^xsd:boolean .
+:Matrix desc:definition "The dimensions of the array in computer memory used to store the data acquired during a pulse sequence. Related to the number of phase-encoding steps, frequency-encoding points and number of slices." ;
+        rdfs:label "Matrix" ;
+        owl:deprecated "true"^^xsd:boolean ;
+        skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Modular_Component desc:replacedBy :Data_Resource ;
-                   owl:deprecated "true"^^xsd:boolean ;
-                   skos:historyNote "Deprecated for BRO v3.0" ;
+:Modular_Component desc:definition "Resource that provides access to a software component." ;
                    rdfs:label "Modular Component" ;
-                   desc:definition "Resource that provides access to a software component." .
+                   owl:deprecated "true"^^xsd:boolean ;
+                   skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Molecular_Trajectories rdfs:label "Molecular Trajectories" ;
-                        desc:definition "" ;
+:Molecular_Trajectories desc:definition "" ;
+                        rdfs:label "Molecular Trajectories" ;
                         owl:deprecated "true"^^xsd:boolean ;
-                        desc:replacedBy :Molecular_Trajectory_Data ;
                         skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Molecular_Trajectory_Data rdfs:label "Molecular Trajectory Data" ;
+:Molecular_Trajectory_Data desc:definition "A resource that provides access to kinetic information, usually quantitative, regarding biological system components over time." ;
+                           rdfs:label "Molecular Trajectory Data" ;
                            owl:deprecated "true"^^xsd:boolean ;
-                           skos:historyNote "Deprecated for BRO v3.0" ;
-                           desc:replacedBy :Dynamic_Model ;
-                           desc:definition "A resource that provides access to kinetic information, usually quantitative, regarding biological system components over time." .
+                           skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Molecular_and_Cellular_Data rdfs:label "Molecular and Cellular Data" ;
-                             desc:definition "A resource that provides data related to molecular and cellular properties and their relationship to macroscopic parameters. " .
+:Molecular_and_Cellular_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
+                             rdfs:label "DEPRECATED Molecular and Cellular Data" ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
-:Narrative_Resource skos:editorialNote "Work with NIF to define blog and wiki." ;
-                    desc:definition "A resource that provides a literary work, book, story, textual description, or account of events, experiences, or the like, whether true or fictitious.  " ;
-                    rdfs:label "Narrative Resource" .
+:Narrative_Resource rdfs:comment "moved in hierarchy and change in definition and IRI" ;
+                    rdfs:label "DEPRECATED Narrative Resource" ;
+                    rdfs:seeAlso :I3016 ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 :Natural_Language_Processing desc:definition "A resource that provides access to software, library, or application that interprets human (natural) language into a machine-interpretable form." ;
                              rdfs:label "Natural Language Processing" .
 
 
-:Network_Editor owl:deprecated "true"^^xsd:boolean ;
-                skos:historyNote "Deprecated for BRO v3.0" ;
+:Network_Editor desc:definition "Deprecate" ;
                 rdfs:label "Network Editor" ;
-                desc:definition "Deprecate" ;
-                desc:replacedBy :Data_Editor .
+                owl:deprecated "true"^^xsd:boolean ;
+                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Network_Model skos:editorialNote """Proposed children:
-- Bayesian network 
-- Correlation network 
-- Pathway network 
-- Causality network  
-
-e.g. Sage Bionetworks will be publishing exactly these types of models.""" ;
-               desc:definition "A resource that provides access to a computational model representing objects and their relationships." ;
-               rdfs:label "Network Model" .
-
-
-:Network_model owl:deprecated "true"^^xsd:boolean ;
-               rdfs:label "Network model" ;
-               desc:definition "" ;
-               skos:historyNote "Deprecated for BRO v2.7" ;
-               desc:replacedBy :Network_Model .
-
-
-:Non_Computational_Service rdfs:label "Non Computational Service" ;
-                           desc:definition "Biomedical Resources which are not predominantly computing (http://en.wikipedia.org/wiki/Computing) in nature." ;
-                           skos:historyNote "Deprecated for BRO v2.7" ;
-                           desc:replacedBy :Resource ;
-                           owl:deprecated "true"^^xsd:boolean .
-
-
-:Nonhuman_Data rdfs:label "Nonhuman Data" ;
-               desc:definition "Clinical data that is not derived from a person." ;
-               skos:historyNote "Deprecated for BRO v3.0" ;
-               desc:replacedBy :Clinical_Research_Data ;
+:Network_Model rdfs:comment "level of detail is too specific" ;
+               rdfs:label "DEPRECATED Network Model" ;
+               rdfs:seeAlso :Computational_Model ;
                owl:deprecated "true"^^xsd:boolean .
+
+
+:Network_model desc:definition "" ;
+               rdfs:label "Network model" ;
+               owl:deprecated "true"^^xsd:boolean ;
+               skos:historyNote "Deprecated for BRO v2.7" .
+
+
+:Non_Computational_Service desc:definition "Biomedical Resources which are not predominantly computing (http://en.wikipedia.org/wiki/Computing) in nature." ;
+                           rdfs:label "Non Computational Service" ;
+                           owl:deprecated "true"^^xsd:boolean ;
+                           skos:historyNote "Deprecated for BRO v2.7" .
+
+
+:Nonhuman_Data desc:definition "Clinical data that is not derived from a person." ;
+               rdfs:label "Nonhuman Data" ;
+               owl:deprecated "true"^^xsd:boolean ;
+               skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Numerical_Integrator desc:definition "Resource that provides access to tools or functions that calculate the numerical value of a definite integral." ;
@@ -4135,105 +4777,96 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" ;
 
 
 :Numerical_Integrators rdfs:label "Numerical Integrators" ;
-                       desc:replacedBy :Numerical_Integrator ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Numerical_Method rdfs:label "Numerical Method" ;
-                  desc:definition "Resource that provides access to methods of numerical analysis or computational tools  (ala, GAMS: http://gams.nist.gov/)." .
+:Numerical_Method desc:definition "Resource that provides access to methods of numerical analysis or computational tools  (ala, GAMS: http://gams.nist.gov/)." ;
+                  rdfs:label "Numerical Method" .
 
 
-:Numerical_Methods rdfs:label "Numerical Methods" ;
-                   desc:replacedBy :Numerical_Method ;
-                   skos:historyNote "Deprecated for BRO v2.7" ;
-                   desc:definition "General numerical modeling and computational tools (ala, GAMS: http://gams.nist.gov/)" ;
-                   owl:deprecated "true"^^xsd:boolean .
+:Numerical_Methods desc:definition "General numerical modeling and computational tools (ala, GAMS: http://gams.nist.gov/)" ;
+                   rdfs:label "Numerical Methods" ;
+                   owl:deprecated "true"^^xsd:boolean ;
+                   skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Pass_Through_License desc:replacedBy :License ;
-                      desc:definition "A license that grants the right of usage from a third party distributor to the end user." ;
-                      skos:historyNote "Deprecated for BRO v3.0" ;
+:Pass_Through_License desc:definition "A license that grants the right of usage from a third party distributor to the end user." ;
+                      rdfs:label "Pass Through License" ;
                       owl:deprecated "true"^^xsd:boolean ;
-                      rdfs:label "Pass Through License" .
+                      skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Physico-Chemical_Model rdfs:label "Physico-Chemical Model" ;
-                        desc:definition "Resource that provides access to software, applications, or toolkits that calculate solutions to physiological processes that involve chemical kinetics, compartments, or stochastic interactions." .
+:Physico-Chemical_Model desc:definition "Resource that provides access to software, applications, or toolkits that calculate solutions to physiological processes that involve chemical kinetics, compartments, or stochastic interactions." ;
+                        rdfs:label "Physico-Chemical Model" .
 
 
-:Portal desc:definition "A Resource that provides a point of access to information on the World Wide Web, presenting information from diverse sources in a unified way." ;
-        rdfs:label "Portal" ;
-        skos:editorialNote "pending final vetting: review NIF hierarchy for source of children terms." .
+:Portal rdfs:comment "No clear difference to Database IR" ;
+        rdfs:label "DEPRECATED Portal" ;
+        rdfs:seeAlso :I3005 ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
-:Portlet_Component owl:deprecated "true"^^xsd:boolean ;
-                   skos:historyNote "Deprecated for BRO v3.0" ;
+:Portlet_Component desc:definition "Resource that provides access to software portlet." ;
                    rdfs:label "Portlet Component" ;
-                   desc:replacedBy :Portal ;
-                   desc:definition "Resource that provides access to software portlet." .
+                   owl:deprecated "true"^^xsd:boolean ;
+                   skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Provenance owl:deprecated "true"^^xsd:boolean ;
-            skos:historyNote "Deprecated for BRO v2.7" ;
-            desc:replacedBy :Resource ;
-            desc:definition "" ;
-            rdfs:label "Provenance" .
+:Provenance desc:definition "" ;
+            rdfs:label "Provenance" ;
+            owl:deprecated "true"^^xsd:boolean ;
+            skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Provenance_and_Intellectual_Property rdfs:label "Provenance and Intellectual Property" ;
-                                      skos:historyNote "Deprecated for BRO v2.7" ;
+:Provenance_and_Intellectual_Property desc:definition "" ;
+                                      rdfs:label "Provenance and Intellectual Property" ;
                                       owl:deprecated "true"^^xsd:boolean ;
-                                      desc:replacedBy :Resource ;
-                                      desc:definition "" .
+                                      skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Publication desc:definition "A document that is publicly available." ;
-             desc:replacedBy :Bibliographic_Resource ;
              rdfs:label "Publication" ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Reagent_Resource rdfs:label "Reagent Resource" ;
-                  desc:definition "A material resource that provides access to reagents, such as antibodies or drugs. Included in this definition are sites designed to work with individual service providers of reagents such as ExactAntigen who do not sell antibodies directly, but provide a catalog with pricing information for most commercial and noncommercial antibody providers. Note, reagents may be of organismal origin or not, but must be classified as macromolecules or molecules." .
+:Reagent_Resource desc:definition "A material resource that provides access to reagents, such as antibodies or drugs. Included in this definition are sites designed to work with individual service providers of reagents such as ExactAntigen who do not sell antibodies directly, but provide a catalog with pricing information for most commercial and noncommercial antibody providers. Note, reagents may be of organismal origin or not, but must be classified as macromolecules or molecules." ;
+                  rdfs:label "Reagent Resource" .
 
 
-:Research_Supplies rdfs:label "Research Supplies" ;
-                   desc:definition "Material supplies provided for research (http://en.wikipedia.org/wiki/Research) purposes" ;
+:Research_Supplies desc:definition "Material supplies provided for research (http://en.wikipedia.org/wiki/Research) purposes" ;
+                   rdfs:label "Research Supplies" ;
                    owl:deprecated "true"^^xsd:boolean ;
-                   desc:replacedBy :Resource ;
                    skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Resource rdfs:label "Resource" ;
-          desc:definition "An entity that provides access (either in the open community or within an organization) to material, intellectual, financial, technological, or electronic means of carrying out research and development." .
+:Resource rdfs:comment "Definition and IRI outdated" ;
+          rdfs:label "DEPRECATED Resource" ;
+          rdfs:seeAlso :R0001 ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
-:Scalar_Data skos:historyNote "Deprecated for BRO v3.0" ;
+:Scalar_Data desc:definition "Discrete data that is composed of individual data points as compared to." ;
              rdfs:label "Scalar Data" ;
-             desc:definition "Discrete data that is composed of individual data points as compared to." ;
-             desc:replacedBy :Data_Resource ;
-             owl:deprecated "true"^^xsd:boolean .
+             owl:deprecated "true"^^xsd:boolean ;
+             skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Scripting_Language_and_Environment skos:historyNote "Deprecated for BRO v2.7" ;
-                                    owl:deprecated "true"^^xsd:boolean ;
+:Scripting_Language_and_Environment desc:definition "" ;
                                     rdfs:label "Scripting Language and Environment" ;
-                                    desc:replacedBy :Integration_and_Interoperability_Tool ;
-                                    desc:definition "" .
+                                    owl:deprecated "true"^^xsd:boolean ;
+                                    skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Semantic_Network desc:replacedBy :Knowledgebase ;
-                  owl:deprecated "true"^^xsd:boolean ;
+:Semantic_Network desc:definition "" ;
                   rdfs:label "Semantic Network" ;
-                  skos:historyNote "Deprecated for BRO v3.0" ;
-                  desc:definition "" .
+                  owl:deprecated "true"^^xsd:boolean ;
+                  skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Server desc:replacedBy :Computational_Service ;
+:Server desc:definition "A resource that provides any combination of hardware or software designed to provide services to clients as defined in http://en.wikipedia.org/wiki/Server_(computing)" ;
         rdfs:label "Server" ;
-        desc:definition "A resource that provides any combination of hardware or software designed to provide services to clients as defined in http://en.wikipedia.org/wiki/Server_(computing)" ;
         owl:deprecated "true"^^xsd:boolean ;
         skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -4245,140 +4878,128 @@ e.g. Sage Bionetworks will be publishing exactly these types of models.""" ;
 :Software_Distribution desc:definition """Resource that provides access to software distribution that access to a computer program file or collection of files.
 
 """ ;
-                       owl:deprecated "true"^^xsd:boolean ;
-                       skos:historyNote "Deprecated for BRO v3.0" ;
                        rdfs:label "Software Distribution" ;
-                       desc:replacedBy :Data_Resource .
+                       owl:deprecated "true"^^xsd:boolean ;
+                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Software_Documentation desc:replacedBy :Bibliographic_Resource ;
+:Software_Documentation desc:definition "A resource that provides access to instructions regarding how software operates or how to use it." ;
                         rdfs:label "Software Documentation" ;
-                        desc:definition "A resource that provides access to instructions regarding how software operates or how to use it." ;
-                        skos:historyNote "Deprecated for BRO v3.0" ;
-                        owl:deprecated "true"^^xsd:boolean .
-
-
-:Software_development desc:replacedBy activity:Software_Development ;
-                      rdfs:label "Software development" ;
-                      skos:historyNote "Deprecated for BRO v2.7" ;
-                      owl:deprecated "true"^^xsd:boolean ;
-                      desc:replacedBy :Software_Development_Resource .
-
-
-:Source_Code desc:replacedBy :Data_Resource ;
-             desc:definition "Resource that provides access to information content entity that specifies, using a programming language, some algorithm." ;
-             rdfs:label "Source Code" ;
-             skos:historyNote "Deprecated for BRO v3.0" ;
-             owl:deprecated "true"^^xsd:boolean .
-
-
-:Standalone_Application desc:definition "Resource that provides access to software distribution that does not have any dependencies.  Software distributed in this manner can be run on a desktop computer." ;
-                        desc:replacedBy :Data_Resource ;
                         owl:deprecated "true"^^xsd:boolean ;
-                        rdfs:label "Standalone Application" ;
                         skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Stochastic_Data owl:deprecated "true"^^xsd:boolean ;
-                 desc:replacedBy :Data_Resource ;
+:Software_development rdfs:label "Software development" ;
+                      owl:deprecated "true"^^xsd:boolean ;
+                      skos:historyNote "Deprecated for BRO v2.7" .
+
+
+:Source_Code desc:definition "Resource that provides access to information content entity that specifies, using a programming language, some algorithm." ;
+             rdfs:label "Source Code" ;
+             owl:deprecated "true"^^xsd:boolean ;
+             skos:historyNote "Deprecated for BRO v3.0" .
+
+
+:Standalone_Application desc:definition "Resource that provides access to software distribution that does not have any dependencies.  Software distributed in this manner can be run on a desktop computer." ;
+                        rdfs:label "Standalone Application" ;
+                        owl:deprecated "true"^^xsd:boolean ;
+                        skos:historyNote "Deprecated for BRO v3.0" .
+
+
+:Stochastic_Data desc:definition "" ;
                  rdfs:label "Stochastic Data" ;
-                 skos:historyNote "Deprecated for BRO v3.0" ;
-                 desc:definition "" .
-
-
-:Structured_Data skos:historyNote "Deprecated for BRO v3.0" ;
-                 rdfs:label "Structured Data" ;
-                 desc:replacedBy :Structured_File ;
                  owl:deprecated "true"^^xsd:boolean ;
-                 desc:definition "A resource that distributes data that is organized in a purposeful manner" .
+                 skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Structured_File rdfs:label "Structured File" ;
-                 desc:definition "A resource that provides access to an electronic document having and manifesting a clearly defined structure or organization that allows it to be executed. " .
+:Structured_Data desc:definition "A resource that distributes data that is organized in a purposeful manner" ;
+                 rdfs:label "Structured Data" ;
+                 owl:deprecated "true"^^xsd:boolean ;
+                 skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Structured_Knowledge_Resource desc:definition "A resource that provides access to collection of data records arranged according to some semantic framework.  The semantic framework may be minimally expressive - such as a simple controlled vocabulary - or highly expressive such as a formally structured ontology.  Such resources may include only a representation of universal/classes/categories or may be linked to individual instance data typed according to a set of asserted classes (i.e., a knowledgebase)." ;
-                               rdfs:label "Structured Knowledge Resource" .
+:Structured_File rdfs:comment "definition and IRI change" ;
+                 rdfs:label "DEPRECATED Structured File" ;
+                 rdfs:seeAlso :I3010 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
-:Summarization rdfs:label "Summarization" ;
-               skos:historyNote "Deprecated for BRO v3.0" ;
+:Structured_Knowledge_Resource rdfs:comment "rename and definition change" ;
+                               rdfs:label "DEPRECATED Structured Knowledge Resource" ;
+                               rdfs:seeAlso :I2003 ;
+                               owl:deprecated "true"^^xsd:boolean .
+
+
+:Summarization desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." ;
+               rdfs:label "Summarization" ;
                owl:deprecated "true"^^xsd:boolean ;
-               desc:replacedBy :Language_Summarization ;
-               desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." .
+               skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Support desc:definition "A resource that provides aid or assistance with a technology product." ;
          rdfs:label "Support" ;
-         desc:replacedBy :Technical_Support ;
-         skos:historyNote "Deprecated for BRO v3.0" ;
-         owl:deprecated "true"^^xsd:boolean .
+         owl:deprecated "true"^^xsd:boolean ;
+         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Technical_Support desc:definition "A resource that provides aid or assistance with a technology product." ;
-                   skos:editorialNote "pending final vetting: refine definition" ;
-                   rdfs:label "Technical Support" .
+                   rdfs:label "Technical Support" ;
+                   skos:editorialNote "pending final vetting: refine definition" .
 
 
-:Three_Dimensional_Data rdfs:label "Three Dimensional Data" ;
-                        desc:definition "Discrete data that consists of x, y, and z coordinates." ;
-                        skos:historyNote "Deprecated for BRO v3.0" ;
-                        desc:replacedBy :Data_Resource ;
-                        owl:deprecated "true"^^xsd:boolean .
+:Three_Dimensional_Data desc:definition "Discrete data that consists of x, y, and z coordinates." ;
+                        rdfs:label "Three Dimensional Data" ;
+                        owl:deprecated "true"^^xsd:boolean ;
+                        skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Toolkit owl:deprecated "true"^^xsd:boolean ;
-         skos:historyNote "Deprecated for BRO v3.0" ;
+:Toolkit desc:definition "Resource that provides access to software, applications, or toolkits that deliver software or application in toolkit fashion, whereby the kit components can be used independently of each other, or included as part of another program" ;
          rdfs:label "Toolkit" ;
-         desc:replacedBy :Integration_and_Interoperability_Tool ;
-         desc:definition "Resource that provides access to software, applications, or toolkits that deliver software or application in toolkit fashion, whereby the kit components can be used independently of each other, or included as part of another program" .
+         owl:deprecated "true"^^xsd:boolean ;
+         skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Tutorial rdfs:label "Tutorial" ;
-          desc:definition "An educational resource that is interactive and teaches by example." .
+:Tutorial desc:definition "An educational resource that is interactive and teaches by example." ;
+          rdfs:label "Tutorial" .
 
 
-:Tutorials desc:replacedBy :Tutorial ;
+:Tutorials desc:definition "" ;
            rdfs:label "Tutorials" ;
            owl:deprecated "true"^^xsd:boolean ;
-           desc:definition "" ;
            skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Unstructured_Data owl:deprecated "true"^^xsd:boolean ;
-                   desc:definition "Data distribution that does not have a data model or has one that is not easily usable by a computer program. " ;
-                   desc:replacedBy :Unstructured_Knowledge_Resource ;
+:Unstructured_Data desc:definition "Data distribution that does not have a data model or has one that is not easily usable by a computer program. " ;
                    rdfs:label "Unstructured Data" ;
+                   owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Unstructured_Knowledge_Resource skos:editorialNote "Suggested child terms: audio track, slide, and video per NIF.  Work with NIF to generate definitions." ;
-                                 desc:definition "A resource that provides access to collection of data or information that is not easily queryable without using metadata about the resource." ;
-                                 rdfs:label "Unstructured Knowledge Resource" .
+:Unstructured_Knowledge_Resource rdfs:comment "rename and change of definition and IRI" ;
+                                 rdfs:label "DEPRECATED Unstructured Knowledge Resource" ;
+                                 rdfs:seeAlso :I2011 ;
+                                 owl:deprecated "true"^^xsd:boolean .
 
 
-:Vector_Data owl:deprecated "true"^^xsd:boolean ;
+:Vector_Data desc:definition "Discrete data that representents physical entities as XY coordinates." ;
              rdfs:label "Vector Data" ;
-             skos:historyNote "Deprecated for BRO v3.0" ;
-             desc:definition "Discrete data that representents physical entities as XY coordinates." ;
-             desc:replacedBy :Data_Resource .
+             owl:deprecated "true"^^xsd:boolean ;
+             skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Web_Service desc:replacedBy :Computational_Service ;
+:Web_Service desc:definition "A resource that provides a software system designed to support interoperable machine-to-machine interaction over a network. Web services are frequently Web APIs that can be accessed over a network, such as the Internet, and executed on a remote system hosting the requested services." ;
              rdfs:label "Web Service" ;
-             desc:definition "A resource that provides a software system designed to support interoperable machine-to-machine interaction over a network. Web services are frequently Web APIs that can be accessed over a network, such as the Internet, and executed on a remote system hosting the requested services." ;
-             skos:historyNote "Deprecated for BRO v3.0" ;
-             owl:deprecated "true"^^xsd:boolean .
+             owl:deprecated "true"^^xsd:boolean ;
+             skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :physico_chemical_models desc:definition "" ;
-                         skos:historyNote "Deprecated for BRO v2.7" ;
+                         rdfs:label "physico chemical models" ;
                          owl:deprecated "true"^^xsd:boolean ;
-                         desc:replacedBy :Physico-Chemical_Model ;
-                         rdfs:label "physico chemical models" .
+                         skos:historyNote "Deprecated for BRO v2.7" .
 
 
 owl:Thing owl:versionInfo "TODO:" .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
