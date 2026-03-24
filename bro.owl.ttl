@@ -206,74 +206,6 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2011
-:S2011 rdf:type owl:Class ;
-       rdfs:subClassOf :S1001 ;
-       rdfs:label "Data Management SR"@en ;
-       skos:altLabel "Data Management Service Resource"@en ;
-       skos:definition "A 'Service Resource' that provides assistance or guidelines along the data life cycle."@en ;
-       skos:example <http://purl.obolibrary.org/obo/T4FS_0000447> .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2012
-:S2012 rdf:type owl:Class ;
-       rdfs:subClassOf :S1001 ;
-       rdfs:label "Material Storage SR"@en ;
-       skos:altLabel "Material Storage Service Resource"@en ;
-       skos:definition "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
-       skos:example "Harvard brain tissue bank"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :S2012 ;
-   owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
-   :mentions :M1001
- ] .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2013
-:S2013 rdf:type owl:Class ;
-       rdfs:subClassOf :S1001 ;
-       rdfs:comment "It can include both materials and documentation along with expertise in the form of personnel."@en ;
-       rdfs:label "Regulatory Compliance SR"@en ;
-       skos:altLabel "Regulatory Compliance Service Resource"@en ;
-       skos:definition "A 'Service Resource' that provides guidance related to ethical or legal matters, including information provision and regulation application support."@en ;
-       skos:example "Protocol Statement that study was conducted according to Good Clinical Practice (GCP) guidelines"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2014
-:S2014 rdf:type owl:Class ;
-       rdfs:subClassOf :S1001 ;
-       rdfs:label "Technical Support SR"@en ;
-       skos:altLabel "Technical Support Service Resource"@en ;
-       skos:definition "A 'Service Resource' in which the service provider offers assistance with TOOL RESOURCEs in their correct installation, maintenance, operation, and repair."@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2017
-:S2017 rdf:type owl:Class ;
-       rdfs:subClassOf :S1001 ;
-       rdfs:label "Training SR"@en ;
-       skos:altLabel "Training Service Resource"@en ;
-       skos:definition "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3015
-:S3015 rdf:type owl:Class ;
-       rdfs:subClassOf :S2014 ;
-       rdfs:label "Computational SR"@en ;
-       skos:altLabel "Computational Service Resource"@en ;
-       skos:definition "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of HARDWARE TR and SOFTWARE TR."@en ;
-       skos:example "database hosting, backup and disaster recovery"@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3016
-:S3016 rdf:type owl:Class ;
-       rdfs:subClassOf :S2014 ;
-       rdfs:label "Repair SR"@en ;
-       skos:altLabel "Repair Service Resource"@en ;
-       skos:definition "A 'Technical Support SR' that repairs physical tools like DEVICE Rs or technical, sanitary, and other installations."@en .
-
-
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -2785,8 +2717,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3006
 :P3006 rdf:type owl:Class ;
        rdfs:subClassOf :P2003 ;
-       rdfs:comment "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ,
-                    "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+       rdfs:comment "'Professional PR' that is trained to perform 'Data Management SR'"@en ,
+                    "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ;
        rdfs:label "Data Management Expertise PR"@en ;
        skos:altLabel "Data Management People Resource"@en ;
        skos:definition "A 'Professional PR' trained in the collection, storage, access, and preservation of data along the data life cycle."@en ;
@@ -2795,7 +2727,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :P3006 ;
    owl:annotatedProperty rdfs:comment ;
-   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded." ;
+   owl:annotatedTarget "'Professional PR' that is trained to perform 'Data Management SR'"@en ;
+   :mentions :S2011
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3006 ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Data created or collected in the course of research, clinical, or administrative activities. This covers the entire life cycle of data from planning the investigation to conducting it, and from backing up data as it is created and used to long term preservation of data deliverables after the research investigation has concluded."@en ;
    rdfs:seeAlso "https://terms.codata.org/rdmt/research-data-management"
  ] .
 
@@ -3321,7 +3260,67 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
        rdfs:subClassOf :S1001 ;
        rdfs:comment "This includes specialized devices, technologies and/or professional support, and usually services and space for this particular purpose."@en ;
        rdfs:label "Core Facility"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C15896> ;
        skos:definition "A 'Service Resource' that provides expert support (knowledge and devices) for a specific type of tasks."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2011
+:S2011 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Data Management SR"@en ;
+       skos:altLabel "Data Management Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides assistance or guidelines along the data life cycle."@en ;
+       skos:example <http://purl.obolibrary.org/obo/T4FS_0000447> .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2012
+:S2012 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Material Storage SR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/OBI_0001557> ;
+       skos:altLabel "Material Storage Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
+       skos:example "Harvard brain tissue bank"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S2012 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
+   :mentions :M1001
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2013
+:S2013 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:comment "It can include both materials and documentation along with expertise in the form of personnel."@en ;
+       rdfs:label "Regulatory Compliance SR"@en ;
+       skos:altLabel "Regulatory Compliance Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides guidance related to ethical or legal matters, including information provision and regulation application support."@en ;
+       skos:example "Protocol Statement that study was conducted according to Good Clinical Practice (GCP) guidelines"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2014
+:S2014 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Technical Support SR"@en ;
+       skos:altLabel "Technical Support Service Resource"@en ;
+       skos:definition "A 'Service Resource' in which the service provider offers assistance with TOOL RESOURCEs in their correct installation, maintenance, operation, and repair."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2017
+:S2017 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Training SR"@en ;
+       skos:altLabel "Training Service Resource"@en ;
+       skos:definition "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S2017 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en ;
+   rdfs:seeAlso <http://purl.obolibrary.org/obo/OBI_0001538>
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3003
@@ -3330,6 +3329,13 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
        rdfs:comment "Usage for experimental research, teaching, or testing"@en ;
        rdfs:label "Animal Facility"@en ;
        skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3003 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals."@en ;
+   rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D007756>
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3004
@@ -3365,6 +3371,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 :S3006 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:label "Fabrication Facility"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D066192> ;
        skos:definition "A 'Core Facility' with a specialization on creating, manufacturing, building or assembling resources from raw or intermediate materials used in scientific research."@en .
 
 
@@ -3372,6 +3379,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 :S3007 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:label "Imaging Facility"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C53520> ;
        skos:definition "A 'Core Facility' with a specialization on technologies or methods that aid in the visualization of any biomedical material, data, or process."@en .
 
 
@@ -3416,6 +3424,23 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
    owl:annotatedTarget "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'."@en ;
    :mentions <http://purl.obolibrary.org/obo/UBERON_0000479>
  ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3015
+:S3015 rdf:type owl:Class ;
+       rdfs:subClassOf :S2014 ;
+       rdfs:label "Computational SR"@en ;
+       skos:altLabel "Computational Service Resource"@en ;
+       skos:definition "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of HARDWARE TR and SOFTWARE TR."@en ;
+       skos:example "database hosting, backup and disaster recovery"@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3016
+:S3016 rdf:type owl:Class ;
+       rdfs:subClassOf :S2014 ;
+       rdfs:label "Repair SR"@en ;
+       skos:altLabel "Repair Service Resource"@en ;
+       skos:definition "A 'Technical Support SR' that repairs physical tools like DEVICE Rs or technical, sanitary, and other installations."@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
