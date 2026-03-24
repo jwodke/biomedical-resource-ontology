@@ -179,10 +179,42 @@
 | - | - | Outreach Program | Subclass of Training Resource, deprecated because the level of detail is too specific |
 | - | - | Seminar Service | Subclass of Training Resource, deprecated because the level of detail is too specific |
 **ab hier @en ergänzen, in ttl, da super nervig in protege**
+
+
+Deprecate classs from Software:
 |  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| - | - | Algorithm | Subclass of *Software*, deprecated because it is not a software |
+| - | - | Graph Algorithm | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Centrality Analysis | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
+| - | - | Community Structure Analysis | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
+| - | - | Graph Alignment | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
+| - | - | Approximate Graph Alignment | Subclass of Graph Alignment, deprecated because Parentclass deprecated |
+| - | - | Graph Analysis | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
+| - | - | Image Algorithm | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Computational Geometry | Subclass of Image Algorithm, deprecated because Parentclass deprecated |
+| - | - | Feature Analysis | Subclass of Computational Geometry, deprecated because Parentclass deprecated |
+| - | - | Pattern Recognition | Subclass of Computational Geometry, deprecated because Parentclass deprecated |
+| - | - | Shape Analysis | Subclass of Computational Geometry, deprecated because Parentclass deprecated |
+| - | - | Convolution | Subclass of Image Algorithm, deprecated because Parentclass deprecated |
+| - | - | Fast Fourier Transform | Subclass of Image Algorithm, deprecated because Parentclass deprecated |
+| - | - | Image Reconstruction | Subclass of Image Algorithm, deprecated because Parentclass deprecated |
+| - | - | Numerical Method | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Linear Algebra Tool | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | Monte Carlo Simulation | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | Numerical Integrator | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | Optimizer | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | PDE Solver | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | Root Finder | Subclass of Numerical Method, deprecated because Parentclass deprecated |
+| - | - | Searching Sorting and Indexing | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Document Retrieval | Subclass of Searching Sorting and Indexing, deprecated because Parentclass deprecated |
+| - | - | Mass Spectra Identification | Subclass of Searching Sorting and Indexing, deprecated because Parentclass deprecated |
+| - | - | Sequence Alignment | Subclass of Searching Sorting and Indexing, deprecated because Parentclass deprecated |
+| - | - | Statistical Algorithm | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Hypothesis Testing Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
+| - | - | Model Fitting Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
+| - | - | Pattern Inference Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
+| - | - | Symbolic and Analytic Model | Subclass of Algorithm, deprecated because Parentclass deprecated |
+| - | - | Model with Closed Form Solution | Subclass of Symbolic and Analytic Model, deprecated because Parentclass deprecated |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |

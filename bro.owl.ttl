@@ -230,9 +230,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Algorithm
 :Algorithm rdf:type owl:Class ;
-           rdfs:subClassOf :Software ;
-           desc:definition "Resource that provides access to software or application that perform numerical analysis or other canonical computational methods that act either on experimental or synthetic data." ;
-           rdfs:label "Algorithm" .
+           rdfs:comment "It is not a software, but sorted as one" ;
+           rdfs:label "DEPRECATED Algorithm" ;
+           rdfs:seeAlso :Software ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Amplifier
@@ -296,10 +297,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Approximate_Graph_Alignment
 :Approximate_Graph_Alignment rdf:type owl:Class ;
-                             rdfs:subClassOf :Graph_Alignment ,
-                                             :Searching_Sorting_and_Indexing ;
-                             desc:definition "Resource that provides access to software, applications, or toolkits that allows insertions, deletions, or mismatches in nodes/edges." ;
-                             rdfs:label "Approximate Graph Alignment" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Approximate Graph Alignment" ;
+                             rdfs:seeAlso :Graph_Alignment ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Assessment_Material_Resource
@@ -536,8 +537,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analysis
-:Centrality_Analysis rdf:type owl:Class ;
-                     rdfs:subClassOf :Graph_Algorithm .
+:Centrality_Analysis rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Certificate_Program
@@ -614,9 +614,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Community_Structure_Analysis
 :Community_Structure_Analysis rdf:type owl:Class ;
-                              rdfs:subClassOf :Graph_Algorithm ;
-                              desc:definition "Resource that provides access to a graph algorithm that identifies densely interlinked nodes in the graph." ;
-                              rdfs:label "Community Structure Analysis" .
+                              rdfs:comment "Parentclass deprecated" ;
+                              rdfs:label "DEPRECATED Community Structure Analysis" ;
+                              rdfs:seeAlso :Graph_Algorithm ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Compiler
@@ -628,10 +629,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Geometry
 :Computational_Geometry rdf:type owl:Class ;
-                        rdfs:subClassOf :Image_Algorithm ,
-                                        :Numerical_Method ;
-                        desc:definition "Resource that provides access to tools for computational geometric representation and analysis." ;
-                        rdfs:label "Computational Geometry" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Computational Geometry" ;
+                        rdfs:seeAlso :Image_Algorithm ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Hosting
@@ -719,10 +720,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Convolution
 :Convolution rdf:type owl:Class ;
-             rdfs:subClassOf :Image_Algorithm ,
-                             :Numerical_Method ;
-             desc:definition "Resource the provides access to tools or functions that implements the canonical convolution or operation that describes the action of a linear system on a signal." ;
-             rdfs:label "Convolution" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Convolution" ;
+             rdfs:seeAlso :Image_Algorithm ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cortical_Modeling
@@ -975,10 +976,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document_Retrieval
 :Document_Retrieval rdf:type owl:Class ;
-                    rdfs:subClassOf :Searching_Sorting_and_Indexing ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that provides an electronic document or file in response to a query." ;
-                    rdfs:label "Document Retrieval" ;
-                    skos:editorialNote "pending final vetting: review location in hierarchy" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Document Retrieval" ;
+                    rdfs:seeAlso :Searching_Sorting_and_Indexing ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document_Structure_Parsing
@@ -1197,17 +1198,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fast_Fourier_Transform
 :Fast_Fourier_Transform rdf:type owl:Class ;
-                        rdfs:subClassOf :Image_Algorithm ,
-                                        :Numerical_Method ;
-                        desc:definition "Resource that provides access to tools or functions that compute the discrete Fourier transform (DFT) and its inverse." ;
-                        rdfs:label "Fast Fourier Transform" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Fast Fourier Transform" ;
+                        rdfs:seeAlso :Image_Algorithm ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Feature_Analysis
 :Feature_Analysis rdf:type owl:Class ;
-                  rdfs:subClassOf :Computational_Geometry ;
-                  desc:definition "Resource that provides access to methods for automated analysis of object features and quantitative characterization of data." ;
-                  rdfs:label "Feature Analysis" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Feature Analysis" ;
+                  rdfs:seeAlso :Computational_Geometry ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Feature_Request
@@ -1327,23 +1329,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Algorithm
 :Graph_Algorithm rdf:type owl:Class ;
-                 rdfs:subClassOf :Algorithm ;
-                 desc:definition "Resource that provides access to methods of analysis or generation of networks and graph data structures." ;
-                 rdfs:label "Graph Algorithm" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Graph Algorithm" ;
+                 rdfs:seeAlso :Algorithm ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Alignment
 :Graph_Alignment rdf:type owl:Class ;
-                 rdfs:subClassOf :Graph_Algorithm ;
-                 desc:definition "Resource that provides access to a graph algorithm that compares the similarity of graphs to each other." ;
-                 rdfs:label "Graph Alignment" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Graph Alignment" ;
+                 rdfs:seeAlso :Graph_Algorithm ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Analysis
 :Graph_Analysis rdf:type owl:Class ;
-                rdfs:subClassOf :Graph_Algorithm ;
-                desc:definition "Resource that provides access to software, applications, or toolkit that analyze biological graphs." ;
-                rdfs:label "Graph Analysis" .
+                rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Graph Analysis" ;
+                rdfs:seeAlso :Graph_Algorithm ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewer
@@ -1450,9 +1455,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hypothesis_Testing_Algorithm
 :Hypothesis_Testing_Algorithm rdf:type owl:Class ;
-                              rdfs:subClassOf :Statistical_Algorithm ;
-                              desc:definition "Resource that provides access to tools or functions for testing statistical hypothesis against data." ;
-                              rdfs:label "Hypothesis Testing Algorithm" .
+                              rdfs:comment "Parentclass deprecated" ;
+                              rdfs:label "DEPRECATED Hypothesis Testing Algorithm" ;
+                              rdfs:seeAlso :Statistical_Algorithm ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I1001
@@ -1720,9 +1726,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Algorithm
 :Image_Algorithm rdf:type owl:Class ;
-                 rdfs:subClassOf :Algorithm ;
-                 desc:definition "Resource that provides access to methods basic numerical analysis or other canonical computational methods that act on 1, 2, 3 or 4 dimensional images." ;
-                 rdfs:label "Image Algorithm" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Image Algorithm" ;
+                 rdfs:seeAlso :Algorithm ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Processing
@@ -1735,9 +1742,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Reconstruction
 :Image_Reconstruction rdf:type owl:Class ;
-                      rdfs:subClassOf :Image_Algorithm ;
-                      desc:definition "A resource that provides access to tools or function that are used to reconstruct 2D and 3D images based on projections of an object." ;
-                      rdfs:label "Image Reconstruction" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Image Reconstruction" ;
+                      rdfs:seeAlso :Image_Algorithm ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Imaging
@@ -1980,8 +1988,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tool
-:Linear_Algebra_Tool rdf:type owl:Class ;
-                     rdfs:subClassOf :Numerical_Method .
+:Linear_Algebra_Tool rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
@@ -2154,9 +2161,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mass_Spectra_Identification
 :Mass_Spectra_Identification rdf:type owl:Class ;
-                             rdfs:subClassOf :Searching_Sorting_and_Indexing ;
-                             desc:definition "Resource that provides access to software, applications, or toolkits that calculates mass spectra sequence and related data from experimental mass spectra data." ;
-                             rdfs:label "Mass Spectra Identification" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Mass Spectra Identification" ;
+                             rdfs:seeAlso :Searching_Sorting_and_Indexing ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mass_Spectrometer
@@ -2299,18 +2307,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Model_Fitting_Algorithm
 :Model_Fitting_Algorithm rdf:type owl:Class ;
-                         rdfs:subClassOf :Statistical_Algorithm ;
-                         desc:definition "A resource that provides tools or functions that aligns data with a model of the data." ;
-                         rdfs:label "Model Fitting Algorithm" .
+                         rdfs:comment "Parentclass deprecated" ;
+                         rdfs:label "DEPRECATED Model Fitting Algorithm" ;
+                         rdfs:seeAlso :Statistical_Algorithm ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Model_with_Closed_Form_Solutions
 :Model_with_Closed_Form_Solutions rdf:type owl:Class ;
-                                  rdfs:subClassOf :Modeling_and_Simulation ,
-                                                  :Symbolic_and_Analytic_Model ;
-                                  desc:definition "Resource that provides access to software, applications, or toolkits that calculate solutions to models with closed form." ;
-                                  rdfs:label "Model with Closed Form Solutions" ;
-                                  skos:editorialNote "pending final vetting: review location in hierarchy" .
+                                  rdfs:comment "Parentclass deprecated" ;
+                                  rdfs:label "DEPRECATED Model with Closed Form Solutions" ;
+                                  rdfs:seeAlso :Symbolic_and_Analytic_Model ;
+                                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Modeling_and_Simulation
@@ -2401,9 +2409,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Monte_Carlo_Simulation
 :Monte_Carlo_Simulation rdf:type owl:Class ;
-                        rdfs:subClassOf :Numerical_Method ;
-                        desc:definition "A resource that provides access to tools or functions that model biological processes that involves random sampling in the algorithm." ;
-                        rdfs:label "Monte Carlo Simulation" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Monte Carlo Simulation" ;
+                        rdfs:seeAlso :Numerical_Method ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Multibody_Dynamics
@@ -2536,8 +2545,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrator
-:Numerical_Integrator rdf:type owl:Class ;
-                      rdfs:subClassOf :Numerical_Method .
+:Numerical_Integrator rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrators
@@ -2546,8 +2554,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Method
-:Numerical_Method rdf:type owl:Class ;
-                  rdfs:subClassOf :Algorithm .
+:Numerical_Method rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Methods
@@ -2630,9 +2637,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Optimizer
 :Optimizer rdf:type owl:Class ;
-           rdfs:subClassOf :Numerical_Method ;
-           desc:definition "A resource that provides access to a tool or function that locates the extremum (usually minimum) of a cost function subject to constraints.," ;
-           rdfs:label "Optimizer" .
+           rdfs:comment "Parentclass deprecated" ;
+           rdfs:label "DEPRECATED Optimizer" ;
+           rdfs:seeAlso :Numerical_Method ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Oscillograph
@@ -2813,9 +2821,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PDE_Solver
 :PDE_Solver rdf:type owl:Class ;
-            rdfs:subClassOf :Numerical_Method ;
-            desc:definition "A resource that provides access to a tool or function that generates the solution of a partial differential equation subject to appropriate parameters and initial or boundary conditions." ;
-            rdfs:label "PDE Solver" .
+            rdfs:comment "Parentclass deprecated" ;
+            rdfs:label "DEPRECATED PDE Solver" ;
+            rdfs:seeAlso :Numerical_Method ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PET_Scanner
@@ -2873,16 +2882,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pattern_Inference_Algorithm
 :Pattern_Inference_Algorithm rdf:type owl:Class ;
-                             rdfs:subClassOf :Statistical_Algorithm ;
-                             desc:definition "A resource that provides access to tools or functions that derive reduced significant information about experimental or synthetic data." ;
-                             rdfs:label "Pattern Inference Algorithm" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Pattern Inference Algorithm" ;
+                             rdfs:seeAlso :Statistical_Algorithm ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pattern_Recognition
 :Pattern_Recognition rdf:type owl:Class ;
-                     rdfs:subClassOf :Computational_Geometry ;
-                     desc:definition "Resource that provides access to tools for the representation, modeling, analysis and visualization of biological patterns out of data." ;
-                     rdfs:label "Pattern Recognition" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Pattern Recognition" ;
+                     rdfs:seeAlso :Computational_Geometry ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pattern_and_Motif_Inference
@@ -3241,9 +3252,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Root_Finder
 :Root_Finder rdf:type owl:Class ;
-             rdfs:subClassOf :Numerical_Method ;
-             desc:definition "A resource that provides access to a tool or function that finds a value x such that f(x) = 0, for a given function f. Such an x is called a root of the function f." ;
-             rdfs:label "Root Finder" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Root Finder" ;
+             rdfs:seeAlso :Numerical_Method ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S1001
@@ -3455,9 +3467,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Searching_Sorting_and_Indexing
 :Searching_Sorting_and_Indexing rdf:type owl:Class ;
-                                rdfs:subClassOf :Algorithm ;
-                                desc:definition "Resource that provides access to software, applications, or toolkits that search, sort, or index on binary or textual formatted data." ;
-                                rdfs:label "Searching Sorting and Indexing" .
+                                rdfs:comment "Parentclass deprecated" ;
+                                rdfs:label "DEPRECATED Searching Sorting and Indexing" ;
+                                rdfs:seeAlso :Algorithm ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Segmentation
@@ -3497,9 +3510,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Alignment
 :Sequence_Alignment rdf:type owl:Class ;
-                    rdfs:subClassOf :Searching_Sorting_and_Indexing ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that compare two or more genomic sequences and provides summary information." ;
-                    rdfs:label "Sequence Alignment" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Sequence Alignment" ;
+                    rdfs:seeAlso :Searching_Sorting_and_Indexing ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Annotation
@@ -3539,9 +3553,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Shape_Analysis
 :Shape_Analysis rdf:type owl:Class ;
-                rdfs:subClassOf :Computational_Geometry ;
-                desc:definition "Resource that provides access to tools representation, modeling, analysis and visualization of biological shape out of data." ;
-                rdfs:label "Shape Analysis" .
+                rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Shape Analysis" ;
+                rdfs:seeAlso :Computational_Geometry ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Signal_Processing
@@ -3674,9 +3689,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Algorithm
 :Statistical_Algorithm rdf:type owl:Class ;
-                       rdfs:subClassOf :Algorithm ;
-                       desc:definition "Resource that provides access to tools or functions that calculate basic methods of statistics and biometrics." ;
-                       rdfs:label "Statistical Algorithm" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Statistical Algorithm" ;
+                       rdfs:seeAlso :Algorithm ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Analysis
@@ -3760,9 +3776,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Symbolic_and_Analytic_Model
 :Symbolic_and_Analytic_Model rdf:type owl:Class ;
-                             rdfs:subClassOf :Algorithm ;
-                             desc:definition "Resource that provides access to methods of analysis and modeling that have closed-form analytical mathematical representations." ;
-                             rdfs:label "Symbolic and Analytic Model" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Symbolic and Analytic Model" ;
+                             rdfs:seeAlso :Algorithm ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
@@ -4670,8 +4687,10 @@ desc:replacedBy rdfs:label "replacedBy" .
                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Centrality_Analysis desc:definition "A Resource that provides access to a graph algorithm that uses ranking of network elements to identify the importance of elements in a network." ;
-                     rdfs:label "Centrality Analysis" .
+:Centrality_Analysis rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Centrality Analysis" ;
+                     rdfs:seeAlso :Graph_Algorithm ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 :Clinical_Care_Data rdfs:comment "can be incorporated in the existing Subclasses of Information Resource" ;
@@ -4939,8 +4958,10 @@ we think this should be deleted""" ;
                            skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Linear_Algebra_Tool desc:definition "A resource which provides access to tools or functions that compute linear calculations on vector spaces." ;
-                     rdfs:label "Linear Algebra Tool" .
+:Linear_Algebra_Tool rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Linear Algebra Tool" ;
+                     rdfs:seeAlso :Numerical_Method ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 :Linear_Algebra_Tools rdfs:label "Linear Algebra Tools" ;
@@ -5027,8 +5048,10 @@ we think this should be deleted""" ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Numerical_Integrator desc:definition "Resource that provides access to tools or functions that calculate the numerical value of a definite integral." ;
-                      rdfs:label "Numerical Integrator" .
+:Numerical_Integrator rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Numerical Integrator" ;
+                      rdfs:seeAlso :Numerical_Method ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 :Numerical_Integrators rdfs:label "Numerical Integrators" ;
@@ -5036,8 +5059,10 @@ we think this should be deleted""" ;
                        skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Numerical_Method desc:definition "Resource that provides access to methods of numerical analysis or computational tools  (ala, GAMS: http://gams.nist.gov/)." ;
-                  rdfs:label "Numerical Method" .
+:Numerical_Method rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Numerical Method" ;
+                  rdfs:seeAlso :Algorithm ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 :Numerical_Methods desc:definition "General numerical modeling and computational tools (ala, GAMS: http://gams.nist.gov/)" ;
