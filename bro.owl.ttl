@@ -917,9 +917,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Deep_Parsing
 :Deep_Parsing rdf:type owl:Class ;
-              rdfs:subClassOf :Parsing ;
-              desc:definition "Resource that provides access to applications, libraries, or software that detect relationships between language constructs." ;
-              rdfs:label "Deep Parsing" .
+              rdfs:comment "Parentclass deprecated" ;
+              rdfs:label "DEPRECATED Deep Parsing" ;
+              rdfs:seeAlso :Parsing ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Delimited_Table
@@ -984,9 +985,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document_Structure_Parsing
 :Document_Structure_Parsing rdf:type owl:Class ;
-                            rdfs:subClassOf :Parsing ;
-                            desc:definition "Resource that provides access to applications, libraries, or software that analyze and report on document structure." ;
-                            rdfs:label "Document Structure Parsing" .
+                            rdfs:comment "Parentclass deprecated" ;
+                            rdfs:label "DEPRECATED Document Structure Parsing" ;
+                            rdfs:seeAlso :Parsing ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Documentation_Generation
@@ -1798,9 +1800,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Inference_From_Data
 :Inference_From_Data rdf:type owl:Class ;
-                     rdfs:subClassOf :Data_Mining_and_Inference ;
-                     desc:definition "Resource that provides access to software, applications, or toolkits, that generate a conclusion or finding based on applying logics and statistics to observations/hypothesis." ;
-                     rdfs:label "Inference From Data" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Inference From Data" ;
+                     rdfs:seeAlso :Data_Mining_and_Inference ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Information_Resource
@@ -1814,9 +1817,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Information_Retrieval
 :Information_Retrieval rdf:type owl:Class ;
-                       rdfs:subClassOf :Data_Mining_and_Inference ;
-                       desc:definition "Resource that provides access to software, applications, or toolkits that searches documents for information within the document and metadata about the document." ;
-                       rdfs:label "Information Retrieval" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Information Retrieval" ;
+                       rdfs:seeAlso :Data_Mining_and_Inference ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Inhomogeneity_Correction
@@ -1929,9 +1933,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Extraction
 :Knowledge_Extraction rdf:type owl:Class ;
-                      rdfs:subClassOf :Text_Mining ;
-                      desc:definition "Resource that provides access to software, applications, or toolkits that recognize and report on entities and relations in text corpora." ;
-                      rdfs:label "Knowledge Extraction" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Knowledge Extraction" ;
+                      rdfs:seeAlso :Text_Mining ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Mining_and_Capturing
@@ -1960,9 +1965,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Lexical_Analysis
 :Lexical_Analysis rdf:type owl:Class ;
-                  rdfs:subClassOf :Parsing ;
-                  desc:definition "Resource that provides access to applications, libraries, or software that converts a sequence of characters into a sequence of tokens. " ;
-                  rdfs:label "Lexical Analysis" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Lexical Analysis" ;
+                  rdfs:seeAlso :Parsing ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License
@@ -2440,16 +2446,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Named_Entity_Normalization
 :Named_Entity_Normalization rdf:type owl:Class ;
-                            rdfs:subClassOf :Parsing ;
-                            desc:definition "Resource that provides access to applications, libraries, or software that map the recognized entities to unambiguous references to real world entities." ;
-                            rdfs:label "Named Entity Normalization" .
+                            rdfs:comment "Parentclass deprecated" ;
+                            rdfs:label "DEPRECATED Named Entity Normalization" ;
+                            rdfs:seeAlso :Parsing ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Named_Entity_Recognition
 :Named_Entity_Recognition rdf:type owl:Class ;
-                          rdfs:subClassOf :Parsing ;
-                          desc:definition "Resource that provides access to applications, libraries, or software that attempts to identify and classify atomic elements in text into predefined categories such as the organizations, locations, expressions of times, quantities, and names of people." ;
-                          rdfs:label "Named Entity Recognition" .
+                          rdfs:comment "Parentclass deprecated" ;
+                          rdfs:label "DEPRECATED Named Entity Recognition" ;
+                          rdfs:seeAlso :Parsing ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Narrative_Resource
@@ -2463,9 +2471,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Characterization
 :Network_Characterization rdf:type owl:Class ;
-                          rdfs:subClassOf :Genomic_Phenotypic_Analysis ;
-                          desc:definition "Resource that provides access to tools or functions that describe a connectivity between components at the genomic, molecular, cellular, tissue level, or population levels." ;
-                          rdfs:label "Network Characterization" .
+                          rdfs:comment "Parentclass deprecated" ;
+                          rdfs:label "DEPRECATED Network Characterization" ;
+                          rdfs:seeAlso :Genomic_Phenotypic_Analysis ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Editor
@@ -2854,9 +2863,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Partial_Parsing
 :Partial_Parsing rdf:type owl:Class ;
-                 rdfs:subClassOf :Parsing ;
-                 desc:definition "Resource that provides access to applications, libraries, or software that parse part of a text or corpus." ;
-                 rdfs:label "Partial Parsing" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Partial Parsing" ;
+                 rdfs:seeAlso :Parsing ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pass_Through_License
@@ -2898,9 +2908,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pattern_and_Motif_Inference
 :Pattern_and_Motif_Inference rdf:type owl:Class ;
-                             rdfs:subClassOf :Inference_From_Data ;
-                             desc:definition "Resource that provides access to software, applications, or toolkits that generate patterns or motifs based on applying logics and statistics to observations/hypothesis." ;
-                             rdfs:label "Pattern and Motif Inference" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Pattern and Motif Inference" ;
+                             rdfs:seeAlso :Inference_From_Data ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#People_Resource
@@ -3197,9 +3208,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Signaling_Network_Reconstruction
 :Regulatory_Signaling_Network_Reconstruction rdf:type owl:Class ;
-                                             rdfs:subClassOf :Genomic_Phenotypic_Analysis ;
-                                             desc:definition "PML Resource that provides access to tools or functions that generate network maps of biological signaling or regulatory networks based on applying logic and statistics to observations/hypothesis." ;
-                                             rdfs:label "Regulatory Signaling Network Reconstruction" .
+                                             rdfs:comment "Parentclass deprecated" ;
+                                             rdfs:label "DEPRECATED Regulatory Signaling Network Reconstruction" ;
+                                             rdfs:seeAlso :Genomic_Phenotypic_Analysis ;
+                                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Relational_Database
@@ -3503,9 +3515,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sentence_Splitting
 :Sentence_Splitting rdf:type owl:Class ;
-                    rdfs:subClassOf :Parsing ;
-                    desc:definition "Resource that provides access to applications, libraries, or software that divide sentences into components or fragments." ;
-                    rdfs:label "Sentence Splitting" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Sentence Splitting" ;
+                    rdfs:seeAlso :Parsing ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Alignment
@@ -3518,16 +3531,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Annotation
 :Sequence_Annotation rdf:type owl:Class ;
-                     rdfs:subClassOf :Genomic_Phenotypic_Analysis ;
-                     desc:definition "Resource that provides access to tools or functions that provide information beyond biological sequence, e.g., function." ;
-                     rdfs:label "Sequence Annotation" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Sequence Annotation" ;
+                     rdfs:seeAlso :Genomic_Phenotypic_Analysis ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Similarity_Searching
 :Sequence_Similarity_Searching rdf:type owl:Class ;
-                               rdfs:subClassOf :Genomic_Phenotypic_Analysis ;
-                               desc:definition "Resource that provides access to tools or functions that perform similarity searching involving biological sequences." ;
-                               rdfs:label "Sequence Similarity Searching" .
+                               rdfs:comment "Parentclass deprecated" ;
+                               rdfs:label "DEPRECATED Sequence Similarity Searching" ;
+                               rdfs:seeAlso :Genomic_Phenotypic_Analysis ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Visualization
@@ -3569,10 +3584,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Signaling_Network_Reconstruction
 :Signaling_Network_Reconstruction rdf:type owl:Class ;
-                                  rdfs:subClassOf :Genomic_Phenotypic_Analysis ,
-                                                  :Inference_From_Data ;
-                                  desc:definition "Resource that provides access to software, applications, or toolkits that generate network maps of biological signaling networks based on applying logic and statistics to observations/hypothesis." ;
-                                  rdfs:label "Signaling Network Reconstruction" .
+                                  rdfs:comment "Parentclass deprecated" ;
+                                  rdfs:label "DEPRECATED Signaling Network Reconstruction" ;
+                                  rdfs:seeAlso :Inference_From_Data ;
+                                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Skull_Stripping
@@ -3711,9 +3726,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Text_Analysis
 :Statistical_Text_Analysis rdf:type owl:Class ;
-                           rdfs:subClassOf :Text_Mining ;
-                           desc:definition "Resource that provides access to software, applications, or toolkits that performs statistical tests on text corpora." ;
-                           rdfs:label "Statistical Text Analysis" .
+                           rdfs:comment "Parentclass deprecated" ;
+                           rdfs:label "DEPRECATED Statistical Text Analysis" ;
+                           rdfs:seeAlso :Text_Mining ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stem_Cell_Therapy_Facility
@@ -3803,10 +3819,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Text_Mining
 :Text_Mining rdf:type owl:Class ;
-             rdfs:subClassOf :Data_Mining_and_Inference ,
-                             :Natural_Language_Processing ;
-             desc:definition "Resource that provides access to software, applications, or toolkits that derives information from free text." ;
-             rdfs:label "Text Mining" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Text Mining" ;
+             rdfs:seeAlso :Data_Mining_and_Inference ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Thesis
