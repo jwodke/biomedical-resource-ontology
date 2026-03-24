@@ -206,55 +206,72 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3003
-:S3003 rdf:type owl:Class ;
-       rdfs:subClassOf :S2002 ;
-       rdfs:comment "Usage for experimental research, teaching, or testing" ;
-       rdfs:label "Animal Facility" ;
-       skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2011
+:S2011 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Data Management SR"@en ;
+       skos:altLabel "Data Management Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides assistance or guidelines along the data life cycle."@en ;
+       skos:example <http://purl.obolibrary.org/obo/T4FS_0000447> .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3008
-:S3008 rdf:type owl:Class ;
-       rdfs:subClassOf :S2002 ;
-       rdfs:label "Molecular Biology Facility" ;
-       skos:definition "A 'Core Facility' with a specialization in MESH:'Molecular Biology'." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2012
+:S2012 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Material Storage SR"@en ;
+       skos:altLabel "Material Storage Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
+       skos:example "Harvard brain tissue bank"@en .
 
 [ rdf:type owl:Axiom ;
-   owl:annotatedSource :S3008 ;
+   owl:annotatedSource :S2012 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Molecular Biology'." ;
-   :mentions <http://id.nlm.nih.gov/mesh/D008967>
+   owl:annotatedTarget "A 'Service Resource' that provides storage, maintenance, and retrieval of 'Material Resource's."@en ;
+   :mentions :M1001
  ] .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3009
-:S3009 rdf:type owl:Class ;
-       rdfs:subClassOf :S2002 ;
-       rdfs:label "Physiology Facility" ;
-       skos:definition "A 'Core Facility' with a specialization in NCIT:'Physiology'." .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :S3009 ;
-   owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Core Facility' with a specialization in NCIT:'Physiology'." ;
-   :mentions <http://purl.obolibrary.org/obo/NCIT_C16990>
- ] .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2013
+:S2013 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:comment "It can include both materials and documentation along with expertise in the form of personnel."@en ;
+       rdfs:label "Regulatory Compliance SR"@en ;
+       skos:altLabel "Regulatory Compliance Service Resource"@en ;
+       skos:definition "A 'Service Resource' that provides guidance related to ethical or legal matters, including information provision and regulation application support."@en ;
+       skos:example "Protocol Statement that study was conducted according to Good Clinical Practice (GCP) guidelines"@en .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3010
-:S3010 rdf:type owl:Class ;
-       rdfs:subClassOf :S2002 ;
-       rdfs:comment "For research, diagnostic, or therapeutic purposes" ;
-       rdfs:label "Tissue Organ Facility" ;
-       skos:definition "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2014
+:S2014 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Technical Support SR"@en ;
+       skos:altLabel "Technical Support Service Resource"@en ;
+       skos:definition "A 'Service Resource' in which the service provider offers assistance with TOOL RESOURCEs in their correct installation, maintenance, operation, and repair."@en .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :S3010 ;
-   owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'." ;
-   :mentions <http://purl.obolibrary.org/obo/UBERON_0000479>
- ] .
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S2017
+:S2017 rdf:type owl:Class ;
+       rdfs:subClassOf :S1001 ;
+       rdfs:label "Training SR"@en ;
+       skos:altLabel "Training Service Resource"@en ;
+       skos:definition "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3015
+:S3015 rdf:type owl:Class ;
+       rdfs:subClassOf :S2014 ;
+       rdfs:label "Computational SR"@en ;
+       skos:altLabel "Computational Service Resource"@en ;
+       skos:definition "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of HARDWARE TR and SOFTWARE TR."@en ;
+       skos:example "database hosting, backup and disaster recovery"@en .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#S3016
+:S3016 rdf:type owl:Class ;
+       rdfs:subClassOf :S2014 ;
+       rdfs:label "Repair SR"@en ;
+       skos:altLabel "Repair Service Resource"@en ;
+       skos:definition "A 'Technical Support SR' that repairs physical tools like DEVICE Rs or technical, sanitary, and other installations."@en .
 
 
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
@@ -316,9 +333,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Animal_Compliance_Resource
 :Animal_Compliance_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                            desc:definition "A resource which can include a committee or a board that reviews research protocols and conducts evaluations of the animal care facilities.  The resource can be used to ensure the use of animals in research follows the required legal and ethical guidelines." ;
-                            rdfs:label "Animal Compliance Resource" .
+                            rdfs:comment "level of detail is too specific" ;
+                            rdfs:label "DEPRECATED Animal Compliance Resource" ;
+                            rdfs:seeAlso :S2013 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Animal_Models_Facility
@@ -331,9 +349,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Antibody_Production
 :Antibody_Production rdf:type owl:Class ;
-                     rdfs:subClassOf :Material_Service ;
-                     desc:definition "A resource that provides access to the ability to generate antibodies that bind to a specific antigen." ;
-                     rdfs:label "Antibody Production" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Antibody Production" ;
+                     rdfs:seeAlso :Material_Service ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Application_Programming_Interface
@@ -371,16 +390,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Authentication
 :Authentication rdf:type owl:Class ;
-                rdfs:subClassOf :Identity_Management ;
-                desc:definition "The process of confirming the correctness of the claimed identity. " ;
-                rdfs:label "Authentication" .
+                rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Authentication" ;
+                rdfs:seeAlso :Identity_Management ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Authorization
 :Authorization rdf:type owl:Class ;
-               rdfs:subClassOf :Identity_Management ;
-               desc:definition "The process of specifying access rights to a resource." ;
-               rdfs:label "Authorization" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Authorization" ;
+               rdfs:seeAlso :Identity_Management ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Automated_Natural_Language_Output
@@ -399,8 +420,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archive_Service
-:Backup_Archive_Service rdf:type owl:Class ;
-                        rdfs:subClassOf :Computational_Service .
+:Backup_Archive_Service rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archives_and_Disaster_Recovery
@@ -410,10 +430,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Behavioral_Analysis_Service
 :Behavioral_Analysis_Service rdf:type owl:Class ;
-                             rdfs:subClassOf :Computational_Service ;
-                             desc:definition "A resource that provides data from whole behaving animals, which are either provided to the service provider or purchased by the service provider specifically for the experiment which the provider was contracted to perform. Viewing this as an input/output relationship the input would be an animal and the output would be data such as an excel sheet of times of escape from the Morris water maze." ;
-                             rdfs:label "Behavioral Analysis Service" ;
-                             skos:editorialNote "pending final vetting: review hierarchy location" .
+                             rdfs:comment "level of detail is too specific" ;
+                             rdfs:label "DEPRECATED Behavioral Analysis Service" ;
+                             rdfs:seeAlso :S3015 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bibliographic_Resource
@@ -440,16 +460,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Analysis_Service
 :Biomaterial_Analysis_Service rdf:type owl:Class ;
-                              rdfs:subClassOf :Computational_Service ;
-                              desc:definition "A resource that provides data from any biomaterial sample that was given to the service provider. This can also be a service that performs an experiment such as electrophysiological examination of LTP in a transgenic mouse. Viewing this as an input/output relationship the input would be a tissue or an animal and the output would be data." ;
-                              rdfs:label "Biomaterial Analysis Service" .
+                              rdfs:comment "level of detail is too specific" ;
+                              rdfs:label "DEPRECATED Biomaterial Analysis Service" ;
+                              rdfs:seeAlso :S3015 ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Manufacture
 :Biomaterial_Manufacture rdf:type owl:Class ;
-                         rdfs:subClassOf :Material_Service ;
-                         desc:definition "A resource that produces a product that is of organismal origin. An example of a biomaterial service is the production of a knockout mouse or cell culture. Note, for simplicity of definitions all molecules including antibodies and toxins are considered reagents even though some may have an organismal origin." ;
-                         rdfs:label "Biomaterial Manufacture" .
+                         rdfs:comment "level of detail is too specific" ;
+                         rdfs:label "DEPRECATED Biomaterial Manufacture" ;
+                         rdfs:seeAlso :Material_Service ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Supply_Resource
@@ -516,9 +538,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calendar_Schedule_and_Resource_Management
 :Calendar_Schedule_and_Resource_Management rdf:type owl:Class ;
-                                           rdfs:subClassOf :Data_Service ;
-                                           desc:definition "A resource that provides functionality to allocate resources based on a method of timekeeping." ;
-                                           rdfs:label "Calendar Schedule and Resource Management" .
+                                           rdfs:comment "Parentclass deprecated" ;
+                                           rdfs:label "DEPRECATED Calendar Schedule and Resource Management" ;
+                                           rdfs:seeAlso :Data_Service ;
+                                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calorimeter
@@ -587,9 +610,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Certificate_Program
 :Certificate_Program rdf:type owl:Class ;
-                     rdfs:subClassOf :Training_Resource ;
-                     desc:definition "A resource that provides a document that certifies completion of the program. " ;
-                     rdfs:label "Certificate Program" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Certificate Program" ;
+                     rdfs:seeAlso :Training_Resource ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Chamber
@@ -680,10 +704,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Hosting
 :Computational_Hosting rdf:type owl:Class ;
-                       rdfs:subClassOf :Hosting ;
-                       desc:definition "" ;
-                       rdfs:label "Computational Hosting" ;
-                       skos:editorialNote "pending final vetting: propose definition" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Computational Hosting" ;
+                       rdfs:seeAlso :Hosting ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Model
@@ -695,8 +719,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
-:Computational_Service rdf:type owl:Class ;
-                       rdfs:subClassOf :S1001 .
+:Computational_Service rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computer-Instrumentation_Interface
@@ -717,9 +740,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Conflict_of_Interest_Resource
 :Conflict_of_Interest_Resource rdf:type owl:Class ;
-                               rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                               desc:definition "A resource that develops policies and procedures related to associations between academia and industry to ensure that the advantages of these connections are not being achieved at the expense of the fundamental values of objectivity in research." ;
-                               rdfs:label "Conflict of Interest Resource" .
+                               rdfs:comment "level of detail is too specific" ;
+                               rdfs:label "DEPRECATED Conflict of Interest Resource" ;
+                               rdfs:seeAlso :S2013 ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Connectivity_Matrix
@@ -736,9 +760,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuing_Medical_Education
 :Continuing_Medical_Education rdf:type owl:Class ;
-                              rdfs:subClassOf :Training_Resource ;
-                              desc:definition "A resource that provides post-grad education for physicians. " ;
-                              rdfs:label "Continuing Medical Education" .
+                              rdfs:comment "level of detail is too specific" ;
+                              rdfs:label "DEPRECATED Continuing Medical Education" ;
+                              rdfs:seeAlso :Training_Resource ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuous_Data
@@ -834,9 +859,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Computation_Service
 :Data_Computation_Service rdf:type owl:Class ;
-                          rdfs:subClassOf :Computational_Service ;
-                          desc:definition "A resource that provides calculating or processing over a data input, such as interpreting EEG data. Note, this may include human and/or computer expertise, so that a software tool may be included as a data computation service." ;
-                          rdfs:label "Data Computation Service" .
+                          rdfs:comment "level of detail is too specific" ;
+                          rdfs:label "DEPRECATED Data Computation Service" ;
+                          rdfs:seeAlso :S3015 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Distribution
@@ -895,10 +921,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Service
 :Data_Service rdf:type owl:Class ;
-              rdfs:subClassOf :Computational_Service ;
-              desc:definition "A resource that provides data management and specialized use." ;
-              rdfs:label "Data Service" ;
-              skos:editorialNote "pending final vetting: review location in hierarchy" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Data Service" ;
+              rdfs:seeAlso :S3015 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage
@@ -912,8 +938,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Service
-:Data_Storage_Service rdf:type owl:Class ;
-                      rdfs:subClassOf :S1001 .
+:Data_Storage_Service rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transfer_and_Communication
@@ -946,9 +971,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database_Hosting
 :Database_Hosting rdf:type owl:Class ;
-                  rdfs:subClassOf :Hosting ;
-                  desc:definition "A resource that provides space for and access to a database." ;
-                  rdfs:label "Database Hosting" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Database Hosting" ;
+                  rdfs:seeAlso :Hosting ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database_Software
@@ -988,8 +1014,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Disaster_Recovery_Service
-:Disaster_Recovery_Service rdf:type owl:Class ;
-                           rdfs:subClassOf :Computational_Service .
+:Disaster_Recovery_Service rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Discrete_Data
@@ -1089,9 +1114,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Environmental_Health_and_Safety_Resource
 :Environmental_Health_and_Safety_Resource rdf:type owl:Class ;
-                                          rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                                          desc:definition "A resource that provides services to ensure research is conducted in accordance with environmental and safety standards (e.g. laboratory safety procedures, radiation safety procedures, disposal protocols, etc)." ;
-                                          rdfs:label "Environmental Health and Safety Resource" .
+                                          rdfs:comment "level of detail is too specific" ;
+                                          rdfs:label "DEPRECATED Environmental Health and Safety Resource" ;
+                                          rdfs:seeAlso :S2013 ;
+                                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exercise_Study_Facility
@@ -1422,9 +1448,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Grid_Computing
 :Grid_Computing rdf:type owl:Class ;
-                rdfs:subClassOf :Computational_Service ;
-                desc:definition "A resource that provides a combination of computational resources from multiple administrative domains, applied to a common task. " ;
-                rdfs:label "Grid Computing" .
+                rdfs:comment "level of detail is too specific" ;
+                rdfs:label "DEPRECATED Grid Computing" ;
+                rdfs:seeAlso :S3015 ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heat_Map
@@ -1460,23 +1487,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hosting
 :Hosting rdf:type owl:Class ;
-         rdfs:subClassOf :Computational_Service ;
-         desc:definition "A resource that provides a server for data or programs that another computer can access by means of a network." ;
-         rdfs:label "Hosting" .
+         rdfs:comment "level of detail is too specific" ;
+         rdfs:label "DEPRECATED Hosting" ;
+         rdfs:seeAlso :S3015 ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Human_Embryonic_Stem_Cell_Resource
 :Human_Embryonic_Stem_Cell_Resource rdf:type owl:Class ;
-                                    rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                                    desc:definition "A resource that provides guidance and information regarding the use of embryos or human embryonic stem cells in research." ;
-                                    rdfs:label "Human Embryonic Stem Cell Resource" .
+                                    rdfs:comment "level of detail is too specific" ;
+                                    rdfs:label "DEPRECATED Human Embryonic Stem Cell Resource" ;
+                                    rdfs:seeAlso :S2013 ;
+                                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Human_Studies_Compliance_Resource
 :Human_Studies_Compliance_Resource rdf:type owl:Class ;
-                                   rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                                   desc:definition "A resource that provides guidelines and information related to research involving humans with the aim to protect the rights and welfare of research subjects. Such resources could supply consent forms, patient questionnaires, assist in ethical protocol designs, host seminars on conducting human studies, etc." ;
-                                   rdfs:label "Human Studies Compliance Resource" .
+                                   rdfs:comment "level of detail is too specific" ;
+                                   rdfs:label "DEPRECATED Human Studies Compliance Resource" ;
+                                   rdfs:seeAlso :S2013 ;
+                                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hyperbolic_Graph
@@ -1742,9 +1772,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Identity_Management
 :Identity_Management rdf:type owl:Class ;
-                     rdfs:subClassOf :Data_Service ;
-                     desc:definition "A resource that provides software which maintains the identity of a software user with their software account." ;
-                     rdfs:label "Identity Management" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Identity Management" ;
+                     rdfs:seeAlso :Data_Service ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image
@@ -1865,17 +1896,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument_Manufacture
 :Instrument_Manufacture rdf:type owl:Class ;
-                        rdfs:subClassOf :Material_Service ;
-                        desc:definition "A resource that provides the manufacture of a piece of hardware. An example is producing a made to order microarray chip." ;
-                        rdfs:label "Instrument Manufacture" .
+                        rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Instrument Manufacture" ;
+                        rdfs:seeAlso :Material_Service ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integrated_Hosting
 :Integrated_Hosting rdf:type owl:Class ;
-                    rdfs:subClassOf :Hosting ;
-                    desc:definition "Cloud computing" ;
-                    rdfs:label "Integrated Hosting" ;
-                    skos:editorialNote "pending final vetting: refine definition" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Integrated Hosting" ;
+                    rdfs:seeAlso :Hosting ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration
@@ -1897,9 +1929,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Intellectual_Property_Resource
 :Intellectual_Property_Resource rdf:type owl:Class ;
-                                rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                                desc:definition "A resource that provides legal counsel regarding contracts and agreements between an institution and various external parties.  These resources may provide legal seminars along with training materials regarding intellectual property." ;
-                                rdfs:label "Intellectual Property Resource" .
+                                rdfs:comment "level of detail is too specific" ;
+                                rdfs:label "DEPRECATED Intellectual Property Resource" ;
+                                rdfs:seeAlso :S2013 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interaction_Modeling
@@ -2204,9 +2237,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Analysis_Service
 :Material_Analysis_Service rdf:type owl:Class ;
-                           rdfs:subClassOf :Computational_Service ;
-                           desc:definition "A resource that provides data from any material sample that was given to the service provider. This can also be a service which performs an experiment such as electrophysiological examination of LTP magnitude in the presence of a drug given to the service provider. Viewing this as an input/output relationship the input would involve a drug and the output would be data such as a dose response curve." ;
-                           rdfs:label "Material Analysis Service" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Material Analysis Service" ;
+                           rdfs:seeAlso :S3015 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Resource
@@ -2220,16 +2254,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Service
 :Material_Service rdf:type owl:Class ;
-                  rdfs:subClassOf :S1001 ;
-                  desc:definition "A resource that provides a service the output of which is a material object. That material object might be an instrument, a chemical, or an animal." ;
-                  rdfs:label "Material Service" .
+                  rdfs:comment "there is no clear difference to Core Facility" ;
+                  rdfs:label "DEPRECATED Material Service" ;
+                  rdfs:seeAlso :S2002 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Storage_Service
 :Material_Storage_Service rdf:type owl:Class ;
-                          rdfs:subClassOf :S1001 ;
-                          desc:definition "A resource that provides material storage, maintenance and retrieval, such as the Harvard brain tissue bank." ;
-                          rdfs:label "Material Storage Service" .
+                          rdfs:comment "change of definition and IRI" ;
+                          rdfs:label "DEPRECATED Material Storage Service" ;
+                          rdfs:seeAlso :S2012 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Matrix
@@ -2509,9 +2545,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_and_Communication
 :Network_and_Communication rdf:type owl:Class ;
-                           rdfs:subClassOf :Computational_Service ;
-                           desc:definition "A resource that provides access to or support for a system of interconnected computers able to share information." ;
-                           rdfs:label "Network and Communication" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Network and Communication" ;
+                           rdfs:seeAlso :S3015 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_model
@@ -2691,9 +2728,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Outreach_Program
 :Outreach_Program rdf:type owl:Class ;
-                  rdfs:subClassOf :Training_Resource ;
-                  desc:definition "A resource that provides general education to the public. " ;
-                  rdfs:label "Outreach Program" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Outreach Program" ;
+                  rdfs:seeAlso :Training_Resource ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#P1001
@@ -2888,9 +2926,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pathology_Laboratory_Screening
 :Pathology_Laboratory_Screening rdf:type owl:Class ;
-                                rdfs:subClassOf :Material_Service ;
-                                desc:definition "A resource that provides the analysis of biological samples. An example is genotyping transgenic mice." ;
-                                rdfs:label "Pathology Laboratory Screening" .
+                                rdfs:comment "level of detail is too specific" ;
+                                rdfs:label "DEPRECATED Pathology Laboratory Screening" ;
+                                rdfs:seeAlso :Material_Service ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pattern_Inference_Algorithm
@@ -3165,9 +3204,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Manufacture
 :Reagent_Manufacture rdf:type owl:Class ;
-                     rdfs:subClassOf :Material_Service ;
-                     desc:definition "A resource that manufactures a product that could have a role as reagent. Examples include producing antibodies to a particular antigen (Charles River custom antibody service) or designing drugs which fit a receptor." ;
-                     rdfs:label "Reagent Manufacture" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Reagent Manufacture" ;
+                     rdfs:seeAlso :Material_Service ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
@@ -3191,16 +3231,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Compliance_Resource
 :Regulatory_Compliance_Resource rdf:type owl:Class ;
-                                rdfs:subClassOf :S1001 ;
-                                desc:definition "A resource that provides guidance related to ethical or legal matters concerning scientific research.  These resources provide both information regarding ethical/legal research matters as well as methods for developing, applying, assessing and reviewing regulations (i.e. compliance documents, procedures, consent forms, etc).  These resources can include both materials and documentation along with expertise in the form of personnel." ;
-                                rdfs:label "Regulatory Compliance Resource" .
+                                rdfs:comment "change of definition and of IRI" ;
+                                rdfs:label "DEPRECATED Regulatory Compliance Resource" ;
+                                rdfs:seeAlso :S2013 ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Policy_Resource
 :Regulatory_Policy_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :Regulatory_Compliance_Resource ;
-                            desc:definition "A resource that provides guidelines for complying with federal, state, and local regulations (e.g. research integrity office, research policy office, etc).  The resource can provide seminars, documents, and other items regarding regulations." ;
-                            rdfs:label "Regulatory Policy Resource" .
+                            rdfs:comment "level of detail is too specific" ;
+                            rdfs:label "DEPRECATED Regulatory Policy Resource" ;
+                            rdfs:seeAlso :S2013 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Signaling_Network_Reconstruction
@@ -3268,31 +3310,39 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S1001
 :S1001 rdf:type owl:Class ;
        rdfs:subClassOf :R0001 ;
-       rdfs:comment "An organized system of apparatus, appliances, technology, personnel, performance, etc. It references to the provider, who performs the task for a service consumer." ;
-       rdfs:label "Service Resource" ;
+       rdfs:comment "An organized system of apparatus, appliances, technology, personnel, performance, etc. It references to the provider, who performs the task for a service consumer."@en ;
+       rdfs:label "Service Resource"@en ;
        skos:altLabel "SR" ;
-       skos:definition "A 'Resource' providing access to an act of supporting activity, consisting in a defined system for access to and conditions for the offered support." .
+       skos:definition "A 'Resource' providing access to an act of supporting activity, consisting in a defined system for access to and conditions for the offered support."@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2002
 :S2002 rdf:type owl:Class ;
        rdfs:subClassOf :S1001 ;
-       rdfs:comment "This includes specialized devices, technologies and/or professional support, and usually services and space for this particular purpose." ;
-       rdfs:label "Core Facility" ;
-       skos:definition "A 'Service Resource' that provides expert support (knowledge and devices) for a specific type of tasks." .
+       rdfs:comment "This includes specialized devices, technologies and/or professional support, and usually services and space for this particular purpose."@en ;
+       rdfs:label "Core Facility"@en ;
+       skos:definition "A 'Service Resource' that provides expert support (knowledge and devices) for a specific type of tasks."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3003
+:S3003 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:comment "Usage for experimental research, teaching, or testing"@en ;
+       rdfs:label "Animal Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals."@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3004
 :S3004 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
-       rdfs:comment "Is classified by guidelines into levels 1 to 4." ;
-       rdfs:label "Biosafety Level Facility" ;
-       skos:definition "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'.." .
+       rdfs:comment "Is classified by guidelines into levels 1 to 4."@en ;
+       rdfs:label "Biosafety Level Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3004 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'.." ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization to have taken precautions for the containement of potentially dangerous biological agents. The precautions are according to NCIT:'Biosafety Level'."@en ;
    :mentions <http://purl.obolibrary.org/obo/NCIT_C151920>
  ] .
 
@@ -3300,13 +3350,13 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3005
 :S3005 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
-       rdfs:label "Cell Biology Facility" ;
-       skos:definition "A 'Core Facility' with a specialization in MESH:'Cell Biology'." .
+       rdfs:label "Cell Biology Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Cell Biology'."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3005 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Cell Biology'." ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Cell Biology'."@en ;
    :mentions <http://id.nlm.nih.gov/mesh/D003585>
  ] .
 
@@ -3314,15 +3364,58 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3006
 :S3006 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
-       rdfs:label "Fabrication Facility" ;
-       skos:definition "A 'Core Facility' with a specialization on creating, manufacturing, building or assembling resources from raw or intermediate materials used in scientific research." .
+       rdfs:label "Fabrication Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization on creating, manufacturing, building or assembling resources from raw or intermediate materials used in scientific research."@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3007
 :S3007 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
-       rdfs:label "Imaging Facility" ;
-       skos:definition "A 'Core Facility' with a specialization on technologies or methods that aid in the visualization of any biomedical material, data, or process." .
+       rdfs:label "Imaging Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization on technologies or methods that aid in the visualization of any biomedical material, data, or process."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3008
+:S3008 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Molecular Biology Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Molecular Biology'."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3008 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in MESH:'Molecular Biology'."@en ;
+   :mentions <http://id.nlm.nih.gov/mesh/D008967>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3009
+:S3009 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:label "Physiology Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization in NCIT:'Physiology'."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3009 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in NCIT:'Physiology'."@en ;
+   :mentions <http://purl.obolibrary.org/obo/NCIT_C16990>
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3010
+:S3010 rdf:type owl:Class ;
+       rdfs:subClassOf :S2002 ;
+       rdfs:comment "For research, diagnostic, or therapeutic purposes"@en ;
+       rdfs:label "Tissue Organ Facility"@en ;
+       skos:definition "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3010 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'."@en ;
+   :mentions <http://purl.obolibrary.org/obo/UBERON_0000479>
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
@@ -3364,9 +3457,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Seminar_Series
 :Seminar_Series rdf:type owl:Class ;
-                rdfs:subClassOf :Training_Resource ;
-                desc:definition "A resource that provides presentations from experts within their field. " ;
-                rdfs:label "Seminar Series" .
+                rdfs:comment "level of detail is too specific" ;
+                rdfs:label "DEPRECATED Seminar Series" ;
+                rdfs:seeAlso :Training_Resource ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sentence_Splitting
@@ -3647,9 +3741,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
-:Technical_Support rdf:type owl:Class ;
-                   rdfs:subClassOf :P1001 ,
-                                   :S1001 .
+:Technical_Support rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Temperature_Control_Unit
@@ -3726,18 +3818,19 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Training_Resource
 :Training_Resource rdf:type owl:Class ;
-                   rdfs:subClassOf :R0001 ;
-                   desc:definition "A resource that provides access to educational materials or events, such as courses, workshops or graduate programs." ;
-                   rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-                   rdfs:label "Training Resource" .
+                   rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                                "there is no clear difference to Training SR" ;
+                   rdfs:label "DEPRECATED Training Resource" ;
+                   rdfs:seeAlso :S2017 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Training_Service
 :Training_Service rdf:type owl:Class ;
-                  rdfs:subClassOf :S1001 ;
-                  desc:definition "A resource that provides training to people." ;
-                  rdfs:label "Training Service" ;
-                  skos:editorialNote "pending final vetting: review location in hierarchy" .
+                  rdfs:comment "change of definition and IRI" ;
+                  rdfs:label "DEPRECATED Training Service" ;
+                  rdfs:seeAlso :S2017 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorial
@@ -3853,9 +3946,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Website_Hosting
 :Website_Hosting rdf:type owl:Class ;
-                 rdfs:subClassOf :Hosting ;
-                 desc:definition "A resource that provides space for and access to a web server and content." ;
-                 rdfs:label "Website Hosting" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Website Hosting" ;
+                 rdfs:seeAlso :Hosting ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#White_Paper
@@ -4515,8 +4609,10 @@ desc:replacedBy rdfs:label "replacedBy" .
                             skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Backup_Archive_Service desc:definition "A resource that provides long-term storage for back-up copies of files. " ;
-                        rdfs:label "Backup Archive Service" .
+:Backup_Archive_Service rdfs:comment "level of detail is too specific" ;
+                        rdfs:label "DEPRECATED Backup Archive Service" ;
+                        rdfs:seeAlso :S3015 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 :Backup_Archives_and_Disaster_Recovery desc:definition "A resource that provides long-term storage for backup copies of files or for files that are no longer in active use, and the ability to retrieve backed up content in the event of a disaster that impacts the system in question," ;
@@ -4591,8 +4687,10 @@ we think this should be deleted""" ;
                      skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Computational_Service desc:definition "A resource that provides support for computer-related services such as database hosting and backup and disaster recovery." ;
-                       rdfs:label "Computational Service" .
+:Computational_Service rdfs:comment "change in hierarchy, definition and IRI" ;
+                       rdfs:label "DEPRECATED Computational Service" ;
+                       rdfs:seeAlso :S3015 ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 :Connectivity_Matrix desc:definition "A matrix is a subset of a network that contains node-edge-node connections of interest and are represented as a matrix." ;
@@ -4647,8 +4745,10 @@ we think this should be deleted""" ;
                          skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Data_Storage_Service desc:definition "A resource that provides data storage and maintenance, such as a database that accepts submissions of similar data for storage and use. For example, the cell centered database (CCDB) encourages submissions of anatomical images that will increase its' holdings." ;
-                      rdfs:label "Data Storage Service" .
+:Data_Storage_Service rdfs:comment "it is included in Data Management SR" ;
+                      rdfs:label "DEPRECATED Data Storage Service" ;
+                      rdfs:seeAlso :S2011 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 :Data_Transform desc:definition "Resource that provides access to software, applications, or toolkits that general data transformations." ;
@@ -4671,8 +4771,10 @@ we think this should be deleted""" ;
                    rdfs:label "Database Software" .
 
 
-:Disaster_Recovery_Service desc:definition "A resource that provides the ability to retrieve archived content in the event of a disaster that impacts the system in question. " ;
-                           rdfs:label "Disaster Recovery Service" .
+:Disaster_Recovery_Service rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Disaster Recovery Service" ;
+                           rdfs:seeAlso :S3015 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 :Discrete_Data desc:definition "A data object that consists of separate, but finite set of values. " ;
@@ -5070,9 +5172,10 @@ we think this should be deleted""" ;
          skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Technical_Support desc:definition "A resource that provides aid or assistance with a technology product." ;
-                   rdfs:label "Technical Support" ;
-                   skos:editorialNote "pending final vetting: refine definition" .
+:Technical_Support rdfs:comment "change of definition and IRI" ;
+                   rdfs:label "DEPRECATED Technical Support" ;
+                   rdfs:seeAlso :S2014 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 :Three_Dimensional_Data desc:definition "Discrete data that consists of x, y, and z coordinates." ;

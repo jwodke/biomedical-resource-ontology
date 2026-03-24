@@ -96,8 +96,6 @@
 | - | - | Protocol Development Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Psychometrics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Toxicology Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
-
-**ab hier @en ergänzen, in ttl, da super nervig in protege**
 | S1001 | Service Resource | Service Resource | definition change |
 | S2002 | Core Facility | Facility Core | rename and definition change |
 | S3003 | Animal Facility | Research Animals Facility | rename and definition change |
@@ -136,17 +134,51 @@
 | - | - | Immunohistochemistry Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
 | - | - | Micro Dissection Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
 | - | - | Phlebotomy Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| - | - | Material Service | Subclass of Service Resource, deprecated because there is no clear difference to Core Facility |
+| - | - | Antibody Production | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Biomaterial Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Instrument Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Pathology Laboratory Screening | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Reagent Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
+| S2011 | Data Management SR | - | new class added as subclass of Service Resource |
+| - | - | Data Storage Service | Subclass of Service Resource, deprecated because it is included in Data Management SR |
+| S2012 | Material Storage SR | Material Storage Service | definition change |
+| S2013 | Regulatory Compliance SR | Regulatory Compliance Resource | definition change |
+| - | - | Animal Compliance Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Conflict of Interest Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Environmental Health and Safety Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Human Embryonic Stem Cell Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Human Studies Compliance Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Intellectual Property Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| - | - | Regulatory Policy Resource | Subclass of Regulatory Compliance SR, deprecated because the level of detail is too specific |
+| S2014 | Technical Support SR | Technical Support | definition change |
+| S3015 | Computational SR | Computational Service | change in hierarchy from Subclass of Service Resource to Subclass of Technical Support SR and definition change |
+| - | - | Backup Archive Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Behavorial Analysis Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Biomaterial Analysis Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Data Computation Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Data Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Calendar Schedule and Resource Management | Subclass of Data Service, deprecated because Parentclass deprecated |
+| - | - | Identity Management | Subclass of Data Service, deprecated because Parentclass deprecated |
+| - | - | Authentication | Subclass of Identity Management, deprecated because Parentclass deprecated |
+| - | - | Authorization | Subclass of Identity Management, deprecated because Parentclass deprecated |
+| - | - | Disaster Recovery Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Grid Computing | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Hosting | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Computational Hosting | Subclass of Hosting, deprecated because Parentclass deprecated |
+| - | - | Database Hosting | Subclass of Hosting, deprecated because Parentclass deprecated |
+| - | - | Integrated Hosting | Subclass of Hosting, deprecated because Parentclass deprecated |
+| - | - | Website Hosting | Subclass of Hosting, deprecated because Parentclass deprecated |
+| - | - | Material Analysis Service | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| - | - | Network and Communication | Subclass of Computational SR, deprecated because the level of detail is too specific |
+| S3016 | Repair SR | - | new class added as subclass of Technical Support SR |
+| S2017 | Training SR | Training Service | definition change |
+| - | - | Training Resource | Subclass of Resource, deprecated because there is no clear difference to Training SR |
+| - | - | Certificate Program | Subclass of Training Resource, deprecated because the level of detail is too specific |
+| - | - | Continuing Medical Education | Subclass of Training Resource, deprecated because the level of detail is too specific |
+| - | - | Outreach Program | Subclass of Training Resource, deprecated because the level of detail is too specific |
+| - | - | Seminar Service | Subclass of Training Resource, deprecated because the level of detail is too specific |
+**ab hier @en ergänzen, in ttl, da super nervig in protege**
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
