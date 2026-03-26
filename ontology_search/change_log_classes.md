@@ -215,7 +215,7 @@ Deprecate classs from Software:
 | - | - | Pattern Inference Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
 | - | - | Symbolic and Analytic Model | Subclass of Algorithm, deprecated because Parentclass deprecated |
 | - | - | Model with Closed Form Solution | Subclass of Symbolic and Analytic Model, deprecated because Parentclass deprecated |
-|  |  |  |  |
+
 under Data Analysis Software:
 | - | - | Data Mining and Inference | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
 | - | - | Inference from Data | Subclass of Data Mining and Inference, deprecated because Parentclass deprecated |
@@ -242,12 +242,119 @@ under Data Analysis Software:
 | - | - | Sentence Splitting | Subclass of Parsing, deprecated because Parentclass deprecated |
 | - | - | Phenotype Management | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
 | - | - | Signal Processing | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
-...
+| - | - | Averaging and Agglomeration | Subclass of Signal Processing, deprecated because Parentclass deprecated |
+| - | - | Data Normalization | Subclass of Signal Processing, deprecated because Parentclass deprecated |
+| - | - | Outlier Detection and Removal | Subclass of Signal Processing, deprecated because Parentclass deprecated |
+| - | - | Regularization and Smoothing | Subclass of Signal Processing, deprecated because Parentclass deprecated |
+| - | - | Time Series Analysis | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Statistical Analysis | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| - | - | Statistical Package | Subclass of Statistical Analysis, deprecated because Parentclass deprecated |
+
+under Image Processing:
+| - | - | Analysis of Gel-Electrophoresis | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Atlas Generation | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Cortical Modeling | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Exploratory Data Analysis | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Pre-Processing | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Data Transform | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
+| - | - | Spectral Transform | Subclass of Data Transform, deprecated because Parentclass deprecated |
+| - | - | Fourier Transform | Subclass of Spectral Transform, deprecated because Parentclass deprecated |
+| - | - | Wavelet Transform | Subclass of Spectral Transform, deprecated because Parentclass deprecated |
+| - | - | Filtering | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
+| - | - | Inhomogenity Correction | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
+| - | - | Skull Stripping | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
+| - | - | Registration | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Segmentation | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+
+under Data Transfer and Communication:
+| - | - | Communication Interface | Subclass of *Data Transfer and Communication*, deprecated because the level of detail is too specific |
+| - | - | Dissemination Vehicle | Subclass of *Data Transfer and Communication*, deprecated because the level of detail is too specific |
+| - | - | Education | Subclass of Dissemination Vehicle, deprecated because Parentclass deprecated |
+| - | - | Course Material | Subclass of Education, deprecated because Parentclass deprecated |
+| - | - | Tutorial | Subclass of Education, deprecated because Parentclass deprecated |
+| - | - | Web Posting | Subclass of Dissemination Vehicle, deprecated because Parentclass deprecated |
+| - | - | News | Subclass of Web Posting, deprecated because Parentclass deprecated |
+| - | - | Online Course | Subclass of Web Posting, deprecated because Parentclass deprecated |
+
+under Data Integration and Interoperability Tool:
+| - | - | Pipeline Manager | Subclass of *Data Integration and Interoperability Tool*, deprecated because the level of detail is too specific |
+| - | - | Graphical Processing Workflow Environments | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
+| - | - | Processing Pipeline | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
+| - | - | Workbench | Subclass of *Data Integration and Interoperability Tool*, deprecated because the level of detail is too specific |
+
+in Interactive Tool:
+| - | - | Interactive Tool | Subclass of *Software*, deprecated because it is a feature and not a specification |
+| - | - | Communication and Collaborative Work | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Data Editor | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Graphical Composition | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Interactive Network Analysis | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Interactive Web-Based Tool | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Bug Reporting | Subclass of Interactive Web-Based Tool, deprecated because Parentclass deprecated |
+| - | - | Feature Request | Subclass of Interactive Web-Based Tool, deprecated because Parentclass deprecated |
+| - | - | Mailing List | Subclass of Interactive Web-Based Tool, deprecated because Parentclass deprecated |
+| - | - | Online Support | Subclass of Interactive Web-Based Tool, deprecated because Parentclass deprecated |
+| - | - | Knowledge Mining and Capturing | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Software Development Resource | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Software Development Tool | Subclass of Software Development Resource, deprecated because Parentclass deprecated |
+| - | - | Code Profiler | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Code Testing Framework | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Compiler | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Cross-Language Wrapping | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Cross-Plattform Tool | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Document Generation | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Documentation Generation | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Integration | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Application Programming Interface | Subclass of Integration, deprecated because Parentclass deprecated |
+| - | - | Graphical Integration | Subclass of Integration, deprecated because Parentclass deprecated |
+| - | - | Mapper | Subclass of Integration, deprecated because Parentclass deprecated |
+| - | - | Resource Integration Component | Subclass of Integration, deprecated because Parentclass deprecated |
+| - | - | Ontology Development and Management | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Data Annotation | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Ontology Development | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Ontology Diff and Alignment | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Ontology Visualization | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Programmatic Access | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Web Access | Subclass of Ontology Development and Management, deprecated because Parentclass deprecated |
+| - | - | Software Development Environment | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Source Control | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Testing Tools | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Version Source Control System | Subclass of Software Development Tool, deprecated because Parentclass deprecated |
+| - | - | Software Engineering Tool | Subclass of Software Development Resource, deprecated because Parentclass deprecated |
+| - | - | Visualization | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+| - | - | Data Exploration | Subclass of Visualization, deprecated because Parentclass deprecated |
+| - | - | Graph Viewer | Subclass of Visualization, deprecated because Parentclass deprecated |
+| - | - | Hyperbolic Graph | Subclass of Graph Viewer, deprecated because Parentclass deprecated |
+| - | - | Hierarchical Tree | Subclass of Hyperbolic Graph, deprecated because Parentclass deprecated |
+| - | - | Heat Map | Subclass of Visualization, deprecated because Parentclass deprecated |
+| - | - | Imaging | Subclass of Visualization, deprecated because Parentclass deprecated |
+| - | - | Cross-Sectional Viewer | Subclass of Imaging, deprecated because Parentclass deprecated |
+| - | - | Manifold Viewer | Subclass of Imaging, deprecated because Parentclass deprecated |
+| - | - | Sequence Visualization | Subclass of Visualization, deprecated because Parentclass deprecated |
+| - | - | Workbench | Subclass of Interactive Tool, deprecated because Parentclass deprecated |
+
+under Modeling and Simulation:
+| - | - | Finite Element Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Interaction Modeling | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Protein Interaction Modeling | Subclass of Interaction Modeling, deprecated because Parentclass deprecated |
+| - | - | Mesh Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Numerical Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Physico-Chemical Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Cell Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
+| - | - | Mechanical Simulation | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
+| - | - | Contact Modelling | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Continuum Method Simulation | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Controllers | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Meshing | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Molecular Force Field Calculator | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Multibody Dynamics | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
+| - | - | Molecular Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
+...
+| - | - | Network Interaction Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
+| - | - | Physiological Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
+
+| - | - | Random Number Simulation | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Structural Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
+| - | - | Wavelet Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |

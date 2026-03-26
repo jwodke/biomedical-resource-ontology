@@ -290,9 +290,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Application_Programming_Interface
 :Application_Programming_Interface rdf:type owl:Class ;
-                                   rdfs:subClassOf :Integration ;
-                                   desc:definition "Resource that provides access to software, application, or toolkit that enables or can be used to develop application programming interfaces." ;
-                                   rdfs:label "Application Programming Interface" .
+                                   rdfs:comment "Parentclass deprecated" ;
+                                   rdfs:label "DEPRECATED Application Programming Interface" ;
+                                   rdfs:seeAlso :Integration ;
+                                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Approximate_Graph_Alignment
@@ -343,8 +344,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Agglomeration
-:Averaging_and_Agglomeration rdf:type owl:Class ;
-                             rdfs:subClassOf :Signal_Processing .
+:Averaging_and_Agglomeration rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Aglomeration
@@ -448,9 +448,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bug_Reporting
 :Bug_Reporting rdf:type owl:Class ;
-               rdfs:subClassOf :Interactive_Web-Based_Tool ;
-               desc:definition "Resource that provides access to software, application, or toolkit that enable web-based tools that provide structure to indicate a problem or issue. Typically, bug reporting software provides a mechanism to indicate the severity of the problem and a contact person to review the issue." ;
-               rdfs:label "Bug Reporting" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Bug Reporting" ;
+               rdfs:seeAlso :Interactive_Web-Based_Tool ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#CT_Scanner
@@ -586,16 +587,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Code_Profiler
 :Code_Profiler rdf:type owl:Class ;
-               rdfs:subClassOf :Software_Development_Tool ;
-               desc:definition "A resource that provides a performance analysis tool that measures the behavior of a program as it executes, particularly the frequency and duration of function calls. The profiling process helps to determine which subroutines (or just snippets of code) take longest to execute and which subroutines are called most often. Code profilers are used when you suspect that some part of your code is called very often and maybe there is a need to optimize it, which could significantly improve the overall performance. Profilers use a wide variety of techniques to collect data, including hardware interrupts, code instrumentation, instruction set simulation, operating system hooks, and performance counters." ;
-               rdfs:label "Code Profiler" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Code Profiler" ;
+               rdfs:seeAlso :Software_Development_Tool ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Code_Testing_Framework
 :Code_Testing_Framework rdf:type owl:Class ;
-                        rdfs:subClassOf :Software_Development_Tool ;
-                        desc:definition "A resource that provides a software environment created to investigate the quality of the product or service under test, with respect to the context in which it is intended to operate. This includes, but is not limited to, the process of executing a program or application with the intent of finding software bugs." ;
-                        rdfs:label "Code Testing Framework" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Code Testing Framework" ;
+                        rdfs:seeAlso :Software_Development_Tool ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Communication_Interface
@@ -607,9 +610,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Communication_and_Collaborative_Work
 :Communication_and_Collaborative_Work rdf:type owl:Class ;
-                                      rdfs:subClassOf :Interactive_Tool ;
-                                      desc:definition "Resource that provides access to software, application, or toolkit that has mechanisms for sharing information between members of a group working on a shared project." ;
-                                      rdfs:label "Communication and Collaborative Work" .
+                                      rdfs:comment "Parentclass deprecated" ;
+                                      rdfs:label "DEPRECATED Communication and Collaborative Work" ;
+                                      rdfs:seeAlso :Interactive_Tool ;
+                                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Community_Structure_Analysis
@@ -622,9 +626,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Compiler
 :Compiler rdf:type owl:Class ;
-          rdfs:subClassOf :Software_Development_Tool ;
-          desc:definition "A resource that provides a computer program (or set of programs) that transforms source code written in a computer language (the source language) into another computer language (the target language, often having a binary form known as object code). The most common reason for wanting to transform source code is to create an executable program. A \\\\u201ccompiler\\\\u201d is primarily used for programs that translate source code from a high-level programming language to a lower level language (e.g., assembly language or machine language), and is likely to perform many or all of the following operations: lexical analysis, pre-processing, parsing, semantic analysis, code generation, and code optimization." ;
-          rdfs:label "Compiler" .
+          rdfs:comment "Parentclass deprecated" ;
+          rdfs:label "DEPRECATED Compiler" ;
+          rdfs:seeAlso :Software_Development_Tool ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Geometry
@@ -686,9 +691,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Contact_Modeling
 :Contact_Modeling rdf:type owl:Class ;
-                  rdfs:subClassOf :Mechanical_Simulation ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that simulate the effect of contact between objects. For example an articular contact model to study articular surface stresses." ;
-                  rdfs:label "Contact Modeling" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Contact Modeling" ;
+                  rdfs:seeAlso :Mechanical_Simulation ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuing_Medical_Education
@@ -706,16 +712,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuum_Method_Simulation
 :Continuum_Method_Simulation rdf:type owl:Class ;
-                             rdfs:subClassOf :Mechanical_Simulation ;
-                             desc:definition "Resource that provides access to software, applications, or toolkits that uses all data points in a simulation." ;
-                             rdfs:label "Continuum Method Simulation" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Continuum Method Simulation" ;
+                             rdfs:seeAlso :Mechanical_Simulation ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Controllers
 :Controllers rdf:type owl:Class ;
-             rdfs:subClassOf :Mechanical_Simulation ;
-             desc:definition "Resource that provides access to software, applications, or toolkits that use controllers in the performance of a simulation." ;
-             rdfs:label "Controllers" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Controllers" ;
+             rdfs:seeAlso :Mechanical_Simulation ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Convolution
@@ -735,30 +743,34 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Course_Material
 :Course_Material rdf:type owl:Class ;
-                 rdfs:subClassOf :Education ;
-                 desc:definition "Resource that provides access to educational material that can be used to disseminate information about a course of study. " ;
-                 rdfs:label "Course Material" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Course Material" ;
+                 rdfs:seeAlso :Education ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cross-Language_Wrapping
 :Cross-Language_Wrapping rdf:type owl:Class ;
-                         rdfs:subClassOf :Software_Development_Tool ;
-                         desc:definition "Resource that provides access to software, application, or toolkit that enables an interactive software development tool that creates language bindings." ;
-                         rdfs:label "Cross-Language Wrapping" .
+                         rdfs:comment "Parentclass deprecated" ;
+                         rdfs:label "DEPRECATED Cross-Language Wrapping" ;
+                         rdfs:seeAlso :Software_Development_Tool ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cross-Platform_Tool
 :Cross-Platform_Tool rdf:type owl:Class ;
-                     rdfs:subClassOf :Software_Development_Tool ;
-                     desc:definition "Resource that provides access to software, application, or toolkit that enables an interactive software development tool that runs on different computer operating systems." ;
-                     rdfs:label "Cross-Platform Tool" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Cross-Platform Tool" ;
+                     rdfs:seeAlso :Software_Development_Tool ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cross-Sectional_Viewer
 :Cross-Sectional_Viewer rdf:type owl:Class ;
-                        rdfs:subClassOf :Imaging ;
-                        desc:definition "Resource that provides access to data visualization tools relying on displays of lower-dimensional cross-sectional (hyper)planes." ;
-                        rdfs:label "Cross-Sectional Viewer" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Cross-Sectional Viewer" ;
+                        rdfs:seeAlso :Imaging ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Acquisition_Software
@@ -778,9 +790,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Annotation
 :Data_Annotation rdf:type owl:Class ;
-                 rdfs:subClassOf :Ontology_Development_and_Management ;
-                 desc:definition "Resource that provides access an interactive software tool that enables tagging data with ontology terms." ;
-                 rdfs:label "Data Annotation" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Data Annotation" ;
+                 rdfs:seeAlso :Ontology_Development_and_Management ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Compression
@@ -804,15 +817,15 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Editor
-:Data_Editor rdf:type owl:Class ;
-             rdfs:subClassOf :Interactive_Tool .
+:Data_Editor rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Exploration
 :Data_Exploration rdf:type owl:Class ;
-                  rdfs:subClassOf :Visualization ;
-                  desc:definition "Resource that provides access to a visualization tool that is able to display data as an image or graphical representation." ;
-                  rdfs:label "Data Exploration" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Data Exploration" ;
+                  rdfs:seeAlso :Visualization ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Mining_and_Inference
@@ -826,9 +839,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Normalization
 :Data_Normalization rdf:type owl:Class ;
-                    rdfs:subClassOf :Signal_Processing ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that reduces systematic sources of variation from data. " ;
-                    rdfs:label "Data Normalization" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Data Normalization" ;
+                    rdfs:seeAlso :Signal_Processing ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Object
@@ -882,8 +896,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transform
-:Data_Transform rdf:type owl:Class ;
-                rdfs:subClassOf :Pre-Processing .
+:Data_Transform rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transforms
@@ -970,9 +983,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document_Generation
 :Document_Generation rdf:type owl:Class ;
-                     rdfs:subClassOf :Software_Development_Tool ;
-                     desc:definition "Resource that provides access to software, application, or toolkit that enables a software development tool that is able to generate textual information when included in computer source code as specially formatted comments." ;
-                     rdfs:label "Document Generation" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Document Generation" ;
+                     rdfs:seeAlso :Software_Development_Tool ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document_Retrieval
@@ -993,9 +1007,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Documentation_Generation
 :Documentation_Generation rdf:type owl:Class ;
-                          rdfs:subClassOf :Software_Development_Tool ;
-                          desc:definition "Resource that provides access to software, application, or toolkit that enables a software development tool create documentation of software source code. " ;
-                          rdfs:label "Documentation Generation" .
+                          rdfs:comment "Parentclass deprecated" ;
+                          rdfs:label "DEPRECATED Documentation Generation" ;
+                          rdfs:seeAlso :Software_Development_Tool ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Drug_Delivery_Device
@@ -1017,9 +1032,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Education
 :Education rdf:type owl:Class ;
-           rdfs:subClassOf :Dissemination_Vehicle ;
-           desc:definition "Resource that provides access to educational resources (incl. book, magazines, audio, video, digital streams, etc.)," ;
-           rdfs:label "Education" .
+           rdfs:comment "Parentclass deprecated" ;
+           rdfs:label "DEPRECATED Education" ;
+           rdfs:seeAlso :Dissemination_Vehicle ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Electrode_Holder
@@ -1216,9 +1232,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Feature_Request
 :Feature_Request rdf:type owl:Class ;
-                 rdfs:subClassOf :Interactive_Web-Based_Tool ;
-                 desc:definition "Resource that provides access to software, application, or toolkit that enable interactive web-based tool that has functionality to collect a request for new features for a specified tool. " ;
-                 rdfs:label "Feature Request" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Feature Request" ;
+                 rdfs:seeAlso :Interactive_Web-Based_Tool ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Federal_Funding_Resource
@@ -1231,9 +1248,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Filtering
 :Filtering rdf:type owl:Class ;
-           rdfs:subClassOf :Pre-Processing ;
-           desc:definition "Resource that provides access to software, applications, or toolkits that perform alter the spatial-temporal spectral content of data." ;
-           rdfs:label "Filtering" .
+           rdfs:comment "Parentclass deprecated" ;
+           rdfs:label "DEPRECATED Filtering" ;
+           rdfs:seeAlso :Pre-Processing ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Finite_Element_Model
@@ -1266,9 +1284,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fourier_Transform
 :Fourier_Transform rdf:type owl:Class ;
-                   rdfs:subClassOf :Spectral_Transform ;
-                   desc:definition "Resource that provides access to software, applications, or toolkits that performs Multi-dimensional Fourier transform" ;
-                   rdfs:label "Fourier Transform" .
+                   rdfs:comment "Parentclass deprecated" ;
+                   rdfs:label "DEPRECATED Fourier Transform" ;
+                   rdfs:seeAlso :Spectral_Transform ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Free_Text
@@ -1354,8 +1373,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewer
-:Graph_Viewer rdf:type owl:Class ;
-              rdfs:subClassOf :Visualization .
+:Graph_Viewer rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewers
@@ -1365,24 +1383,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graphical_Composition
 :Graphical_Composition rdf:type owl:Class ;
-                       rdfs:subClassOf :Interactive_Tool ;
-                       desc:definition "Resource that provides access to software, application, or toolkit that enable graphical composition of applications." ;
-                       rdfs:label "Graphical Composition" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Graphical Composition" ;
+                       rdfs:seeAlso :Interactive_Tool ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graphical_Integration
 :Graphical_Integration rdf:type owl:Class ;
-                       rdfs:subClassOf :Integration ;
-                       desc:definition "Resource that provides access to software, application, or toolkit that enables software or application integration using graphical methods." ;
-                       rdfs:label "Graphical Integration" .
+                       rdfs:comment "Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Graphical Integration" ;
+                       rdfs:seeAlso :Integration ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graphical_Processing_Workflow_Environments
 :Graphical_Processing_Workflow_Environments rdf:type owl:Class ;
-                                            rdfs:subClassOf :Pipeline_Manager ;
-                                            desc:definition "Resource that provides access to software, applications, or toolkits that enable integration and interoperability tools that facilitate communication between software tools via graphical workflow pipelines." ;
-                                            rdfs:label "Graphical Processing Workflow Environments" ;
-                                            skos:editorialNote "pending final vetting: review definition" .
+                                            rdfs:comment "Parentclass deprecated" ;
+                                            rdfs:label "DEPRECATED Graphical Processing Workflow Environments" ;
+                                            rdfs:seeAlso :Pipeline_Manager ;
+                                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Grid_Computing
@@ -1395,9 +1415,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heat_Map
 :Heat_Map rdf:type owl:Class ;
-          rdfs:subClassOf :Visualization ;
-          desc:definition "Resource that provides access to an interactive visualization tool that represents variables in a 2-D graph as colors." ;
-          rdfs:label "Heat Map" .
+          rdfs:comment "Parentclass deprecated" ;
+          rdfs:label "DEPRECATED Heat Map" ;
+          rdfs:seeAlso :Visualization ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heterogeneous_Funding_Resource
@@ -1407,9 +1428,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hierarchical_Tree
 :Hierarchical_Tree rdf:type owl:Class ;
-                   rdfs:subClassOf :Hyperbolic_Graph ;
-                   desc:definition "Resource that provides access to viewers of directed, acyclic tree-structures." ;
-                   rdfs:label "Hierarchical Tree" .
+                   rdfs:comment "Parentclass deprecated" ;
+                   rdfs:label "DEPRECATED Hierarchical Tree" ;
+                   rdfs:seeAlso :Hyperbolic_Graph ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#High_Dimensional_Data
@@ -1450,9 +1472,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hyperbolic_Graph
 :Hyperbolic_Graph rdf:type owl:Class ;
-                  rdfs:subClassOf :Graph_Viewer ;
-                  desc:definition "Resource that provides access to hyperbolic space (hierarchical) graph/tree visualization tools." ;
-                  rdfs:label "Hyperbolic Graph" .
+                  rdfs:comment "Parentclass deprecated" ;
+                  rdfs:label "DEPRECATED Hyperbolic Graph" ;
+                  rdfs:seeAlso :Graph_Viewer ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hypothesis_Testing_Algorithm
@@ -1752,10 +1775,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Imaging
 :Imaging rdf:type owl:Class ;
-         rdfs:subClassOf :Visualization ;
-         desc:definition "Resource that provides access to software, application, or toolkit that enable visualization methods for imaging data." ;
-         rdfs:label "Imaging" ;
-         skos:editorialNote "pending final vetting: rename this Imaging_Software (at least as it occurs in Software tree)?" .
+         rdfs:comment "Parentclass deprecated" ;
+         rdfs:label "DEPRECATED Imaging" ;
+         rdfs:seeAlso :Visualization ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Imaging_Facility
@@ -1825,9 +1848,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Inhomogeneity_Correction
 :Inhomogeneity_Correction rdf:type owl:Class ;
-                          rdfs:subClassOf :Pre-Processing ;
-                          desc:definition "Resource that provides access to software, applications, or toolkits that performs methods for correction of image intensities where non-biological and non-physiological drift or noise is introduced by the scanning hardware." ;
-                          rdfs:label "Inhomogeneity Correction" .
+                          rdfs:comment "Parentclass deprecated" ;
+                          rdfs:label "DEPRECATED Inhomogeneity Correction" ;
+                          rdfs:seeAlso :Pre-Processing ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument
@@ -1856,9 +1880,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration
 :Integration rdf:type owl:Class ;
-             rdfs:subClassOf :Software_Development_Tool ;
-             desc:definition "Resource that provides access to software, application, or toolkit that enables a software development tool that combines software documentation with generating source code." ;
-             rdfs:label "Integration" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Integration" ;
+             rdfs:seeAlso :Software_Development_Tool ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
@@ -1896,9 +1921,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Network_Analysis
 :Interactive_Network_Analysis rdf:type owl:Class ;
-                              rdfs:subClassOf :Interactive_Tool ;
-                              desc:definition "Resource that provides access to software, application, or toolkit that analyze networks interactively with a user." ;
-                              rdfs:label "Interactive Network Analysis" .
+                              rdfs:comment "Parentclass deprecated" ;
+                              rdfs:label "DEPRECATED Interactive Network Analysis" ;
+                              rdfs:seeAlso :Interactive_Tool ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tool
@@ -1913,9 +1939,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Web-Based_Tool
 :Interactive_Web-Based_Tool rdf:type owl:Class ;
-                            rdfs:subClassOf :Interactive_Tool ;
-                            desc:definition "Resource that provides access to software, application, or toolkit that enables hands-on resources for data management (entry, query, traversal, comparison, etc.)" ;
-                            rdfs:label "Interactive Web-Based Tool" .
+                            rdfs:comment "Parentclass deprecated" ;
+                            rdfs:label "DEPRECATED Interactive Web-Based Tool" ;
+                            rdfs:seeAlso :Interactive_Tool ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Journal_Article
@@ -1941,10 +1968,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Mining_and_Capturing
 :Knowledge_Mining_and_Capturing rdf:type owl:Class ;
-                                rdfs:subClassOf :Interactive_Tool ,
-                                                :Software ;
-                                desc:definition "Resource that provides access to software, applications, or toolkits that are used to extract hidden patterns from data." ;
-                                rdfs:label "Knowledge Mining and Capturing" .
+                                rdfs:comment "Parentclass deprecated" ;
+                                rdfs:label "DEPRECATED Knowledge Mining and Capturing" ;
+                                rdfs:seeAlso :Interactive_Tool ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledgebase
@@ -2143,14 +2170,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mailing_List
 :Mailing_List rdf:type owl:Class ;
-              rdfs:subClassOf :Interactive_Web-Based_Tool ;
-              desc:definition "Resource that provides access to software, application, or toolkit that enable interactive Web-based tool that can be used to send information to groups." ;
-              rdfs:label "Mailing List" .
+              rdfs:comment "Parentclass deprecated" ;
+              rdfs:label "DEPRECATED Mailing List" ;
+              rdfs:seeAlso :Interactive_Web-Based_Tool ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewer
-:Manifold_Viewer rdf:type owl:Class ;
-                 rdfs:subClassOf :Imaging .
+:Manifold_Viewer rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewers
@@ -2160,9 +2187,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mapper
 :Mapper rdf:type owl:Class ;
-        rdfs:subClassOf :Integration ;
-        desc:definition "Resource that provides access to software, application, or toolkit that enables application integration using mapping." ;
-        rdfs:label "Mapper" .
+        rdfs:comment "Parentclass deprecated" ;
+        rdfs:label "DEPRECATED Mapper" ;
+        rdfs:seeAlso :Integration ;
+        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mass_Spectra_Identification
@@ -2242,9 +2270,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Meshing
 :Meshing rdf:type owl:Class ;
-         rdfs:subClassOf :Mechanical_Simulation ;
-         desc:definition "Resource that provides access to software, applications, or toolkits that create meshes in biological systems." ;
-         rdfs:label "Meshing" .
+         rdfs:comment "Parentclass deprecated" ;
+         rdfs:label "DEPRECATED Meshing" ;
+         rdfs:seeAlso :Mechanical_Simulation ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Metabolism_Facility
@@ -2356,9 +2385,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Force_Field_Calculator
 :Molecular_Force_Field_Calculator rdf:type owl:Class ;
-                                  rdfs:subClassOf :Mechanical_Simulation ;
-                                  desc:definition "Resource that provides access to software, applications, or toolkits that calculate molecular forces in a biomolecular system." ;
-                                  rdfs:label "Molecular Force Field Calculator" .
+                                  rdfs:comment "Parentclass deprecated" ;
+                                  rdfs:label "DEPRECATED Molecular Force Field Calculator" ;
+                                  rdfs:seeAlso :Mechanical_Simulation ;
+                                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Interaction
@@ -2423,9 +2453,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Multibody_Dynamics
 :Multibody_Dynamics rdf:type owl:Class ;
-                    rdfs:subClassOf :Mechanical_Simulation ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that can be used to calculate the time course of multibody dynamics." ;
-                    rdfs:label "Multibody Dynamics" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Multibody Dynamics" ;
+                    rdfs:seeAlso :Mechanical_Simulation ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#NMR_Facility
@@ -2523,9 +2554,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#News
 :News rdf:type owl:Class ;
-      rdfs:subClassOf :Web_Posting ;
-      desc:definition "Resource that provides news and RSS feed resources" ;
-      rdfs:label "News" .
+      rdfs:comment "Parentclass deprecated" ;
+      rdfs:label "DEPRECATED News" ;
+      rdfs:seeAlso :Web_Posting ;
+      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Next_Generation_Sequencer
@@ -2596,16 +2628,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Online_Course
 :Online_Course rdf:type owl:Class ;
-               rdfs:subClassOf :Web_Posting ;
-               desc:definition "Resource that provides online training and educational resources." ;
-               rdfs:label "Online Course" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Online Course" ;
+               rdfs:seeAlso :Web_Posting ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Online_Support
 :Online_Support rdf:type owl:Class ;
-                rdfs:subClassOf :Interactive_Web-Based_Tool ;
-                desc:definition "Resource that provides access to software, application, or toolkit that enable help via internet accessible material." ;
-                rdfs:label "Online Support" .
+                rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Online Support" ;
+                rdfs:seeAlso :Interactive_Web-Based_Tool ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology
@@ -2618,30 +2652,34 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology_Development
 :Ontology_Development rdf:type owl:Class ;
-                      rdfs:subClassOf :Ontology_Development_and_Management ;
-                      desc:definition "Resource that provides access to ontology and development management tool that allows a user to develop a set of terms, and the hierarchial relationship between them as well as metadata about the terms." ;
-                      rdfs:label "Ontology Development" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Ontology Development" ;
+                      rdfs:seeAlso :Ontology_Development_and_Management ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology_Development_and_Management
 :Ontology_Development_and_Management rdf:type owl:Class ;
-                                     rdfs:subClassOf :Software_Development_Tool ;
-                                     desc:definition "Resource that provides access to software development tool that can be used to build a set of terms and specify the relationship between the terms." ;
-                                     rdfs:label "Ontology Development and Management" .
+                                     rdfs:comment "Parentclass deprecated" ;
+                                     rdfs:label "DEPRECATED Ontology Development and Management" ;
+                                     rdfs:seeAlso :Software_Development_Tool ;
+                                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology_Diff_and_Alignment
 :Ontology_Diff_and_Alignment rdf:type owl:Class ;
-                             rdfs:subClassOf :Ontology_Development_and_Management ;
-                             desc:definition "Resource that provides access to an ontology and development management tool that identifies differences between two ontologies." ;
-                             rdfs:label "Ontology Diff and Alignment" .
+                             rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Ontology Diff and Alignment" ;
+                             rdfs:seeAlso :Ontology_Development_and_Management ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Ontology_Visualization
 :Ontology_Visualization rdf:type owl:Class ;
-                        rdfs:subClassOf :Ontology_Development_and_Management ;
-                        desc:definition "Resource that provides access to a ontology development and management tool that is used to generate an image of the ontology." ;
-                        rdfs:label "Ontology Visualization" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Ontology Visualization" ;
+                        rdfs:seeAlso :Ontology_Development_and_Management ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Optimizer
@@ -2670,9 +2708,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Outlier_Detection_and_Removal
 :Outlier_Detection_and_Removal rdf:type owl:Class ;
-                               rdfs:subClassOf :Signal_Processing ;
-                               desc:definition "Resource that provides access to software, applications, or toolkits that perform quality assurance on data to detect and/or remove outliers." ;
-                               rdfs:label "Outlier Detection and Removal" .
+                               rdfs:comment "Parentclass deprecated" ;
+                               rdfs:label "DEPRECATED Outlier Detection and Removal" ;
+                               rdfs:seeAlso :Signal_Processing ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Outreach_Program
@@ -3038,17 +3077,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Processing_Pipeline
 :Processing_Pipeline rdf:type owl:Class ;
-                     rdfs:subClassOf :Pipeline_Manager ;
-                     desc:definition "Resource that provides access to software, applications, or toolkits that enable execution processing." ;
-                     rdfs:label "Processing Pipeline" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Processing Pipeline" ;
+                     rdfs:seeAlso :Pipeline_Manager ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Programmatic_Access
 :Programmatic_Access rdf:type owl:Class ;
-                     rdfs:subClassOf :Ontology_Development_and_Management ;
-                     desc:definition "" ;
-                     rdfs:label "Programmatic Access" ;
-                     skos:editorialNote "pending final vetting: propose to deprecate, but replacement term needed since this term is used in annotation" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Programmatic Access" ;
+                     rdfs:seeAlso :Ontology_Development_and_Management ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein-Protein_Interaction
@@ -3068,9 +3108,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Interaction_Modeling
 :Protein_Interaction_Modeling rdf:type owl:Class ;
-                              rdfs:subClassOf :Interaction_Modeling ;
-                              desc:definition "Resource that provides access to software, applications, or toolkits that can be used to model protein interactions." ;
-                              rdfs:label "Protein Interaction Modeling" .
+                              rdfs:comment "Parentclass deprecated" ;
+                              rdfs:label "DEPRECATED Protein Interaction Modeling" ;
+                              rdfs:seeAlso :Interaction_Modeling ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Model
@@ -3185,9 +3226,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regularization_and_Smoothing
 :Regularization_and_Smoothing rdf:type owl:Class ;
-                              rdfs:subClassOf :Signal_Processing ;
-                              desc:definition "Resource that provides access to software, applications, or toolkits that smooths time series data." ;
-                              rdfs:label "Regularization and Smoothing" .
+                              rdfs:comment "Parentclass deprecated" ;
+                              rdfs:label "DEPRECATED Regularization and Smoothing" ;
+                              rdfs:seeAlso :Signal_Processing ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regulatory_Compliance_Resource
@@ -3249,9 +3291,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Resource_Integration_Component
 :Resource_Integration_Component rdf:type owl:Class ;
-                                rdfs:subClassOf :Integration ;
-                                desc:definition "Resource that provides access to software, application, or toolkit that enable integration of diverse resources." ;
-                                rdfs:label "Resource Integration Component" .
+                                rdfs:comment "Parentclass deprecated" ;
+                                rdfs:label "DEPRECATED Resource Integration Component" ;
+                                rdfs:seeAlso :Integration ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Robotic_Arrayer
@@ -3547,9 +3590,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sequence_Visualization
 :Sequence_Visualization rdf:type owl:Class ;
-                        rdfs:subClassOf :Visualization ;
-                        desc:definition "Resource that provides access to molecular sequence viewers." ;
-                        rdfs:label "Sequence Visualization" .
+                        rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Sequence Visualization" ;
+                        rdfs:seeAlso :Visualization ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Server
@@ -3592,9 +3636,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Skull_Stripping
 :Skull_Stripping rdf:type owl:Class ;
-                 rdfs:subClassOf :Pre-Processing ;
-                 desc:definition "Resource that provides access to software, applications, or toolkits that methods for removing of segments from images, which have no valuable information about the biological object. For example, removing non-brain tissue from whole-brain MRI scans, for the purpose of doing quantitative evaluations of time or space changing brain anatomy." ;
-                 rdfs:label "Skull Stripping" .
+                 rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Skull Stripping" ;
+                 rdfs:seeAlso :Pre-Processing ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Sleep_Study_Facility
@@ -3615,21 +3660,22 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Environment
 :Software_Development_Environment rdf:type owl:Class ;
-                                  rdfs:subClassOf :Software_Development_Tool ;
-                                  desc:definition "A resource that provides the entire environment (applications, servers, network) that provides comprehensive facilities to computer programmers for software development. An SDE typically includes an integrated development environment (IDE, comprising source code editor, compiler, build automation, debugger), requirement management tools, design modeling tools, documentation generation tools, code analysis tools, and so on." ;
-                                  rdfs:label "Software Development Environment" .
+                                  rdfs:comment "Parentclass deprecated" ;
+                                  rdfs:label "DEPRECATED Software Development Environment" ;
+                                  rdfs:seeAlso :Software_Development_Tool ;
+                                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Resource
-:Software_Development_Resource rdf:type owl:Class ;
-                               rdfs:subClassOf :Interactive_Tool .
+:Software_Development_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Tool
 :Software_Development_Tool rdf:type owl:Class ;
-                           rdfs:subClassOf :Software_Development_Resource ;
-                           desc:definition "Resource that provides access to software, application, or toolkit that enable generic tools for software development, engineering and deployment." ;
-                           rdfs:label "Software Development Tool" .
+                           rdfs:comment "Parentclass deprecated" ;
+                           rdfs:label "DEPRECATED Software Development Tool" ;
+                           rdfs:seeAlso :Software_Development_Resource ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Distribution
@@ -3644,9 +3690,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Engineering_Tool
 :Software_Engineering_Tool rdf:type owl:Class ;
-                           rdfs:subClassOf :Software_Development_Resource ;
-                           desc:definition "Resource that provides access to software, application, or toolkit that enables professional software engineering processes." ;
-                           rdfs:label "Software Engineering Tool" .
+                           rdfs:comment "Parentclass deprecated" ;
+                           rdfs:label "DEPRECATED Software Engineering Tool" ;
+                           rdfs:seeAlso :Software_Development_Resource ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Technology_Protocol
@@ -3669,16 +3716,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Source_Control
 :Source_Control rdf:type owl:Class ;
-                rdfs:subClassOf :Software_Development_Tool ;
-                desc:definition "Resource that provides access to software, application, or toolkit that enable software source control methods." ;
-                rdfs:label "Source Control" .
+                rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Source Control" ;
+                rdfs:seeAlso :Software_Development_Tool ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Spectral_Transform
 :Spectral_Transform rdf:type owl:Class ;
-                    rdfs:subClassOf :Data_Transform ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that perform spatial and frequency-type data transformations." ;
-                    rdfs:label "Spectral Transform" .
+                    rdfs:comment "Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Spectral Transform" ;
+                    rdfs:seeAlso :Data_Transform ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Standalone_Application
@@ -3719,9 +3768,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Package
 :Statistical_Package rdf:type owl:Class ;
-                     rdfs:subClassOf :Statistical_Analysis ;
-                     desc:definition "A resource that provides access to self-contained tools, resources and packages for statistical modeling and data analysis (e.g., R, SOCR, SAS, SPSS, SYSTAT, etc.)." ;
-                     rdfs:label "Statistical Package" .
+                     rdfs:comment "Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Statistical Package" ;
+                     rdfs:seeAlso :Statistical_Analysis ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Text_Analysis
@@ -3812,9 +3862,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Testing_Tools
 :Testing_Tools rdf:type owl:Class ;
-               rdfs:subClassOf :Software_Development_Tool ;
-               desc:definition "Resource that provides access to a software development tool to perform quality assurance of software." ;
-               rdfs:label "Testing Tools" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Testing Tools" ;
+               rdfs:seeAlso :Software_Development_Tool ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Text_Mining
@@ -3848,9 +3899,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Time_Series_Analysis
 :Time_Series_Analysis rdf:type owl:Class ;
-                      rdfs:subClassOf :Signal_Processing ;
-                      desc:definition "Resource that provides access to software, applications, or toolkits that includes methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data." ;
-                      rdfs:label "Time Series Analysis" .
+                      rdfs:comment "Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Time Series Analysis" ;
+                      rdfs:seeAlso :Signal_Processing ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tissue_Organ_Facility
@@ -3892,8 +3944,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorial
-:Tutorial rdf:type owl:Class ;
-          rdfs:subClassOf :Education .
+:Tutorial rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorials
@@ -3925,9 +3976,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Version_Source_Control_System
 :Version_Source_Control_System rdf:type owl:Class ;
-                               rdfs:subClassOf :Software_Development_Tool ;
-                               desc:definition "A resource that provides a system for the management of multiple revisions of the same unit of information. It is most commonly used in engineering and software development to manage ongoing development of digital documents like application source code, art resources such as blueprints or electronic models, and other projects that may be worked on by a team of people." ;
-                               rdfs:label "Version Source Control System" .
+                               rdfs:comment "Parentclass deprecated" ;
+                               rdfs:label "DEPRECATED Version Source Control System" ;
+                               rdfs:seeAlso :Software_Development_Tool ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vibration_Isolation_Table
@@ -3948,9 +4000,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Visualization
 :Visualization rdf:type owl:Class ;
-               rdfs:subClassOf :Interactive_Tool ;
-               desc:definition "Resource that provides access to tools for graphical, interactive, multimodal and multidimensional data and result visualization." ;
-               rdfs:label "Visualization" .
+               rdfs:comment "Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Visualization" ;
+               rdfs:seeAlso :Interactive_Tool ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Volume_Model_Scene_Data
@@ -3970,23 +4023,26 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Wavelet_Transform
 :Wavelet_Transform rdf:type owl:Class ;
-                   rdfs:subClassOf :Spectral_Transform ;
-                   desc:definition "Resource that provides access to software, applications, or toolkits that performs multi-dimensional wavelet transform." ;
-                   rdfs:label "Wavelet Transform" .
+                   rdfs:comment "Parentclass deprecated" ;
+                   rdfs:label "DEPRECATED Wavelet Transform" ;
+                   rdfs:seeAlso :Spectral_Transform ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Access
 :Web_Access rdf:type owl:Class ;
-            rdfs:subClassOf :Ontology_Development_and_Management ;
-            desc:definition "Resource that provides access to an ontology development and management tool that can be accessed via the Web." ;
-            rdfs:label "Web Access" .
+            rdfs:comment "Parentclass deprecated" ;
+            rdfs:label "DEPRECATED Web Access" ;
+            rdfs:seeAlso :Ontology_Development_and_Management ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Posting
 :Web_Posting rdf:type owl:Class ;
-             rdfs:subClassOf :Dissemination_Vehicle ;
-             desc:definition "Resources that are disseminated on the Internet via HTTP, FTP and other web protocols." ;
-             rdfs:label "Web Posting" .
+             rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Web Posting" ;
+             rdfs:seeAlso :Dissemination_Vehicle ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Service
@@ -4020,10 +4076,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Workbench
 :Workbench rdf:type owl:Class ;
-           rdfs:subClassOf :Integration_and_Interoperability_Tool ,
-                           :Interactive_Tool ;
-           desc:definition "Resource that provides access to software, applications, or toolkits that can be used to build or manage frameworks that provides sets of interoperable software tools." ;
-           rdfs:label "Workbench" .
+           rdfs:comment "Parentclass deprecated" ;
+           rdfs:label "DEPRECATED Workbench" ;
+           rdfs:seeAlso :Interactive_Tool ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#X-Ray_Crystallography_Facility
@@ -4657,8 +4713,10 @@ desc:replacedBy rdfs:label "replacedBy" .
                                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Averaging_and_Agglomeration desc:definition "Resource that provides access to software, applications, or toolkits that performs signal processing by repeated measures of the signal and then calculates the expected value of the data set." ;
-                             rdfs:label "Averaging and Agglomeration" .
+:Averaging_and_Agglomeration rdfs:comment "Parentclass deprecated" ;
+                             rdfs:label "DEPRECATED Averaging and Agglomeration" ;
+                             rdfs:seeAlso :Signal_Processing ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 :Averaging_and_Aglomeration desc:definition "Resource that provides access to software, applications, or toolkits that performs signal processing by repeated measures of the signal and then calculates the expected value of the data set." ;
@@ -4771,8 +4829,10 @@ we think this should be deleted""" ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Data_Editor desc:definition "Resource that provides access to software, application, or toolkit that is able to alter information." ;
-             rdfs:label "Data Editor" .
+:Data_Editor rdfs:comment "Parentclass deprecated" ;
+             rdfs:label "DEPRECATED Data Editor" ;
+             rdfs:seeAlso :Interactive_Tool ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 :Data_Object desc:definition "A resource that provides computational building blocks for complex data types, individual facts, statistics or items of information." ;
@@ -4811,8 +4871,10 @@ we think this should be deleted""" ;
                       owl:deprecated "true"^^xsd:boolean .
 
 
-:Data_Transform desc:definition "Resource that provides access to software, applications, or toolkits that general data transformations." ;
-                rdfs:label "Data Transform" .
+:Data_Transform rdfs:comment "Parentclass deprecated" ;
+                rdfs:label "DEPRECATED Data Transform" ;
+                rdfs:seeAlso :Pre-Processing ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 :Data_Transforms desc:definition "General data transformations" ;
@@ -4899,8 +4961,10 @@ we think this should be deleted""" ;
                   owl:deprecated "true"^^xsd:boolean .
 
 
-:Graph_Viewer desc:definition "Resource that provides access to general graph visualization methods." ;
-              rdfs:label "Graph Viewer" .
+:Graph_Viewer rdfs:comment "Parentclass deprecated" ;
+              rdfs:label "DEPRECATED Graph Viewer" ;
+              rdfs:seeAlso :Visualization ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 :Graph_Viewers desc:definition "General graph visualization resources" ;
@@ -4985,8 +5049,10 @@ we think this should be deleted""" ;
                       skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Manifold_Viewer desc:definition "Resource that provides access to general (hyper)volume visualization tools (e.g., volume rendering)." ;
-                 rdfs:label "Manifold Viewer" .
+:Manifold_Viewer rdfs:comment "Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Manifold Viewer" ;
+                 rdfs:seeAlso :Imaging ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 :Manifold_Viewers desc:definition "General (hyper)volume visualization tools (e.g., volume rendering)." ;
@@ -5167,8 +5233,10 @@ we think this should be deleted""" ;
         skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Software_Development_Resource desc:definition "Resource that provides access to software, application, or toolkit that enable interactive tools for generating a computer program." ;
-                               rdfs:label "Software Development Resource" .
+:Software_Development_Resource rdfs:comment "Parentclass deprecated" ;
+                               rdfs:label "DEPRECATED Software Development Resource" ;
+                               rdfs:seeAlso :Interactive_Tool ;
+                               owl:deprecated "true"^^xsd:boolean .
 
 
 :Software_Distribution desc:definition """Resource that provides access to software distribution that access to a computer program file or collection of files.
@@ -5256,8 +5324,10 @@ we think this should be deleted""" ;
          skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Tutorial desc:definition "An educational resource that is interactive and teaches by example." ;
-          rdfs:label "Tutorial" .
+:Tutorial rdfs:comment "Parentclass deprecated" ;
+          rdfs:label "DEPRECATED Tutorial" ;
+          rdfs:seeAlso :Education ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 :Tutorials desc:definition "" ;
