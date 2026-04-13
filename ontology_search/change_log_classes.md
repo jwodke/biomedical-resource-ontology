@@ -348,10 +348,20 @@ under Modeling and Simulation:
 | - | - | Molecular Force Field Calculator | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
 | - | - | Multibody Dynamics | Subclass of Mechanical Simulation, deprecated because Parentclass deprecated |
 | - | - | Molecular Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
-...
+| - | - | Molecular Modeling and Classification | Subclass of Molecular Model, deprecated because Parentclass deprecated |
+| - | - | Calculation of Solvent Accessible Area | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Homology Modeling | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Molecular Dynamics | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Molecular Visualization | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Numerical Calculation of Electrostatic Potential | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Prediction of Side-Chain Conformations | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Structure-Based Protein Classification | Subclass of Molecular Modeling and Classification, deprecated because Parentclass deprecated |
+| - | - | Protein Model | Subclass of Molecular Model, deprecated because Parentclass deprecated |
+| - | - | RNA Model | Subclass of Molecular Model, deprecated because Parentclass deprecated |
 | - | - | Network Interaction Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
 | - | - | Physiological Model | Subclass of Physico-Chemical Model, deprecated because Parentclass deprecated |
-
+| - | - | Cardiovascular Model | Subclass of Physiological Model, deprecated because Parentclass deprecated |
+| - | - | Neuromuscular Model | Subclass of Physiological Model, deprecated because Parentclass deprecated |
 | - | - | Random Number Simulation | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
 | - | - | Structural Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |
 | - | - | Wavelet Model | Subclass of *Modeling and Simulation*, deprecated because the level of detail is too specific |

@@ -465,9 +465,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calculation_of_Solvent_Accessible_Area
 :Calculation_of_Solvent_Accessible_Area rdf:type owl:Class ;
-                                        rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                                        desc:definition "Resource that provides access to software, applications, or toolkits that can be used to determine the surface area of a molecule such as DNA or protein. " ;
-                                        rdfs:label "Calculation of Solvent Accessible Area" .
+                                        rdfs:comment "deprecated because Parentclass deprecated" ;
+                                        rdfs:label "DEPRECATED Calculation of Solvent Accessible Area" ;
+                                        rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calendar_Schedule_and_Resource_Management
@@ -496,9 +497,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cardiovascular_Model
 :Cardiovascular_Model rdf:type owl:Class ;
-                      rdfs:subClassOf :Physioloigcal_Model ;
-                      desc:definition "Resource that provides access to software, applications, or toolkits that can be used to model physiological processes of the cardiovascular system. " ;
-                      rdfs:label "Cardiovascular Model" .
+                      rdfs:comment "deprecated because Parentclass deprecated" ;
+                      rdfs:label "DEPRECATED Cardiovascular Model" ;
+                      rdfs:seeAlso :Physioloigcal_Model ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Biology_Facility
@@ -519,9 +521,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Model
 :Cell_Model rdf:type owl:Class ;
-            rdfs:subClassOf :Physico-Chemical_Model ;
-            desc:definition "Resource that provides access to software, applications, or toolkits that model the processes of a cell. " ;
-            rdfs:label "Cell Model" .
+            rdfs:comment "deprecated because Parentclass deprecated" ;
+            rdfs:label "DEPRECATED Cell Model" ;
+            rdfs:seeAlso :Physico-Chemical_Model ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cell_Processing_Clean_Room_Facility
@@ -1441,9 +1444,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Homology_Modeling
 :Homology_Modeling rdf:type owl:Class ;
-                   rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                   desc:definition "Resource that provides access to software, applications, or toolkits that uses a proteins amino acid sequence and an experimental three-dimensional structure of a related homologous protein to generate an atomic-resolution model of the protein." ;
-                   rdfs:label "Homology Modeling" .
+                   rdfs:comment "deprecated because Parentclass deprecated" ;
+                   rdfs:label "DEPRECATED Homology Modeling" ;
+                   rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Hosting
@@ -2249,9 +2253,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mechanical_Simulation
 :Mechanical_Simulation rdf:type owl:Class ;
-                       rdfs:subClassOf :Physico-Chemical_Model ;
-                       desc:definition "Resource that provides access to software, applications, or toolkits that model mechanical forces." ;
-                       rdfs:label "Mechanical Simulation" .
+                       rdfs:comment "deprecated because Parentclass deprecated" ;
+                       rdfs:label "DEPRECATED Mechanical Simulation" ;
+                       rdfs:seeAlso :Physico-Chemical_Model ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Medical_Device
@@ -2378,9 +2383,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Dynamics
 :Molecular_Dynamics rdf:type owl:Class ;
-                    rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that involves atoms and molecules are allowed to interact for a period of time by approximations of known physics." ;
-                    rdfs:label "Molecular Dynamics" .
+                    rdfs:comment "deprecated because Parentclass deprecated" ;
+                    rdfs:label "DEPRECATED Molecular Dynamics" ;
+                    rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Force_Field_Calculator
@@ -2401,17 +2407,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Model
 :Molecular_Model rdf:type owl:Class ;
-                 rdfs:subClassOf :Physico-Chemical_Model ;
-                 desc:definition "Resource that provides access to software, applications, or toolkits that calculate time course of physico-chemical model that representation of a molecule or of the arrangement of molecules in a solid substance, with the purpose of visualizing some of its properties, such as the nature and relative positions of its atoms, the chemical bonds between them, the three-dimensional shape of the molecule, and how its shape can change by bending or rotation of the bonds." ;
-                 rdfs:label "Molecular Model" .
+                 rdfs:comment "deprecated because Parentclass deprecated" ;
+                 rdfs:label "DEPRECATED Molecular Model" ;
+                 rdfs:seeAlso :Physico-Chemical_Model ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Modeling_and_Classification
 :Molecular_Modeling_and_Classification rdf:type owl:Class ;
-                                       rdfs:subClassOf :Molecular_Model ;
-                                       desc:definition "Resource that provides access to software, applications, or toolkits that calculate the time course of biomolecular configurations and their classification." ;
-                                       rdfs:label "Molecular Modeling and Classification" ;
-                                       skos:editorialNote "pending final vetting: review definition" .
+                                       rdfs:comment "deprecated because Parentclass deprecated" ;
+                                       rdfs:label "DEPRECATED Molecular Modeling and Classification" ;
+                                       rdfs:seeAlso :Molecular_Model ;
+                                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectories
@@ -2426,9 +2433,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Visualization
 :Molecular_Visualization rdf:type owl:Class ;
-                         rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                         desc:definition "Resource that provides access to software, applications, or toolkits that can be used to visualize a configuration of biomolecules in space and time." ;
-                         rdfs:label "Molecular Visualization" .
+                         rdfs:comment "deprecated because Parentclass deprecated" ;
+                         rdfs:label "DEPRECATED Molecular Visualization" ;
+                         rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
@@ -2515,9 +2523,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Interaction_Model
 :Network_Interaction_Model rdf:type owl:Class ;
-                           rdfs:subClassOf :Physico-Chemical_Model ;
-                           desc:definition "Resource that provides access to software, applications, or toolkits that can be used model a molecular, cellular, organ, or population network." ;
-                           rdfs:label "Network Interaction Model" .
+                           rdfs:comment "deprecated because Parentclass deprecated" ;
+                           rdfs:label "DEPRECATED Network Interaction Model" ;
+                           rdfs:seeAlso :Physico-Chemical_Model ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Model
@@ -2547,9 +2556,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Neuromuscular_Model
 :Neuromuscular_Model rdf:type owl:Class ;
-                     rdfs:subClassOf :Physioloigcal_Model ;
-                     desc:definition "Resource that provides access to software, applications, or toolkits that can be used to model combined biomechanical and neurological system." ;
-                     rdfs:label "Neuromuscular Model" .
+                     rdfs:comment "deprecated because Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Neuromuscular Model" ;
+                     rdfs:seeAlso :Physioloigcal_Model ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#News
@@ -2580,9 +2590,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Calculation_of_Electrostatic_Potential
 :Numerical_Calculation_of_Electrostatic_Potential rdf:type owl:Class ;
-                                                  rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                                                  desc:definition "Resource that provides access to software, applications, or toolkits that can be used to calculate the electrostatic potential of biomolecular configurations." ;
-                                                  rdfs:label "Numerical Calculation of Electrostatic Potential" .
+                                                  rdfs:comment "deprecated because Parentclass deprecated" ;
+                                                  rdfs:label "DEPRECATED Numerical Calculation of Electrostatic Potential" ;
+                                                  rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                                                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrator
@@ -3017,9 +3028,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physioloigcal_Model
 :Physioloigcal_Model rdf:type owl:Class ;
-                     rdfs:subClassOf :Physico-Chemical_Model ;
-                     desc:definition "Resource that provides access to software, applications, or toolkits that can be used model physiology." ;
-                     rdfs:label "Physioloigcal Model" .
+                     rdfs:comment "deprecated because Parentclass deprecated" ;
+                     rdfs:label "DEPRECATED Physioloigcal Model" ;
+                     rdfs:seeAlso :Physico-Chemical_Model ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pipeline_Manager
@@ -3055,9 +3067,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Prediction_of_Side-Chain_Conformations
 :Prediction_of_Side-Chain_Conformations rdf:type owl:Class ;
-                                        rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                                        desc:definition "Resource that provides access to software, applications, or toolkits that can be used to calculate the estimate of side chains of conformations in biomolecular configurations." ;
-                                        rdfs:label "Prediction of Side-Chain Conformations" .
+                                        rdfs:comment "deprecated because Parentclass deprecated" ;
+                                        rdfs:label "DEPRECATED Prediction of Side-Chain Conformations" ;
+                                        rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pressure_Regulator
@@ -3116,9 +3129,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Protein_Model
 :Protein_Model rdf:type owl:Class ;
-               rdfs:subClassOf :Molecular_Model ;
-               desc:definition "Resource that provides access to software, applications, or toolkits that can be used to specifically model protein structure and function." ;
-               rdfs:label "Protein Model" .
+               rdfs:comment "deprecated because Parentclass deprecated" ;
+               rdfs:label "DEPRECATED Protein Model" ;
+               rdfs:seeAlso :Molecular_Model ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Proteomics_Facility
@@ -3176,9 +3190,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#RNA_Model
 :RNA_Model rdf:type owl:Class ;
-           rdfs:subClassOf :Molecular_Model ;
-           desc:definition "Resource that provides access to software, applications, or toolkits that can be used to specifically model RNA structure and function.," ;
-           rdfs:label "RNA Model" .
+           rdfs:comment "deprecated because Parentclass deprecated" ;
+           rdfs:label "DEPRECATED RNA Model" ;
+           rdfs:seeAlso :Molecular_Model ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Rack
@@ -3812,9 +3827,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structure-Based_Protein_Classification
 :Structure-Based_Protein_Classification rdf:type owl:Class ;
-                                        rdfs:subClassOf :Molecular_Modeling_and_Classification ;
-                                        desc:definition "Resource that provides access to software, applications, or toolkits that can be used to classify protein shape and parameters." ;
-                                        rdfs:label "Structure-Based Protein Classification" .
+                                        rdfs:comment "deprecated because Parentclass deprecated" ;
+                                        rdfs:label "DEPRECATED Structure-Based Protein Classification" ;
+                                        rdfs:seeAlso :Molecular_Modeling_and_Classification ;
+                                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_Data
