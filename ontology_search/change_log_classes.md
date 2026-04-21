@@ -218,13 +218,9 @@
 | - | - | Vibrotome | Subclass of Device R, deprecated because the level of detail is too specific |
 | T3003 | Laboratory DR | Laboratory Supply Resource | renamed, change in hierarchy from Subclass of Material Resource to Subclass of Device R and definition change |
 | T3004 | Medical DR | Medical Device | change in hierarchy from Subclass of Material Resource to Subclass of Device R and definition change |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-Deprecate classes from Software:
-|  |  |  |  |
-| - | - | Algorithm | Subclass of *Software*, deprecated because it is not a software |
+| T2005 | Hardware TR | - | new class added as subclass of Tool Resource |
+| T2006 | Software TR | Software | change in hierarchy from Subclass of Resource to Subclass of Tool Resource and definition change |
+| - | - | Algorithm | Subclass of Software TR, deprecated because it is not a software |
 | - | - | Graph Algorithm | Subclass of Algorithm, deprecated because Parentclass deprecated |
 | - | - | Centrality Analysis | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
 | - | - | Community Structure Analysis | Subclass of Graph Algorithm, deprecated because Parentclass deprecated |
@@ -256,6 +252,8 @@ Deprecate classes from Software:
 | - | - | Pattern Inference Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
 | - | - | Symbolic and Analytic Model | Subclass of Algorithm, deprecated because Parentclass deprecated |
 | - | - | Model with Closed Form Solution | Subclass of Symbolic and Analytic Model, deprecated because Parentclass deprecated |
+
+**here**
 
 under Data Analysis Software:
 | - | - | Data Mining and Inference | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |

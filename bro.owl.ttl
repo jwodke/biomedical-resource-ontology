@@ -232,6 +232,23 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
        skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components." .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2005
+:T2005 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:label "Hardware TR" ;
+       skos:altLabel "Hardware Tool Resource" ;
+       skos:definition "A 'Tool Resource' provided by physical, manifactured components or objects of the digital research infrastructure." .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2006
+:T2006 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:label "Software TR" ;
+       skos:altLabel "S" ,
+                     "Software Tool Resource" ;
+       skos:definition "An executable digital 'Tool Resource' that can be used to work digitally and is usually provided in source or compiled form." .
+
+
 ###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3003
 :T3003 rdf:type owl:Class ;
        rdfs:subClassOf :T2002 ;
@@ -823,7 +840,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Acquisition_Software
 :Data_Acquisition_Software rdf:type owl:Class ;
-                           rdfs:subClassOf :Software ;
+                           rdfs:subClassOf :T2006 ;
                            desc:definition "Resource that provides access to software or application that support collection of real-world conditions and converts these to a numerical representation that can be processed by a computer, http://en.wikipedia.org/wiki/Data_acquisition." ;
                            rdfs:label "Data Acquisition Software" ;
                            skos:editorialNote "pending final vetting: review term in comparison to siblings data analysis software and data processing software" .
@@ -831,7 +848,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Analysis_Software
 :Data_Analysis_Software rdf:type owl:Class ;
-                        rdfs:subClassOf :Software ;
+                        rdfs:subClassOf :T2006 ;
                         desc:definition "A resource that provides access to software or application that is used to analyze, model, and transform data with the goal of testing a research hypothesis, highlighting useful information, suggesting conclusions, or supporting decision making." ;
                         rdfs:label "Data Analysis Software" .
 
@@ -900,7 +917,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Processing_Software
 :Data_Processing_Software rdf:type owl:Class ;
-                          rdfs:subClassOf :Software ;
+                          rdfs:subClassOf :T2006 ;
                           desc:definition "A resource that provides access to software or application that is used to convert or manipulate data into information or knowledge. " ;
                           rdfs:label "Data Processing Software" .
 
@@ -938,7 +955,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transfer_and_Communication
 :Data_Transfer_and_Communication rdf:type owl:Class ;
-                                 rdfs:subClassOf :Software ;
+                                 rdfs:subClassOf :T2006 ;
                                  desc:definition "A resource that provides access to software or application that is used to transmit formatted textual or binary data." ;
                                  rdfs:label "Data Transfer and Communication" .
 
@@ -973,7 +990,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database_Software
 :Database_Software rdf:type owl:Class ;
-                   rdfs:subClassOf :Software .
+                   rdfs:subClassOf :T2006 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Deep_Parsing
@@ -1936,7 +1953,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
 :Integration_and_Interoperability_Tool rdf:type owl:Class ;
-                                       rdfs:subClassOf :Software .
+                                       rdfs:subClassOf :T2006 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tools
@@ -1977,7 +1994,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tool
 :Interactive_Tool rdf:type owl:Class ;
-                  rdfs:subClassOf :Software .
+                  rdfs:subClassOf :T2006 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tools
@@ -2408,7 +2425,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Modeling_and_Simulation
 :Modeling_and_Simulation rdf:type owl:Class ;
-                         rdfs:subClassOf :Software ;
+                         rdfs:subClassOf :T2006 ;
                          desc:definition "Resource that provides access to software, applications, or toolkits that is used to model or simulate biological structures, kinetics, function, structure, random events, and genotype or phenotype in time and space." ;
                          rdfs:label "Modeling and Simulation" .
 
@@ -3710,10 +3727,11 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software
 :Software rdf:type owl:Class ;
-          rdfs:subClassOf :R0001 ;
-          desc:definition "Resource that provides access usually through repositories or the Internet to computer executables, libraries, plugins, or source code." ;
-          rdfs:comment "As per alignment with NIF resource type hierarchy." ;
-          rdfs:label "Software" .
+          rdfs:comment "DEPRECATED As per alignment with NIF resource type hierarchy." ,
+                       "change in IRI, hierarchy and definition" ;
+          rdfs:label "DEPRECATED Software" ;
+          rdfs:seeAlso :T2006 ;
+          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Environment
