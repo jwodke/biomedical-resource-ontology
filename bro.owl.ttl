@@ -206,6 +206,50 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T1001
+:T1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Tool Resource" ;
+       skos:altLabel "TR" ;
+       skos:definition "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T1001 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." ;
+   :mentions :I1001 ,
+             :M1001
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2002
+:T2002 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:comment "hardware and software can be a part of a device" ,
+                    "in the field of healthcare and biomedical research" ;
+       rdfs:label "Device R" ;
+       skos:altLabel "Device Resource" ;
+       skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components." .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3003
+:T3003 rdf:type owl:Class ;
+       rdfs:subClassOf :T2002 ;
+       rdfs:comment "Those devices are usually designed to carry out specific functions or a set of functions." ;
+       rdfs:label "Laboratory DR" ;
+       skos:altLabel "Laboratory Device Resource" ;
+       skos:definition "A 'Device R' used for laboratory experiments." ;
+       skos:example "reagents, instruments, tissue samples" .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3004
+:T3004 rdf:type owl:Class ;
+       rdfs:subClassOf :T2002 ;
+       rdfs:label "Medical DR" ;
+       skos:altLabel "Medical Device Resource" ;
+       skos:definition "A 'Device R' that is useful for prevention, diagnosis, monitoring, or treatment of disease or other medical conditions." .
+
+
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -238,10 +282,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Amplifier
 :Amplifier rdf:type owl:Class ;
-           rdfs:subClassOf :Instrument ;
-           desc:definition "An instrument that increases the output of another instrument." ;
-           rdfs:label "Amplifier" ;
-           skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+           rdfs:comment "level of detail is too specific" ;
+           rdfs:label "DEPRECATED Amplifier" ;
+           rdfs:seeAlso :T2002 ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Analysis_of_Gel-Electrophoresis
@@ -306,9 +350,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Assessment_Material_Resource
 :Assessment_Material_Resource rdf:type owl:Class ;
-                              rdfs:subClassOf :M1001 ;
-                              desc:definition "A resource that provides access to scientific data assessment instruments, for example behavioral assessment tests. " ;
-                              rdfs:label "Assessment Material Resource" .
+                              rdfs:comment "Material Resources is restructured" ;
+                              rdfs:label "DEPRECATED Assessment Material Resource" ;
+                              rdfs:seeAlso :M1001 ;
+                              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas
@@ -409,17 +454,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomaterial_Supply_Resource
 :Biomaterial_Supply_Resource rdf:type owl:Class ;
-                             rdfs:subClassOf :M1001 ;
-                             desc:definition "A resource that provides access to physical materials like tissue samples or organisms. For example, the IMSR enables acquisition of a transgenic mouse or cell line. Note, for the sake of simplicity we have excluded molecules of organismal origin from this category as these can be manufactured chemically and have included them under the reagent category (eg. antibodies, toxins)." ;
-                             rdfs:label "Biomaterial Supply Resource" .
+                             rdfs:comment "Material Resources is restructured" ;
+                             rdfs:label "DEPRECATED Biomaterial Supply Resource" ;
+                             rdfs:seeAlso :M1001 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomedical_Supply_Resource
 :Biomedical_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :M1001 ;
-                            desc:definition "Biomedical (http://en.wikipedia.org/wiki/Biomedicine) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
-                            rdfs:label "Biomedical Supply Resource" ;
-                            skos:editorialNote "pending final vetting: suggest to deprecate" .
+                            rdfs:comment "Material Resources is restructured" ;
+                            rdfs:label "DEPRECATED Biomedical Supply Resource" ;
+                            rdfs:seeAlso :M1001 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biomolecular_Interaction_Facility
@@ -456,11 +502,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#CT_Scanner
 :CT_Scanner rdf:type owl:Class ;
-            rdfs:subClassOf :Instrument ,
-                            :Medical_Device ;
-            desc:definition "A measurement (or image acquisition) device that generates a three-dimensional image of the inside of an object from a series of two-dimensional X-ray images taken around a single axis of rotation." ;
-            rdfs:label "CT Scanner" ;
-            skos:editorialNote "pending final vetting: location in hierarchy and harmonize with OBI/eagle-i" .
+            rdfs:comment "level of detail is too specific" ;
+            rdfs:label "DEPRECATED CT Scanner" ;
+            rdfs:seeAlso :T2002 ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calculation_of_Solvent_Accessible_Area
@@ -481,10 +526,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Calorimeter
 :Calorimeter rdf:type owl:Class ;
-             rdfs:subClassOf :Instrument ;
-             desc:definition "A measurement device that is used to calculate the heat flow of a chemical reaction or physical change." ;
-             rdfs:label "Calorimeter" ;
-             skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+             rdfs:comment "level of detail is too specific" ;
+             rdfs:label "DEPRECATED Calorimeter" ;
+             rdfs:seeAlso :T2002 ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cardiovascular_Facility
@@ -554,10 +599,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Chamber
 :Chamber rdf:type owl:Class ;
-         rdfs:subClassOf :Instrument ;
-         desc:definition "An instrument that forms an enclosed space." ;
-         rdfs:label "Chamber" ;
-         skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+         rdfs:comment "level of detail is too specific" ;
+         rdfs:label "DEPRECATED Chamber" ;
+         rdfs:seeAlso :T2002 ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Care_Data
@@ -665,10 +710,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computer-Instrumentation_Interface
 :Computer-Instrumentation_Interface rdf:type owl:Class ;
-                                    rdfs:subClassOf :Instrument ;
-                                    desc:definition "A part of an instrument that provides for human user input to operate the instrument." ;
-                                    rdfs:label "Computer-Instrumentation Interface" ;
-                                    skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                                    rdfs:comment "level of detail is too specific" ;
+                                    rdfs:label "DEPRECATED Computer-Instrumentation Interface" ;
+                                    rdfs:seeAlso :T2002 ;
+                                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Conference_Proceeding
@@ -1018,10 +1063,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Drug_Delivery_Device
 :Drug_Delivery_Device rdf:type owl:Class ;
-                      rdfs:subClassOf :Instrument ;
-                      desc:definition "An instrument that is used to administer a drug." ;
-                      rdfs:label "Drug Delivery Device" ;
-                      skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                      rdfs:comment "level of detail is too specific" ;
+                      rdfs:label "DEPRECATED Drug Delivery Device" ;
+                      rdfs:seeAlso :T2002 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Dynamic_Model
@@ -1043,27 +1088,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Electrode_Holder
 :Electrode_Holder rdf:type owl:Class ;
-                  rdfs:subClassOf :Instrument ;
-                  desc:definition "An instrument that provides a means of coupling fluid-filled glass microelectrodes to a patch clamp amplifier for the measurement of electrical currents or potentials.  Holders are available in straight angle configurations made out of polycarbonate or Teflon, and usually feature a silver/ silver chloride pellet attached to a BNC-compatible pin/ending.  A suction port is standard for holders meant for patch clamp recordings, but are not included in holders meant for sharp electrode recordings or extracellular recordings." ;
-                  rdfs:label "Electrode Holder" ;
-                  skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Electrode Holder" ;
+                  rdfs:seeAlso :T2002 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Electrode_Puller
 :Electrode_Puller rdf:type owl:Class ;
-                  rdfs:subClassOf :Instrument ;
-                  desc:definition "An instrument to make micropipettes." ;
-                  rdfs:label "Electrode Puller" ;
-                  skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Electrode Puller" ;
+                  rdfs:seeAlso :T2002 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Electron_Microscope
 :Electron_Microscope rdf:type owl:Class ;
-                     rdfs:subClassOf :Microscope ;
-                     desc:definition "A microscope that produces an electronically-magnified image of a specimen for detailed observation." ;
-                     rdfs:label "Electron Microscope" ;
-                     skos:altLabel "EM" ;
-                     skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                     rdfs:comment "level of detail is too specific" ;
+                     rdfs:label "DEPRECATED Electron Microscope" ;
+                     rdfs:seeAlso :Microscope ;
+                     owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Environmental_Health_and_Safety_Resource
@@ -1211,10 +1255,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Faraday_Cage
 :Faraday_Cage rdf:type owl:Class ;
-              rdfs:subClassOf :Instrument ;
-              desc:definition "An enclosure, formed by conducting material or by a mesh of such material, that blocks out external static electric fields." ;
-              rdfs:label "Faraday Cage" ;
-              skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Faraday Cage" ;
+              rdfs:seeAlso :T2002 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Fast_Fourier_Transform
@@ -1860,10 +1904,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument
 :Instrument rdf:type owl:Class ;
-            rdfs:subClassOf :M1001 ;
-            desc:definition "A resource that provides scientific instruments such as microscopes, amplifiers or dissection tools. For example, Grass Instruments is a site that sells amplifiers and other equipment useful for electrophysiology. From NIFSTD" ;
-            rdfs:label "Instrument" ;
-            skos:editorialNote "pending final vetting: review scope of BRO for child terms" .
+            rdfs:comment "renamed, change in hierarchy and definition change" ;
+            rdfs:label "DEPRECATED Instrument" ;
+            rdfs:seeAlso :T2002 ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Instrument_Manufacture
@@ -1984,9 +2028,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Laboratory_Supply_Resource
 :Laboratory_Supply_Resource rdf:type owl:Class ;
-                            rdfs:subClassOf :M1001 ;
-                            desc:definition "A resource that provides items such as reagents, instruments, tissue samples or organisms for use in a laboratory." ;
-                            rdfs:label "Laboratory Supply Resource" .
+                            rdfs:comment "renamed, change in hierarchy and definition change" ;
+                            rdfs:label "DEPRECATED Laboratory Supply Resource" ;
+                            rdfs:seeAlso :T3003 ;
+                            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Language_Summarization
@@ -2018,10 +2063,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Light_Microscope
 :Light_Microscope rdf:type owl:Class ;
-                  rdfs:subClassOf :Microscope ;
-                  desc:definition "A microscope (device to magnify small objects) in which objects are lit directly by white light." ;
-                  rdfs:label "Light Microscope" ;
-                  skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Light Microscope" ;
+                  rdfs:seeAlso :Microscope ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tool
@@ -2165,11 +2210,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#MRI_Scanner
 :MRI_Scanner rdf:type owl:Class ;
-             rdfs:subClassOf :Instrument ,
-                             :Medical_Device ;
-             desc:definition "A measurement (or image acquisition) device that visualizes detailed internal structure and limited function of the body, using a powerful magnetic field to align the nuclear magnetization of (usually) hydrogen atoms in water in the body." ;
-             rdfs:label "MRI Scanner" ;
-             skos:editorialNote "pending final vetting: location in hierarchy and harmonize with OBI/eagle-i" .
+             rdfs:comment "level of detail is too specific" ;
+             rdfs:label "DEPRECATED MRI Scanner" ;
+             rdfs:seeAlso :T2002 ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mailing_List
@@ -2207,10 +2251,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mass_Spectrometer
 :Mass_Spectrometer rdf:type owl:Class ;
-                   rdfs:subClassOf :Instrument ;
-                   desc:definition "A mass spectrometer is an instrument which is used to measure the mass to charge ratio of ions. All mass spectrometers consist of three basic parts: an ion source, a mass analyzer, and a detector system." ;
-                   rdfs:label "Mass Spectrometer" ;
-                   skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                   rdfs:comment "level of detail is too specific" ;
+                   rdfs:label "DEPRECATED Mass Spectrometer" ;
+                   rdfs:seeAlso :T2002 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Material_Analysis_Service
@@ -2261,9 +2305,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Medical_Device
 :Medical_Device rdf:type owl:Class ;
-                rdfs:subClassOf :M1001 ;
-                desc:definition "A resource that provides devices used for therapy, diagnosis or surgery. " ;
-                rdfs:label "Medical Device" .
+                rdfs:comment "change in hierarchy and definition change" ;
+                rdfs:label "DEPRECATED Medical Device" ;
+                rdfs:seeAlso :T3004 ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Mesh_Model
@@ -2307,26 +2352,26 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microarray_Scanner
 :Microarray_Scanner rdf:type owl:Class ;
-                    rdfs:subClassOf :Instrument ;
-                    desc:definition "An instrument which acquires images of fluorescence (induced with lasers) from labeled molecules on the surface of the microarray chip." ;
-                    rdfs:label "Microarray Scanner" ;
-                    skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                    rdfs:comment "level of detail is too specific" ;
+                    rdfs:label "DEPRECATED Microarray Scanner" ;
+                    rdfs:seeAlso :T2002 ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Micromanipulator
 :Micromanipulator rdf:type owl:Class ;
-                  rdfs:subClassOf :Instrument ;
-                  desc:definition "An instrument that is used to physically interact with a sample under a microscope, where a level of precision of movement is necessary that cannot be achieved by the unaided human hand." ;
-                  rdfs:label "Micromanipulator" ;
-                  skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Micromanipulator" ;
+                  rdfs:seeAlso :T2002 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microscope
 :Microscope rdf:type owl:Class ;
-            rdfs:subClassOf :Instrument ;
-            desc:definition "An instrument used to obtain a magnified image of small objects and reveal details of structure not otherwise distinguishable." ;
-            rdfs:label "Microscope" ;
-            skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+            rdfs:comment "level of detail is too specific" ;
+            rdfs:label "DEPRECATED Microscope" ;
+            rdfs:seeAlso :T2002 ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microscopy_Facility
@@ -2339,10 +2384,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Microtome
 :Microtome rdf:type owl:Class ;
-           rdfs:subClassOf :Instrument ;
-           desc:definition "An instrument used to cut very fine sections of material." ;
-           rdfs:label "Microtome" ;
-           skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+           rdfs:comment "level of detail is too specific" ;
+           rdfs:label "DEPRECATED Microtome" ;
+           rdfs:seeAlso :T2002 ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Model_Fitting_Algorithm
@@ -2477,10 +2522,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#NMR_Instrument
 :NMR_Instrument rdf:type owl:Class ;
-                rdfs:subClassOf :Instrument ;
-                desc:definition "An instrument used to perform NMR of a sample." ;
-                rdfs:label "NMR Instrument" ;
-                skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                rdfs:comment "level of detail is too specific" ;
+                rdfs:label "DEPRECATED NMR Instrument" ;
+                rdfs:seeAlso :T2002 ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Named_Entity_Normalization
@@ -2572,10 +2617,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Next_Generation_Sequencer
 :Next_Generation_Sequencer rdf:type owl:Class ;
-                           rdfs:subClassOf :Instrument ;
-                           desc:definition "Next generation of High throughput DNA sequencer (http://en.wikipedia.org/wiki/DNA_sequencing)" ;
-                           rdfs:label "Next Generation Sequencer" ;
-                           skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Next Generation Sequencer" ;
+                           rdfs:seeAlso :T2002 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Non_Computational_Service
@@ -2703,18 +2748,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Oscillograph
 :Oscillograph rdf:type owl:Class ;
-              rdfs:subClassOf :Instrument ;
-              desc:definition "An instrument for measuring alternating or varying electric current in terms of current and voltage." ;
-              rdfs:label "Oscillograph" ;
-              skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Oscillograph" ;
+              rdfs:seeAlso :T2002 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Oscilloscope
 :Oscilloscope rdf:type owl:Class ;
-              rdfs:subClassOf :Instrument ;
-              desc:definition "An electronic measuring instrument that creates a visible two-dimensional graph, on a screen, of one or more continuously varying voltages or currents." ;
-              rdfs:label "Oscilloscope" ;
-              skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Oscilloscope" ;
+              rdfs:seeAlso :T2002 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Outlier_Detection_and_Removal
@@ -2872,10 +2917,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Instrument
 :PCR_Instrument rdf:type owl:Class ;
-                rdfs:subClassOf :Instrument ;
-                desc:definition "An instrument based on the PCR method (http://en.wikipedia.org/wiki/PCR)" ;
-                rdfs:label "PCR Instrument" ;
-                skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                rdfs:comment "level of detail is too specific" ;
+                rdfs:label "DEPRECATED PCR Instrument" ;
+                rdfs:seeAlso :T2002 ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PDE_Solver
@@ -2888,12 +2933,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PET_Scanner
 :PET_Scanner rdf:type owl:Class ;
-             rdfs:subClassOf :Instrument ,
-                             :Medical_Device ;
-             desc:definition """A measurement (or image acquisition) device that produces a three-dimensional image or picture of functional processes in the body. It detects pairs of gamma rays emitted indirectly by a positron-emitting
-radionuclide (tracer), which is introduced into the body on a biologically active molecule.""" ;
-             rdfs:label "PET Scanner" ;
-             skos:editorialNote "pending final vetting: location in hierarchy and harmonize with OBI/eagle-i" .
+             rdfs:comment "level of detail is too specific" ;
+             rdfs:label "DEPRECATED PET Scanner" ;
+             rdfs:seeAlso :T2002 ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Paper
@@ -3052,10 +3095,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Power_Conditioning_Unit
 :Power_Conditioning_Unit rdf:type owl:Class ;
-                         rdfs:subClassOf :Instrument ;
-                         desc:definition "" ;
-                         rdfs:label "Power Conditioning Unit" ;
-                         skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                         rdfs:comment "level of detail is too specific" ;
+                         rdfs:label "DEPRECATED Power Conditioning Unit" ;
+                         rdfs:seeAlso :T2002 ;
+                         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pre-Processing
@@ -3075,9 +3118,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pressure_Regulator
 :Pressure_Regulator rdf:type owl:Class ;
-                    rdfs:subClassOf :Instrument ;
-                    rdfs:label "Pressure Regulator" ;
-                    skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                    rdfs:comment "level of detail is too specific" ;
+                    rdfs:label "DEPRECATED Pressure Regulator" ;
+                    rdfs:seeAlso :T2002 ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Private_Funding_Resource
@@ -3198,10 +3242,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Rack
 :Rack rdf:type owl:Class ;
-      rdfs:subClassOf :Instrument ;
-      desc:definition "An instrument to place and store other instruments." ;
-      rdfs:label "Rack" ;
-      skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+      rdfs:comment "level of detail is too specific" ;
+      rdfs:label "DEPRECATED Rack" ;
+      rdfs:seeAlso :T2002 ;
+      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Radioisotopes_Facility
@@ -3228,8 +3272,7 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
-:Reagent_Resource rdf:type owl:Class ;
-                  rdfs:subClassOf :M1001 .
+:Reagent_Resource rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Registration
@@ -3314,10 +3357,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Robotic_Arrayer
 :Robotic_Arrayer rdf:type owl:Class ;
-                 rdfs:subClassOf :Instrument ;
-                 desc:definition "An automated mechanical machine for creating microarrays" ;
-                 rdfs:label "Robotic Arrayer" ;
-                 skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                 rdfs:comment "level of detail is too specific" ;
+                 rdfs:label "DEPRECATED Robotic Arrayer" ;
+                 rdfs:seeAlso :T2002 ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Root_Finder
@@ -3807,10 +3850,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stimulator
 :Stimulator rdf:type owl:Class ;
-            rdfs:subClassOf :Instrument ;
-            desc:definition "A neurosurgical device that supplies a controlled alternating-current voltage to two electrodes that are applied to a patient." ;
-            rdfs:label "Stimulator" ;
-            skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+            rdfs:comment "level of detail is too specific" ;
+            rdfs:label "DEPRECATED Stimulator" ;
+            rdfs:seeAlso :T2002 ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stochastic_Data
@@ -3870,10 +3913,10 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Temperature_Control_Unit
 :Temperature_Control_Unit rdf:type owl:Class ;
-                          rdfs:subClassOf :Instrument ;
-                          desc:definition "An instrument to heat or cool an environment." ;
-                          rdfs:label "Temperature Control Unit" ;
-                          skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                          rdfs:comment "level of detail is too specific" ;
+                          rdfs:label "DEPRECATED Temperature Control Unit" ;
+                          rdfs:seeAlso :T2002 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Testing_Tools
@@ -4000,18 +4043,18 @@ radionuclide (tracer), which is introduced into the body on a biologically activ
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vibration_Isolation_Table
 :Vibration_Isolation_Table rdf:type owl:Class ;
-                           rdfs:subClassOf :Instrument ;
-                           desc:definition "An table that provides a workspace insulated from vibration." ;
-                           rdfs:label "Vibration Isolation Table" ;
-                           skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Vibration Isolation Table" ;
+                           rdfs:seeAlso :T2002 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vibrotome
 :Vibrotome rdf:type owl:Class ;
-           rdfs:subClassOf :Instrument ;
-           desc:definition "An instrument for sectioning tissue samples that uses a vibrating razor blade to cut the sample. " ;
-           rdfs:label "Vibrotome" ;
-           skos:editorialNote "pending final vetting: work with eagle-i to define terms since out of scope of BRO" .
+           rdfs:comment "level of detail is too specific" ;
+           rdfs:label "DEPRECATED Vibrotome" ;
+           rdfs:seeAlso :T2002 ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Visualization
@@ -5209,8 +5252,10 @@ we think this should be deleted""" ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Reagent_Resource desc:definition "A material resource that provides access to reagents, such as antibodies or drugs. Included in this definition are sites designed to work with individual service providers of reagents such as ExactAntigen who do not sell antibodies directly, but provide a catalog with pricing information for most commercial and noncommercial antibody providers. Note, reagents may be of organismal origin or not, but must be classified as macromolecules or molecules." ;
-                  rdfs:label "Reagent Resource" .
+:Reagent_Resource rdfs:comment "in hierarchy under Non-living MR but too detailed" ;
+                  rdfs:label "DEPRECATED Reagent Resource" ;
+                  rdfs:seeAlso :M2009 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 :Research_Supplies desc:definition "Material supplies provided for research (http://en.wikipedia.org/wiki/Research) purposes" ;

@@ -72,6 +72,10 @@
 | - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | M1001 | Material Resource | Material Resource | definition change |
+| - | - | Assesment Material Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
+| - | - | Biomaterial Supply Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
+| - | - | Biomedical Supply Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
+| - | - | Reagent Resource | Subclass of Material Resource, deprecated because in hierarchy under Non-living MR but too detailed |
 | M2002 | Living MR | - | new class added as subclass of Material Resource |
 | M3003 | Animal MR | - | new class added as subclass of Living MR |
 | M4004 | Human MR | - | new class added as subclass of Animal MR |
@@ -179,9 +183,46 @@
 | - | - | Outreach Program | Subclass of Training Resource, deprecated because the level of detail is too specific |
 | - | - | Seminar Service | Subclass of Training Resource, deprecated because the level of detail is too specific |
 **ab hier @en ergänzen, in ttl, da super nervig in protege**
+| T1001 | Tool Resource | - | new class added as subclass of Resource |
+| T2002 | Device R | Instrument | renamed, change in hierarchy from Subclass of Material Resource to Subclass of Tool Resource and definition change |
+| - | - | Amplifier | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Calorimeter | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Chamber | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Computer-Instrumentation Interface | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | CT Scanner | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Drug Delivery Device | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Electrode Holder | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Electrode Puller  | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Faraday Cage | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Mass Spectrometer | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Microarray Scanner | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Micromanipulator | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Microscope | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Electron Microscope | Subclass of Microscope, deprecated because the level of detail is too specific |
+| - | - | Light Microscope | Subclass of Microscope, deprecated because the level of detail is too specific |
+| - | - | Microtome | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | MRI Scanner | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Next Generation Sequencer | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | NMR Instrument | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Oscillograph | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Oscilloscope | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | PCR Instrument | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | PET Scanner | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Power Conditioning Unit | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Pressure Regulator | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Rack | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Robotic Arrayer | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Stimulator | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Temperature Control Unit | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Vibration Isolation Table | Subclass of Device R, deprecated because the level of detail is too specific |
+| - | - | Vibrotome | Subclass of Device R, deprecated because the level of detail is too specific |
+| T3003 | Laboratory DR | Laboratory Supply Resource | renamed, change in hierarchy from Subclass of Material Resource to Subclass of Device R and definition change |
+| T3004 | Medical DR | Medical Device | change in hierarchy from Subclass of Material Resource to Subclass of Device R and definition change |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
-
-Deprecate classs from Software:
+Deprecate classes from Software:
 |  |  |  |  |
 | - | - | Algorithm | Subclass of *Software*, deprecated because it is not a software |
 | - | - | Graph Algorithm | Subclass of Algorithm, deprecated because Parentclass deprecated |
