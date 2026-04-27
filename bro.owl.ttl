@@ -206,65 +206,108 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T1001
-:T1001 rdf:type owl:Class ;
-       rdfs:subClassOf :R0001 ;
-       rdfs:label "Tool Resource" ;
-       skos:altLabel "TR" ;
-       skos:definition "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3007
+:T3007 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Data Access S" ;
+       skos:altLabel "Data Access Software" ;
+       skos:definition "A 'Software TR' used to retrieve data from an internal or external storage and to provide it to analysis software." .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3008
+:T3008 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Data Acquisition S" ;
+       skos:altLabel "Data Acquisition Software" ;
+       skos:definition "A 'Software TR' that has the purpose of EDAM:'Data Acquisition'." .
 
 [ rdf:type owl:Axiom ;
-   owl:annotatedSource :T1001 ;
+   owl:annotatedSource :T3008 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." ;
-   :mentions :I1001 ,
-             :M1001
+   owl:annotatedTarget "A 'Software TR' that has the purpose of EDAM:'Data Acquisition'." ;
+   :mentions <http://edamontology.org/topic_3077>
  ] .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2002
-:T2002 rdf:type owl:Class ;
-       rdfs:subClassOf :T1001 ;
-       rdfs:comment "hardware and software can be a part of a device" ,
-                    "in the field of healthcare and biomedical research" ;
-       rdfs:label "Device R" ;
-       skos:altLabel "Device Resource" ;
-       skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3009
+:T3009 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Data Analysis S" ;
+       skos:altLabel "Data Analysis Software" ;
+       skos:definition "A 'Software TR' for inspecting, cleaning, modeling, and/or transforming data to unravel new information and knowledge about those data." .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2005
-:T2005 rdf:type owl:Class ;
-       rdfs:subClassOf :T1001 ;
-       rdfs:label "Hardware TR" ;
-       skos:altLabel "Hardware Tool Resource" ;
-       skos:definition "A 'Tool Resource' provided by physical, manifactured components or objects of the digital research infrastructure." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3010
+:T3010 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Data Integration S" ;
+       skos:altLabel "Data Integration Software" ;
+       skos:definition "A 'Software TR'  with the purpose to combine diverse data from disparate sources into one unified dataset or database or to exchange data." .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T2006
-:T2006 rdf:type owl:Class ;
-       rdfs:subClassOf :T1001 ;
-       rdfs:label "Software TR" ;
-       skos:altLabel "S" ,
-                     "Software Tool Resource" ;
-       skos:definition "An executable digital 'Tool Resource' that can be used to work digitally and is usually provided in source or compiled form." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3011
+:T3011 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:comment "This includes taking care of the associated metadata, data formats, storage, preservation/archiving, access, and legal aspects related to using and sharing data." ;
+       rdfs:label "Data Management S" ;
+       skos:altLabel "Data Management Software" ;
+       skos:definition "A 'Software TR' that organizes data consistently, easily accessible and reusable, while ensuring a required level of data protection." .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3003
-:T3003 rdf:type owl:Class ;
-       rdfs:subClassOf :T2002 ;
-       rdfs:comment "Those devices are usually designed to carry out specific functions or a set of functions." ;
-       rdfs:label "Laboratory DR" ;
-       skos:altLabel "Laboratory Device Resource" ;
-       skos:definition "A 'Device R' used for laboratory experiments." ;
-       skos:example "reagents, instruments, tissue samples" .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3012
+:T3012 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Data Processing S" ;
+       skos:altLabel "Data Processing Software" ;
+       skos:definition "A 'Software TR' that has the purpose to convert or manipulate data at any point in the data life cycle." .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3004
-:T3004 rdf:type owl:Class ;
-       rdfs:subClassOf :T2002 ;
-       rdfs:label "Medical DR" ;
-       skos:altLabel "Medical Device Resource" ;
-       skos:definition "A 'Device R' that is useful for prevention, diagnosis, monitoring, or treatment of disease or other medical conditions." .
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4013
+:T4013 rdf:type owl:Class ;
+       rdfs:subClassOf :T3012 ;
+       rdfs:comment "It is used to allow the output of data or to transform data into a form that will allow to link different applications." ;
+       rdfs:label "Adapter" ;
+       skos:definition "A 'Data Processing S' to convert or manipulate the representation and or the format of data." ;
+       skos:example "png to pdf converter" .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4014
+:T4014 rdf:type owl:Class ;
+       rdfs:subClassOf :T3012 ;
+       rdfs:comment "Both compression with and without loss is meant." ;
+       rdfs:label "Data Compression S" ;
+       skos:altLabel "Data Compression Software" ;
+       skos:definition "A 'Data Processing S' for reducing the data size." .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4015
+:T4015 rdf:type owl:Class ;
+       rdfs:subClassOf :T3012 ;
+       rdfs:label "Data Visualization S" ;
+       skos:altLabel "Data Visualization Software" ;
+       skos:definition "A 'Data Processing S' for representing data or information as an 'Image IR'." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T4015 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Data Processing S' for representing data or information as an 'Image IR'." ;
+   :mentions :I3013
+ ] .
+
+
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4016
+:T4016 rdf:type owl:Class ;
+       rdfs:subClassOf :T3012 ;
+       rdfs:label "Image Processing S" ;
+       skos:altLabel "Image Processing Software" ;
+       skos:definition "A 'Data Processing S' for performing post-processing on an 'Image IR'. This refers to the technical process of modifying, enhancing, or optimizing images after their initial capture or creation." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T4016 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Data Processing S' for performing post-processing on an 'Image IR'. This refers to the technical process of modifying, enhancing, or optimizing images after their initial capture or creation." ;
+   :mentions :I3013
+ ] .
 
 
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
@@ -276,9 +319,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Adapter
 :Adapter rdf:type owl:Class ;
-         rdfs:subClassOf :Data_Processing_Software ;
-         desc:definition "Resource that provides access to software, applications, or toolkits that convert or manipulate the representation of data." ;
-         rdfs:label "Adapter" .
+         rdfs:comment "change of definition and IRI" ;
+         rdfs:label "DEPRECATED Adapter" ;
+         rdfs:seeAlso :T4013 ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Aggregate_Human_Data
@@ -307,9 +351,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Analysis_of_Gel-Electrophoresis
 :Analysis_of_Gel-Electrophoresis rdf:type owl:Class ;
-                                 rdfs:subClassOf :Image_Processing ;
-                                 desc:definition "Resource that provides access to software, applications, or toolkits that can be used to provide quantitative data on the molecules being analyzed such as molecular weight, abundance or purity." ;
-                                 rdfs:label "Analysis of Gel-Electrophoresis" .
+                                 rdfs:comment "level of detail is too specific" ;
+                                 rdfs:label "DEPRECATED Analysis of Gel-Electrophoresis" ;
+                                 rdfs:seeAlso :T4016 ;
+                                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Anatomic_Atlas
@@ -379,9 +424,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas_Generation
 :Atlas_Generation rdf:type owl:Class ;
-                  rdfs:subClassOf :Image_Processing ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that generate computational atlases of biological objects using imaging techniques." ;
-                  rdfs:label "Atlas Generation" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Atlas Generation" ;
+                  rdfs:seeAlso :T4016 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Authentication
@@ -801,9 +847,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Cortical_Modeling
 :Cortical_Modeling rdf:type owl:Class ;
-                   rdfs:subClassOf :Image_Processing ;
-                   desc:definition "Resource that provides access to software, applications, or toolkits that perform detection, extraction, representation and analysis of cortical brain structure." ;
-                   rdfs:label "Cortical Modeling" .
+                   rdfs:comment "level of detail is too specific" ;
+                   rdfs:label "DEPRECATED Cortical Modeling" ;
+                   rdfs:seeAlso :T4016 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Course_Material
@@ -840,17 +887,18 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Acquisition_Software
 :Data_Acquisition_Software rdf:type owl:Class ;
-                           rdfs:subClassOf :T2006 ;
-                           desc:definition "Resource that provides access to software or application that support collection of real-world conditions and converts these to a numerical representation that can be processed by a computer, http://en.wikipedia.org/wiki/Data_acquisition." ;
-                           rdfs:label "Data Acquisition Software" ;
-                           skos:editorialNote "pending final vetting: review term in comparison to siblings data analysis software and data processing software" .
+                           rdfs:comment "change of definition and IRI" ;
+                           rdfs:label "DEPRECATED Data Acquisition Software" ;
+                           rdfs:seeAlso :T3008 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Analysis_Software
 :Data_Analysis_Software rdf:type owl:Class ;
-                        rdfs:subClassOf :T2006 ;
-                        desc:definition "A resource that provides access to software or application that is used to analyze, model, and transform data with the goal of testing a research hypothesis, highlighting useful information, suggesting conclusions, or supporting decision making." ;
-                        rdfs:label "Data Analysis Software" .
+                        rdfs:comment "change of definition and IRI" ;
+                        rdfs:label "DEPRECATED Data Analysis Software" ;
+                        rdfs:seeAlso :T3009 ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Annotation
@@ -863,9 +911,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Compression
 :Data_Compression rdf:type owl:Class ;
-                  rdfs:subClassOf :Data_Processing_Software ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that reduce the bits (information units) needed to encode the data." ;
-                  rdfs:label "Data Compression" .
+                  rdfs:comment "change of definition and IRI" ;
+                  rdfs:label "DEPRECATED Data Compression" ;
+                  rdfs:seeAlso :T4014 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Computation_Service
@@ -895,7 +944,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Mining_and_Inference
 :Data_Mining_and_Inference rdf:type owl:Class ;
-                           rdfs:subClassOf :Data_Analysis_Software ,
+                           rdfs:subClassOf :T3009 ,
                                            :Statistical_Analysis ;
                            desc:definition "A resource that provides access to software, application, or toolkits that merge data with analysis tools with the goal of testing a research hypothesis, highlighting useful information, suggesting conclusions, or supporting decision making." ;
                            rdfs:label "Data Mining and Inference" ;
@@ -917,9 +966,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Processing_Software
 :Data_Processing_Software rdf:type owl:Class ;
-                          rdfs:subClassOf :T2006 ;
-                          desc:definition "A resource that provides access to software or application that is used to convert or manipulate data into information or knowledge. " ;
-                          rdfs:label "Data Processing Software" .
+                          rdfs:comment "change of definition and IRI" ;
+                          rdfs:label "DEPRECATED Data Processing Software" ;
+                          rdfs:seeAlso :T3012 ;
+                          owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Repository
@@ -971,9 +1021,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Visualization
 :Data_Visualization rdf:type owl:Class ;
-                    rdfs:subClassOf :Data_Processing_Software ;
-                    desc:definition "Resource that provides access to software, applications, or toolkits that present information as an image. " ;
-                    rdfs:label "Data Visualization" .
+                    rdfs:comment "change of definition and IRI" ;
+                    rdfs:label "DEPRECATED Data Visualization" ;
+                    rdfs:seeAlso :T4015 ;
+                    owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database
@@ -989,8 +1040,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database_Software
-:Database_Software rdf:type owl:Class ;
-                   rdfs:subClassOf :T2006 .
+:Database_Software rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Deep_Parsing
@@ -1162,8 +1212,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exploratory_Data_Analysis
-:Exploratory_Data_Analysis rdf:type owl:Class ;
-                           rdfs:subClassOf :Image_Processing .
+:Exploratory_Data_Analysis rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#F1001
@@ -1381,7 +1430,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Genomic_Phenotypic_Analysis
 :Genomic_Phenotypic_Analysis rdf:type owl:Class ;
-                             rdfs:subClassOf :Data_Analysis_Software ;
+                             rdfs:subClassOf :T3009 ;
                              desc:definition """A resource that provides access to software or application that is used to analyze and model biological processes at the genomic, molecular, cellular, tissue level, or population levels.
 
 """ ;
@@ -1824,10 +1873,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Processing
 :Image_Processing rdf:type owl:Class ;
-                  rdfs:subClassOf :Data_Processing_Software ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that performs image post processing (i.e., excludes image generation)." ;
-                  rdfs:label "Image Processing" ;
-                  skos:editorialNote "pending final vetting: review location in hierarchy" .
+                  rdfs:comment "change of definition and IRI" ;
+                  rdfs:label "DEPRECATED Image Processing" ;
+                  rdfs:seeAlso :T4016 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Image_Reconstruction
@@ -1952,8 +2001,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
-:Integration_and_Interoperability_Tool rdf:type owl:Class ;
-                                       rdfs:subClassOf :T2006 .
+:Integration_and_Interoperability_Tool rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tools
@@ -2183,12 +2231,12 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Plant MR"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001481> ;
        skos:altLabel "Plant Material Resource"@en ;
-       skos:definition "Any 'Living MR' from MESH:'Plant'."@en .
+       skos:definition "Any 'Living MR' from MESH:'Plants'."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :M3007 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "Any 'Living MR' from MESH:'Plant'."@en ;
+   owl:annotatedTarget "Any 'Living MR' from MESH:'Plants'."@en ;
    :mentions <http://id.nlm.nih.gov/mesh/D010944>
  ] .
 
@@ -2567,7 +2615,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Natural_Language_Processing
 :Natural_Language_Processing rdf:type owl:Class ;
-                             rdfs:subClassOf :Data_Analysis_Software .
+                             rdfs:subClassOf :T3009 .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Characterization
@@ -3051,7 +3099,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotype_Management
 :Phenotype_Management rdf:type owl:Class ;
-                      rdfs:subClassOf :Data_Analysis_Software ;
+                      rdfs:subClassOf :T3009 ;
                       desc:definition "Resource that provides access to applications, libraries, or software that perform inference and information retrieval on biological phenotype data." ;
                       rdfs:label "Phenotype Management" ;
                       skos:editorialNote "pending final vetting: review location in hierarchy" .
@@ -3096,9 +3144,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pipeline_Manager
 :Pipeline_Manager rdf:type owl:Class ;
-                  rdfs:subClassOf :Integration_and_Interoperability_Tool ;
-                  desc:definition "Resource that provides access to software, applications, or toolkits that manage software pipelines" ;
-                  rdfs:label "Pipeline Manager" .
+                  rdfs:comment "level of detail is too specific" ;
+                  rdfs:label "DEPRECATED Pipeline Manager" ;
+                  rdfs:seeAlso :T3010 ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portal
@@ -3120,9 +3169,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pre-Processing
 :Pre-Processing rdf:type owl:Class ;
-                rdfs:subClassOf :Image_Processing ;
-                desc:definition "Resource that provides access to software, applications, or toolkits that perform image pre-processing routines that are required as preliminary steps before standard image processing, analysis and visualization take place." ;
-                rdfs:label "Pre-Processing" .
+                rdfs:comment "level of detail is too specific" ;
+                rdfs:label "DEPRECATED Pre-Processing" ;
+                rdfs:seeAlso :T4016 ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Prediction_of_Side-Chain_Conformations
@@ -3294,9 +3344,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Registration
 :Registration rdf:type owl:Class ;
-              rdfs:subClassOf :Image_Processing ;
-              desc:definition "Resource that provides access to software, applications, or toolkits that performs methods for co-registration, alignment and warping of imaging and hyper-imaging data." ;
-              rdfs:label "Registration" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Registration" ;
+              rdfs:seeAlso :T4016 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Regularization_and_Smoothing
@@ -3605,9 +3656,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Segmentation
 :Segmentation rdf:type owl:Class ;
-              rdfs:subClassOf :Image_Processing ;
-              desc:definition "Resource that provides access to software, applications, or toolkits that classify sub-regions of images." ;
-              rdfs:label "Segmentation" .
+              rdfs:comment "level of detail is too specific" ;
+              rdfs:label "DEPRECATED Segmentation" ;
+              rdfs:seeAlso :T4016 ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Semantic_Network
@@ -3695,7 +3747,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Signal_Processing
 :Signal_Processing rdf:type owl:Class ;
-                   rdfs:subClassOf :Data_Analysis_Software ,
+                   rdfs:subClassOf :T3009 ,
                                    :Statistical_Analysis ;
                    desc:definition "Resource that provides access to software, applications, or toolkits that analysis multi-dimensional spatio-temporal data." ;
                    rdfs:label "Signal Processing" .
@@ -3837,7 +3889,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Analysis
 :Statistical_Analysis rdf:type owl:Class ;
-                      rdfs:subClassOf :Data_Analysis_Software ;
+                      rdfs:subClassOf :T3009 ;
                       desc:definition "A resource that provides access to software, applications, or toolkits for basic statistical modeling and analysis." ;
                       rdfs:label "Statistical Analysis" .
 
@@ -3923,6 +3975,67 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
                              rdfs:label "DEPRECATED Symbolic and Analytic Model" ;
                              rdfs:seeAlso :Algorithm ;
                              owl:deprecated "true"^^xsd:boolean .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T1001
+:T1001 rdf:type owl:Class ;
+       rdfs:subClassOf :R0001 ;
+       rdfs:label "Tool Resource" ;
+       skos:altLabel "TR" ;
+       skos:definition "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T1001 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Resource' that provides access to 'Information Resource's or 'Material Resource's used to gather, store, access, and analyze data." ;
+   :mentions :I1001 ,
+             :M1001
+ ] .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T2002
+:T2002 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:comment "hardware and software can be a part of a device" ,
+                    "in the field of healthcare and biomedical research" ;
+       rdfs:label "Device R" ;
+       skos:altLabel "Device Resource" ;
+       skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T2005
+:T2005 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:label "Hardware TR" ;
+       skos:altLabel "Hardware Tool Resource" ;
+       skos:definition "A 'Tool Resource' provided by physical, manifactured components or objects of the digital research infrastructure." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T2006
+:T2006 rdf:type owl:Class ;
+       rdfs:subClassOf :T1001 ;
+       rdfs:label "Software TR" ;
+       skos:altLabel "S" ,
+                     "Software Tool Resource" ;
+       skos:definition "An executable digital 'Tool Resource' that can be used to work digitally and is usually provided in source or compiled form." .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3003
+:T3003 rdf:type owl:Class ;
+       rdfs:subClassOf :T2002 ;
+       rdfs:comment "Those devices are usually designed to carry out specific functions or a set of functions." ;
+       rdfs:label "Laboratory DR" ;
+       skos:altLabel "Laboratory Device Resource" ;
+       skos:definition "A 'Device R' used for laboratory experiments." ;
+       skos:example "reagents, instruments, tissue samples" .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3004
+:T3004 rdf:type owl:Class ;
+       rdfs:subClassOf :T2002 ;
+       rdfs:label "Medical DR" ;
+       skos:altLabel "Medical Device Resource" ;
+       skos:definition "A 'Device R' that is useful for prevention, diagnosis, monitoring, or treatment of disease or other medical conditions." .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
@@ -4966,8 +5079,10 @@ we think this should be deleted""" ;
           owl:deprecated "true"^^xsd:boolean .
 
 
-:Database_Software desc:definition "A resource that provides access to software, applications, or toolkits that are used in the development of database management systems." ;
-                   rdfs:label "Database Software" .
+:Database_Software rdfs:comment "rename and change of definition and IRI" ;
+                   rdfs:label "DEPRECATED Database Software" ;
+                   rdfs:seeAlso :T3011 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 :Disaster_Recovery_Service rdfs:comment "level of detail is too specific" ;
@@ -5015,8 +5130,10 @@ we think this should be deleted""" ;
            skos:historyNote "Deprecated for BRO v2.7" .
 
 
-:Exploratory_Data_Analysis desc:definition "Resource that provides access to software, applications, or toolkits that performs exploratory data analysis methods." ;
-                           rdfs:label "Exploratory Data Analysis" .
+:Exploratory_Data_Analysis rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Exploratory Data Analysis" ;
+                           rdfs:seeAlso :T4016 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 :Four_Dimensional_Data desc:definition "3-D models evolving in time" ;
@@ -5062,8 +5179,10 @@ we think this should be deleted""" ;
                        skos:historyNote "Deprecated for BRO v3.0" .
 
 
-:Integration_and_Interoperability_Tool desc:definition "A resource that provides access to software or application that is used to enable (i) interoperability and association of data and/or (ii) pipeline of online tools." ;
-                                       rdfs:label "Integration and Interoperability Tool" .
+:Integration_and_Interoperability_Tool rdfs:comment "change of definition, label and IRI" ;
+                                       rdfs:label "DEPRECATED Integration and Interoperability Tool" ;
+                                       rdfs:seeAlso :T3010 ;
+                                       owl:deprecated "true"^^xsd:boolean .
 
 
 :Integration_and_Interoperability_Tools desc:definition "These are resources that allow tool interoperability and resource integration and data mediation." ;

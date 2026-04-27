@@ -252,11 +252,10 @@
 | - | - | Pattern Inference Algorithm | Subclass of Statistical Algorithm, deprecated because Parentclass deprecated |
 | - | - | Symbolic and Analytic Model | Subclass of Algorithm, deprecated because Parentclass deprecated |
 | - | - | Model with Closed Form Solution | Subclass of Symbolic and Analytic Model, deprecated because Parentclass deprecated |
-
-**here**
-
-under Data Analysis Software:
-| - | - | Data Mining and Inference | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
+| T3007 | Data Access S | - | new class added as subclass of Software TR |
+| T3008 | Data Acquisition S | Data Acquisition Software | definition change |
+| T3009 | Data Analysis S | Data Analysis Software | definition change |
+| - | - | **Data Mining and Inference** | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Inference from Data | Subclass of Data Mining and Inference, deprecated because Parentclass deprecated |
 | - | - | Pattern and Motif Inference | Subclass of Inference from Data, deprecated because Parentclass deprecated |
 | - | - | Signaling Network Reconstruction | Subclass of Inference from Data, deprecated because Parentclass deprecated |
@@ -288,13 +287,22 @@ under Data Analysis Software:
 | - | - | Time Series Analysis | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Statistical Analysis | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
 | - | - | Statistical Package | Subclass of Statistical Analysis, deprecated because Parentclass deprecated |
-
-under Image Processing:
-| - | - | Analysis of Gel-Electrophoresis | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
-| - | - | Atlas Generation | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
-| - | - | Cortical Modeling | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
-| - | - | Exploratory Data Analysis | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
-| - | - | Pre-Processing | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| T3010 | Data Integration S | Integration and Interoperability Tool | rename and definition change |
+| - | - | Pipeline Manager | Subclass of Data Integration S, deprecated because the level of detail is too specific |
+| - | - | Graphical Processing Workflow Environments | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
+| - | - | Processing Pipeline | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
+| - | - | Workbench | Subclass of Data Integration S deprecated because the level of detail is too specific |
+| T3011 | Data Management S | Database Software | rename and definition change |
+| T3012 | Data Processing S | Data Processing Software | definition change |
+| T4013 | Adapter | Adapter | definition change |
+| T4014 | Data Compression S | Data Compression | definition change |
+| T4015 | Data Visualization S | Data Visualization | definition change |
+| T4016 | Image Processing S | Image Processing | definition change |
+| - | - | Analysis of Gel-Electrophoresis | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+| - | - | Atlas Generation | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+| - | - | Cortical Modeling | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+| - | - | Exploratory Data Analysis | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+| - | - | Pre-Processing | Subclass of Image Processing S, deprecated because the level of detail is too specific |
 | - | - | Data Transform | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
 | - | - | Spectral Transform | Subclass of Data Transform, deprecated because Parentclass deprecated |
 | - | - | Fourier Transform | Subclass of Spectral Transform, deprecated because Parentclass deprecated |
@@ -302,8 +310,15 @@ under Image Processing:
 | - | - | Filtering | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
 | - | - | Inhomogenity Correction | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
 | - | - | Skull Stripping | Subclass of Pre-Processing, deprecated because Parentclass deprecated |
-| - | - | Registration | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
-| - | - | Segmentation | Subclass of *Image Processing*, deprecated because the level of detail is too specific |
+| - | - | Registration | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+| - | - | Segmentation | Subclass of Image Processing S, deprecated because the level of detail is too specific |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+**here**
 
 under Data Transfer and Communication:
 | - | - | Communication Interface | Subclass of *Data Transfer and Communication*, deprecated because the level of detail is too specific |
@@ -315,11 +330,6 @@ under Data Transfer and Communication:
 | - | - | News | Subclass of Web Posting, deprecated because Parentclass deprecated |
 | - | - | Online Course | Subclass of Web Posting, deprecated because Parentclass deprecated |
 
-under Data Integration and Interoperability Tool:
-| - | - | Pipeline Manager | Subclass of *Data Integration and Interoperability Tool*, deprecated because the level of detail is too specific |
-| - | - | Graphical Processing Workflow Environments | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
-| - | - | Processing Pipeline | Subclass of Pipeline Manager, deprecated because Parentclass deprecated |
-| - | - | Workbench | Subclass of *Data Integration and Interoperability Tool*, deprecated because the level of detail is too specific |
 
 in Interactive Tool:
 | - | - | Interactive Tool | Subclass of *Software*, deprecated because it is a feature and not a specification |
@@ -424,11 +434,7 @@ under Modeling and Simulation:
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+
 
 
 
