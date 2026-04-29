@@ -302,7 +302,7 @@
 | T3007 | Data Access S | - | new class added as subclass of Software TR |
 | T3008 | Data Acquisition S | Data Acquisition Software | definition change |
 | T3009 | Data Analysis S | Data Analysis Software | definition change |
-| - | - | **Data Mining and Inference** | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
+| - | - | Data Mining and Inference | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Inference from Data | Subclass of Data Mining and Inference, deprecated because Parentclass deprecated |
 | - | - | Pattern and Motif Inference | Subclass of Inference from Data, deprecated because Parentclass deprecated |
 | - | - | Signaling Network Reconstruction | Subclass of Inference from Data, deprecated because Parentclass deprecated |
@@ -310,12 +310,12 @@
 | - | - | Text Mining | Subclass of Data Mining and Inference, deprecated because Parentclass deprecated |
 | - | - | Knowledge Extraction | Subclass of Text Mining, deprecated because Parentclass deprecated |
 | - | - | Statistical Text Analysis | Subclass of Text Mining, deprecated because Parentclass deprecated |
-| - | - | Genomic Phenotypic Analysis | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
+| - | - | Genomic Phenotypic Analysis | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Network Characterization | Subclass of Genomic Phenotypic Analysis, deprecated because Parentclass deprecated |
 | - | - | Regulatory Signaling Network Reconstruction | Subclass of Genomic Phenotypic Analysis, deprecated because Parentclass deprecated |
 | - | - | Sequence Annotation | Subclass of Genomic Phenotypic Analysis, deprecated because Parentclass deprecated |
 | - | - | Sequence Similarity Searching | Subclass of Genomic Phenotypic Analysis, deprecated because Parentclass deprecated |
-| - | - | **Natural Language Processing** | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
+| - | - | Natural Language Processing | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Language Summarization | Subclass of Natural Language Processing, deprecated because Parentclass deprecated |
 | - | - | Parsing | Subclass of Natural Language Processing, deprecated because Parentclass deprecated |
 | - | - | Deep Parsing | Subclass of Parsing, deprecated because Parentclass deprecated |
@@ -325,14 +325,14 @@
 | - | - | Named Entity Recognition | Subclass of Parsing, deprecated because Parentclass deprecated |
 | - | - | Partial Parsing | Subclass of Parsing, deprecated because Parentclass deprecated |
 | - | - | Sentence Splitting | Subclass of Parsing, deprecated because Parentclass deprecated |
-| - | - | Phenotype Management | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
-| - | - | Signal Processing | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
+| - | - | Phenotype Management | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
+| - | - | Signal Processing | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Averaging and Agglomeration | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Data Normalization | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Outlier Detection and Removal | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Regularization and Smoothing | Subclass of Signal Processing, deprecated because Parentclass deprecated |
 | - | - | Time Series Analysis | Subclass of Signal Processing, deprecated because Parentclass deprecated |
-| - | - | Statistical Analysis | Subclass of *Data Analysis Software*, deprecated because the level of detail is too specific |
+| - | - | Statistical Analysis | Subclass of Data Analysis S, deprecated because the level of detail is too specific |
 | - | - | Statistical Package | Subclass of Statistical Analysis, deprecated because Parentclass deprecated |
 | T3010 | Data Integration S | Integration and Interoperability Tool | rename and definition change |
 | - | - | Pipeline Manager | Subclass of Data Integration S, deprecated because the level of detail is too specific |

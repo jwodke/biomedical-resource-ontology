@@ -841,11 +841,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Mining_and_Inference
 :Data_Mining_and_Inference rdf:type owl:Class ;
-                           rdfs:subClassOf :Statistical_Analysis ,
-                                           :T3009 ;
-                           desc:definition "A resource that provides access to software, application, or toolkits that merge data with analysis tools with the goal of testing a research hypothesis, highlighting useful information, suggesting conclusions, or supporting decision making." ;
-                           rdfs:label "Data Mining and Inference" ;
-                           skos:editorialNote "pending final vetting: review location in hierarchy and child terms" .
+                           rdfs:comment "level of detail is too specific" ;
+                           rdfs:label "DEPRECATED Data Mining and Inference" ;
+                           rdfs:seeAlso :T3009 ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Normalization
@@ -1330,11 +1329,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Genomic_Phenotypic_Analysis
 :Genomic_Phenotypic_Analysis rdf:type owl:Class ;
-                             rdfs:subClassOf :T3009 ;
-                             desc:definition """A resource that provides access to software or application that is used to analyze and model biological processes at the genomic, molecular, cellular, tissue level, or population levels.
-
-""" ;
-                             rdfs:label "Genomic Phenotypic Analysis" .
+                             rdfs:comment "level of detail is too specific" ;
+                             rdfs:label "DEPRECATED Genomic Phenotypic Analysis" ;
+                             rdfs:seeAlso :T3009 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Genomics_Facility
@@ -2000,8 +1998,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Language_Summarization
-:Language_Summarization rdf:type owl:Class ;
-                        rdfs:subClassOf :Natural_Language_Processing .
+:Language_Summarization rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Lexical_Analysis
@@ -2161,14 +2158,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M4004 rdf:type owl:Class ;
        rdfs:subClassOf :M3003 ;
        rdfs:label "Human MR"@en ;
-       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D006801> ;
+       rdfs:seeAlso <> ;
        skos:altLabel "Human Material Resource"@en ;
-       skos:definition "Any 'Living MR' from BIOLINK:'Human'"@en .
+       skos:definition "Any 'Living MR' from MESH:'Humans'"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :M4004 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Human'"@en ;
+   owl:annotatedTarget "Any 'Living MR' from MESH:'Humans'"@en ;
    :mentions "https://w3id.org/biolink/vocab/Human"^^xsd:anyURI
  ] .
 
@@ -2516,8 +2513,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Natural_Language_Processing
-:Natural_Language_Processing rdf:type owl:Class ;
-                             rdfs:subClassOf :T3009 .
+:Natural_Language_Processing rdf:type owl:Class .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Characterization
@@ -2924,9 +2920,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Parsing
 :Parsing rdf:type owl:Class ;
-         rdfs:subClassOf :Natural_Language_Processing ;
-         desc:definition "Resource that provides access to applications, libraries, or software that analyze text to detect language constructs or tokens such as noun phrases and verbs." ;
-         rdfs:label "Parsing" .
+         rdfs:comment "Parentclass deprecated" ;
+         rdfs:label "DEPRECATED Parsing" ;
+         rdfs:seeAlso :Natural_Language_Processing ;
+         owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Partial_Parsing
@@ -3009,10 +3006,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotype_Management
 :Phenotype_Management rdf:type owl:Class ;
-                      rdfs:subClassOf :T3009 ;
-                      desc:definition "Resource that provides access to applications, libraries, or software that perform inference and information retrieval on biological phenotype data." ;
-                      rdfs:label "Phenotype Management" ;
-                      skos:editorialNote "pending final vetting: review location in hierarchy" .
+                      rdfs:comment "level of detail is too specific" ;
+                      rdfs:label "DEPRECATED Phenotype Management" ;
+                      rdfs:seeAlso :T3009 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Phenotypic_Measurement
@@ -3679,10 +3676,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Signal_Processing
 :Signal_Processing rdf:type owl:Class ;
-                   rdfs:subClassOf :Statistical_Analysis ,
-                                   :T3009 ;
-                   desc:definition "Resource that provides access to software, applications, or toolkits that analysis multi-dimensional spatio-temporal data." ;
-                   rdfs:label "Signal Processing" .
+                   rdfs:comment "level of detail is too specific" ;
+                   rdfs:label "DEPRECATED Signal Processing" ;
+                   rdfs:seeAlso :T3009 ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Signaling_Network_Reconstruction
@@ -3821,9 +3818,10 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Analysis
 :Statistical_Analysis rdf:type owl:Class ;
-                      rdfs:subClassOf :T3009 ;
-                      desc:definition "A resource that provides access to software, applications, or toolkits for basic statistical modeling and analysis." ;
-                      rdfs:label "Statistical Analysis" .
+                      rdfs:comment "level of detail is too specific" ;
+                      rdfs:label "DEPRECATED Statistical Analysis" ;
+                      rdfs:seeAlso :T3009 ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Statistical_Package
@@ -3932,6 +3930,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:comment "hardware and software can be a part of a device"@en ,
                     "in the field of healthcare and biomedical research"@en ;
        rdfs:label "Device R"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C62103> ,
+                    <https://biolink.github.io/biolink-model/Device/> ;
        skos:altLabel "Device Resource"@en ;
        skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components."@en .
 
@@ -3948,6 +3948,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T2006 rdf:type owl:Class ;
        rdfs:subClassOf :T1001 ;
        rdfs:label "Software TR"@en ;
+       rdfs:seeAlso <http://purl.org/dc/dcmitype/Software> ;
        skos:altLabel "S"@en ,
                      "Software Tool Resource"@en ;
        skos:definition "An executable digital 'Tool Resource' that can be used to work digitally and is usually provided in source or compiled form."@en .
@@ -3958,6 +3959,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T2002 ;
        rdfs:comment "Those devices are usually designed to carry out specific functions or a set of functions."@en ;
        rdfs:label "Laboratory DR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C203665> ;
        skos:altLabel "Laboratory Device Resource"@en ;
        skos:definition "A 'Device R' used for laboratory experiments."@en ;
        skos:example "reagents, instruments, tissue samples"@en .
@@ -3967,6 +3969,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T3004 rdf:type owl:Class ;
        rdfs:subClassOf :T2002 ;
        rdfs:label "Medical DR"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C16830> ;
        skos:altLabel "Medical Device Resource"@en ;
        skos:definition "A 'Device R' that is useful for prevention, diagnosis, monitoring, or treatment of disease or other medical conditions."@en .
 
@@ -4005,14 +4008,31 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T3009 rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Data Analysis S"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D000078332> ,
+                    <http://purl.obolibrary.org/obo/T4FS_0000352> ;
        skos:altLabel "Data Analysis Software"@en ;
        skos:definition "A 'Software TR' for inspecting, cleaning, modeling, and/or transforming data to unravel new information and knowledge about those data."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T3009 ;
+   owl:annotatedProperty rdfs:seeAlso ;
+   owl:annotatedTarget <http://id.nlm.nih.gov/mesh/D000078332> ;
+   rdfs:comment "software with the purpose of mesh:D000078332"@en
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T3009 ;
+   owl:annotatedProperty rdfs:seeAlso ;
+   owl:annotatedTarget <http://purl.obolibrary.org/obo/T4FS_0000352> ;
+   rdfs:comment "software with the purpose of T4FS:0000352"@en
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3010
 :T3010 rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Data Integration S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000487> ;
        skos:altLabel "Data Integration Software"@en ;
        skos:definition "A 'Software TR'  with the purpose to combine diverse data from disparate sources into one unified dataset or database or to exchange data."@en .
 
@@ -4022,6 +4042,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:comment "This includes taking care of the associated metadata, data formats, storage, preservation/archiving, access, and legal aspects related to using and sharing data."@en ;
        rdfs:label "Data Management S"@en ;
+       rdfs:seeAlso <http://edamontology.org/topic_3071> ;
        skos:altLabel "Data Management Software"@en ;
        skos:definition "A 'Software TR' that organizes data consistently, easily accessible and reusable, while ensuring a required level of data protection."@en .
 
@@ -4030,6 +4051,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T3012 rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Data Processing S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000044> ;
        skos:altLabel "Data Processing Software"@en ;
        skos:definition "A 'Software TR' that has the purpose to convert or manipulate data at any point in the data life cycle."@en .
 
@@ -4039,6 +4061,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:comment "quality aspects such as security, data privacy, data quality, data integrity, and audit trail"@en ;
        rdfs:label "Data Transfer and Communication S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C209464> ;
        skos:altLabel "Data Transfer and Communication Software"@en ;
        skos:definition "A 'Software TR' for exchanging data across computer systems and networks, taking into account all required quality aspects."@en .
 
@@ -4047,6 +4070,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T3018 rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Modeling and Simulation S"@en ;
+       rdfs:seeAlso <http://edamontology.org/operation_2426> ;
        skos:altLabel "Modeling and Simulation Software"@en ;
        skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en .
 
@@ -4063,6 +4087,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T3012 ;
        rdfs:comment "It is used to allow the output of data or to transform data into a form that will allow to link different applications."@en ;
        rdfs:label "Adapter"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C73536> ;
        skos:definition "A 'Data Processing S' to convert or manipulate the representation and or the format of data."@en ;
        skos:example "png to pdf converter"@en .
 
@@ -4072,6 +4097,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T3012 ;
        rdfs:comment "Both compression with and without loss is meant."@en ;
        rdfs:label "Data Compression S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C64347> ;
        skos:altLabel "Data Compression Software"@en ;
        skos:definition "A 'Data Processing S' for reducing the data size."@en .
 
@@ -5283,8 +5309,10 @@ we think this should be deleted""" ;
                owl:deprecated "true"^^xsd:boolean .
 
 
-:Language_Summarization desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." ;
-                        rdfs:label "Language Summarization" .
+:Language_Summarization rdfs:comment "Parentclass deprecated" ;
+                        rdfs:label "DEPRECATED Language Summarization" ;
+                        rdfs:seeAlso :Natural_Language_Processing ;
+                        owl:deprecated "true"^^xsd:boolean .
 
 
 :License rdfs:comment "level of detail is too specific" ;
@@ -5363,8 +5391,10 @@ we think this should be deleted""" ;
                     owl:deprecated "true"^^xsd:boolean .
 
 
-:Natural_Language_Processing desc:definition "A resource that provides access to software, library, or application that interprets human (natural) language into a machine-interpretable form." ;
-                             rdfs:label "Natural Language Processing" .
+:Natural_Language_Processing rdfs:comment "level of detail is too specific" ;
+                             rdfs:label "DEPRECATED Natural Language Processing" ;
+                             rdfs:seeAlso :T3009 ;
+                             owl:deprecated "true"^^xsd:boolean .
 
 
 :Network_Editor desc:definition "Deprecate" ;
