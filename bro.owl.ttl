@@ -2110,15 +2110,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M3006 rdf:type owl:Class ;
        rdfs:subClassOf :M2002 ;
        rdfs:label "Fungal MR"@en ;
-       rdfs:seeAlso <http://purl.obolibrary.org/obo/BTO_0001494> ;
        skos:altLabel "Fungal Material Resource"@en ;
-       skos:definition "Any 'Living MR' from BIOLINK:'Fungus'."@en .
+       skos:definition "Any 'Living MR' from BTO:'Fungus'."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :M3006 ;
    owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "Any 'Living MR' from BIOLINK:'Fungus'."@en ;
-   :mentions "https://w3id.org/biolink/vocab/Fungus"^^xsd:anyURI
+   owl:annotatedTarget "Any 'Living MR' from BTO:'Fungus'."@en ;
+   :mentions "http://purl.obolibrary.org/obo/BTO_0001494"^^xsd:anyURI
  ] .
 
 
@@ -2158,7 +2157,6 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :M4004 rdf:type owl:Class ;
        rdfs:subClassOf :M3003 ;
        rdfs:label "Human MR"@en ;
-       rdfs:seeAlso <> ;
        skos:altLabel "Human Material Resource"@en ;
        skos:definition "Any 'Living MR' from MESH:'Humans'"@en .
 
@@ -2166,7 +2164,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
    owl:annotatedSource :M4004 ;
    owl:annotatedProperty skos:definition ;
    owl:annotatedTarget "Any 'Living MR' from MESH:'Humans'"@en ;
-   :mentions "https://w3id.org/biolink/vocab/Human"^^xsd:anyURI
+   :mentions <http://id.nlm.nih.gov/mesh/D006801>
  ] .
 
 
