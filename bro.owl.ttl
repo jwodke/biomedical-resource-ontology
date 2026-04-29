@@ -206,30 +206,6 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3017
-:T3017 rdf:type owl:Class ;
-       rdfs:subClassOf :T2006 ;
-       rdfs:comment "quality aspects such as security, data privacy, data quality, data integrity, and audit trail"@en ;
-       rdfs:label "Data Transfer and Communication S"@en ;
-       skos:altLabel "Data Transfer and Communication Software"@en ;
-       skos:definition "A 'Software TR' for exchanging data across computer systems and networks, taking into account all required quality aspects."@en .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T3018
-:T3018 rdf:type owl:Class ;
-       rdfs:subClassOf :T2006 ;
-       rdfs:label "Modeling and Simulation S"@en ;
-       skos:altLabel "Modeling and Simulation Software"@en ;
-       skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource :T3018 ;
-   owl:annotatedProperty skos:definition ;
-   owl:annotatedTarget "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en ;
-   :mentions :I3004
- ] .
-
-
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
@@ -2898,6 +2874,13 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        skos:altLabel "Software Development Expertise People Resource"@en ;
        skos:definition "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :P3011 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Professional PR' trained in the development and adaptation of 'Software TR'."@en ;
+   :mentions :T2006
+ ] .
+
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PCR_Facility
 :PCR_Facility rdf:type owl:Class ;
@@ -3425,7 +3408,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S1001 ;
        rdfs:label "Technical Support SR"@en ;
        skos:altLabel "Technical Support Service Resource"@en ;
-       skos:definition "A 'Service Resource' in which the service provider offers assistance with TOOL RESOURCEs in their correct installation, maintenance, operation, and repair."@en .
+       skos:definition "A 'Service Resource' in which the service provider offers assistance with 'Tool Resource's in their correct installation, maintenance, operation, and repair."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S2014 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Service Resource' in which the service provider offers assistance with 'Tool Resource's in their correct installation, maintenance, operation, and repair."@en ;
+   :mentions :T1001
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2017
@@ -3551,8 +3541,16 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S2014 ;
        rdfs:label "Computational SR"@en ;
        skos:altLabel "Computational Service Resource"@en ;
-       skos:definition "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of HARDWARE TR and SOFTWARE TR."@en ;
+       skos:definition "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of 'Hardware TR' and 'Software TR'."@en ;
        skos:example "database hosting, backup and disaster recovery"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3015 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Technical Support SR' that focuses on installation, maintenance, operation, and repair of 'Hardware TR' and 'Software TR'."@en ;
+   :mentions :T2005 ,
+             :T2006
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S3016
@@ -3560,7 +3558,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S2014 ;
        rdfs:label "Repair SR"@en ;
        skos:altLabel "Repair Service Resource"@en ;
-       skos:definition "A 'Technical Support SR' that repairs physical tools like DEVICE Rs or technical, sanitary, and other installations."@en .
+       skos:definition "A 'Technical Support SR' that repairs physical tools like 'Device R's or technical, sanitary, and other installations."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :S3016 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Technical Support SR' that repairs physical tools like 'Device R's or technical, sanitary, and other installations."@en ;
+   :mentions :T2002
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
@@ -3971,7 +3976,14 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Data Access S"@en ;
        skos:altLabel "Data Access Software"@en ;
-       skos:definition "A 'Software TR' used to retrieve data from an internal or external storage and to provide it to analysis software."@en .
+       skos:definition "A 'Software TR' used to retrieve data from an internal or external storage and to provide it to 'Data Analysis S'."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T3007 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Software TR' used to retrieve data from an internal or external storage and to provide it to 'Data Analysis S'."@en ;
+   :mentions :T3009
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3008
@@ -4020,6 +4032,30 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Data Processing S"@en ;
        skos:altLabel "Data Processing Software"@en ;
        skos:definition "A 'Software TR' that has the purpose to convert or manipulate data at any point in the data life cycle."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3017
+:T3017 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:comment "quality aspects such as security, data privacy, data quality, data integrity, and audit trail"@en ;
+       rdfs:label "Data Transfer and Communication S"@en ;
+       skos:altLabel "Data Transfer and Communication Software"@en ;
+       skos:definition "A 'Software TR' for exchanging data across computer systems and networks, taking into account all required quality aspects."@en .
+
+
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3018
+:T3018 rdf:type owl:Class ;
+       rdfs:subClassOf :T2006 ;
+       rdfs:label "Modeling and Simulation S"@en ;
+       skos:altLabel "Modeling and Simulation Software"@en ;
+       skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :T3018 ;
+   owl:annotatedProperty skos:definition ;
+   owl:annotatedTarget "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en ;
+   :mentions :I3004
+ ] .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T4013
