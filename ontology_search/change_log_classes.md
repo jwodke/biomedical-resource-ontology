@@ -400,7 +400,7 @@
 | - | - | Random Number Simulation | Subclass of Modeling and Simulation S, deprecated because the level of detail is too specific |
 | - | - | Structural Model | Subclass of Modeling and Simulation S, deprecated because the level of detail is too specific |
 | - | - | Wavelet Model | Subclass of Modeling and Simulation S, deprecated because the level of detail is too specific |
-
+| T4019 | Machine Learning S | - | new class added as subclass of Modeling and Simulation S |
 
 
 

@@ -206,6 +206,16 @@ activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
 
 
+###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4019
+:T4019 rdf:type owl:Class ;
+       rdfs:subClassOf :T3018 ;
+       rdfs:label "Machine Learning S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C176231> ,
+                    <http://purl.obolibrary.org/obo/OBI_0002587> ;
+       skos:altLabel "Machine Learning Software"@en ;
+       skos:definition "A 'Modeling and Simulation S' that employs statistical algorithms to progressively improve its ability to perform tasks and generalize unseen data without relying on explicitly encoded rules."@en .
+
+
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
 area:Deprecated_Area_of_Research rdf:type owl:Class ;
                                  desc:definition "Former subclasses of area:Area_of_Research that have been deprecated and their usage is not recommended." ;
