@@ -117,9 +117,10 @@ desc:byline rdf:type owl:DatatypeProperty ;
 ###  http://bioontology.org/ontologies/biositemap.owl#center
 desc:center rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:string ;
-            desc:definition "Name and/or acronym of the research center or institute (if appropriate) that produced, shares, or uses the resource (usually a sub-unit of Organization)" ;
-            rdfs:label "Center or Institute" ,
-                       "center" .
+            rdfs:comment "there is no usage anymore" ;
+            rdfs:label "DEPRECATED Center or Institute" ,
+                       "DEPRECATED center" ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioontology.org/ontologies/biositemap.owl#definition
@@ -142,47 +143,61 @@ desc:mailing_list_URL rdf:type owl:DatatypeProperty ;
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Identifier
 :Identifier rdf:type owl:DatatypeProperty ;
-            rdfs:comment "Any kind of identifier" ;
-            rdfs:label "Identifier" .
+            rdfs:comment "DEPRECATED Any kind of identifier" ,
+                         "there is no usage anymore, specific IRI with alphanumerical identifier is used instead" ;
+            rdfs:label "DEPRECATED Identifier" ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Originator
 :Originator rdf:type owl:DatatypeProperty ;
             rdfs:domain :Algorithm ;
-            rdfs:comment "Originator of a class" ;
-            rdfs:label "Originator" .
+            rdfs:comment "DEPRECATED Originator of a class" ,
+                         "Domain Algorithm was deprecated" ;
+            rdfs:label "DEPRECATED Originator" ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Other_Information
 :Other_Information rdf:type owl:DatatypeProperty ;
                    rdfs:domain :Algorithm ;
-                   rdfs:label "Other Information" ,
-                              "Other_Information" .
+                   rdfs:comment "Domain Algorithm was deprecated" ;
+                   rdfs:label "DEPRECATED Other Information" ,
+                              "DEPRECATED Other_Information" ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#PeerReviewStatus
 :PeerReviewStatus rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Publication ;
-                  rdfs:comment "is this a peer-reviewed scientific publication?" ;
-                  rdfs:label "PeerReviewStatus" .
+                  rdfs:comment "DEPRECATED is this a peer-reviewed scientific publication?" ,
+                               "Domain Publication was deprecated and level too specific" ;
+                  rdfs:label "DEPRECATED PeerReviewStatus" ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#ProteinType
 :ProteinType rdf:type owl:DatatypeProperty ;
-             rdfs:comment "broad classification of protein type based on structure or function" ;
-             rdfs:label "ProteinType" .
+             rdfs:comment "DEPRECATED broad classification of protein type based on structure or function" ,
+                          "there is no usage and connectivity anymore" ;
+             rdfs:label "DEPRECATED ProteinType" ;
+             owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Target_User_Type
 :Target_User_Type rdf:type owl:DatatypeProperty ;
-                  rdfs:label "Target User Type" ,
-                             "Target_User_Type" .
+                  rdfs:comment "there is no usage" ;
+                  rdfs:label "DEPRECATED Target User Type" ,
+                             "DEPRECATED Target_User_Type" ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#TranscriptType
 :TranscriptType rdf:type owl:DatatypeProperty ;
-                rdfs:comment "Type of biological transcript" ;
-                rdfs:label "TranscriptType" .
+                rdfs:comment "DEPRECATED Type of biological transcript" ,
+                             "there is no usage and connectivity anymore" ;
+                rdfs:label "DEPRECATED TranscriptType" ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 #################################################################
@@ -5005,7 +5020,10 @@ activity:Novel_Therapeutics desc:definition "Innovative therapeutics (http://en.
                             skos:historyNote "Deprecated for BRO v2.7" .
 
 
-desc:definition rdfs:label "Definition" .
+desc:definition rdfs:comment "there is no usage anymore, skos:definition is used instead" ;
+                rdfs:label "DEPRECATED Definition" ;
+                rdfs:seeAlso skos:definition ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 desc:replacedBy rdfs:label "replacedBy" .

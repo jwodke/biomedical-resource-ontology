@@ -1,3 +1,5 @@
+Change log classes:
+
 | BRO Identifier New | BRO Class New [v.5.0.0] | Old class [v.4.1.1] | change |
 | ------------- | ------------- | -------------| ------------- |
 | R0001 | Resource | Resource | definition change |
@@ -402,5 +404,22 @@
 | - | - | Wavelet Model | Subclass of Modeling and Simulation S, deprecated because the level of detail is too specific |
 | T4019 | Machine Learning S | - | new class added as subclass of Modeling and Simulation S |
 
+Change log properties:
 
+| BRO Identifier New | BRO Property New [v.5.0.0] | Old Property [v.4.1.1] | change |
+| ------------- | ------------- | -------------| ------------- |
+| - | - | center | Data property, deprecated because there is no usage anymore |
+| - | - | Definition | Data property, deprecated because there is no usage anymore, skos:definition is used instead |
+| - | - | Identifier | Data property, deprecated because there is no usage anymore, specific IRI with alphanumerical identifier is used instead |
+| - | - | Originator | Data property, deprecated because Domain Algorithm was deprecated |
+| - | - | Other_Information | Data property, deprecated because Domain Algorithm was deprecated |
+| - | - | PeerReviewStatus | Data property, deprecated because Domain Publication was deprecated and level too specific |
+| - | - | ProteinType | Data property, deprecated there is no usage and connectivity anymore |
+| - | - | Target User Type | Data property, deprecated there is no usage |
+| - | - | TranscriptType | Data property, deprecated there is no usage and connectivity anymore |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
