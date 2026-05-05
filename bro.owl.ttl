@@ -1514,7 +1514,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Semi-Structured IR"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000431> ;
        skos:altLabel "Semi-Structured Information Resource"@en ;
-       skos:definition "An 'Information Resource' that has some organizational properties (like keys or labels), but does not follow a strict schema."@en .
+       skos:definition "An 'Information Resource' that has some organizational properties (like keys or labels), but does not follow a strict schema."@en ;
+       skos:example "Bibliographic Resource"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :I2002 ;
@@ -1557,7 +1558,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Computational Model IR"@en ;
        rdfs:seeAlso <http://identifiers.org/mamo/MAMO_0000023> ;
        skos:altLabel "Computational Model Information Resource"@en ;
-       skos:definition "An computationally executable 'Structured IR' that provides with a simplified or symbolic representation of a system or phenomenon. It is often used to study the behavior of this system or a phenomenon."@en .
+       skos:definition "An computationally executable 'Structured IR' that provides with a simplified or symbolic representation of a system or phenomenon. It is often used to study the behavior of this system or a phenomenon."@en ;
+       skos:example "Dynamic Model, Network Model"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3005
@@ -1616,7 +1618,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Structured File IR"@en ;
        skos:altLabel "Structured File Information Resource"@en ;
        skos:definition "A 'Structured IR' that encompasses an electronic document being machine-readable."@en ;
-       skos:example "JSON, XML, code script" .
+       skos:example "JSON, XML, code script, RDF"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I3012
@@ -1642,7 +1644,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:comment "It can be non-fictional or fictional."@en ;
        rdfs:label "Narrative IR"@en ;
        skos:altLabel "Narrative Information Resource"@en ;
-       skos:definition "An 'Unstructured IR' that is a written account of research, events or experiences."@en .
+       skos:definition "An 'Unstructured IR' that is a written account of research, events or experiences."@en ;
+       skos:example "experimental protocol, personal communication, report"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :I3016 ;
@@ -1708,7 +1711,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C48471> ;
        skos:altLabel "Published Information Resource"@en ;
        skos:definition "A 'Narrative IR' that has been formally released, distributed, or made publicly available through established publication channels, typically with editorial oversight, formatting, and distribution mechanisms that distinguish it from 'Unpublished IR'."@en ;
-       skos:example "book, paper, blog, newspaper, website"@en .
+       skos:example "book, paper, blog, newspaper, website, journal article"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#I4020
@@ -1742,7 +1745,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :I4017 ;
        rdfs:label "Unreviewed IR"@en ;
        skos:altLabel "Unreviewed Information Resource"@en ;
-       skos:definition "A 'Published IR' that has been released without being evaluated."@en .
+       skos:definition "A 'Published IR' that has been released without being evaluated."@en ;
+       skos:example "blog post"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Identity_Management
@@ -2858,7 +2862,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Research Expertise PR"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000433> ;
        skos:altLabel "Research Expertise People Resource"@en ;
-       skos:definition "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en .
+       skos:definition "A 'Professional PR' trained in the conduction of a research project through the entire life cycle of it."@en ;
+       skos:example "Protocol Development Expertise, Toxicology Expertise"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#P3011
@@ -3368,7 +3373,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Data Management SR"@en ;
        skos:altLabel "Data Management Service Resource"@en ;
        skos:definition "A 'Service Resource' that provides assistance or guidelines along the data life cycle."@en ;
-       skos:example <http://purl.obolibrary.org/obo/T4FS_0000447> .
+       skos:example <http://purl.obolibrary.org/obo/T4FS_0000447> ,
+                    "Data Storage Service"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2012
@@ -3395,7 +3401,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Regulatory Compliance SR"@en ;
        skos:altLabel "Regulatory Compliance Service Resource"@en ;
        skos:definition "A 'Service Resource' that provides guidance related to ethical or legal matters, including information provision and regulation application support."@en ;
-       skos:example "Protocol Statement that study was conducted according to Good Clinical Practice (GCP) guidelines"@en .
+       skos:example "Protocol Statement that study was conducted according to Good Clinical Practice (GCP) guidelines, Animal Compliance Resource, Environmental Health and Safety Resource, Intellectual Property Resource"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#S2014
@@ -3418,7 +3424,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S1001 ;
        rdfs:label "Training SR"@en ;
        skos:altLabel "Training Service Resource"@en ;
-       skos:definition "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en .
+       skos:definition "A 'Service Resource' in which the service provider offers educational materials or events, such as courses, workshops, or graduate programs."@en ;
+       skos:example "Certificate Program, Seminar Service, Outreach Program"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S2017 ;
@@ -3433,7 +3440,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:comment "Usage for experimental research, teaching, or testing"@en ;
        rdfs:label "Animal Facility"@en ;
-       skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals."@en .
+       skos:definition "A 'Core Facility' with a specialization in the procurement, breeding, care, health, selection, and usage of animals."@en ;
+       skos:example "Animal Care Facility, Animal Model Facility"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3003 ;
@@ -3462,7 +3470,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :S3005 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:label "Cell Biology Facility"@en ;
-       skos:definition "A 'Core Facility' with a specialization in MESH:'Cell Biology'."@en .
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Cell Biology'."@en ;
+       skos:example "Cell Culture Facility, Cell Processing Clean Room Facility, Gene Therapy Facility, Microscopy Facility"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3005 ;
@@ -3492,7 +3501,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :S3008 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:label "Molecular Biology Facility"@en ;
-       skos:definition "A 'Core Facility' with a specialization in MESH:'Molecular Biology'."@en .
+       skos:definition "A 'Core Facility' with a specialization in MESH:'Molecular Biology'."@en ;
+       skos:example "Genomics Facility, PCR Facility, Proteomics Facility"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3008 ;
@@ -3506,7 +3516,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :S3009 rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:label "Physiology Facility"@en ;
-       skos:definition "A 'Core Facility' with a specialization in NCIT:'Physiology'."@en .
+       skos:definition "A 'Core Facility' with a specialization in NCIT:'Physiology'."@en ;
+       skos:example "Cardiovascular Facility, Metabolism Facility, Nutrition Facility"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3009 ;
@@ -3521,7 +3532,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :S2002 ;
        rdfs:comment "For research, diagnostic, or therapeutic purposes"@en ;
        rdfs:label "Tissue Organ Facility"@en ;
-       skos:definition "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'."@en .
+       skos:definition "A 'Core Facility' with a specialization in the preparation, maintenance, preservation, and analysis of UBERON:'Tissue'."@en ;
+       skos:example "Biobank Facility, Micro Dissection Facility"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :S3010 ;
@@ -3931,7 +3943,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C62103> ,
                     <https://biolink.github.io/biolink-model/Device/> ;
        skos:altLabel "Device Resource"@en ;
-       skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components."@en .
+       skos:definition "A 'Tool Resource' that provides a piece of mechanical or electronic instrument, optionally equipped with software components."@en ;
+       skos:example "Calorimeter, Microscope. Next Generation Sequencer, Temperature Control Unit"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T2005
@@ -3946,7 +3959,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T2006 rdf:type owl:Class ;
        rdfs:subClassOf :T1001 ;
        rdfs:label "Software TR"@en ;
-       rdfs:seeAlso <http://purl.org/dc/dcmitype/Software> ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D012984> ,
+                    <http://purl.org/dc/dcmitype/Software> ;
        skos:altLabel "S"@en ,
                      "Software Tool Resource"@en ;
        skos:definition "An executable digital 'Tool Resource' that can be used to work digitally and is usually provided in source or compiled form."@en .
@@ -4068,7 +4082,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T3018 rdf:type owl:Class ;
        rdfs:subClassOf :T2006 ;
        rdfs:label "Modeling and Simulation S"@en ;
-       rdfs:seeAlso <http://edamontology.org/operation_2426> ;
+       rdfs:seeAlso <http://edamontology.org/operation_2426> ,
+                    <http://purl.obolibrary.org/obo/NCIT_C16461> ;
        skos:altLabel "Modeling and Simulation Software"@en ;
        skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en .
 
@@ -4104,6 +4119,7 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
 :T4015 rdf:type owl:Class ;
        rdfs:subClassOf :T3012 ;
        rdfs:label "Data Visualization S"@en ;
+       rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D000078326> ;
        skos:altLabel "Data Visualization Software"@en ;
        skos:definition "A 'Data Processing S' for representing data or information as an 'Image IR'."@en .
 

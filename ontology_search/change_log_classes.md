@@ -12,6 +12,17 @@
 | F4009 | Institutional FR | - | new class added as subclass of Private FR |
 | F4010 | Personal FR | - | new class added as subclass of Private FR |
 | I1001 | Information Resource | Information Resource | definition change |
+| - | - | Portal | Subclass of Information Resource, deprecated because there is no clear difference to Database IR |
+| - | - | Data Resource | Subclass of Information Resource, deprecated because there is no clear difference between Data Resource and Information Resource |
+| - | - | Clinical Care Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Aggregate Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
+| - | - | Individual Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
+| - | - | Clinical Research Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Molecular and Cellular Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
+| - | - | Gene Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Molecular Interaction | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | I2002 | Semi-Structured IR | Semi-Structured Knowledge Resource | rename and definition change |
 | - | - | Atlas | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
 | - | - | Bibliographic Resource | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
@@ -60,17 +71,6 @@
 | I5019 | Unreviewed IR | - | new class added as subclass of Published IR |
 | I4020 | Unpublished IR | - | new class added as subclass of Narrative IR |
 | I3021 | Video IR | - | new class added as subclass of Unstructured IR |
-| - | - | Portal | Subclass of Information Resource, deprecated because there is no clear difference to Database IR |
-| - | - | Data Resource | Subclass of Information Resource, deprecated because there is no clear difference between Data Resource and Information Resource |
-| - | - | Clinical Care Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
-| - | - | Aggregate Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
-| - | - | Individual Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
-| - | - | Clinical Research Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
-| - | - | Molecular and Cellular Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
-| - | - | Gene Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
-| - | - | Molecular Interaction | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
-| - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
-| - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | M1001 | Material Resource | Material Resource | definition change |
 | - | - | Assesment Material Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
 | - | - | Biomaterial Supply Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
@@ -94,14 +94,19 @@
 | P3008 | Financial Expertise PR | Grant Preparation Expertise | change in hierarchy from Subclass of People Resource to Subclass of Professional PR and definition change |
 | P3009 | Industrial Expertise PR | Industry Partnership Expertise | change in hierarchy from Subclass of People Resource to Subclass of Professional PR and definition change |
 | P3010 | Research Expertise PR | - | new class added as subclass of Professional PR |
-| P3011 | Software Development Expertise PR | - | new class added as subclass of Professional PR |
-| - | - | Pharmacokinetics Pharmacodynamics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Pharmacokinetics Pharmacodynamics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Protocol Development Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Psychometrics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
 | - | - | Toxicology Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
+| P3011 | Software Development Expertise PR | - | new class added as subclass of Professional PR |
 | S1001 | Service Resource | Service Resource | definition change |
 | S2002 | Core Facility | Facility Core | rename and definition change |
+| - | - | Material Service | Subclass of Service Resource, deprecated because there is no clear difference to Core Facility |
+| - | - | Antibody Production | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Biomaterial Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Instrument Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Pathology Laboratory Screening | Subclass of Material Service, deprecated because the level of detail is too specific |
+| - | - | Reagent Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
 | S3003 | Animal Facility | Research Animals Facility | rename and definition change |
 | - | - | Animal Care Facility | Subclass of Animal Facility, deprecated because the level of detail is too specific |
 | - | - | Animal Models Facility | Subclass of Animal Facility, deprecated because the level of detail is too specific |
@@ -138,12 +143,6 @@
 | - | - | Immunohistochemistry Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
 | - | - | Micro Dissection Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
 | - | - | Phlebotomy Facility | Subclass of Tissue Organ Facility, deprecated because the level of detail is too specific |
-| - | - | Material Service | Subclass of Service Resource, deprecated because there is no clear difference to Core Facility |
-| - | - | Antibody Production | Subclass of Material Service, deprecated because the level of detail is too specific |
-| - | - | Biomaterial Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
-| - | - | Instrument Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
-| - | - | Pathology Laboratory Screening | Subclass of Material Service, deprecated because the level of detail is too specific |
-| - | - | Reagent Manufacture | Subclass of Material Service, deprecated because the level of detail is too specific |
 | S2011 | Data Management SR | - | new class added as subclass of Service Resource |
 | - | - | Data Storage Service | Subclass of Service Resource, deprecated because it is included in Data Management SR |
 | S2012 | Material Storage SR | Material Storage Service | definition change |
