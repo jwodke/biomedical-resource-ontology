@@ -3952,7 +3952,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T1001 ;
        rdfs:label "Hardware TR"@en ;
        skos:altLabel "Hardware Tool Resource"@en ;
-       skos:definition "A 'Tool Resource' provided by physical, manifactured components or objects of the digital research infrastructure."@en .
+       skos:definition "A 'Tool Resource' provided by physical, manifactured components or objects of the digital research infrastructure."@en ;
+       skos:example "Central Processing Unit,  Graphics Processing Unit, Motherboard"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T2006
@@ -4023,7 +4024,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:seeAlso <http://id.nlm.nih.gov/mesh/D000078332> ,
                     <http://purl.obolibrary.org/obo/T4FS_0000352> ;
        skos:altLabel "Data Analysis Software"@en ;
-       skos:definition "A 'Software TR' for inspecting, cleaning, modeling, and/or transforming data to unravel new information and knowledge about those data."@en .
+       skos:definition "A 'Software TR' for inspecting, cleaning, modeling, and/or transforming data to unravel new information and knowledge about those data."@en ;
+       skos:example "Data Mining and Inference S, Natural Language Processing S, Statistical Analysis S"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :T3009 ;
@@ -4046,7 +4048,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Data Integration S"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/T4FS_0000487> ;
        skos:altLabel "Data Integration Software"@en ;
-       skos:definition "A 'Software TR'  with the purpose to combine diverse data from disparate sources into one unified dataset or database or to exchange data."@en .
+       skos:definition "A 'Software TR'  with the purpose to combine diverse data from disparate sources into one unified dataset or database or to exchange data."@en ;
+       skos:example "Pipeline Manager"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3011
@@ -4075,7 +4078,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Data Transfer and Communication S"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C209464> ;
        skos:altLabel "Data Transfer and Communication Software"@en ;
-       skos:definition "A 'Software TR' for exchanging data across computer systems and networks, taking into account all required quality aspects."@en .
+       skos:definition "A 'Software TR' for exchanging data across computer systems and networks, taking into account all required quality aspects."@en ;
+       skos:example "Communication Interface"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T3018
@@ -4085,7 +4089,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:seeAlso <http://edamontology.org/operation_2426> ,
                     <http://purl.obolibrary.org/obo/NCIT_C16461> ;
        skos:altLabel "Modeling and Simulation Software"@en ;
-       skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en .
+       skos:definition "A 'Software TR' that applies a defined 'Computational Model IR' and simulates it."@en ;
+       skos:example "Protein Interaction Modeling, Numerical Model, Random Number Simulation"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :T3018 ;
@@ -4112,7 +4117,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:label "Data Compression S"@en ;
        rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C64347> ;
        skos:altLabel "Data Compression Software"@en ;
-       skos:definition "A 'Data Processing S' for reducing the data size."@en .
+       skos:definition "A 'Data Processing S' for reducing the data size."@en ;
+       skos:example "7-zip"@en .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#T4015
@@ -4136,7 +4142,8 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
        rdfs:subClassOf :T3012 ;
        rdfs:label "Image Processing S"@en ;
        skos:altLabel "Image Processing Software"@en ;
-       skos:definition "A 'Data Processing S' for performing post-processing on an 'Image IR'. This refers to the technical process of modifying, enhancing, or optimizing images after their initial capture or creation."@en .
+       skos:definition "A 'Data Processing S' for performing post-processing on an 'Image IR'. This refers to the technical process of modifying, enhancing, or optimizing images after their initial capture or creation."@en ;
+       skos:example "Analysis of Gel-Electrophoresis S, Spectral Transform S, 3D Slicer"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :T4016 ;
