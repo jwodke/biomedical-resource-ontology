@@ -77,7 +77,7 @@ Change log classes:
 | - | - | Assesment Material Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
 | - | - | Biomaterial Supply Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
 | - | - | Biomedical Supply Resource | Subclass of Material Resource, deprecated because Material Resources is restructured |
-| - | - | Reagent Resource | Subclass of Material Resource, deprecated because in hierarchy under Non-living MR but too detailed |
+| - | - | Reagent Resource | Subclass of Material Resource, deprecated because in hierarchy under Non-living MR but too specific |
 | M2002 | Living MR | - | new class added as subclass of Material Resource |
 | M3003 | Animal MR | - | new class added as subclass of Living MR |
 | M4004 | Human MR | - | new class added as subclass of Animal MR |
@@ -409,7 +409,7 @@ Change log properties:
 | BRO Identifier New | BRO Property New [v.5.0.0] | Old Property [v.4.1.1] | change |
 | ------------- | ------------- | -------------| ------------- |
 | - | - | center | Data property, deprecated because there is no usage anymore |
-| - | - | Definition | Data property, deprecated because there is no usage anymore, skos:definition is used instead |
+| - | - | Definition | Data and annotation property, deprecated because there is no usage anymore, skos:definition is used instead |
 | - | - | Identifier | Data property, deprecated because there is no usage anymore, specific IRI with alphanumerical identifier is used instead |
 | - | - | Originator | Data property, deprecated because Domain Algorithm was deprecated |
 | - | - | Other_Information | Data property, deprecated because Domain Algorithm was deprecated |
@@ -418,6 +418,12 @@ Change log properties:
 | - | - | Target User Type | Data property, deprecated there is no usage |
 | - | - | TranscriptType | Data property, deprecated there is no usage and connectivity anymore |
 |  |  |  |  |
+| - | - | AlgorithmPurpose | Object property, deprecated because Domain Algorithm was deprecated |
+| - | - | DocumentGoal | Object property, deprecated because Domain Document was deprecated |
+| - | - | InteractionType | Object property, deprecated because no clear usage does exist |
+| - | - | MeasurementType | Object property, deprecated because Domain Experimental Measurement was deprecated |
+| - | - | OutputForm | Object property, deprecated because Domain Algorithm was deprecated |
+| - | - | replacedBy | Object and annotation property, deprecated because there is no usage anymore, rdfs:seeAlso is used instead |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |

@@ -65,42 +65,47 @@ skos:historyNote rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://bioontology.org/ontologies/biositemap.owl#replacedBy
-desc:replacedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain owl:DeprecatedClass .
+desc:replacedBy rdf:type owl:ObjectProperty .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#AlgorithmPurpose
 :AlgorithmPurpose rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Algorithm ;
-                  rdfs:comment "Scientific purpose of algorithm" ;
-                  rdfs:label "AlgorithmPurpose" .
+                  rdfs:comment "DEPRECATED Scientific purpose of algorithm" ,
+                               "Domain Algorithm was deprecated" ;
+                  rdfs:label "DEPRECATED AlgorithmPurpose" ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#DocumentGoal
 :DocumentGoal rdf:type owl:ObjectProperty ;
-              rdfs:domain :Document ;
-              rdfs:comment "What are the goals of the document" ;
-              rdfs:label "DocumentGoal" .
+              rdfs:comment "DEPRECATED What are the goals of the document" ,
+                           "Domain Document was deprecated" ;
+              rdfs:label "DEPRECATED DocumentGoal" ;
+              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#InteractionType
 :InteractionType rdf:type owl:ObjectProperty ;
-                 rdfs:comment "What type of interaction is this?" ;
-                 rdfs:label "InteractionType" .
+                 rdfs:comment "DEPRECATED What type of interaction is this?" ,
+                              "no clear usage does exist" ;
+                 rdfs:label "DEPRECATED InteractionType" ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#MeasurementType
 :MeasurementType rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Experimental_Measurment ;
-                 rdfs:comment "what kind of information is being capture in this measurement?" ;
-                 rdfs:label "MeasurementType" .
+                 rdfs:comment "DEPRECATED what kind of information is being capture in this measurement?" ,
+                              "Domain Experimental Measurement was deprecated" ;
+                 rdfs:label "DEPRECATED MeasurementType" ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#OutputForm
 :OutputForm rdf:type owl:ObjectProperty ;
-            rdfs:domain :Algorithm ;
-            rdfs:comment "What form of output is produced by this thing" ;
-            rdfs:label "OutputForm" .
+            rdfs:comment "DEPRECATED What form of output is produced by this thing" ,
+                         "Domain Algorithm was deprecated" ;
+            rdfs:label "DEPRECATED OutputForm" ;
+            owl:deprecated "true"^^xsd:boolean .
 
 
 #################################################################
@@ -219,16 +224,6 @@ activity:Heath_Services rdf:type owl:Class ;
 ###  http://bioontology.org/ontologies/Activity.owl#Novel_Therapeutics
 activity:Novel_Therapeutics rdf:type owl:Class ;
                             rdfs:subClassOf activity:Deprecated_Activity .
-
-
-###  http://bioontology.org/ontologies/BiomedicalResources.owl#T4019
-:T4019 rdf:type owl:Class ;
-       rdfs:subClassOf :T3018 ;
-       rdfs:label "Machine Learning S"@en ;
-       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C176231> ,
-                    <http://purl.obolibrary.org/obo/OBI_0002587> ;
-       skos:altLabel "Machine Learning Software"@en ;
-       skos:definition "A 'Modeling and Simulation S' that employs statistical algorithms to progressively improve its ability to perform tasks and generalize unseen data without relying on explicitly encoded rules."@en .
 
 
 ###  http://bioontology.org/ontologies/ResearchArea.owl#Deprecated_Area_of_Research
@@ -4178,6 +4173,16 @@ area:Deprecated_Area_of_Research rdf:type owl:Class ;
  ] .
 
 
+###  http://bioportal.bioontology.org/ontologies/BRO.owl#T4019
+:T4019 rdf:type owl:Class ;
+       rdfs:subClassOf :T3018 ;
+       rdfs:label "Machine Learning S"@en ;
+       rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C176231> ,
+                    <http://purl.obolibrary.org/obo/OBI_0002587> ;
+       skos:altLabel "Machine Learning Software"@en ;
+       skos:definition "A 'Modeling and Simulation S' that employs statistical algorithms to progressively improve its ability to perform tasks and generalize unseen data without relying on explicitly encoded rules."@en .
+
+
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
 :Technical_Support rdf:type owl:Class .
 
@@ -4456,12 +4461,12 @@ activity:Health_Services rdf:type owl:NamedIndividual .
 
 ###  http://bioontology.org/ontologies/Activity.owl#Heath_Services
 activity:Heath_Services rdf:type owl:NamedIndividual ;
-                        desc:replacedBy activity:Health_Services .
+                        rdfs:seeAlso activity:Health_Services .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Novel_Therapeutics
 activity:Novel_Therapeutics rdf:type owl:NamedIndividual ;
-                            desc:replacedBy activity:Therapeutics .
+                            rdfs:seeAlso activity:Therapeutics .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Software_Development
@@ -4474,7 +4479,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Anatomic_Atlas
 :Anatomic_Atlas rdf:type owl:NamedIndividual ;
-                desc:replacedBy :Atlas .
+                rdfs:seeAlso :Atlas .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas
@@ -4483,7 +4488,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Automated_Natural_Language_Output
 :Automated_Natural_Language_Output rdf:type owl:NamedIndividual ;
-                                   desc:replacedBy :Natural_Language_Processing .
+                                   rdfs:seeAlso :Natural_Language_Processing .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Agglomeration
@@ -4492,7 +4497,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Aglomeration
 :Averaging_and_Aglomeration rdf:type owl:NamedIndividual ;
-                            desc:replacedBy :Averaging_and_Agglomeration .
+                            rdfs:seeAlso :Averaging_and_Agglomeration .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archive_Service
@@ -4501,28 +4506,28 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archives_and_Disaster_Recovery
 :Backup_Archives_and_Disaster_Recovery rdf:type owl:NamedIndividual ;
-                                       desc:replacedBy :Backup_Archive_Service ,
-                                                       :Disaster_Recovery_Service .
+                                       rdfs:seeAlso :Backup_Archive_Service ,
+                                                    :Disaster_Recovery_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bibliographic_Resource
 :Bibliographic_Resource rdf:type owl:NamedIndividual ;
-                        desc:replacedBy :Bibliographic_Resource .
+                        rdfs:seeAlso :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Binary_Executable
 :Binary_Executable rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Data_Resource .
+                   rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biochemical_Supply_Resource
 :Biochemical_Supply_Resource rdf:type owl:NamedIndividual ;
-                             desc:replacedBy :Reagent_Resource .
+                             rdfs:seeAlso :Reagent_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analsysis
 :Centrality_Analsysis rdf:type owl:NamedIndividual ;
-                      desc:replacedBy :Centrality_Analysis .
+                      rdfs:seeAlso :Centrality_Analysis .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analysis
@@ -4535,17 +4540,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Chart
 :Clinical_Chart rdf:type owl:NamedIndividual ;
-                desc:replacedBy :Narrative_Resource .
+                rdfs:seeAlso :Narrative_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Charts
 :Clinical_Charts rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Clinical_Chart .
+                 rdfs:seeAlso :Clinical_Chart .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Data
 :Clinical_Data rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Clinical_Care_Data .
+               rdfs:seeAlso :Clinical_Care_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Research_Data
@@ -4554,7 +4559,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Trial_Data
 :Clinical_Trial_Data rdf:type owl:NamedIndividual ;
-                     desc:replacedBy :Clinical_Research_Data .
+                     rdfs:seeAlso :Clinical_Research_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
@@ -4563,17 +4568,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Connectivity_Matrix
 :Connectivity_Matrix rdf:type owl:NamedIndividual ;
-                     desc:replacedBy :Data_Resource .
+                     rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuous_Data
 :Continuous_Data rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Data_Resource .
+                 rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Distribution
 :Data_Distribution rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Data_Resource .
+                   rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Editor
@@ -4582,12 +4587,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Object
 :Data_Object rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Data_Resource .
+             rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Repository
 :Data_Repository rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Database .
+                 rdfs:seeAlso :Database .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Resource
@@ -4596,13 +4601,13 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage
 :Data_Storage rdf:type owl:NamedIndividual ;
-              desc:replacedBy :Data_Storage_Repository ,
-                              :Data_Storage_Service .
+              rdfs:seeAlso :Data_Storage_Repository ,
+                           :Data_Storage_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Repository
 :Data_Storage_Repository rdf:type owl:NamedIndividual ;
-                         desc:replacedBy :Database_Software .
+                         rdfs:seeAlso :Database_Software .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Service
@@ -4615,7 +4620,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transforms
 :Data_Transforms rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Data_Transform .
+                 rdfs:seeAlso :Data_Transform .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database
@@ -4632,12 +4637,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Discrete_Data
 :Discrete_Data rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Data_Resource .
+               rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document
 :Document rdf:type owl:NamedIndividual ;
-          desc:replacedBy :Bibliographic_Resource .
+          rdfs:seeAlso :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Dynamic_Model
@@ -4646,17 +4651,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#EDA
 :EDA rdf:type owl:NamedIndividual ;
-     desc:replacedBy :Exploratory_Data_Analysis .
+     rdfs:seeAlso :Exploratory_Data_Analysis .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Experimental_Measurment
 :Experimental_Measurment rdf:type owl:NamedIndividual ;
-                         desc:replacedBy :Molecular_and_Cellular_Data .
+                         rdfs:seeAlso :Molecular_and_Cellular_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Expertise
 :Expertise rdf:type owl:NamedIndividual ;
-           desc:replacedBy :Resource .
+           rdfs:seeAlso :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exploratory_Data_Analysis
@@ -4665,12 +4670,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Four_Dimensional_Data
 :Four_Dimensional_Data rdf:type owl:NamedIndividual ;
-                       desc:replacedBy :Data_Resource .
+                       rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Free_Text
 :Free_Text rdf:type owl:NamedIndividual ;
-           desc:replacedBy :Data_Resource .
+           rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Funding_Resource
@@ -4683,17 +4688,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewers
 :Graph_Viewers rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Graph_Viewer .
+               rdfs:seeAlso :Graph_Viewer .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heterogeneous_Funding_Resource
 :Heterogeneous_Funding_Resource rdf:type owl:NamedIndividual ;
-                                desc:replacedBy :Funding_Resource .
+                                rdfs:seeAlso :Funding_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#High_Dimensional_Data
 :High_Dimensional_Data rdf:type owl:NamedIndividual ;
-                       desc:replacedBy :Data_Resource .
+                       rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
@@ -4702,7 +4707,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tools
 :Integration_and_Interoperability_Tools rdf:type owl:NamedIndividual ;
-                                        desc:replacedBy :Integration_and_Interoperability_Tool .
+                                        rdfs:seeAlso :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tool
@@ -4711,12 +4716,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tools
 :Interactive_Tools rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Interactive_Tool .
+                   rdfs:seeAlso :Interactive_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Environment
 :Knowledge_Environment rdf:type owl:NamedIndividual ;
-                       desc:replacedBy :Structured_Knowledge_Resource .
+                       rdfs:seeAlso :Structured_Knowledge_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledgebase
@@ -4733,12 +4738,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Redistribution
 :License_and_Terms_for_Redistribution rdf:type owl:NamedIndividual ;
-                                      desc:replacedBy :License .
+                                      rdfs:seeAlso :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Use
 :License_and_Terms_for_Use rdf:type owl:NamedIndividual ;
-                           desc:replacedBy :License .
+                           rdfs:seeAlso :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tool
@@ -4747,7 +4752,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
 :Linear_Algebra_Tools rdf:type owl:NamedIndividual ;
-                      desc:replacedBy :Linear_Algebra_Tool .
+                      rdfs:seeAlso :Linear_Algebra_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewer
@@ -4756,27 +4761,27 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewers
 :Manifold_Viewers rdf:type owl:NamedIndividual ;
-                  desc:replacedBy :Manifold_Viewer .
+                  rdfs:seeAlso :Manifold_Viewer .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Matrix
 :Matrix rdf:type owl:NamedIndividual ;
-        desc:replacedBy :Data_Resource .
+        rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Modular_Component
 :Modular_Component rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Data_Resource .
+                   rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectories
 :Molecular_Trajectories rdf:type owl:NamedIndividual ;
-                        desc:replacedBy :Molecular_Trajectory_Data .
+                        rdfs:seeAlso :Molecular_Trajectory_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectory_Data
 :Molecular_Trajectory_Data rdf:type owl:NamedIndividual ;
-                           desc:replacedBy :Dynamic_Model .
+                           rdfs:seeAlso :Dynamic_Model .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
@@ -4793,7 +4798,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Editor
 :Network_Editor rdf:type owl:NamedIndividual ;
-                desc:replacedBy :Data_Editor .
+                rdfs:seeAlso :Data_Editor .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Model
@@ -4802,17 +4807,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_model
 :Network_model rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Network_Model .
+               rdfs:seeAlso :Network_Model .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Non_Computational_Service
 :Non_Computational_Service rdf:type owl:NamedIndividual ;
-                           desc:replacedBy :Resource .
+                           rdfs:seeAlso :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Nonhuman_Data
 :Nonhuman_Data rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Clinical_Research_Data .
+               rdfs:seeAlso :Clinical_Research_Data .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrator
@@ -4821,7 +4826,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrators
 :Numerical_Integrators rdf:type owl:NamedIndividual ;
-                       desc:replacedBy :Numerical_Integrator .
+                       rdfs:seeAlso :Numerical_Integrator .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Method
@@ -4830,12 +4835,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Methods
 :Numerical_Methods rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Numerical_Method .
+                   rdfs:seeAlso :Numerical_Method .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pass_Through_License
 :Pass_Through_License rdf:type owl:NamedIndividual ;
-                      desc:replacedBy :License .
+                      rdfs:seeAlso :License .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physico-Chemical_Model
@@ -4848,22 +4853,22 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portlet_Component
 :Portlet_Component rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Portal .
+                   rdfs:seeAlso :Portal .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance
 :Provenance rdf:type owl:NamedIndividual ;
-            desc:replacedBy :Resource .
+            rdfs:seeAlso :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance_and_Intellectual_Property
 :Provenance_and_Intellectual_Property rdf:type owl:NamedIndividual ;
-                                      desc:replacedBy :Resource .
+                                      rdfs:seeAlso :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Publication
 :Publication rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Bibliographic_Resource .
+             rdfs:seeAlso :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
@@ -4872,7 +4877,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Supplies
 :Research_Supplies rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Resource .
+                   rdfs:seeAlso :Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Resource
@@ -4881,22 +4886,22 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
 :Scalar_Data rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Data_Resource .
+             rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scripting_Language_and_Environment
 :Scripting_Language_and_Environment rdf:type owl:NamedIndividual ;
-                                    desc:replacedBy :Integration_and_Interoperability_Tool .
+                                    rdfs:seeAlso :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Semantic_Network
 :Semantic_Network rdf:type owl:NamedIndividual ;
-                  desc:replacedBy :Knowledgebase .
+                  rdfs:seeAlso :Knowledgebase .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Server
 :Server rdf:type owl:NamedIndividual ;
-        desc:replacedBy :Computational_Service .
+        rdfs:seeAlso :Computational_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Resource
@@ -4905,38 +4910,38 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Distribution
 :Software_Distribution rdf:type owl:NamedIndividual ;
-                       desc:replacedBy :Data_Resource .
+                       rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Documentation
 :Software_Documentation rdf:type owl:NamedIndividual ;
-                        desc:replacedBy :Bibliographic_Resource .
+                        rdfs:seeAlso :Bibliographic_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_development
 :Software_development rdf:type owl:NamedIndividual ;
-                      desc:replacedBy activity:Software_Development ,
-                                      :Software_Development_Resource .
+                      rdfs:seeAlso activity:Software_Development ,
+                                   :Software_Development_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Source_Code
 :Source_Code rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Data_Resource .
+             rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Standalone_Application
 :Standalone_Application rdf:type owl:NamedIndividual ;
-                        desc:replacedBy :Data_Resource .
+                        rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stochastic_Data
 :Stochastic_Data rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Data_Resource .
+                 rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_Data
 :Structured_Data rdf:type owl:NamedIndividual ;
-                 desc:replacedBy :Structured_File .
+                 rdfs:seeAlso :Structured_File .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_File
@@ -4949,12 +4954,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Summarization
 :Summarization rdf:type owl:NamedIndividual ;
-               desc:replacedBy :Language_Summarization .
+               rdfs:seeAlso :Language_Summarization .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Support
 :Support rdf:type owl:NamedIndividual ;
-         desc:replacedBy :Technical_Support .
+         rdfs:seeAlso :Technical_Support .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
@@ -4963,12 +4968,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Three_Dimensional_Data
 :Three_Dimensional_Data rdf:type owl:NamedIndividual ;
-                        desc:replacedBy :Data_Resource .
+                        rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toolkit
 :Toolkit rdf:type owl:NamedIndividual ;
-         desc:replacedBy :Integration_and_Interoperability_Tool .
+         rdfs:seeAlso :Integration_and_Interoperability_Tool .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorial
@@ -4977,12 +4982,12 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorials
 :Tutorials rdf:type owl:NamedIndividual ;
-           desc:replacedBy :Tutorial .
+           rdfs:seeAlso :Tutorial .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Data
 :Unstructured_Data rdf:type owl:NamedIndividual ;
-                   desc:replacedBy :Unstructured_Knowledge_Resource .
+                   rdfs:seeAlso :Unstructured_Knowledge_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Knowledge_Resource
@@ -4991,17 +4996,17 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vector_Data
 :Vector_Data rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Data_Resource .
+             rdfs:seeAlso :Data_Resource .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Service
 :Web_Service rdf:type owl:NamedIndividual ;
-             desc:replacedBy :Computational_Service .
+             rdfs:seeAlso :Computational_Service .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#physico_chemical_models
 :physico_chemical_models rdf:type owl:NamedIndividual ;
-                         desc:replacedBy :Physico-Chemical_Model .
+                         rdfs:seeAlso :Physico-Chemical_Model .
 
 
 #################################################################
@@ -5026,7 +5031,10 @@ desc:definition rdfs:comment "there is no usage anymore, skos:definition is used
                 owl:deprecated "true"^^xsd:boolean .
 
 
-desc:replacedBy rdfs:label "replacedBy" .
+desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used instead" ;
+                rdfs:label "DEPRECATED replacedBy" ;
+                rdfs:seeAlso rdfs:seeAlso ;
+                owl:deprecated "true"^^xsd:boolean .
 
 
 :Anatomic_Atlas desc:definition "A collection of tables, charts, or plates to illustrate anatomical structures." ;
