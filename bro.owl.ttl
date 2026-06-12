@@ -14,10 +14,15 @@
 @base <http://bioportal.bioontology.org/ontologies/BRO.owl#> .
 
 <http://bioontology.org/ontologies/BiomedicalResources.owl> rdf:type owl:Ontology ;
-                                                             owl:versionIRI <http://bioontology.org/ontologies/BiomedicalResources.owl/4.2.0> ;
-                                                             rdfs:comment "Test with new version Info, if changes can be depicted by CHimP" ;
+                                                             owl:versionIRI <http://bioontology.org/ontologies/BiomedicalResources.owl/5.0.0> ;
+                                                             <http://purl.org/dc/terms/abstract> "todo" ;
+                                                             <http://purl.org/dc/terms/contributor> "..." ;
+                                                             <http://purl.org/dc/terms/creator> "..." ;
+                                                             <http://purl.org/dc/terms/language> "en" ;
+                                                             <http://purl.org/dc/terms/license> "?" ;
+                                                             <http://purl.org/dc/terms/title> "BRO - Biomedical Resource Ontology" ;
                                                              owl:priorVersion "4.1.1" ;
-                                                             owl:versionInfo "4.2.0" .
+                                                             owl:versionInfo "5.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -38,6 +43,30 @@ desc:replacedBy rdf:type owl:AnnotationProperty .
           skos:definition "Annotation property that includes the IRI of an entity that is referenced." ;
           skos:editorialNote "At the moment only a working version, label and definition of the Annotation might still change." ;
           rdfs:range xsd:anyURI .
+
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
@@ -4460,13 +4489,11 @@ activity:Health_Services rdf:type owl:NamedIndividual .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Heath_Services
-activity:Heath_Services rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso activity:Health_Services .
+activity:Heath_Services rdf:type owl:NamedIndividual .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Novel_Therapeutics
-activity:Novel_Therapeutics rdf:type owl:NamedIndividual ;
-                            rdfs:seeAlso activity:Therapeutics .
+activity:Novel_Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioontology.org/ontologies/Activity.owl#Software_Development
@@ -4478,8 +4505,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Anatomic_Atlas
-:Anatomic_Atlas rdf:type owl:NamedIndividual ;
-                rdfs:seeAlso :Atlas .
+:Anatomic_Atlas rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Atlas
@@ -4487,8 +4513,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Automated_Natural_Language_Output
-:Automated_Natural_Language_Output rdf:type owl:NamedIndividual ;
-                                   rdfs:seeAlso :Natural_Language_Processing .
+:Automated_Natural_Language_Output rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Agglomeration
@@ -4496,8 +4521,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Averaging_and_Aglomeration
-:Averaging_and_Aglomeration rdf:type owl:NamedIndividual ;
-                            rdfs:seeAlso :Averaging_and_Agglomeration .
+:Averaging_and_Aglomeration rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archive_Service
@@ -4505,29 +4529,23 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Backup_Archives_and_Disaster_Recovery
-:Backup_Archives_and_Disaster_Recovery rdf:type owl:NamedIndividual ;
-                                       rdfs:seeAlso :Backup_Archive_Service ,
-                                                    :Disaster_Recovery_Service .
+:Backup_Archives_and_Disaster_Recovery rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Bibliographic_Resource
-:Bibliographic_Resource rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso :Bibliographic_Resource .
+:Bibliographic_Resource rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Binary_Executable
-:Binary_Executable rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Data_Resource .
+:Binary_Executable rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Biochemical_Supply_Resource
-:Biochemical_Supply_Resource rdf:type owl:NamedIndividual ;
-                             rdfs:seeAlso :Reagent_Resource .
+:Biochemical_Supply_Resource rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analsysis
-:Centrality_Analsysis rdf:type owl:NamedIndividual ;
-                      rdfs:seeAlso :Centrality_Analysis .
+:Centrality_Analsysis rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Centrality_Analysis
@@ -4539,18 +4557,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Chart
-:Clinical_Chart rdf:type owl:NamedIndividual ;
-                rdfs:seeAlso :Narrative_Resource .
+:Clinical_Chart rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Charts
-:Clinical_Charts rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Clinical_Chart .
+:Clinical_Charts rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Data
-:Clinical_Data rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Clinical_Care_Data .
+:Clinical_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Research_Data
@@ -4558,8 +4573,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Clinical_Trial_Data
-:Clinical_Trial_Data rdf:type owl:NamedIndividual ;
-                     rdfs:seeAlso :Clinical_Research_Data .
+:Clinical_Trial_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Computational_Service
@@ -4567,18 +4581,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Connectivity_Matrix
-:Connectivity_Matrix rdf:type owl:NamedIndividual ;
-                     rdfs:seeAlso :Data_Resource .
+:Connectivity_Matrix rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Continuous_Data
-:Continuous_Data rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Data_Resource .
+:Continuous_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Distribution
-:Data_Distribution rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Data_Resource .
+:Data_Distribution rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Editor
@@ -4586,13 +4597,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Object
-:Data_Object rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Data_Resource .
+:Data_Object rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Repository
-:Data_Repository rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Database .
+:Data_Repository rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Resource
@@ -4600,14 +4609,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage
-:Data_Storage rdf:type owl:NamedIndividual ;
-              rdfs:seeAlso :Data_Storage_Repository ,
-                           :Data_Storage_Service .
+:Data_Storage rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Repository
-:Data_Storage_Repository rdf:type owl:NamedIndividual ;
-                         rdfs:seeAlso :Database_Software .
+:Data_Storage_Repository rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Storage_Service
@@ -4619,8 +4625,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Data_Transforms
-:Data_Transforms rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Data_Transform .
+:Data_Transforms rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Database
@@ -4636,13 +4641,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Discrete_Data
-:Discrete_Data rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Data_Resource .
+:Discrete_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Document
-:Document rdf:type owl:NamedIndividual ;
-          rdfs:seeAlso :Bibliographic_Resource .
+:Document rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Dynamic_Model
@@ -4650,18 +4653,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#EDA
-:EDA rdf:type owl:NamedIndividual ;
-     rdfs:seeAlso :Exploratory_Data_Analysis .
+:EDA rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Experimental_Measurment
-:Experimental_Measurment rdf:type owl:NamedIndividual ;
-                         rdfs:seeAlso :Molecular_and_Cellular_Data .
+:Experimental_Measurment rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Expertise
-:Expertise rdf:type owl:NamedIndividual ;
-           rdfs:seeAlso :Resource .
+:Expertise rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Exploratory_Data_Analysis
@@ -4669,13 +4669,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Four_Dimensional_Data
-:Four_Dimensional_Data rdf:type owl:NamedIndividual ;
-                       rdfs:seeAlso :Data_Resource .
+:Four_Dimensional_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Free_Text
-:Free_Text rdf:type owl:NamedIndividual ;
-           rdfs:seeAlso :Data_Resource .
+:Free_Text rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Funding_Resource
@@ -4687,18 +4685,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Graph_Viewers
-:Graph_Viewers rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Graph_Viewer .
+:Graph_Viewers rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Heterogeneous_Funding_Resource
-:Heterogeneous_Funding_Resource rdf:type owl:NamedIndividual ;
-                                rdfs:seeAlso :Funding_Resource .
+:Heterogeneous_Funding_Resource rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#High_Dimensional_Data
-:High_Dimensional_Data rdf:type owl:NamedIndividual ;
-                       rdfs:seeAlso :Data_Resource .
+:High_Dimensional_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tool
@@ -4706,8 +4701,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Integration_and_Interoperability_Tools
-:Integration_and_Interoperability_Tools rdf:type owl:NamedIndividual ;
-                                        rdfs:seeAlso :Integration_and_Interoperability_Tool .
+:Integration_and_Interoperability_Tools rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tool
@@ -4715,13 +4709,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Interactive_Tools
-:Interactive_Tools rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Interactive_Tool .
+:Interactive_Tools rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledge_Environment
-:Knowledge_Environment rdf:type owl:NamedIndividual ;
-                       rdfs:seeAlso :Structured_Knowledge_Resource .
+:Knowledge_Environment rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Knowledgebase
@@ -4737,13 +4729,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Redistribution
-:License_and_Terms_for_Redistribution rdf:type owl:NamedIndividual ;
-                                      rdfs:seeAlso :License .
+:License_and_Terms_for_Redistribution rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#License_and_Terms_for_Use
-:License_and_Terms_for_Use rdf:type owl:NamedIndividual ;
-                           rdfs:seeAlso :License .
+:License_and_Terms_for_Use rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tool
@@ -4751,8 +4741,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Linear_Algebra_Tools
-:Linear_Algebra_Tools rdf:type owl:NamedIndividual ;
-                      rdfs:seeAlso :Linear_Algebra_Tool .
+:Linear_Algebra_Tools rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewer
@@ -4760,28 +4749,23 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Manifold_Viewers
-:Manifold_Viewers rdf:type owl:NamedIndividual ;
-                  rdfs:seeAlso :Manifold_Viewer .
+:Manifold_Viewers rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Matrix
-:Matrix rdf:type owl:NamedIndividual ;
-        rdfs:seeAlso :Data_Resource .
+:Matrix rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Modular_Component
-:Modular_Component rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Data_Resource .
+:Modular_Component rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectories
-:Molecular_Trajectories rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso :Molecular_Trajectory_Data .
+:Molecular_Trajectories rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_Trajectory_Data
-:Molecular_Trajectory_Data rdf:type owl:NamedIndividual ;
-                           rdfs:seeAlso :Dynamic_Model .
+:Molecular_Trajectory_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Molecular_and_Cellular_Data
@@ -4797,8 +4781,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Editor
-:Network_Editor rdf:type owl:NamedIndividual ;
-                rdfs:seeAlso :Data_Editor .
+:Network_Editor rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_Model
@@ -4806,18 +4789,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Network_model
-:Network_model rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Network_Model .
+:Network_model rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Non_Computational_Service
-:Non_Computational_Service rdf:type owl:NamedIndividual ;
-                           rdfs:seeAlso :Resource .
+:Non_Computational_Service rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Nonhuman_Data
-:Nonhuman_Data rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Clinical_Research_Data .
+:Nonhuman_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrator
@@ -4825,8 +4805,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Integrators
-:Numerical_Integrators rdf:type owl:NamedIndividual ;
-                       rdfs:seeAlso :Numerical_Integrator .
+:Numerical_Integrators rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Method
@@ -4834,13 +4813,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Numerical_Methods
-:Numerical_Methods rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Numerical_Method .
+:Numerical_Methods rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Pass_Through_License
-:Pass_Through_License rdf:type owl:NamedIndividual ;
-                      rdfs:seeAlso :License .
+:Pass_Through_License rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Physico-Chemical_Model
@@ -4852,23 +4829,19 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Portlet_Component
-:Portlet_Component rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Portal .
+:Portlet_Component rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance
-:Provenance rdf:type owl:NamedIndividual ;
-            rdfs:seeAlso :Resource .
+:Provenance rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Provenance_and_Intellectual_Property
-:Provenance_and_Intellectual_Property rdf:type owl:NamedIndividual ;
-                                      rdfs:seeAlso :Resource .
+:Provenance_and_Intellectual_Property rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Publication
-:Publication rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Bibliographic_Resource .
+:Publication rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Reagent_Resource
@@ -4876,8 +4849,7 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Research_Supplies
-:Research_Supplies rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Resource .
+:Research_Supplies rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Resource
@@ -4885,23 +4857,19 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scalar_Data
-:Scalar_Data rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Data_Resource .
+:Scalar_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Scripting_Language_and_Environment
-:Scripting_Language_and_Environment rdf:type owl:NamedIndividual ;
-                                    rdfs:seeAlso :Integration_and_Interoperability_Tool .
+:Scripting_Language_and_Environment rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Semantic_Network
-:Semantic_Network rdf:type owl:NamedIndividual ;
-                  rdfs:seeAlso :Knowledgebase .
+:Semantic_Network rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Server
-:Server rdf:type owl:NamedIndividual ;
-        rdfs:seeAlso :Computational_Service .
+:Server rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Development_Resource
@@ -4909,39 +4877,31 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Distribution
-:Software_Distribution rdf:type owl:NamedIndividual ;
-                       rdfs:seeAlso :Data_Resource .
+:Software_Distribution rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_Documentation
-:Software_Documentation rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso :Bibliographic_Resource .
+:Software_Documentation rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Software_development
-:Software_development rdf:type owl:NamedIndividual ;
-                      rdfs:seeAlso activity:Software_Development ,
-                                   :Software_Development_Resource .
+:Software_development rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Source_Code
-:Source_Code rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Data_Resource .
+:Source_Code rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Standalone_Application
-:Standalone_Application rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso :Data_Resource .
+:Standalone_Application rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Stochastic_Data
-:Stochastic_Data rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Data_Resource .
+:Stochastic_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_Data
-:Structured_Data rdf:type owl:NamedIndividual ;
-                 rdfs:seeAlso :Structured_File .
+:Structured_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Structured_File
@@ -4953,13 +4913,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Summarization
-:Summarization rdf:type owl:NamedIndividual ;
-               rdfs:seeAlso :Language_Summarization .
+:Summarization rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Support
-:Support rdf:type owl:NamedIndividual ;
-         rdfs:seeAlso :Technical_Support .
+:Support rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Technical_Support
@@ -4967,13 +4925,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Three_Dimensional_Data
-:Three_Dimensional_Data rdf:type owl:NamedIndividual ;
-                        rdfs:seeAlso :Data_Resource .
+:Three_Dimensional_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Toolkit
-:Toolkit rdf:type owl:NamedIndividual ;
-         rdfs:seeAlso :Integration_and_Interoperability_Tool .
+:Toolkit rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorial
@@ -4981,13 +4937,11 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Tutorials
-:Tutorials rdf:type owl:NamedIndividual ;
-           rdfs:seeAlso :Tutorial .
+:Tutorials rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Data
-:Unstructured_Data rdf:type owl:NamedIndividual ;
-                   rdfs:seeAlso :Unstructured_Knowledge_Resource .
+:Unstructured_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Unstructured_Knowledge_Resource
@@ -4995,18 +4949,15 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Vector_Data
-:Vector_Data rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Data_Resource .
+:Vector_Data rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#Web_Service
-:Web_Service rdf:type owl:NamedIndividual ;
-             rdfs:seeAlso :Computational_Service .
+:Web_Service rdf:type owl:NamedIndividual .
 
 
 ###  http://bioportal.bioontology.org/ontologies/BRO.owl#physico_chemical_models
-:physico_chemical_models rdf:type owl:NamedIndividual ;
-                         rdfs:seeAlso :Physico-Chemical_Model .
+:physico_chemical_models rdf:type owl:NamedIndividual .
 
 
 #################################################################
@@ -5015,12 +4966,14 @@ activity:Therapeutics rdf:type owl:NamedIndividual .
 
 activity:Heath_Services desc:definition "As defined in http://en.wikipedia.org/wiki/Health_services_research" ;
                         rdfs:label "Heath Services" ;
+                        rdfs:seeAlso activity:Health_Services ;
                         owl:deprecated "true"^^xsd:boolean ;
                         skos:historyNote "Deprecated for BRO v2.7" .
 
 
 activity:Novel_Therapeutics desc:definition "Innovative therapeutics (http://en.wiktionary.org/wiki/therapeutics)" ;
                             rdfs:label "Novel Therapeutics" ;
+                            rdfs:seeAlso activity:Therapeutics ;
                             owl:deprecated "true"^^xsd:boolean ;
                             skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5039,6 +4992,7 @@ desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used in
 
 :Anatomic_Atlas desc:definition "A collection of tables, charts, or plates to illustrate anatomical structures." ;
                 rdfs:label "Anatomic Atlas" ;
+                rdfs:seeAlso :Atlas ;
                 owl:deprecated "true"^^xsd:boolean ;
                 skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5051,6 +5005,7 @@ desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used in
 
 :Automated_Natural_Language_Output desc:definition "Data file resulting from natural language processing." ;
                                    rdfs:label "Automated Natural Language Output" ;
+                                   rdfs:seeAlso :Natural_Language_Processing ;
                                    owl:deprecated "true"^^xsd:boolean ;
                                    skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5063,6 +5018,7 @@ desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used in
 
 :Averaging_and_Aglomeration desc:definition "Resource that provides access to software, applications, or toolkits that performs signal processing by repeated measures of the signal and then calculates the expected value of the data set." ;
                             rdfs:label "Averaging and Aglomeration" ;
+                            rdfs:seeAlso :Averaging_and_Agglomeration ;
                             owl:deprecated "true"^^xsd:boolean ;
                             skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5075,30 +5031,36 @@ desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used in
 
 :Backup_Archives_and_Disaster_Recovery desc:definition "A resource that provides long-term storage for backup copies of files or for files that are no longer in active use, and the ability to retrieve backed up content in the event of a disaster that impacts the system in question," ;
                                        rdfs:label "Backup Archives and Disaster Recovery" ;
+                                       rdfs:seeAlso :Backup_Archive_Service ,
+                                                    :Disaster_Recovery_Service ;
                                        owl:deprecated "true"^^xsd:boolean ;
                                        skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Bibliographic_Resource rdfs:comment "level of detail is to specific" ;
                         rdfs:label "DEPRECATED Bibliographic Resource" ;
-                        rdfs:seeAlso :I2002 ;
+                        rdfs:seeAlso :Bibliographic_Resource ,
+                                     :I2002 ;
                         owl:deprecated "true"^^xsd:boolean .
 
 
 :Binary_Executable desc:definition "Resource that provides access to Software that contains data encoded in binary form and contains instructions for the computer to perform a given set of tasks." ;
                    rdfs:label "Binary Executable" ;
+                   rdfs:seeAlso :Data_Resource ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Biochemical_Supply_Resource desc:definition "Biochemical (http://en.wikipedia.org/wiki/Biochemistry) supplies provided for a laboratory (http://en.wikipedia.org/wiki/Laboratory)" ;
                              rdfs:label "Biochemical Supply Resource" ;
+                             rdfs:seeAlso :Reagent_Resource ;
                              owl:deprecated "true"^^xsd:boolean ;
                              skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Centrality_Analsysis desc:definition "A Resource that provides access to a graph algorithm that uses ranking of network elements to identify the importance of elements in a network." ;
                       rdfs:label "Centrality Analsysis" ;
+                      rdfs:seeAlso :Centrality_Analysis ;
                       owl:deprecated "true"^^xsd:boolean ;
                       skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5118,6 +5080,7 @@ desc:replacedBy rdfs:comment "there is no usage anymore, rdfs:seeAlso is used in
 :Clinical_Chart desc:definition """**previously was called Clinical_Charts_eg_Demographics
 we think this should be deleted""" ;
                 rdfs:label "Clinical Chart" ;
+                rdfs:seeAlso :Narrative_Resource ;
                 owl:deprecated "true"^^xsd:boolean ;
                 skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5125,12 +5088,14 @@ we think this should be deleted""" ;
 :Clinical_Charts desc:definition """**previously was called Clinical_Charts_eg_Demographics
 we think this should be deleted""" ;
                  rdfs:label "Clinical Charts" ;
+                 rdfs:seeAlso :Clinical_Chart ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Clinical_Data desc:definition "Any type of data obtained in the course of caring for humans." ;
                rdfs:label "Clinical Data" ;
+               rdfs:seeAlso :Clinical_Care_Data ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5143,6 +5108,7 @@ we think this should be deleted""" ;
 
 :Clinical_Trial_Data desc:definition "A resource the provides access to data about subjects in a clinical trial; for example demographics, medical history, labs, procedures, etc." ;
                      rdfs:label "Clinical Trial Data" ;
+                     rdfs:seeAlso :Clinical_Research_Data ;
                      owl:deprecated "true"^^xsd:boolean ;
                      skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5155,18 +5121,21 @@ we think this should be deleted""" ;
 
 :Connectivity_Matrix desc:definition "A matrix is a subset of a network that contains node-edge-node connections of interest and are represented as a matrix." ;
                      rdfs:label "Connectivity Matrix" ;
+                     rdfs:seeAlso :Data_Resource ;
                      owl:deprecated "true"^^xsd:boolean ;
                      skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Continuous_Data desc:definition "A data object that has infinite numbers of possible values. Quantitative data is often continuous such as weight, blood pressure." ;
                  rdfs:label "Continuous Data" ;
+                 rdfs:seeAlso :Data_Resource ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Data_Distribution desc:definition "A resource that provides data or allows users to access and utilize data" ;
                    rdfs:label "Data Distribution" ;
+                   rdfs:seeAlso :Data_Resource ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5179,12 +5148,14 @@ we think this should be deleted""" ;
 
 :Data_Object desc:definition "A resource that provides computational building blocks for complex data types, individual facts, statistics or items of information." ;
              rdfs:label "Data Object" ;
+             rdfs:seeAlso :Data_Resource ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Data_Repository desc:definition "A resource that provides data storage and maintenance, such as a database which accepts submissions of similar data for storage and use. For example, the cell centered database (CCDB) encourages submissions of anatomical images that will increase its' holdings." ;
                  rdfs:label "Data Repository" ;
+                 rdfs:seeAlso :Database ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5197,12 +5168,15 @@ we think this should be deleted""" ;
 
 :Data_Storage desc:definition "thing stores data" ;
               rdfs:label "Data Storage" ;
+              rdfs:seeAlso :Data_Storage_Repository ,
+                           :Data_Storage_Service ;
               owl:deprecated "true"^^xsd:boolean ;
               skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Data_Storage_Repository desc:definition "A resource that provides access through the Internet or archive to formatted digital or textual data." ;
                          rdfs:label "Data Storage Repository" ;
+                         rdfs:seeAlso :Database_Software ;
                          owl:deprecated "true"^^xsd:boolean ;
                          skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5221,6 +5195,7 @@ we think this should be deleted""" ;
 
 :Data_Transforms desc:definition "General data transformations" ;
                  rdfs:label "Data Transforms" ;
+                 rdfs:seeAlso :Data_Transform ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5245,12 +5220,14 @@ we think this should be deleted""" ;
 
 :Discrete_Data desc:definition "A data object that consists of separate, but finite set of values. " ;
                rdfs:label "Discrete Data" ;
+               rdfs:seeAlso :Data_Resource ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Document desc:definition "A resource that provides any kind written item, as a book, article, or letter, esp. of a factual or informative nature." ;
           rdfs:label "Document" ;
+          rdfs:seeAlso :Bibliographic_Resource ;
           owl:deprecated "true"^^xsd:boolean ;
           skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5263,6 +5240,7 @@ we think this should be deleted""" ;
 
 :EDA desc:definition "Resource that provides access to software, applications, or toolkits that performs exploratory data analysis methods." ;
      rdfs:label "EDA" ;
+     rdfs:seeAlso :Exploratory_Data_Analysis ;
      owl:deprecated "true"^^xsd:boolean ;
      skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5272,12 +5250,14 @@ we think this should be deleted""" ;
 
 :Experimental_Measurment desc:definition "A resource that provides access to data from individual experiments." ;
                          rdfs:label "Experimental Measurement" ;
+                         rdfs:seeAlso :Molecular_and_Cellular_Data ;
                          owl:deprecated "true"^^xsd:boolean ;
                          skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Expertise desc:definition "A resource as an expert (http://en.wikipedia.org/wiki/Expert) who can answer questions, provide technical assistance, etc." ;
            rdfs:label "Expertise" ;
+           rdfs:seeAlso :Resource ;
            owl:deprecated "true"^^xsd:boolean ;
            skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5290,12 +5270,14 @@ we think this should be deleted""" ;
 
 :Four_Dimensional_Data desc:definition "3-D models evolving in time" ;
                        rdfs:label "Four Dimensional Data" ;
+                       rdfs:seeAlso :Data_Resource ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Free_Text desc:definition "Unstructured data in a format of alphanumeric characters." ;
            rdfs:label "Free Text" ;
+           rdfs:seeAlso :Data_Resource ;
            owl:deprecated "true"^^xsd:boolean ;
            skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5315,18 +5297,21 @@ we think this should be deleted""" ;
 
 :Graph_Viewers desc:definition "General graph visualization resources" ;
                rdfs:label "Graph Viewers" ;
+               rdfs:seeAlso :Graph_Viewer ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Heterogeneous_Funding_Resource desc:definition "" ;
                                 rdfs:label "Heterogeneous Funding Resource" ;
+                                rdfs:seeAlso :Funding_Resource ;
                                 owl:deprecated "true"^^xsd:boolean ;
                                 skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :High_Dimensional_Data desc:definition "Discrete data that contains many variables. " ;
                        rdfs:label "High Dimensional Data" ;
+                       rdfs:seeAlso :Data_Resource ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5339,6 +5324,7 @@ we think this should be deleted""" ;
 
 :Integration_and_Interoperability_Tools desc:definition "These are resources that allow tool interoperability and resource integration and data mediation." ;
                                         rdfs:label "Integration and Interoperability Tools" ;
+                                        rdfs:seeAlso :Integration_and_Interoperability_Tool ;
                                         owl:deprecated "true"^^xsd:boolean ;
                                         skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5350,12 +5336,14 @@ we think this should be deleted""" ;
 
 
 :Interactive_Tools rdfs:label "Interactive Tools" ;
+                   rdfs:seeAlso :Interactive_Tool ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Knowledge_Environment desc:definition "A resource that provides access to collaborative knowledge building, decision making, inference or discovery tools." ;
                        rdfs:label "Knowledge Environment" ;
+                       rdfs:seeAlso :Structured_Knowledge_Resource ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5380,12 +5368,14 @@ we think this should be deleted""" ;
 
 :License_and_Terms_for_Redistribution desc:definition "A license that describes the constraints for sharing the resource." ;
                                       rdfs:label "License and Terms for Redistribution" ;
+                                      rdfs:seeAlso :License ;
                                       owl:deprecated "true"^^xsd:boolean ;
                                       skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :License_and_Terms_for_Use desc:definition "A license that describes the constraints for using the resource." ;
                            rdfs:label "License and Terms for Use" ;
+                           rdfs:seeAlso :License ;
                            owl:deprecated "true"^^xsd:boolean ;
                            skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5397,6 +5387,7 @@ we think this should be deleted""" ;
 
 
 :Linear_Algebra_Tools rdfs:label "Linear Algebra Tools" ;
+                      rdfs:seeAlso :Linear_Algebra_Tool ;
                       owl:deprecated "true"^^xsd:boolean ;
                       skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5409,30 +5400,35 @@ we think this should be deleted""" ;
 
 :Manifold_Viewers desc:definition "General (hyper)volume visualization tools (e.g., volume rendering)." ;
                   rdfs:label "Manifold Viewers" ;
+                  rdfs:seeAlso :Manifold_Viewer ;
                   owl:deprecated "true"^^xsd:boolean ;
                   skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Matrix desc:definition "The dimensions of the array in computer memory used to store the data acquired during a pulse sequence. Related to the number of phase-encoding steps, frequency-encoding points and number of slices." ;
         rdfs:label "Matrix" ;
+        rdfs:seeAlso :Data_Resource ;
         owl:deprecated "true"^^xsd:boolean ;
         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Modular_Component desc:definition "Resource that provides access to a software component." ;
                    rdfs:label "Modular Component" ;
+                   rdfs:seeAlso :Data_Resource ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Molecular_Trajectories desc:definition "" ;
                         rdfs:label "Molecular Trajectories" ;
+                        rdfs:seeAlso :Molecular_Trajectory_Data ;
                         owl:deprecated "true"^^xsd:boolean ;
                         skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Molecular_Trajectory_Data desc:definition "A resource that provides access to kinetic information, usually quantitative, regarding biological system components over time." ;
                            rdfs:label "Molecular Trajectory Data" ;
+                           rdfs:seeAlso :Dynamic_Model ;
                            owl:deprecated "true"^^xsd:boolean ;
                            skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5456,6 +5452,7 @@ we think this should be deleted""" ;
 
 :Network_Editor desc:definition "Deprecate" ;
                 rdfs:label "Network Editor" ;
+                rdfs:seeAlso :Data_Editor ;
                 owl:deprecated "true"^^xsd:boolean ;
                 skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5468,18 +5465,21 @@ we think this should be deleted""" ;
 
 :Network_model desc:definition "" ;
                rdfs:label "Network model" ;
+               rdfs:seeAlso :Network_Model ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Non_Computational_Service desc:definition "Biomedical Resources which are not predominantly computing (http://en.wikipedia.org/wiki/Computing) in nature." ;
                            rdfs:label "Non Computational Service" ;
+                           rdfs:seeAlso :Resource ;
                            owl:deprecated "true"^^xsd:boolean ;
                            skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Nonhuman_Data desc:definition "Clinical data that is not derived from a person." ;
                rdfs:label "Nonhuman Data" ;
+               rdfs:seeAlso :Clinical_Research_Data ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5491,6 +5491,7 @@ we think this should be deleted""" ;
 
 
 :Numerical_Integrators rdfs:label "Numerical Integrators" ;
+                       rdfs:seeAlso :Numerical_Integrator ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5503,12 +5504,14 @@ we think this should be deleted""" ;
 
 :Numerical_Methods desc:definition "General numerical modeling and computational tools (ala, GAMS: http://gams.nist.gov/)" ;
                    rdfs:label "Numerical Methods" ;
+                   rdfs:seeAlso :Numerical_Method ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Pass_Through_License desc:definition "A license that grants the right of usage from a third party distributor to the end user." ;
                       rdfs:label "Pass Through License" ;
+                      rdfs:seeAlso :License ;
                       owl:deprecated "true"^^xsd:boolean ;
                       skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5527,24 +5530,28 @@ we think this should be deleted""" ;
 
 :Portlet_Component desc:definition "Resource that provides access to software portlet." ;
                    rdfs:label "Portlet Component" ;
+                   rdfs:seeAlso :Portal ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Provenance desc:definition "" ;
             rdfs:label "Provenance" ;
+            rdfs:seeAlso :Resource ;
             owl:deprecated "true"^^xsd:boolean ;
             skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Provenance_and_Intellectual_Property desc:definition "" ;
                                       rdfs:label "Provenance and Intellectual Property" ;
+                                      rdfs:seeAlso :Resource ;
                                       owl:deprecated "true"^^xsd:boolean ;
                                       skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Publication desc:definition "A document that is publicly available." ;
              rdfs:label "Publication" ;
+             rdfs:seeAlso :Bibliographic_Resource ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5557,6 +5564,7 @@ we think this should be deleted""" ;
 
 :Research_Supplies desc:definition "Material supplies provided for research (http://en.wikipedia.org/wiki/Research) purposes" ;
                    rdfs:label "Research Supplies" ;
+                   rdfs:seeAlso :Resource ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v2.7" .
 
@@ -5569,24 +5577,28 @@ we think this should be deleted""" ;
 
 :Scalar_Data desc:definition "Discrete data that is composed of individual data points as compared to." ;
              rdfs:label "Scalar Data" ;
+             rdfs:seeAlso :Data_Resource ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Scripting_Language_and_Environment desc:definition "" ;
                                     rdfs:label "Scripting Language and Environment" ;
+                                    rdfs:seeAlso :Integration_and_Interoperability_Tool ;
                                     owl:deprecated "true"^^xsd:boolean ;
                                     skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Semantic_Network desc:definition "" ;
                   rdfs:label "Semantic Network" ;
+                  rdfs:seeAlso :Knowledgebase ;
                   owl:deprecated "true"^^xsd:boolean ;
                   skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Server desc:definition "A resource that provides any combination of hardware or software designed to provide services to clients as defined in http://en.wikipedia.org/wiki/Server_(computing)" ;
         rdfs:label "Server" ;
+        rdfs:seeAlso :Computational_Service ;
         owl:deprecated "true"^^xsd:boolean ;
         skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5601,41 +5613,49 @@ we think this should be deleted""" ;
 
 """ ;
                        rdfs:label "Software Distribution" ;
+                       rdfs:seeAlso :Data_Resource ;
                        owl:deprecated "true"^^xsd:boolean ;
                        skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Software_Documentation desc:definition "A resource that provides access to instructions regarding how software operates or how to use it." ;
                         rdfs:label "Software Documentation" ;
+                        rdfs:seeAlso :Bibliographic_Resource ;
                         owl:deprecated "true"^^xsd:boolean ;
                         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Software_development rdfs:label "Software development" ;
+                      rdfs:seeAlso activity:Software_Development ,
+                                   :Software_Development_Resource ;
                       owl:deprecated "true"^^xsd:boolean ;
                       skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Source_Code desc:definition "Resource that provides access to information content entity that specifies, using a programming language, some algorithm." ;
              rdfs:label "Source Code" ;
+             rdfs:seeAlso :Data_Resource ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Standalone_Application desc:definition "Resource that provides access to software distribution that does not have any dependencies.  Software distributed in this manner can be run on a desktop computer." ;
                         rdfs:label "Standalone Application" ;
+                        rdfs:seeAlso :Data_Resource ;
                         owl:deprecated "true"^^xsd:boolean ;
                         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Stochastic_Data desc:definition "" ;
                  rdfs:label "Stochastic Data" ;
+                 rdfs:seeAlso :Data_Resource ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Structured_Data desc:definition "A resource that distributes data that is organized in a purposeful manner" ;
                  rdfs:label "Structured Data" ;
+                 rdfs:seeAlso :Structured_File ;
                  owl:deprecated "true"^^xsd:boolean ;
                  skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5654,12 +5674,14 @@ we think this should be deleted""" ;
 
 :Summarization desc:definition "Resource that provides access to applications, libraries, or software that creates a shortened version of text." ;
                rdfs:label "Summarization" ;
+               rdfs:seeAlso :Language_Summarization ;
                owl:deprecated "true"^^xsd:boolean ;
                skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Support desc:definition "A resource that provides aid or assistance with a technology product." ;
          rdfs:label "Support" ;
+         rdfs:seeAlso :Technical_Support ;
          owl:deprecated "true"^^xsd:boolean ;
          skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5672,12 +5694,14 @@ we think this should be deleted""" ;
 
 :Three_Dimensional_Data desc:definition "Discrete data that consists of x, y, and z coordinates." ;
                         rdfs:label "Three Dimensional Data" ;
+                        rdfs:seeAlso :Data_Resource ;
                         owl:deprecated "true"^^xsd:boolean ;
                         skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Toolkit desc:definition "Resource that provides access to software, applications, or toolkits that deliver software or application in toolkit fashion, whereby the kit components can be used independently of each other, or included as part of another program" ;
          rdfs:label "Toolkit" ;
+         rdfs:seeAlso :Integration_and_Interoperability_Tool ;
          owl:deprecated "true"^^xsd:boolean ;
          skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5690,12 +5714,14 @@ we think this should be deleted""" ;
 
 :Tutorials desc:definition "" ;
            rdfs:label "Tutorials" ;
+           rdfs:seeAlso :Tutorial ;
            owl:deprecated "true"^^xsd:boolean ;
            skos:historyNote "Deprecated for BRO v2.7" .
 
 
 :Unstructured_Data desc:definition "Data distribution that does not have a data model or has one that is not easily usable by a computer program. " ;
                    rdfs:label "Unstructured Data" ;
+                   rdfs:seeAlso :Unstructured_Knowledge_Resource ;
                    owl:deprecated "true"^^xsd:boolean ;
                    skos:historyNote "Deprecated for BRO v3.0" .
 
@@ -5708,18 +5734,21 @@ we think this should be deleted""" ;
 
 :Vector_Data desc:definition "Discrete data that representents physical entities as XY coordinates." ;
              rdfs:label "Vector Data" ;
+             rdfs:seeAlso :Data_Resource ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :Web_Service desc:definition "A resource that provides a software system designed to support interoperable machine-to-machine interaction over a network. Web services are frequently Web APIs that can be accessed over a network, such as the Internet, and executed on a remote system hosting the requested services." ;
              rdfs:label "Web Service" ;
+             rdfs:seeAlso :Computational_Service ;
              owl:deprecated "true"^^xsd:boolean ;
              skos:historyNote "Deprecated for BRO v3.0" .
 
 
 :physico_chemical_models desc:definition "" ;
                          rdfs:label "physico chemical models" ;
+                         rdfs:seeAlso :Physico-Chemical_Model ;
                          owl:deprecated "true"^^xsd:boolean ;
                          skos:historyNote "Deprecated for BRO v2.7" .
 

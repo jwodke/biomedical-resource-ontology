@@ -14,7 +14,6 @@ Change log classes:
 | F4009 | Institutional FR | - | new class added as subclass of Private FR |
 | F4010 | Personal FR | - | new class added as subclass of Private FR |
 | I1001 | Information Resource | Information Resource | definition change |
-| - | - | Portal | Subclass of Information Resource, deprecated because there is no clear difference to Database IR |
 | - | - | Data Resource | Subclass of Information Resource, deprecated because there is no clear difference between Data Resource and Information Resource |
 | - | - | Clinical Care Data | Subclass of Data Resource, deprecated because it can be incorporated in the existing Subclasses of Information Resource |
 | - | - | Aggregate Human Data | Subclass of Clinical Care Data, deprecated because Parentclass deprecated |
@@ -25,6 +24,7 @@ Change log classes:
 | - | - | Molecular Interaction | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | - | - | Phenotypic Measurement | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
 | - | - | Protein Expression | Subclass of Molecular and Cellular Data, deprecated because Parentclass deprecated |
+| - | - | Portal | Subclass of Information Resource, deprecated because there is no clear difference to Database IR |
 | I2002 | Semi-Structured IR | Semi-Structured Knowledge Resource | rename and definition change |
 | - | - | Atlas | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
 | - | - | Bibliographic Resource | Subclass of Semi-Structured Knowledge Resource, deprecated because the level of detail is too specific |
@@ -96,10 +96,10 @@ Change log classes:
 | P3008 | Financial Expertise PR | Grant Preparation Expertise | change in hierarchy from Subclass of People Resource to Subclass of Professional PR and definition change |
 | P3009 | Industrial Expertise PR | Industry Partnership Expertise | change in hierarchy from Subclass of People Resource to Subclass of Professional PR and definition change |
 | P3010 | Research Expertise PR | - | new class added as subclass of Professional PR |
-| - | - | Pharmacokinetics Pharmacodynamics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
-| - | - | Protocol Development Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
-| - | - | Psychometrics Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
-| - | - | Toxicology Expertise | Subclass of Professional PR, deprecated because it was summed into Research Expertise PR (P3010) |
+| - | - | Pharmacokinetics Pharmacodynamics Expertise | Subclass of People Resource, deprecated because it was summed into Research Expertise PR (P3010) |
+| - | - | Protocol Development Expertise | Subclass of People Resource, deprecated because it was summed into Research Expertise PR (P3010) |
+| - | - | Psychometrics Expertise | Subclass of People Resource, deprecated because it was summed into Research Expertise PR (P3010) |
+| - | - | Toxicology Expertise | Subclass of People Resource, deprecated because it was summed into Research Expertise PR (P3010) |
 | P3011 | Software Development Expertise PR | - | new class added as subclass of Professional PR |
 | S1001 | Service Resource | Service Resource | definition change |
 | S2002 | Core Facility | Facility Core | rename and definition change |
