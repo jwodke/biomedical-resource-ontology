@@ -9,6 +9,7 @@
 @prefix desc: <http://bioontology.org/ontologies/biositemap.owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
 @prefix activity: <http://bioontology.org/ontologies/Activity.owl#> .
 @base <http://bioportal.bioontology.org/ontologies/BRO.owl#> .
@@ -16,12 +17,18 @@
 <http://bioontology.org/ontologies/BiomedicalResources.owl> rdf:type owl:Ontology ;
                                                              owl:versionIRI <http://bioontology.org/ontologies/BiomedicalResources.owl/5.0.0> ;
                                                              <http://purl.org/dc/terms/abstract> "todo" ;
+                                                             <http://purl.org/dc/terms/bibliographicCitation> "added after publishing" ;
                                                              <http://purl.org/dc/terms/contributor> "..." ;
+                                                             <http://purl.org/dc/terms/created> "" ;
                                                              <http://purl.org/dc/terms/creator> "..." ;
+                                                             <http://purl.org/dc/terms/description> "..." ;
                                                              <http://purl.org/dc/terms/language> "en" ;
                                                              <http://purl.org/dc/terms/license> "?" ;
                                                              <http://purl.org/dc/terms/title> "BRO - Biomedical Resource Ontology" ;
+                                                             vann:preferredNamespacePrefix "..." ;
+                                                             vann:preferredNamespaceUri "..." ;
                                                              owl:priorVersion "4.1.1" ;
+                                                             owl:versionIRI "http://bioontology.org/ontologies/BiomedicalResources.owl/5.0.0" ;
                                                              owl:versionInfo "5.0.0" .
 
 #################################################################
@@ -49,12 +56,24 @@ desc:replacedBy rdf:type owl:AnnotationProperty .
 <http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/contributor
 <http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/language
@@ -67,6 +86,18 @@ desc:replacedBy rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionIRI
+owl:versionIRI rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
