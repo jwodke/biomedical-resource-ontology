@@ -23,7 +23,7 @@
                                                              <http://purl.org/dc/terms/creator> "..." ;
                                                              <http://purl.org/dc/terms/description> "..." ;
                                                              <http://purl.org/dc/terms/language> "en" ;
-                                                             <http://purl.org/dc/terms/license> "?" ;
+                                                             <http://purl.org/dc/terms/license> "MIT" ;
                                                              <http://purl.org/dc/terms/title> "BRO - Biomedical Resource Ontology" ;
                                                              vann:preferredNamespacePrefix "..." ;
                                                              vann:preferredNamespaceUri "..." ;
