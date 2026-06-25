@@ -425,7 +425,7 @@ Change log properties:
 | - | - | OutputForm | Object property, deprecated because Domain Algorithm was deprecated |
 | - | - | replacedBy | Object and annotation property, deprecated because there is no usage anymore, rdfs:seeAlso is used instead |
 |  |  |  |  |
-|  |  |  |  |
+| - | mentions | - | Annotation property, to include the IRI of an entity that is referenced |
 |  |  |  |  |
 |  |  |  |  |
 
