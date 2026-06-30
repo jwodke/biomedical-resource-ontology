@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "biomedical-resource-ontology"
-version = "4.1.0"
+version = "5.0.0"
 description = "A meta-ontology describing biomedical resources for computational biomedicine"
 authors = ["Sebastian Lobentanzer <sebastian.lobentanzer@gmail.com>", "Judith Wodke <jwodke@uni-greifswald.de>"]
 license = "MIT"

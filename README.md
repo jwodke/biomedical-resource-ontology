@@ -6,6 +6,13 @@ computational biomedicine (specifically, at this time, for the BioCypher
 project).
 
 ## Changes affected after adoption and migration of BRO 3.2.1
+Version 5.0.0: We curated the child classes further and updated all class 
+definitions. We incremented the major version due to the change from literal 
+URIs to an alphanumerical system.
+
+Version 4.1.1: We removed all properties related to classes removed in v4.1.0 and 
+updated the preamble.
+
 Version 4.1.0: We reduced BRO to its core purpose, describing biomedical
 resources, by removing all other top-level classes. The sole remaining top-level
 class is `Resource`. BRO is now provided in turtle format.
